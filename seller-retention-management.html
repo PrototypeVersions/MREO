@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Explore local property-management support within the MREO demonstration owner-retention pathway."
+  >
+
+  <title>MREO | Local Management</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-retention-options-link"
+      class="back-link"
+      href="seller-retention-options.html"
+    >
+      ← Retention Options
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Owner Retention · Management
+      </p>
+
+      <h1 class="page-title">
+        Local Management
+      </h1>
+
+      <p class="page-description">
+        Identify what local help would make continued ownership easier.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="management-form"
+      class="form"
+    >
+
+      <!-- ===================================
+           OWNER LOCATION
+           =================================== -->
+
+      <div class="field">
+
+        <label for="owner-location">
+          Owner Location
+        </label>
+
+        <select
+          id="owner-location"
+          name="ownerLocation"
+          required
+        >
+
+          <option value="">
+            Choose owner location
+          </option>
+
+          <option value="Lives at the property">
+            Lives at the property
+          </option>
+
+          <option value="Lives nearby">
+            Lives nearby
+          </option>
+
+          <option value="Lives elsewhere in the same state">
+            Lives elsewhere in the same state
+          </option>
+
+          <option value="Lives in another state">
+            Lives in another state
+          </option>
+
+          <option value="Lives outside the United States">
+            Lives outside the United States
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           LOCAL HELP NEEDED
+           =================================== -->
+
+      <div class="field">
+
+        <label for="local-help">
+          Local Help Needed
+        </label>
+
+        <select
+          id="local-help"
+          name="localHelp"
+          required
+        >
+
+          <option value="">
+            Choose the main need
+          </option>
+
+          <option value="No current local help needed">
+            No current local help needed
+          </option>
+
+          <option value="Maintenance coordination">
+            Maintenance coordination
+          </option>
+
+          <option value="Tenant placement">
+            Tenant placement
+          </option>
+
+          <option value="Rent collection">
+            Rent collection
+          </option>
+
+          <option value="Property inspections or walkthroughs">
+            Property inspections or walkthroughs
+          </option>
+
+          <option value="Cleaning or turnover">
+            Cleaning or turnover
+          </option>
+
+          <option value="Repair and contractor coordination">
+            Repair and contractor coordination
+          </option>
+
+          <option value="Multiple property-management needs">
+            Multiple property-management needs
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           MANAGEMENT LEVEL
+           =================================== -->
+
+      <div class="field">
+
+        <label for="management-level">
+          Desired Management Level
+        </label>
+
+        <select
+          id="management-level"
+          name="managementLevel"
+          required
+        >
+
+          <option value="">
+            How much would you want coordinated?
+          </option>
+
+          <option value="Occasional assistance">
+            Occasional assistance
+          </option>
+
+          <option value="Coordinate specific services">
+            Coordinate specific services
+          </option>
+
+          <option value="Ongoing property management">
+            Ongoing property management
+          </option>
+
+          <option value="As much as possible">
+            As much as possible
+          </option>
+
+          <option value="Not sure yet">
+            Not sure yet
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           SAVE
+           =================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Save Management Review
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="management-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <p class="page-eyebrow">
+        Management Review
+      </p>
+
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Owner Location
+          </span>
+
+          <span
+            id="result-location"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Local Help
+          </span>
+
+          <span
+            id="result-help"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Management Level
+          </span>
+
+          <span
+            id="result-level"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================
+           CONTEXTUAL RESULT
+           =================================== -->
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Retention Record
+        </p>
+
+        <h3 id="management-heading">
+          Management needs have been recorded.
+        </h3>
+
+        <p
+          id="management-description"
+          class="muted"
+        >
+          Local property-service needs can remain connected to the
+          owner's broader decision to retain the property.
+        </p>
+
+      </section>
+
+
+      <!-- ===================================
+           COMPLETE RETENTION BRANCH
+           =================================== -->
+
+      <div class="button-row">
+
+        <a
+          id="retention-options-link"
+          class="primary-button"
+          href="seller-retention-options.html"
+        >
+          Retention Options
+        </a>
+
+
+        <a
+          id="seller-options-link"
+          class="secondary-button"
+          href="seller-options.html"
+        >
+          Compare Seller Paths
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         MANAGEMENT PRINCIPLE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      A remote or busy owner may want to retain a property while
+      outsourcing local obligations. A full MREO system could
+      coordinate services such as tenant placement, rent collection,
+      cleaning, maintenance, repairs, inspections, and local
+      property access through participating professionals.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      This prototype does not provide actual property-management,
+      brokerage, leasing, contracting, inspection, or maintenance
+      services. Availability and licensing requirements would depend
+      on the property location and participating professionals.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO owner-retention management review
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-retention-options-link"
+      ).href =
+        withAddress(
+          "seller-retention-options.html"
+        );
+
+
+      document.getElementById(
+        "retention-options-link"
+      ).href =
+        withAddress(
+          "seller-retention-options.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      let savedLocation =
+        null;
+
+
+      let savedHelp =
+        null;
+
+
+      let savedLevel =
+        null;
+
+
+      try {
+
+        savedLocation =
+          sessionStorage.getItem(
+            "mreo-seller-management-owner-location"
+          );
+
+
+        savedHelp =
+          sessionStorage.getItem(
+            "mreo-seller-management-local-help"
+          );
+
+
+        savedLevel =
+          sessionStorage.getItem(
+            "mreo-seller-management-level"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore management review:",
+          error
+        );
+
+      }
+
+
+      if (savedLocation) {
+
+        document.getElementById(
+          "owner-location"
+        ).value =
+          savedLocation;
+
+      }
+
+
+      if (savedHelp) {
+
+        document.getElementById(
+          "local-help"
+        ).value =
+          savedHelp;
+
+      }
+
+
+      if (savedLevel) {
+
+        document.getElementById(
+          "management-level"
+        ).value =
+          savedLevel;
+
+      }
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "management-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const ownerLocation =
+            document.getElementById(
+              "owner-location"
+            ).value;
+
+
+          const localHelp =
+            document.getElementById(
+              "local-help"
+            ).value;
+
+
+          const managementLevel =
+            document.getElementById(
+              "management-level"
+            ).value;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-management-owner-location",
+              ownerLocation
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-management-local-help",
+              localHelp
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-management-level",
+              managementLevel
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-retention-management",
+              "complete"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save management review:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RESULT
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-location"
+          ).textContent =
+            ownerLocation;
+
+
+          document.getElementById(
+            "result-help"
+          ).textContent =
+            localHelp;
+
+
+          document.getElementById(
+            "result-level"
+          ).textContent =
+            managementLevel;
+
+
+          /* -----------------------------------
+             CONTEXTUAL MESSAGE
+             ----------------------------------- */
+
+          const heading =
+            document.getElementById(
+              "management-heading"
+            );
+
+
+          const description =
+            document.getElementById(
+              "management-description"
+            );
+
+
+          if (
+            ownerLocation ===
+            "Lives in another state" ||
+            ownerLocation ===
+            "Lives outside the United States"
+          ) {
+
+            heading.textContent =
+              "Local coordination may reduce the burden of remote ownership.";
+
+
+            description.textContent =
+              "The demonstration pathway treats distance as a coordination problem: local professionals can handle authorized property tasks while the owner remains in control.";
+
+          } else if (
+            localHelp ===
+            "Multiple property-management needs" ||
+            managementLevel ===
+            "As much as possible"
+          ) {
+
+            heading.textContent =
+              "Broader property management may support retention.";
+
+
+            description.textContent =
+              "Multiple recurring ownership obligations could be coordinated through one operating record rather than handled independently.";
+
+          } else if (
+            localHelp ===
+            "No current local help needed"
+          ) {
+
+            heading.textContent =
+              "Local management is not currently a major obstacle.";
+
+
+            description.textContent =
+              "The owner can continue evaluating other retention factors or compare retention with the available sale pathways.";
+
+          } else {
+
+            heading.textContent =
+              "A specific local service need has been identified.";
+
+
+            description.textContent =
+              "That service can remain connected to the property record while the owner evaluates whether continued ownership is practical.";
+
+          }
+
+
+          document.getElementById(
+            "management-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "management-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
