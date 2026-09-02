@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Explore an owner-retention pathway through the MREO demonstration seller process."
+  >
+
+  <title>MREO | Keep the Property</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-options-link"
+      class="back-link"
+      href="seller-options.html"
+    >
+      ← Seller Options
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Seller Path · 01
+      </p>
+
+      <h1 class="page-title">
+        Keep the Property
+      </h1>
+
+      <p class="page-description">
+        First determine whether retention still fits the owner's goal.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         RETENTION FORM
+         ===================================== -->
+
+    <form
+      id="retention-form"
+      class="form"
+    >
+
+      <!-- ===================================
+           OWNER GOAL
+           =================================== -->
+
+      <div class="field">
+
+        <label for="owner-goal">
+          Owner Goal
+        </label>
+
+        <select
+          id="owner-goal"
+          name="ownerGoal"
+          required
+        >
+
+          <option value="">
+            Choose your primary goal
+          </option>
+
+          <option value="Remain in the property">
+            Remain in the property
+          </option>
+
+          <option value="Keep the property as a rental">
+            Keep the property as a rental
+          </option>
+
+          <option value="Keep the property for family use">
+            Keep the property for family use
+          </option>
+
+          <option value="Avoid selling if possible">
+            Avoid selling if possible
+          </option>
+
+          <option value="Not sure yet">
+            Not sure yet
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           CURRENT PRESSURE
+           =================================== -->
+
+      <div class="field">
+
+        <label for="current-pressure">
+          Current Pressure
+        </label>
+
+        <select
+          id="current-pressure"
+          name="currentPressure"
+          required
+        >
+
+          <option value="">
+            What is creating the need for a decision?
+          </option>
+
+          <option value="No immediate pressure">
+            No immediate pressure
+          </option>
+
+          <option value="Monthly payment pressure">
+            Monthly payment pressure
+          </option>
+
+          <option value="Property repair needs">
+            Property repair needs
+          </option>
+
+          <option value="Vacancy or tenant issue">
+            Vacancy or tenant issue
+          </option>
+
+          <option value="Loan or lender issue">
+            Loan or lender issue
+          </option>
+
+          <option value="Remote ownership">
+            Remote ownership
+          </option>
+
+          <option value="Other">
+            Other
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           RETENTION FEASIBILITY
+           =================================== -->
+
+      <div class="field">
+
+        <label for="retention-feasibility">
+          Retention Feasibility
+        </label>
+
+        <select
+          id="retention-feasibility"
+          name="retentionFeasibility"
+          required
+        >
+
+          <option value="">
+            How possible does keeping the property seem right now?
+          </option>
+
+          <option value="Appears feasible">
+            Appears feasible
+          </option>
+
+          <option value="Feasible if current problem is resolved">
+            Feasible if current problem is resolved
+          </option>
+
+          <option value="Uncertain">
+            Uncertain
+          </option>
+
+          <option value="Currently difficult">
+            Currently difficult
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           SAVE
+           =================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Continue
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="retention-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Pathway
+          </span>
+
+          <span
+            class="detail-value"
+            style="
+              font-size: 20px;
+              font-weight: 900;
+            "
+          >
+            Owner Retention
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Goal
+          </span>
+
+          <span
+            id="result-goal"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Current Pressure
+          </span>
+
+          <span
+            id="result-pressure"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Feasibility
+          </span>
+
+          <span
+            id="result-feasibility"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Next
+        </p>
+
+        <h3>
+          Examine ways to support retention.
+        </h3>
+
+        <p class="muted">
+          The next step looks only at possible retention-support
+          pathways rather than assuming the property should be sold.
+        </p>
+
+      </section>
+
+
+      <div class="button-row">
+
+        <a
+          id="retention-options-link"
+          class="primary-button"
+          href="seller-retention-options.html"
+        >
+          View Retention Options
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="return-options-link"
+          class="secondary-button"
+          href="seller-options.html"
+        >
+          Other Seller Paths
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         PRINCIPLE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      MREO does not assume that property distress, repair needs,
+      payment pressure, or another ownership problem means the
+      owner should sell. Retention remains a valid pathway when it
+      better serves the owner's objective.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      This page is a demonstration decision-support tool. It does
+      not determine whether retention is financially, legally, or
+      practically feasible and does not provide legal, lending,
+      foreclosure, tax, or financial advice.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO owner-retention pathway
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      document.getElementById(
+        "return-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      document.getElementById(
+        "retention-options-link"
+      ).href =
+        withAddress(
+          "seller-retention-options.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      const savedGoal =
+        sessionStorage.getItem(
+          "mreo-seller-retention-goal"
+        );
+
+
+      const savedPressure =
+        sessionStorage.getItem(
+          "mreo-seller-retention-pressure"
+        );
+
+
+      const savedFeasibility =
+        sessionStorage.getItem(
+          "mreo-seller-retention-feasibility"
+        );
+
+
+      if (savedGoal) {
+
+        document.getElementById(
+          "owner-goal"
+        ).value =
+          savedGoal;
+
+      }
+
+
+      if (savedPressure) {
+
+        document.getElementById(
+          "current-pressure"
+        ).value =
+          savedPressure;
+
+      }
+
+
+      if (savedFeasibility) {
+
+        document.getElementById(
+          "retention-feasibility"
+        ).value =
+          savedFeasibility;
+
+      }
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "retention-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const goal =
+            document.getElementById(
+              "owner-goal"
+            ).value;
+
+
+          const pressure =
+            document.getElementById(
+              "current-pressure"
+            ).value;
+
+
+          const feasibility =
+            document.getElementById(
+              "retention-feasibility"
+            ).value;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-retention-goal",
+              goal
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-retention-pressure",
+              pressure
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-retention-feasibility",
+              feasibility
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-selected-pathway",
+              "Owner Retention"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save retention information:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RESULT
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-goal"
+          ).textContent =
+            goal;
+
+
+          document.getElementById(
+            "result-pressure"
+          ).textContent =
+            pressure;
+
+
+          document.getElementById(
+            "result-feasibility"
+          ).textContent =
+            feasibility;
+
+
+          document.getElementById(
+            "retention-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "retention-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
