@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Enter purchaser identity and authority information for an MREO purchaser profile."
+  >
+
+  <title>MREO | Purchaser Identity</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-profile-link"
+      class="back-link"
+      href="purchaser.html"
+    >
+      ← Purchaser Profile
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Purchaser Profile · 01
+      </p>
+
+      <h1 class="page-title">
+        Identity &amp; Authority
+      </h1>
+
+      <p class="page-description">
+        Identify who is purchasing and who is authorized to act.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-id"
+          class="detail-value mono"
+        >
+          MREO-0001
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="identity-form"
+      class="form"
+    >
+
+      <!-- PURCHASER TYPE -->
+
+      <div class="field">
+
+        <label for="purchaser-type">
+          Purchaser Type
+        </label>
+
+        <select
+          id="purchaser-type"
+          name="purchaserType"
+          required
+        >
+
+          <option value="">
+            Choose purchaser type
+          </option>
+
+          <option value="Individual">
+            Individual
+          </option>
+
+          <option value="Company">
+            Company
+          </option>
+
+          <option value="Investment Fund">
+            Investment Fund
+          </option>
+
+          <option value="Institution">
+            Institution
+          </option>
+
+          <option value="Trust or Other Entity">
+            Trust or Other Entity
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- PURCHASER NAME -->
+
+      <div class="field">
+
+        <label for="purchaser-name">
+          Purchaser Name
+        </label>
+
+        <input
+          id="purchaser-name"
+          name="purchaserName"
+          type="text"
+          placeholder="Name of person or purchasing entity"
+          autocomplete="name"
+          required
+        >
+
+      </div>
+
+
+      <!-- AUTHORITY -->
+
+      <div class="field">
+
+        <label for="authority">
+          Authority to Act
+        </label>
+
+        <select
+          id="authority"
+          name="authority"
+          required
+        >
+
+          <option value="">
+            Choose authority
+          </option>
+
+          <option value="Purchasing for Myself">
+            Purchasing for Myself
+          </option>
+
+          <option value="Authorized Company Representative">
+            Authorized Company Representative
+          </option>
+
+          <option value="Fund or Investment Manager">
+            Fund or Investment Manager
+          </option>
+
+          <option value="Trustee or Authorized Fiduciary">
+            Trustee or Authorized Fiduciary
+          </option>
+
+          <option value="Other Authorized Representative">
+            Other Authorized Representative
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- =====================================
+           SAVE
+           ===================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Save Identity
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         SAVED RESULT
+         ===================================== -->
+
+    <section
+      id="saved-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Status
+          </span>
+
+          <span
+            class="detail-value"
+            style="
+              font-size: 20px;
+              font-weight: 900;
+            "
+          >
+            Identity Complete
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="button-row">
+
+        <a
+          id="continue-funding-link"
+          class="primary-button"
+          href="purchaser-funding.html"
+        >
+          Continue to Funding
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="return-profile-link"
+          class="secondary-button"
+          href="purchaser.html"
+        >
+          Purchaser Profile
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 34px;"
+    >
+      This prototype records demonstration identity and authority
+      information only. An operational system could require
+      additional identity, entity, or authorization verification.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration purchaser identity
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      const propertyId =
+        params.get("property");
+
+
+      /* -----------------------------------------
+         PRESERVE PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      function withProperty(page) {
+
+        if (!propertyId) {
+          return page;
+        }
+
+
+        return (
+          `${page}?property=` +
+          encodeURIComponent(propertyId)
+        );
+
+      }
+
+
+      document.getElementById(
+        "back-profile-link"
+      ).href =
+        withProperty(
+          "purchaser.html"
+        );
+
+
+      document.getElementById(
+        "return-profile-link"
+      ).href =
+        withProperty(
+          "purchaser.html"
+        );
+
+
+      document.getElementById(
+        "continue-funding-link"
+      ).href =
+        withProperty(
+          "purchaser-funding.html"
+        );
+
+
+      if (propertyId) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-id"
+        ).textContent =
+          propertyId;
+
+      }
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      const savedType =
+        sessionStorage.getItem(
+          "mreo-purchaser-type"
+        );
+
+
+      const savedName =
+        sessionStorage.getItem(
+          "mreo-purchaser-name"
+        );
+
+
+      const savedAuthority =
+        sessionStorage.getItem(
+          "mreo-purchaser-authority"
+        );
+
+
+      if (savedType) {
+
+        document.getElementById(
+          "purchaser-type"
+        ).value =
+          savedType;
+
+      }
+
+
+      if (savedName) {
+
+        document.getElementById(
+          "purchaser-name"
+        ).value =
+          savedName;
+
+      }
+
+
+      if (savedAuthority) {
+
+        document.getElementById(
+          "authority"
+        ).value =
+          savedAuthority;
+
+      }
+
+
+      /* -----------------------------------------
+         SAVE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "identity-form"
+      ).addEventListener(
+        "submit",
+        (event) => {
+
+          event.preventDefault();
+
+
+          const purchaserType =
+            document.getElementById(
+              "purchaser-type"
+            ).value;
+
+
+          const purchaserName =
+            document.getElementById(
+              "purchaser-name"
+            ).value.trim();
+
+
+          const authority =
+            document.getElementById(
+              "authority"
+            ).value;
+
+
+          sessionStorage.setItem(
+            "mreo-purchaser-type",
+            purchaserType
+          );
+
+
+          sessionStorage.setItem(
+            "mreo-purchaser-name",
+            purchaserName
+          );
+
+
+          sessionStorage.setItem(
+            "mreo-purchaser-authority",
+            authority
+          );
+
+
+          sessionStorage.setItem(
+            "mreo-purchaser-identity",
+            "complete"
+          );
+
+
+          document.getElementById(
+            "saved-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "saved-result"
+          ).scrollIntoView(
+            {
+              behavior:
+                "smooth",
+
+              block:
+                "start"
+            }
+          );
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
