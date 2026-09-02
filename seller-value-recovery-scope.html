@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Define a preliminary reconstruction scope for the MREO Seller Value Recovery demonstration pathway."
+  >
+
+  <title>MREO | Value Recovery Scope</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-value-recovery-link"
+      class="back-link"
+      href="seller-value-recovery.html"
+    >
+      ← Seller Value Recovery
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Seller Value Recovery · Scope
+      </p>
+
+      <h1 class="page-title">
+        Reconstruction Scope
+      </h1>
+
+      <p class="page-description">
+        Identify the level and type of work that may improve the property's sale position.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="scope-form"
+      class="form"
+    >
+
+      <!-- ===================================
+           REPAIR LEVEL
+           =================================== -->
+
+      <div class="field">
+
+        <label for="repair-level">
+          Repair Level
+        </label>
+
+        <select
+          id="repair-level"
+          name="repairLevel"
+          required
+        >
+
+          <option value="">
+            Choose the likely level of work
+          </option>
+
+          <option value="Minor repairs">
+            Minor repairs
+          </option>
+
+          <option value="Moderate rehabilitation">
+            Moderate rehabilitation
+          </option>
+
+          <option value="Major rehabilitation">
+            Major rehabilitation
+          </option>
+
+          <option value="Full reconstruction">
+            Full reconstruction
+          </option>
+
+          <option value="Scope not yet known">
+            Scope not yet known
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           PRIMARY WORK CATEGORY
+           =================================== -->
+
+      <div class="field">
+
+        <label for="work-category">
+          Primary Work Category
+        </label>
+
+        <select
+          id="work-category"
+          name="workCategory"
+          required
+        >
+
+          <option value="">
+            Choose the main category
+          </option>
+
+          <option value="Interior condition">
+            Interior condition
+          </option>
+
+          <option value="Exterior condition">
+            Exterior condition
+          </option>
+
+          <option value="Kitchen or bathroom">
+            Kitchen or bathroom
+          </option>
+
+          <option value="Plumbing">
+            Plumbing
+          </option>
+
+          <option value="Electrical">
+            Electrical
+          </option>
+
+          <option value="HVAC">
+            HVAC
+          </option>
+
+          <option value="Roof or structure">
+            Roof or structure
+          </option>
+
+          <option value="Water or damage remediation">
+            Water or damage remediation
+          </option>
+
+          <option value="Multiple systems">
+            Multiple systems
+          </option>
+
+          <option value="Condition not yet known">
+            Condition not yet known
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           PROFESSIONAL SCOPE
+           =================================== -->
+
+      <div class="field">
+
+        <label for="professional-scope">
+          Professional Scope / Estimate
+        </label>
+
+        <select
+          id="professional-scope"
+          name="professionalScope"
+          required
+        >
+
+          <option value="">
+            What is needed next?
+          </option>
+
+          <option value="Existing scope and estimate available">
+            Existing scope and estimate available
+          </option>
+
+          <option value="Contractor estimate needed">
+            Contractor estimate needed
+          </option>
+
+          <option value="Inspection needed first">
+            Inspection needed first
+          </option>
+
+          <option value="Multiple professional estimates preferred">
+            Multiple professional estimates preferred
+          </option>
+
+          <option value="Not sure">
+            Not sure
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           SAVE
+           =================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Save Scope Review
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="scope-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <p class="page-eyebrow">
+        Preliminary Scope
+      </p>
+
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Repair Level
+          </span>
+
+          <span
+            id="result-level"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Primary Work
+          </span>
+
+          <span
+            id="result-category"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Professional Review
+          </span>
+
+          <span
+            id="result-professional"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================
+           NEXT
+           =================================== -->
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Next
+        </p>
+
+        <h3 id="scope-heading">
+          Compare reconstruction cost with potential value.
+        </h3>
+
+        <p
+          id="scope-description"
+          class="muted"
+        >
+          The next page keeps the financial question separate:
+          what might the work cost, and what might the property
+          be worth after the work is complete?
+        </p>
+
+      </section>
+
+
+      <div class="button-row">
+
+        <a
+          id="value-link"
+          class="primary-button"
+          href="seller-value-recovery-value.html"
+        >
+          Value Comparison
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="seller-options-link"
+          class="secondary-button"
+          href="seller-options.html"
+        >
+          Compare Seller Paths
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SCOPE PRINCIPLE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      In a full MREO workflow, a reconstruction scope could remain
+      connected to contractor estimates, inspections, approved work,
+      change orders, milestone completion, payments, photographs,
+      and the property's evolving condition record.
+    </div>
+
+
+    <!-- =====================================
+         IMPORTANT LIMIT
+         ===================================== -->
+
+    <div class="status-message">
+      A preliminary scope is not a construction contract or final
+      estimate. Actual work may reveal additional conditions,
+      permitting requirements, code issues, price changes, or other
+      costs that were not visible during initial review.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      This demonstration does not inspect the property, determine
+      necessary repairs, select contractors, estimate construction
+      costs, or certify that any proposed work will increase property value.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO Seller Value Recovery scope
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-value-recovery-link"
+      ).href =
+        withAddress(
+          "seller-value-recovery.html"
+        );
+
+
+      document.getElementById(
+        "value-link"
+      ).href =
+        withAddress(
+          "seller-value-recovery-value.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      let savedLevel =
+        null;
+
+
+      let savedCategory =
+        null;
+
+
+      let savedProfessional =
+        null;
+
+
+      try {
+
+        savedLevel =
+          sessionStorage.getItem(
+            "mreo-seller-value-recovery-repair-level"
+          );
+
+
+        savedCategory =
+          sessionStorage.getItem(
+            "mreo-seller-value-recovery-work-category"
+          );
+
+
+        savedProfessional =
+          sessionStorage.getItem(
+            "mreo-seller-value-recovery-professional-scope"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore scope review:",
+          error
+        );
+
+      }
+
+
+      if (savedLevel) {
+
+        document.getElementById(
+          "repair-level"
+        ).value =
+          savedLevel;
+
+      }
+
+
+      if (savedCategory) {
+
+        document.getElementById(
+          "work-category"
+        ).value =
+          savedCategory;
+
+      }
+
+
+      if (savedProfessional) {
+
+        document.getElementById(
+          "professional-scope"
+        ).value =
+          savedProfessional;
+
+      }
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "scope-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const repairLevel =
+            document.getElementById(
+              "repair-level"
+            ).value;
+
+
+          const workCategory =
+            document.getElementById(
+              "work-category"
+            ).value;
+
+
+          const professionalScope =
+            document.getElementById(
+              "professional-scope"
+            ).value;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-repair-level",
+              repairLevel
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-work-category",
+              workCategory
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-professional-scope",
+              professionalScope
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-scope",
+              "complete"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save scope review:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RESULT
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-level"
+          ).textContent =
+            repairLevel;
+
+
+          document.getElementById(
+            "result-category"
+          ).textContent =
+            workCategory;
+
+
+          document.getElementById(
+            "result-professional"
+          ).textContent =
+            professionalScope;
+
+
+          /* -----------------------------------
+             CONTEXTUAL MESSAGE
+             ----------------------------------- */
+
+          const heading =
+            document.getElementById(
+              "scope-heading"
+            );
+
+
+          const description =
+            document.getElementById(
+              "scope-description"
+            );
+
+
+          if (
+            repairLevel ===
+              "Major rehabilitation" ||
+            repairLevel ===
+              "Full reconstruction"
+          ) {
+
+            heading.textContent =
+              "The financial comparison becomes especially important.";
+
+
+            description.textContent =
+              "A larger reconstruction project should be evaluated against estimated post-repair value, carrying costs, timing, and execution risk before the owner proceeds.";
+
+          } else if (
+            professionalScope ===
+            "Inspection needed first"
+          ) {
+
+            heading.textContent =
+              "The condition should be clarified before cost assumptions are made.";
+
+
+            description.textContent =
+              "An inspection or other appropriate professional review may be needed before reconstruction cost and potential value can be meaningfully compared.";
+
+          } else if (
+            professionalScope ===
+            "Multiple professional estimates preferred"
+          ) {
+
+            heading.textContent =
+              "Multiple estimates can support a clearer cost range.";
+
+
+            description.textContent =
+              "The next page can still model the financial relationship while recognizing that the reconstruction budget remains preliminary.";
+
+          } else {
+
+            heading.textContent =
+              "Compare reconstruction cost with potential value.";
+
+
+            description.textContent =
+              "The next page keeps the financial question separate: what might the work cost, and what might the property be worth after the work is complete?";
+
+          }
+
+
+          document.getElementById(
+            "scope-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "scope-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
