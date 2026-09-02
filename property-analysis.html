@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Analyze a property address through the MREO demonstration seller pathway."
+    content="Analyze a property through the MREO seller demonstration using available property and valuation data."
   >
 
   <title>MREO | Analyze My Property</title>
@@ -66,16 +66,19 @@
        MAIN
        ========================================= -->
 
-  <main class="page page-narrow">
+  <main class="page page-medium">
 
     <!-- =====================================
-         INTRO
+         SEARCH
          ===================================== -->
 
-    <section class="page-intro">
+    <section
+      id="search-section"
+      class="page-intro"
+    >
 
       <p class="page-eyebrow">
-        Sell · Property
+        Seller · Property Analysis
       </p>
 
       <h1 class="page-title">
@@ -83,49 +86,33 @@
       </h1>
 
       <p class="page-description">
-        Enter the property address to begin.
+        Enter the property address to retrieve available property information and a modeled value estimate.
       </p>
 
-    </section>
-
-
-    <!-- =====================================
-         SEARCH
-         ===================================== -->
-
-    <section class="search-box">
 
       <form
         id="property-search-form"
-        class="form"
+        class="search-box"
+        style="margin-top: 34px;"
       >
 
-        <div class="field">
-
-          <label for="property-address">
-            Property Address
-          </label>
+        <div class="search-row">
 
           <input
-            id="property-address"
-            name="address"
+            id="property-address-input"
             type="text"
             autocomplete="street-address"
-            placeholder="Example: 4218 Maple Ridge Drive, Dallas, TX 75229"
+            placeholder="Enter property address"
+            aria-label="Property address"
             required
           >
 
-        </div>
-
-
-        <div class="button-row">
-
           <button
-            id="analyze-button"
+            id="search-button"
             class="primary-button"
             type="submit"
           >
-            Analyze Property
+            Analyze
             <span aria-hidden="true">→</span>
           </button>
 
@@ -133,69 +120,55 @@
 
       </form>
 
+
+      <!-- ===================================
+           REQUEST STATUS
+           =================================== -->
+
+      <div
+        id="request-status"
+        class="status-message"
+        hidden
+        style="margin-top: 24px;"
+      ></div>
+
     </section>
 
 
     <!-- =====================================
-         LOADING
-         ===================================== -->
-
-    <div
-      id="loading-message"
-      class="status-message"
-      hidden
-    >
-      Retrieving available property information…
-    </div>
-
-
-    <!-- =====================================
-         ERROR
-         ===================================== -->
-
-    <div
-      id="error-message"
-      class="error-message"
-      hidden
-    >
-      Property information could not be retrieved. Check the
-      address and try again.
-    </div>
-
-
-    <!-- =====================================
-         RESULTS
+         PROPERTY SNAPSHOT
          ===================================== -->
 
     <section
-      id="analysis-result"
+      id="snapshot-section"
       hidden
-      style="margin-top: 42px;"
+      style="margin-top: 24px;"
     >
 
-      <p class="page-eyebrow">
-        Property Snapshot
-      </p>
+      <section class="page-intro">
 
+        <p class="page-eyebrow">
+          Property Snapshot
+        </p>
 
-      <h2
-        id="result-address"
-        style="
-          font-size: clamp(28px, 5vw, 48px);
-          line-height: 1;
-          letter-spacing: -.045em;
-          margin: 0 0 32px;
-        "
-      >
-        Property Address
-      </h2>
+        <h1
+          id="snapshot-address"
+          class="page-title"
+          style="overflow-wrap: anywhere;"
+        >
+          Property Address
+        </h1>
+
+      </section>
 
 
       <!-- ===================================
-           CORE PROPERTY DATA
+           PROPERTY DETAILS
            =================================== -->
 
       <div class="detail-list">
+
+        <!-- ESTIMATED VALUE -->
 
         <div class="detail-row">
 
@@ -204,12 +177,11 @@
           </span>
 
           <span
-            id="result-value"
+            id="estimated-value"
             class="detail-value"
             style="
-              font-size: 28px;
+              font-size: 30px;
               font-weight: 900;
-              letter-spacing: -.04em;
             "
           >
             —
@@ -218,14 +190,16 @@
         </div>
 
 
+        <!-- VALUE RANGE -->
+
         <div class="detail-row">
 
           <span class="detail-label">
-            Active Listing Price
+            Estimated Range
           </span>
 
           <span
-            id="result-listing-price"
+            id="estimated-range"
             class="detail-value"
           >
             —
@@ -233,6 +207,26 @@
 
         </div>
 
+
+        <!-- LISTING PRICE -->
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Active Listing Price
+          </span>
+
+          <span
+            id="listing-price"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <!-- PROPERTY TYPE -->
 
         <div class="detail-row">
 
@@ -241,7 +235,7 @@
           </span>
 
           <span
-            id="result-type"
+            id="property-type"
             class="detail-value"
           >
             —
@@ -249,6 +243,8 @@
 
         </div>
 
+
+        <!-- BEDROOMS -->
 
         <div class="detail-row">
 
@@ -257,7 +253,7 @@
           </span>
 
           <span
-            id="result-beds"
+            id="bedrooms"
             class="detail-value"
           >
             —
@@ -265,6 +261,8 @@
 
         </div>
 
+
+        <!-- BATHROOMS -->
 
         <div class="detail-row">
 
@@ -273,7 +271,7 @@
           </span>
 
           <span
-            id="result-baths"
+            id="bathrooms"
             class="detail-value"
           >
             —
@@ -281,6 +279,8 @@
 
         </div>
 
+
+        <!-- LIVING AREA -->
 
         <div class="detail-row">
 
@@ -289,7 +289,7 @@
           </span>
 
           <span
-            id="result-sqft"
+            id="living-area"
             class="detail-value"
           >
             —
@@ -297,6 +297,26 @@
 
         </div>
 
+
+        <!-- LOT SIZE -->
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Lot Size
+          </span>
+
+          <span
+            id="lot-size"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <!-- YEAR BUILT -->
 
         <div class="detail-row">
 
@@ -305,7 +325,7 @@
           </span>
 
           <span
-            id="result-year"
+            id="year-built"
             class="detail-value"
           >
             —
@@ -314,6 +334,8 @@
         </div>
 
 
+        <!-- LAST SALE -->
+
         <div class="detail-row">
 
           <span class="detail-label">
@@ -321,7 +343,7 @@
           </span>
 
           <span
-            id="result-last-sale"
+            id="last-sale"
             class="detail-value"
           >
             —
@@ -333,12 +355,24 @@
 
 
       <!-- ===================================
+           PARTIAL DATA NOTICE
+           =================================== -->
+
+      <div
+        id="data-notice"
+        class="status-message"
+        hidden
+        style="margin-top: 30px;"
+      ></div>
+
+
+      <!-- ===================================
            EXTERNAL PROPERTY LINKS
            =================================== -->
 
       <div
         class="button-row"
-        style="margin-top: 30px;"
+        style="margin-top: 32px;"
       >
 
         <a
@@ -359,14 +393,14 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          View on Google Maps
+          Google Maps
         </a>
 
       </div>
 
 
       <!-- ===================================
-           CONTINUE
+           NEXT
            =================================== -->
 
       <section
@@ -379,13 +413,13 @@
         </p>
 
         <h3>
-          What do you want to accomplish with this property?
+          What does the owner want to do?
         </h3>
 
         <p class="muted">
-          MREO begins with the owner's objective before determining
-          whether a sale, retention strategy, or another pathway
-          makes sense.
+          Continue to compare retention, conventional sale,
+          expedited as-is sale, lender-approved short sale,
+          and Seller Value Recovery.
         </p>
 
       </section>
@@ -402,25 +436,33 @@
           <span aria-hidden="true">→</span>
         </a>
 
+
+        <button
+          id="analyze-another-button"
+          class="secondary-button"
+          type="button"
+        >
+          Analyze Another Property
+        </button>
+
+      </div>
+
+
+      <!-- ===================================
+           MODELING DISCLOSURE
+           =================================== -->
+
+      <div
+        class="status-message"
+        style="margin-top: 36px;"
+      >
+        Property and valuation information is retrieved from available
+        third-party data through the MREO demonstration API. Coverage
+        varies by property. An estimated value is a modeled estimate,
+        not an appraisal or guaranteed sale price.
       </div>
 
     </section>
-
-
-    <!-- =====================================
-         MODEL NOTICE
-         ===================================== -->
-
-    <div
-      class="status-message"
-      style="margin-top: 38px;"
-    >
-      Property figures shown here are a demonstration of the MREO
-      information workflow. Automated values, listing information,
-      and other retrieved data may be incomplete or inaccurate and
-      are not an appraisal, offer, inspection, title opinion, legal
-      advice, or financial advice.
-    </div>
 
   </main>
 
@@ -432,7 +474,7 @@
   <footer class="site-footer">
 
     <p>
-      MREO seller property analysis
+      MREO property-analysis demonstration
     </p>
 
     <p>
@@ -451,17 +493,17 @@
       "use strict";
 
 
-      /* -----------------------------------------
+      /* =========================================
          CONFIGURATION
-         ----------------------------------------- */
+         ========================================= */
 
-      const API_BASE =
+      const WORKER_BASE =
         "https://mreo-property-api.blakeaustinmyers01.workers.dev";
 
 
-      /* -----------------------------------------
+      /* =========================================
          ELEMENTS
-         ----------------------------------------- */
+         ========================================= */
 
       const form =
         document.getElementById(
@@ -471,37 +513,49 @@
 
       const addressInput =
         document.getElementById(
-          "property-address"
+          "property-address-input"
         );
 
 
-      const analyzeButton =
+      const searchButton =
         document.getElementById(
-          "analyze-button"
+          "search-button"
         );
 
 
-      const loadingMessage =
+      const requestStatus =
         document.getElementById(
-          "loading-message"
+          "request-status"
         );
 
 
-      const errorMessage =
+      const snapshotSection =
         document.getElementById(
-          "error-message"
+          "snapshot-section"
         );
 
 
-      const resultSection =
+      const dataNotice =
         document.getElementById(
-          "analysis-result"
+          "data-notice"
         );
 
 
-      /* -----------------------------------------
-         CURRENCY
-         ----------------------------------------- */
+      const sellerOptionsLink =
+        document.getElementById(
+          "seller-options-link"
+        );
+
+
+      const analyzeAnotherButton =
+        document.getElementById(
+          "analyze-another-button"
+        );
+
+
+      /* =========================================
+         FORMATTERS
+         ========================================= */
 
       const currency =
         new Intl.NumberFormat(
@@ -514,9 +568,18 @@
         );
 
 
-      /* -----------------------------------------
-         RESTORE ADDRESS FROM URL
-         ----------------------------------------- */
+      const integer =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            maximumFractionDigits: 0
+          }
+        );
+
+
+      /* =========================================
+         URL / SAVED ADDRESS
+         ========================================= */
 
       const params =
         new URLSearchParams(
@@ -524,21 +587,47 @@
         );
 
 
-      const addressFromUrl =
+      const urlAddress =
         params.get("address");
 
 
-      if (addressFromUrl) {
+      let savedAddress =
+        null;
 
-        addressInput.value =
-          addressFromUrl;
+
+      try {
+
+        savedAddress =
+          sessionStorage.getItem(
+            "mreo-seller-property-address"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not read saved property address:",
+          error
+        );
 
       }
 
 
-      /* -----------------------------------------
+      if (urlAddress) {
+
+        addressInput.value =
+          urlAddress;
+
+      } else if (savedAddress) {
+
+        addressInput.value =
+          savedAddress;
+
+      }
+
+
+      /* =========================================
          SEARCH
-         ----------------------------------------- */
+         ========================================= */
 
       form.addEventListener(
         "submit",
@@ -556,141 +645,263 @@
           }
 
 
-          resetPage();
-
-
-          loadingMessage.hidden =
-            false;
-
-
-          analyzeButton.disabled =
-            true;
-
-
-          analyzeButton.textContent =
-            "Analyzing…";
-
-
-          try {
-
-            const encodedAddress =
-              encodeURIComponent(address);
-
-
-            /*
-              We request valuation/property information and any
-              available active sale listing separately.
-
-              Either request can fail without preventing the other
-              result from being displayed.
-            */
-
-            const [
-              valuationResult,
-              listingResult
-            ] =
-              await Promise.allSettled([
-
-                fetchJson(
-                  `${API_BASE}/avm/value?address=${encodedAddress}&lookupSubjectAttributes=true`
-                ),
-
-                fetchJson(
-                  `${API_BASE}/listings/sale?address=${encodedAddress}&status=Active&limit=1`
-                )
-
-              ]);
-
-
-            const valuationData =
-              valuationResult.status ===
-              "fulfilled"
-                ? valuationResult.value
-                : null;
-
-
-            const listingData =
-              listingResult.status ===
-              "fulfilled"
-                ? listingResult.value
-                : null;
-
-
-            if (
-              !valuationData &&
-              !listingData
-            ) {
-
-              throw new Error(
-                "No property data returned."
-              );
-
-            }
-
-
-            const snapshot =
-              buildSnapshot(
-                address,
-                valuationData,
-                listingData
-              );
-
-
-            renderSnapshot(
-              snapshot
-            );
-
-
-            saveSnapshot(
-              snapshot
-            );
-
-
-            resultSection.hidden =
-              false;
-
-
-            resultSection.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-
-
-          } catch (error) {
-
-            console.error(
-              "MREO property analysis error:",
-              error
-            );
-
-
-            errorMessage.hidden =
-              false;
-
-          } finally {
-
-            loadingMessage.hidden =
-              true;
-
-
-            analyzeButton.disabled =
-              false;
-
-
-            analyzeButton.innerHTML =
-              'Analyze Property <span aria-hidden="true">→</span>';
-
-          }
+          await analyzeProperty(
+            address
+          );
 
         }
       );
 
 
-      /* -----------------------------------------
-         FETCH JSON
-         ----------------------------------------- */
+      /* =========================================
+         ANALYZE ANOTHER
+         ========================================= */
 
-      async function fetchJson(url) {
+      analyzeAnotherButton.addEventListener(
+        "click",
+        () => {
+
+          snapshotSection.hidden =
+            true;
+
+
+          dataNotice.hidden =
+            true;
+
+
+          requestStatus.hidden =
+            true;
+
+
+          addressInput.focus();
+
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+
+        }
+      );
+
+
+      /* =========================================
+         PROPERTY ANALYSIS
+         ========================================= */
+
+      async function analyzeProperty(
+        address
+      ) {
+
+        setLoading(true);
+
+
+        snapshotSection.hidden =
+          true;
+
+
+        dataNotice.hidden =
+          true;
+
+
+        showStatus(
+          "Retrieving available property and valuation data…"
+        );
+
+
+        const encodedAddress =
+          encodeURIComponent(
+            address
+          );
+
+
+        const avmUrl =
+          `${WORKER_BASE}/avm/value` +
+          `?address=${encodedAddress}` +
+          `&lookupSubjectAttributes=true`;
+
+
+        const listingUrl =
+          `${WORKER_BASE}/listings/sale` +
+          `?address=${encodedAddress}` +
+          `&status=Active` +
+          `&limit=1`;
+
+
+        const results =
+          await Promise.allSettled([
+            fetchJson(avmUrl),
+            fetchJson(listingUrl)
+          ]);
+
+
+        const avmResult =
+          results[0];
+
+
+        const listingResult =
+          results[1];
+
+
+        const avmPayload =
+          avmResult.status === "fulfilled"
+            ? avmResult.value
+            : null;
+
+
+        const listingPayload =
+          listingResult.status === "fulfilled"
+            ? listingResult.value
+            : null;
+
+
+        /*
+          If BOTH requests failed, do not pretend the API
+          returned blank property information.
+        */
+
+        if (
+          avmResult.status === "rejected" &&
+          listingResult.status === "rejected"
+        ) {
+
+          const avmError =
+            getErrorMessage(
+              avmResult.reason
+            );
+
+
+          const listingError =
+            getErrorMessage(
+              listingResult.reason
+            );
+
+
+          showStatus(
+            "The property-data request failed. " +
+            `Valuation request: ${avmError}. ` +
+            `Listing request: ${listingError}.`,
+            true
+          );
+
+
+          setLoading(false);
+
+          return;
+
+        }
+
+
+        const snapshot =
+          normalizePropertyData(
+            avmPayload,
+            listingPayload,
+            address,
+            {
+              avmSucceeded:
+                avmResult.status ===
+                "fulfilled",
+
+              listingSucceeded:
+                listingResult.status ===
+                "fulfilled"
+            }
+          );
+
+
+        renderSnapshot(
+          snapshot
+        );
+
+
+        saveSnapshot(
+          snapshot
+        );
+
+
+        setLoading(false);
+
+
+        requestStatus.hidden =
+          true;
+
+
+        snapshotSection.hidden =
+          false;
+
+
+        snapshotSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+
+        /* -------------------------------------
+           PARTIAL REQUEST FAILURE
+           ------------------------------------- */
+
+        const notices =
+          [];
+
+
+        if (
+          avmResult.status ===
+          "rejected"
+        ) {
+
+          notices.push(
+            "The valuation request failed, so an estimated value may not be available."
+          );
+
+        }
+
+
+        if (
+          listingResult.status ===
+          "rejected"
+        ) {
+
+          notices.push(
+            "The active-listing request failed, so listing information may not be available."
+          );
+
+        }
+
+
+        if (
+          snapshot.activeListingFound ===
+          false &&
+          snapshot.listingRequestSucceeded
+        ) {
+
+          notices.push(
+            "No active sale listing was found for this address."
+          );
+
+        }
+
+
+        if (notices.length > 0) {
+
+          dataNotice.textContent =
+            notices.join(" ");
+
+
+          dataNotice.hidden =
+            false;
+
+        }
+
+      }
+
+
+      /* =========================================
+         FETCH JSON
+         ========================================= */
+
+      async function fetchJson(
+        url
+      ) {
 
         const response =
           await fetch(
@@ -698,240 +909,503 @@
             {
               method: "GET",
               headers: {
-                Accept: "application/json"
+                "Accept": "application/json"
               }
             }
           );
 
 
+        const rawText =
+          await response.text();
+
+
+        let payload =
+          null;
+
+
+        if (rawText) {
+
+          try {
+
+            payload =
+              JSON.parse(
+                rawText
+              );
+
+          } catch (error) {
+
+            throw new Error(
+              `Server returned invalid JSON (${response.status})`
+            );
+
+          }
+
+        }
+
+
         if (!response.ok) {
 
+          const serverMessage =
+            firstNonEmpty([
+              payload &&
+              payload.error,
+
+              payload &&
+              payload.message,
+
+              payload &&
+              payload.detail
+            ]);
+
+
           throw new Error(
-            `Request failed: ${response.status}`
+            serverMessage ||
+            `HTTP ${response.status}`
           );
 
         }
 
 
-        return await response.json();
+        return payload;
 
       }
 
 
-      /* -----------------------------------------
-         BUILD SNAPSHOT
-         ----------------------------------------- */
+      /* =========================================
+         NORMALIZE DATA
+         ========================================= */
 
-      function buildSnapshot(
-        enteredAddress,
-        valuationResponse,
-        listingResponse
+      function normalizePropertyData(
+        avmPayload,
+        listingPayload,
+        requestedAddress,
+        requestState
       ) {
 
-        const valuation =
-          extractFirstRecord(
-            valuationResponse
+        const avmCandidates =
+          buildCandidates(
+            avmPayload
           );
 
 
-        const listing =
-          extractFirstRecord(
-            listingResponse
+        const listingCandidates =
+          buildCandidates(
+            listingPayload
           );
 
 
-        const canonicalAddress =
-          firstValue(
-            valuation?.formattedAddress,
-            valuation?.address,
-            valuation?.propertyAddress,
-            listing?.formattedAddress,
-            listing?.address,
-            listing?.propertyAddress,
-            enteredAddress
+        /*
+          RentCast native AVM response:
+          {
+            price: ...,
+            priceRangeLow: ...,
+            priceRangeHigh: ...,
+            subjectProperty: {...}
+          }
+
+          We deliberately locate subjectProperty separately
+          so the AVM's own price is not confused with other
+          property prices.
+        */
+
+        const subjectProperty =
+          findNamedObject(
+            avmPayload,
+            "subjectProperty"
           );
 
+
+        const activeListing =
+          findListingRecord(
+            listingPayload
+          );
+
+
+        const propertyCandidates =
+          uniqueObjects([
+            subjectProperty,
+            activeListing,
+            ...avmCandidates,
+            ...listingCandidates
+          ]);
+
+
+        /* -------------------------------------
+           AVM
+           ------------------------------------- */
 
         const estimatedValue =
           firstNumber(
-            valuation?.price,
-            valuation?.value,
-            valuation?.estimatedValue,
-            valuation?.avm,
-            valuation?.valuation,
-            valuation?.priceEstimate
+            avmCandidates,
+            [
+              "estimatedValue",
+              "valueEstimate",
+              "avmValue",
+              "AVMValue",
+              "marketValue",
+              "price"
+            ]
           );
 
 
-        const listingPrice =
+        const priceRangeLow =
           firstNumber(
-            listing?.price,
-            listing?.listPrice,
-            listing?.listingPrice
+            avmCandidates,
+            [
+              "priceRangeLow",
+              "rangeLow",
+              "valueRangeLow",
+              "estimatedValueLow"
+            ]
+          );
+
+
+        const priceRangeHigh =
+          firstNumber(
+            avmCandidates,
+            [
+              "priceRangeHigh",
+              "rangeHigh",
+              "valueRangeHigh",
+              "estimatedValueHigh"
+            ]
+          );
+
+
+        /* -------------------------------------
+           ACTIVE LISTING
+           ------------------------------------- */
+
+        const activeListingPrice =
+          activeListing
+            ? firstNumber(
+                [activeListing],
+                [
+                  "price",
+                  "listingPrice",
+                  "listPrice",
+                  "activeListingPrice"
+                ]
+              )
+            : firstNumber(
+                listingCandidates,
+                [
+                  "listingPrice",
+                  "listPrice",
+                  "activeListingPrice"
+                ]
+              );
+
+
+        /* -------------------------------------
+           PROPERTY ATTRIBUTES
+           ------------------------------------- */
+
+        const formattedAddress =
+          firstText(
+            propertyCandidates,
+            [
+              "formattedAddress",
+              "fullAddress",
+              "address"
+            ]
+          ) ||
+          requestedAddress;
+
+
+        const city =
+          firstText(
+            propertyCandidates,
+            [
+              "city"
+            ]
+          );
+
+
+        const state =
+          firstText(
+            propertyCandidates,
+            [
+              "state"
+            ]
+          );
+
+
+        const zipCode =
+          firstText(
+            propertyCandidates,
+            [
+              "zipCode",
+              "zip",
+              "postalCode"
+            ]
           );
 
 
         const propertyType =
-          firstValue(
-            valuation?.propertyType,
-            valuation?.type,
-            listing?.propertyType,
-            listing?.type
+          firstText(
+            propertyCandidates,
+            [
+              "propertyType",
+              "type"
+            ]
           );
 
 
-        const beds =
+        const bedrooms =
           firstNumber(
-            valuation?.bedrooms,
-            valuation?.beds,
-            listing?.bedrooms,
-            listing?.beds
+            propertyCandidates,
+            [
+              "bedrooms",
+              "beds"
+            ]
           );
 
 
-        const baths =
+        const bathrooms =
           firstNumber(
-            valuation?.bathrooms,
-            valuation?.baths,
-            listing?.bathrooms,
-            listing?.baths
+            propertyCandidates,
+            [
+              "bathrooms",
+              "baths"
+            ]
           );
 
 
-        const sqft =
+        const squareFootage =
           firstNumber(
-            valuation?.squareFootage,
-            valuation?.sqft,
-            valuation?.livingArea,
-            listing?.squareFootage,
-            listing?.sqft,
-            listing?.livingArea
+            propertyCandidates,
+            [
+              "squareFootage",
+              "sqft",
+              "livingArea",
+              "livingAreaSqFt",
+              "livingAreaSquareFeet"
+            ]
+          );
+
+
+        const lotSize =
+          firstNumber(
+            propertyCandidates,
+            [
+              "lotSize",
+              "lotSqft",
+              "lotSquareFootage"
+            ]
           );
 
 
         const yearBuilt =
           firstNumber(
-            valuation?.yearBuilt,
-            valuation?.year,
-            listing?.yearBuilt,
-            listing?.year
+            propertyCandidates,
+            [
+              "yearBuilt",
+              "year"
+            ]
           );
 
 
         const lastSalePrice =
-          firstNumber(
-            valuation?.lastSalePrice,
-            valuation?.salePrice
+          firstNumberByPaths(
+            propertyCandidates,
+            [
+              "lastSalePrice",
+              "lastSale.price",
+              "sale.price",
+              "lastSale.amount"
+            ]
           );
 
 
         const lastSaleDate =
-          firstValue(
-            valuation?.lastSaleDate,
-            valuation?.saleDate
+          firstTextByPaths(
+            propertyCandidates,
+            [
+              "lastSaleDate",
+              "lastSale.date",
+              "sale.date"
+            ]
           );
 
 
         return {
 
           address:
-            canonicalAddress,
+            formattedAddress,
 
-          enteredAddress,
+          requestedAddress,
+
+          city,
+
+          state,
+
+          zipCode,
 
           estimatedValue,
 
-          listingPrice,
+          priceRangeLow,
+
+          priceRangeHigh,
+
+          activeListingPrice,
+
+          activeListingFound:
+            Boolean(
+              activeListing
+            ) ||
+            activeListingPrice !== null,
+
+          listingRequestSucceeded:
+            requestState.listingSucceeded,
+
+          avmRequestSucceeded:
+            requestState.avmSucceeded,
 
           propertyType,
 
-          beds,
+          bedrooms,
 
-          baths,
+          bathrooms,
 
-          sqft,
+          squareFootage,
+
+          lotSize,
 
           yearBuilt,
 
           lastSalePrice,
 
-          lastSaleDate
+          lastSaleDate,
+
+          retrievedAt:
+            new Date().toISOString()
 
         };
 
       }
 
 
-      /* -----------------------------------------
-         EXTRACT FIRST RECORD
-         ----------------------------------------- */
+      /* =========================================
+         CANDIDATE BUILDER
+         ========================================= */
 
-      function extractFirstRecord(data) {
+      function buildCandidates(
+        payload
+      ) {
 
-        if (!data) {
-          return null;
-        }
+        const candidates =
+          [];
 
 
-        /*
-          Direct normalized object.
-        */
+        const visited =
+          new Set();
 
-        if (
-          typeof data === "object" &&
-          !Array.isArray(data)
+
+        const allowedNestedKeys =
+          new Set([
+            "data",
+            "result",
+            "property",
+            "subjectProperty",
+            "avm",
+            "AVM",
+            "valuation",
+            "estimate",
+            "listing",
+            "listings",
+            "saleListing",
+            "records",
+            "results",
+            "lastSale"
+          ]);
+
+
+        function visit(
+          value,
+          depth
         ) {
 
           if (
-            data.address ||
-            data.formattedAddress ||
-            data.propertyAddress ||
-            data.price ||
-            data.value ||
-            data.estimatedValue ||
-            data.propertyType ||
-            data.bedrooms
+            value === null ||
+            value === undefined ||
+            depth > 5
           ) {
 
-            return data;
+            return;
 
           }
 
 
-          /*
-            Common wrapper structures.
-          */
-
-          const candidates = [
-            data.data,
-            data.result,
-            data.results,
-            data.properties,
-            data.listings
-          ];
-
-
-          for (
-            const candidate of candidates
+          if (
+            typeof value !== "object"
           ) {
 
+            return;
+
+          }
+
+
+          if (
+            visited.has(value)
+          ) {
+
+            return;
+
+          }
+
+
+          visited.add(value);
+
+
+          if (Array.isArray(value)) {
+
+            /*
+              Search-result endpoints normally return arrays.
+              The address request uses limit=1, so the first
+              record is the relevant listing.
+            */
+
             if (
-              Array.isArray(candidate) &&
-              candidate.length > 0
+              value.length > 0 &&
+              value[0] &&
+              typeof value[0] ===
+              "object"
             ) {
 
-              return candidate[0];
+              visit(
+                value[0],
+                depth + 1
+              );
 
             }
 
 
+            return;
+
+          }
+
+
+          candidates.push(
+            value
+          );
+
+
+          for (
+            const [key, nested]
+            of Object.entries(value)
+          ) {
+
             if (
-              candidate &&
-              typeof candidate === "object" &&
-              !Array.isArray(candidate)
+              allowedNestedKeys.has(
+                key
+              )
             ) {
 
-              return candidate;
+              visit(
+                nested,
+                depth + 1
+              );
 
             }
 
@@ -940,16 +1414,268 @@
         }
 
 
+        visit(
+          payload,
+          0
+        );
+
+
+        return candidates;
+
+      }
+
+
+      /* =========================================
+         FIND SUBJECT PROPERTY
+         ========================================= */
+
+      function findNamedObject(
+        payload,
+        targetKey
+      ) {
+
+        if (
+          !payload ||
+          typeof payload !== "object"
+        ) {
+
+          return null;
+
+        }
+
+
+        const visited =
+          new Set();
+
+
+        function search(
+          value,
+          depth
+        ) {
+
+          if (
+            !value ||
+            typeof value !== "object" ||
+            depth > 6 ||
+            visited.has(value)
+          ) {
+
+            return null;
+
+          }
+
+
+          visited.add(value);
+
+
+          if (Array.isArray(value)) {
+
+            for (const item of value) {
+
+              const found =
+                search(
+                  item,
+                  depth + 1
+                );
+
+
+              if (found) {
+                return found;
+              }
+
+            }
+
+
+            return null;
+
+          }
+
+
+          if (
+            value[targetKey] &&
+            typeof value[targetKey] ===
+            "object"
+          ) {
+
+            return value[targetKey];
+
+          }
+
+
+          const wrapperKeys =
+            [
+              "data",
+              "result",
+              "property",
+              "avm",
+              "AVM",
+              "valuation",
+              "estimate"
+            ];
+
+
+          for (
+            const key
+            of wrapperKeys
+          ) {
+
+            if (value[key]) {
+
+              const found =
+                search(
+                  value[key],
+                  depth + 1
+                );
+
+
+              if (found) {
+                return found;
+              }
+
+            }
+
+          }
+
+
+          return null;
+
+        }
+
+
+        return search(
+          payload,
+          0
+        );
+
+      }
+
+
+      /* =========================================
+         FIND LISTING RECORD
+         ========================================= */
+
+      function findListingRecord(
+        payload
+      ) {
+
+        if (
+          payload === null ||
+          payload === undefined
+        ) {
+
+          return null;
+
+        }
+
+
+        if (Array.isArray(payload)) {
+
+          return (
+            payload.find(
+              item =>
+                item &&
+                typeof item === "object"
+            ) ||
+            null
+          );
+
+        }
+
+
+        if (
+          typeof payload !== "object"
+        ) {
+
+          return null;
+
+        }
+
+
         /*
-          Direct array response.
+          Native single listing record.
         */
 
         if (
-          Array.isArray(data) &&
-          data.length > 0
+          looksLikeListing(
+            payload
+          )
         ) {
 
-          return data[0];
+          return payload;
+
+        }
+
+
+        const wrapperKeys =
+          [
+            "listing",
+            "listings",
+            "data",
+            "results",
+            "records",
+            "result",
+            "saleListing"
+          ];
+
+
+        for (
+          const key
+          of wrapperKeys
+        ) {
+
+          const nested =
+            payload[key];
+
+
+          if (!nested) {
+            continue;
+          }
+
+
+          if (Array.isArray(nested)) {
+
+            const record =
+              nested.find(
+                item =>
+                  item &&
+                  typeof item === "object"
+              );
+
+
+            if (record) {
+              return record;
+            }
+
+          }
+
+
+          if (
+            typeof nested ===
+            "object"
+          ) {
+
+            if (
+              looksLikeListing(
+                nested
+              )
+            ) {
+
+              return nested;
+
+            }
+
+
+            const deeper =
+              findListingRecord(
+                nested
+              );
+
+
+            if (deeper) {
+              return deeper;
+            }
+
+          }
 
         }
 
@@ -959,184 +1685,365 @@
       }
 
 
-      /* -----------------------------------------
-         RENDER
-         ----------------------------------------- */
+      function looksLikeListing(
+        object
+      ) {
 
-      function renderSnapshot(snapshot) {
+        if (
+          !object ||
+          typeof object !== "object"
+        ) {
 
-        setText(
-          "result-address",
-          snapshot.address ||
-          snapshot.enteredAddress
-        );
-
-
-        setText(
-          "result-value",
-          formatCurrency(
-            snapshot.estimatedValue
-          )
-        );
-
-
-        setText(
-          "result-listing-price",
-          formatCurrency(
-            snapshot.listingPrice
-          )
-        );
-
-
-        setText(
-          "result-type",
-          snapshot.propertyType ||
-          "Not available"
-        );
-
-
-        setText(
-          "result-beds",
-          formatNumber(
-            snapshot.beds
-          )
-        );
-
-
-        setText(
-          "result-baths",
-          formatNumber(
-            snapshot.baths
-          )
-        );
-
-
-        setText(
-          "result-sqft",
-          snapshot.sqft !== null
-            ? `${Math.round(snapshot.sqft).toLocaleString("en-US")} sq ft`
-            : "Not available"
-        );
-
-
-        setText(
-          "result-year",
-          snapshot.yearBuilt !== null
-            ? Math.round(snapshot.yearBuilt)
-            : "Not available"
-        );
-
-
-        setText(
-          "result-last-sale",
-          formatLastSale(
-            snapshot.lastSalePrice,
-            snapshot.lastSaleDate
-          )
-        );
-
-
-        /* ---------------------------------------
-           EXTERNAL LINKS
-           --------------------------------------- */
-
-        const searchableAddress =
-          snapshot.address ||
-          snapshot.enteredAddress;
-
-
-        document.getElementById(
-          "zillow-link"
-        ).href =
-          `https://www.zillow.com/homes/${encodeURIComponent(searchableAddress)}_rb/`;
-
-
-        document.getElementById(
-          "maps-link"
-        ).href =
-          `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(searchableAddress)}`;
-
-
-        /* ---------------------------------------
-           SELLER OPTIONS
-           --------------------------------------- */
-
-        document.getElementById(
-          "seller-options-link"
-        ).href =
-          `seller-options.html?address=${encodeURIComponent(searchableAddress)}`;
-
-      }
-
-
-      /* -----------------------------------------
-         SAVE SNAPSHOT
-         ----------------------------------------- */
-
-      function saveSnapshot(snapshot) {
-
-        try {
-
-          sessionStorage.setItem(
-            "mreo-seller-property-analysis",
-            JSON.stringify(snapshot)
-          );
-
-
-          sessionStorage.setItem(
-            "mreo-seller-property-address",
-            snapshot.address ||
-            snapshot.enteredAddress
-          );
-
-
-        } catch (error) {
-
-          console.warn(
-            "Could not save seller property analysis:",
-            error
-          );
+          return false;
 
         }
 
-      }
 
-
-      /* -----------------------------------------
-         RESET
-         ----------------------------------------- */
-
-      function resetPage() {
-
-        loadingMessage.hidden =
-          true;
-
-
-        errorMessage.hidden =
-          true;
-
-
-        resultSection.hidden =
-          true;
+        return Boolean(
+          object.status ||
+          object.listedDate ||
+          object.listingType ||
+          object.daysOnMarket ||
+          object.mlsName ||
+          object.mlsNumber
+        );
 
       }
 
 
-      /* -----------------------------------------
+      /* =========================================
          VALUE HELPERS
-         ----------------------------------------- */
+         ========================================= */
 
-      function firstValue(...values) {
+      function firstNumber(
+        candidates,
+        keys
+      ) {
+
+        for (
+          const candidate
+          of candidates
+        ) {
+
+          if (
+            !candidate ||
+            typeof candidate !==
+            "object"
+          ) {
+
+            continue;
+
+          }
+
+
+          for (const key of keys) {
+
+            const value =
+              candidate[key];
+
+
+            const number =
+              toNumber(
+                value
+              );
+
+
+            if (
+              number !== null
+            ) {
+
+              return number;
+
+            }
+
+          }
+
+        }
+
+
+        return null;
+
+      }
+
+
+      function firstText(
+        candidates,
+        keys
+      ) {
+
+        for (
+          const candidate
+          of candidates
+        ) {
+
+          if (
+            !candidate ||
+            typeof candidate !==
+            "object"
+          ) {
+
+            continue;
+
+          }
+
+
+          for (const key of keys) {
+
+            const value =
+              candidate[key];
+
+
+            if (
+              value !== null &&
+              value !== undefined &&
+              String(value).trim() !== ""
+            ) {
+
+              return String(
+                value
+              ).trim();
+
+            }
+
+          }
+
+        }
+
+
+        return null;
+
+      }
+
+
+      function firstNumberByPaths(
+        candidates,
+        paths
+      ) {
+
+        for (
+          const candidate
+          of candidates
+        ) {
+
+          for (
+            const path
+            of paths
+          ) {
+
+            const value =
+              getPath(
+                candidate,
+                path
+              );
+
+
+            const number =
+              toNumber(
+                value
+              );
+
+
+            if (
+              number !== null
+            ) {
+
+              return number;
+
+            }
+
+          }
+
+        }
+
+
+        return null;
+
+      }
+
+
+      function firstTextByPaths(
+        candidates,
+        paths
+      ) {
+
+        for (
+          const candidate
+          of candidates
+        ) {
+
+          for (
+            const path
+            of paths
+          ) {
+
+            const value =
+              getPath(
+                candidate,
+                path
+              );
+
+
+            if (
+              value !== null &&
+              value !== undefined &&
+              String(value).trim() !== ""
+            ) {
+
+              return String(
+                value
+              ).trim();
+
+            }
+
+          }
+
+        }
+
+
+        return null;
+
+      }
+
+
+      function getPath(
+        object,
+        path
+      ) {
+
+        if (
+          !object ||
+          typeof object !== "object"
+        ) {
+
+          return undefined;
+
+        }
+
+
+        return path
+          .split(".")
+          .reduce(
+            (current, key) => {
+
+              if (
+                current === null ||
+                current === undefined
+              ) {
+
+                return undefined;
+
+              }
+
+
+              return current[key];
+
+            },
+            object
+          );
+
+      }
+
+
+      function toNumber(
+        value
+      ) {
+
+        if (
+          value === null ||
+          value === undefined ||
+          value === ""
+        ) {
+
+          return null;
+
+        }
+
+
+        if (
+          typeof value === "number"
+        ) {
+
+          return Number.isFinite(value)
+            ? value
+            : null;
+
+        }
+
+
+        if (
+          typeof value === "string"
+        ) {
+
+          const cleaned =
+            value.replace(
+              /[$,\s]/g,
+              ""
+            );
+
+
+          const parsed =
+            Number(cleaned);
+
+
+          return Number.isFinite(parsed)
+            ? parsed
+            : null;
+
+        }
+
+
+        return null;
+
+      }
+
+
+      function uniqueObjects(
+        values
+      ) {
+
+        const seen =
+          new Set();
+
+
+        return values.filter(
+          value => {
+
+            if (
+              !value ||
+              typeof value !== "object" ||
+              seen.has(value)
+            ) {
+
+              return false;
+
+            }
+
+
+            seen.add(value);
+
+            return true;
+
+          }
+        );
+
+      }
+
+
+      function firstNonEmpty(
+        values
+      ) {
 
         for (const value of values) {
 
           if (
             value !== null &&
             value !== undefined &&
-            String(value).trim() !== ""
+            String(value).trim()
           ) {
 
-            return String(value).trim();
+            return String(
+              value
+            ).trim();
 
           }
 
@@ -1148,91 +2055,244 @@
       }
 
 
-      function firstNumber(...values) {
+      /* =========================================
+         RENDER
+         ========================================= */
 
-        for (const value of values) {
+      function renderSnapshot(
+        snapshot
+      ) {
 
-          if (
-            value === null ||
-            value === undefined ||
-            value === ""
-          ) {
-            continue;
-          }
-
-
-          const cleaned =
-            typeof value === "string"
-              ? value.replace(
-                  /[$,\s]/g,
-                  ""
-                )
-              : value;
+        document.getElementById(
+          "snapshot-address"
+        ).textContent =
+          snapshot.address;
 
 
-          const number =
-            Number(cleaned);
+        /* -------------------------------------
+           ESTIMATED VALUE
+           ------------------------------------- */
+
+        document.getElementById(
+          "estimated-value"
+        ).textContent =
+          snapshot.estimatedValue !== null
+            ? currency.format(
+                snapshot.estimatedValue
+              )
+            : "Not available";
 
 
-          if (
-            Number.isFinite(number)
-          ) {
+        /* -------------------------------------
+           RANGE
+           ------------------------------------- */
 
-            return number;
+        const rangeElement =
+          document.getElementById(
+            "estimated-range"
+          );
 
-          }
-
-        }
-
-
-        return null;
-
-      }
-
-
-      /* -----------------------------------------
-         FORMAT HELPERS
-         ----------------------------------------- */
-
-      function formatCurrency(value) {
 
         if (
-          value === null ||
-          value === undefined ||
-          !Number.isFinite(value)
+          snapshot.priceRangeLow !== null &&
+          snapshot.priceRangeHigh !== null
         ) {
 
-          return "Not available";
+          rangeElement.textContent =
+            `${currency.format(snapshot.priceRangeLow)} – ` +
+            `${currency.format(snapshot.priceRangeHigh)}`;
+
+        } else {
+
+          rangeElement.textContent =
+            "Not available";
 
         }
 
 
-        return currency.format(value);
+        /* -------------------------------------
+           ACTIVE LISTING
+           ------------------------------------- */
 
-      }
+        const listingElement =
+          document.getElementById(
+            "listing-price"
+          );
 
-
-      function formatNumber(value) {
 
         if (
-          value === null ||
-          value === undefined ||
-          !Number.isFinite(value)
+          snapshot.activeListingPrice !==
+          null
         ) {
 
-          return "Not available";
-
-        }
-
-
-        return Number.isInteger(value)
-          ? value.toLocaleString("en-US")
-          : value.toLocaleString(
-              "en-US",
-              {
-                maximumFractionDigits: 1
-              }
+          listingElement.textContent =
+            currency.format(
+              snapshot.activeListingPrice
             );
+
+        } else if (
+          snapshot.listingRequestSucceeded &&
+          !snapshot.activeListingFound
+        ) {
+
+          listingElement.textContent =
+            "No active listing found";
+
+        } else {
+
+          listingElement.textContent =
+            "Not available";
+
+        }
+
+
+        /* -------------------------------------
+           PROPERTY ATTRIBUTES
+           ------------------------------------- */
+
+        document.getElementById(
+          "property-type"
+        ).textContent =
+          displayValue(
+            snapshot.propertyType
+          );
+
+
+        document.getElementById(
+          "bedrooms"
+        ).textContent =
+          displayNumber(
+            snapshot.bedrooms
+          );
+
+
+        document.getElementById(
+          "bathrooms"
+        ).textContent =
+          displayNumber(
+            snapshot.bathrooms
+          );
+
+
+        document.getElementById(
+          "living-area"
+        ).textContent =
+          snapshot.squareFootage !== null
+            ? `${integer.format(snapshot.squareFootage)} sq ft`
+            : "Not available";
+
+
+        document.getElementById(
+          "lot-size"
+        ).textContent =
+          snapshot.lotSize !== null
+            ? `${integer.format(snapshot.lotSize)} sq ft`
+            : "Not available";
+
+
+        document.getElementById(
+          "year-built"
+        ).textContent =
+          snapshot.yearBuilt !== null
+            ? String(
+                Math.round(
+                  snapshot.yearBuilt
+                )
+              )
+            : "Not available";
+
+
+        document.getElementById(
+          "last-sale"
+        ).textContent =
+          formatLastSale(
+            snapshot.lastSalePrice,
+            snapshot.lastSaleDate
+          );
+
+
+        /* -------------------------------------
+           EXTERNAL LINKS
+           ------------------------------------- */
+
+        const encodedAddress =
+          encodeURIComponent(
+            snapshot.address
+          );
+
+
+        document.getElementById(
+          "maps-link"
+        ).href =
+          "https://www.google.com/maps/search/?api=1&query=" +
+          encodedAddress;
+
+
+        /*
+          Zillow search path.
+          This does not use a Zillow API.
+        */
+
+        document.getElementById(
+          "zillow-link"
+        ).href =
+          "https://www.zillow.com/homes/" +
+          encodedAddress +
+          "_rb/";
+
+
+        /* -------------------------------------
+           SELLER OPTIONS
+           ------------------------------------- */
+
+        sellerOptionsLink.href =
+          "seller-options.html?address=" +
+          encodeURIComponent(
+            snapshot.address
+          );
+
+      }
+
+
+      /* =========================================
+         DISPLAY HELPERS
+         ========================================= */
+
+      function displayValue(
+        value
+      ) {
+
+        if (
+          value === null ||
+          value === undefined ||
+          value === ""
+        ) {
+
+          return "Not available";
+
+        }
+
+
+        return String(value);
+
+      }
+
+
+      function displayNumber(
+        value
+      ) {
+
+        if (
+          value === null ||
+          value === undefined
+        ) {
+
+          return "Not available";
+
+        }
+
+
+        return String(value);
 
       }
 
@@ -1252,16 +2312,18 @@
         }
 
 
-        const parts = [];
+        const parts =
+          [];
 
 
         if (
-          price !== null &&
-          Number.isFinite(price)
+          price !== null
         ) {
 
           parts.push(
-            currency.format(price)
+            currency.format(
+              price
+            )
           );
 
         }
@@ -1270,7 +2332,9 @@
         if (date) {
 
           const formattedDate =
-            formatDate(date);
+            formatDate(
+              date
+            );
 
 
           if (formattedDate) {
@@ -1284,14 +2348,16 @@
         }
 
 
-        return parts.length > 0
-          ? parts.join(" · ")
-          : "Not available";
+        return parts.join(
+          " · "
+        );
 
       }
 
 
-      function formatDate(value) {
+      function formatDate(
+        value
+      ) {
 
         if (!value) {
           return null;
@@ -1325,22 +2391,155 @@
       }
 
 
-      function setText(
-        id,
-        value
+      /* =========================================
+         SESSION STORAGE
+         ========================================= */
+
+      function saveSnapshot(
+        snapshot
       ) {
 
-        document.getElementById(
-          id
-        ).textContent =
-          value;
+        try {
+
+          sessionStorage.setItem(
+            "mreo-seller-property-address",
+            snapshot.address
+          );
+
+
+          sessionStorage.setItem(
+            "mreo-seller-property-analysis",
+            JSON.stringify(
+              snapshot
+            )
+          );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not save property analysis:",
+            error
+          );
+
+        }
 
       }
 
 
-      /* -----------------------------------------
+      /* =========================================
+         STATUS
+         ========================================= */
+
+      function showStatus(
+        message,
+        isError = false
+      ) {
+
+        requestStatus.textContent =
+          message;
+
+
+        requestStatus.hidden =
+          false;
+
+
+        /*
+          Keep the existing neutral visual language.
+          No yellow information box.
+        */
+
+        if (isError) {
+
+          requestStatus.className =
+            "error-message";
+
+        } else {
+
+          requestStatus.className =
+            "status-message";
+
+        }
+
+      }
+
+
+      function setLoading(
+        loading
+      ) {
+
+        searchButton.disabled =
+          loading;
+
+
+        addressInput.disabled =
+          loading;
+
+
+        searchButton.innerHTML =
+          loading
+            ? "Analyzing…"
+            : 'Analyze <span aria-hidden="true">→</span>';
+
+      }
+
+
+      function getErrorMessage(
+        error
+      ) {
+
+        if (!error) {
+          return "Unknown request error";
+        }
+
+
+        if (
+          typeof error === "string"
+        ) {
+
+          return error;
+
+        }
+
+
+        if (error.message) {
+
+          return error.message;
+
+        }
+
+
+        return "Unknown request error";
+
+      }
+
+
+      /* =========================================
+         OPTIONAL AUTO-ANALYSIS FROM URL
+         ========================================= */
+
+      /*
+        If another MREO page explicitly links here using
+        ?address=..., perform the lookup automatically.
+
+        A merely saved session address is only prefilled;
+        it does not consume another API request automatically.
+      */
+
+      if (
+        urlAddress &&
+        urlAddress.trim()
+      ) {
+
+        analyzeProperty(
+          urlAddress.trim()
+        );
+
+      }
+
+
+      /* =========================================
          PAGE
-         ----------------------------------------- */
+         ========================================= */
 
       document.getElementById(
         "current-year"
