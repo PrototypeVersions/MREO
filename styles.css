@@ -18,13 +18,13 @@
   --line: #111111;
   --soft-line: #cfc7b8;
 
-  --yellow: #f2c94c;
+  --yellow: #f2c43c;
   --yellow-light: #fae9a0;
 
   --blue: #3159c8;
   --blue-light: #dce5ff;
 
-  --red: #d84b3f;
+  --red: #df3528;
   --red-light: #f5d6d2;
 
   --green: #8bcf78;
@@ -242,9 +242,9 @@ h3 {
     0 auto;
 
   padding:
-    clamp(48px, 8vw, 95px)
+    clamp(48px, 7vw, 82px)
     0
-    clamp(38px, 6vw, 68px);
+    clamp(42px, 6vw, 68px);
 }
 
 .landing-brand {
@@ -272,7 +272,7 @@ h3 {
 
 .landing-eyebrow {
   margin:
-    0 0 13px;
+    0 0 15px;
 
   color:
     var(--blue);
@@ -290,12 +290,37 @@ h3 {
     uppercase;
 }
 
+
+/* ============================================================
+   LANDING TITLE + SHAPES
+   ============================================================ */
+
+.landing-intro-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(260px, 350px);
+
+  gap:
+    clamp(30px, 6vw, 85px);
+
+  align-items:
+    center;
+}
+
+.landing-intro-copy {
+  min-width:
+    0;
+}
+
 .landing-title {
   margin:
     0;
 
   font-size:
-    clamp(74px, 16vw, 180px);
+    clamp(74px, 15vw, 174px);
 
   line-height:
     0.78;
@@ -319,6 +344,107 @@ h3 {
 
   line-height:
     1.55;
+}
+
+
+/* ============================================================
+   BAUHAUS LANDING SHAPES
+   ============================================================ */
+
+.landing-shapes {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  aspect-ratio:
+    1 / 1;
+
+  max-width:
+    330px;
+
+  justify-self:
+    end;
+}
+
+.shape-circle,
+.shape-square,
+.shape-line {
+  position:
+    absolute;
+
+  display:
+    block;
+}
+
+
+/* YELLOW CIRCLE */
+
+.shape-circle {
+  width:
+    39%;
+
+  aspect-ratio:
+    1 / 1;
+
+  top:
+    7%;
+
+  right:
+    7%;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--yellow);
+}
+
+
+/* RED SQUARE */
+
+.shape-square {
+  width:
+    20%;
+
+  aspect-ratio:
+    1 / 1;
+
+  right:
+    23%;
+
+  bottom:
+    14%;
+
+  background:
+    var(--red);
+}
+
+
+/* BLUE DIAGONAL LINE */
+
+.shape-line {
+  width:
+    5px;
+
+  height:
+    53%;
+
+  left:
+    31%;
+
+  top:
+    28%;
+
+  background:
+    var(--blue);
+
+  transform:
+    rotate(35deg);
+
+  transform-origin:
+    center;
 }
 
 
@@ -386,12 +512,12 @@ h3 {
 
 .landing-choice-buy:hover {
   background:
-    var(--yellow-light);
+    #f6d35b;
 }
 
 .landing-choice-sell:hover {
   background:
-    var(--blue-light);
+    var(--paper-dark);
 }
 
 .landing-choice-number {
@@ -751,9 +877,15 @@ h3 {
     background 150ms ease;
 }
 
+
+/*
+   Interior cards remain mostly neutral.
+   We are deliberately not using large yellow hover areas.
+*/
+
 .choice-card:hover {
   background:
-    var(--yellow);
+    var(--paper-dark);
 }
 
 .choice-card.blue:hover {
@@ -861,9 +993,17 @@ h3 {
     18px;
 }
 
+
+/*
+   IMPORTANT:
+   panel-yellow is intentionally NOT yellow anymore.
+   Existing HTML can retain the class without producing
+   the large yellow box seen in the screenshot.
+*/
+
 .panel-yellow {
   background:
-    var(--yellow-light);
+    var(--paper-light);
 }
 
 .panel-blue {
@@ -1013,12 +1153,16 @@ h3 {
     none;
 
   transition:
-    transform 150ms ease;
+    transform 150ms ease,
+    background 150ms ease;
 }
 
 .property-card:hover {
   transform:
     translateY(-2px);
+
+  background:
+    var(--paper-dark);
 }
 
 .property-image {
@@ -1205,7 +1349,7 @@ h3 {
 
 .secondary-button:hover {
   background:
-    var(--yellow);
+    var(--paper-dark);
 }
 
 .text-button {
@@ -1363,7 +1507,7 @@ textarea::placeholder {
     1px solid var(--ink);
 
   background:
-    var(--yellow-light);
+    var(--paper-light);
 }
 
 .search-row {
@@ -1394,7 +1538,7 @@ textarea::placeholder {
     14px 16px;
 
   background:
-    var(--green-light);
+    var(--paper-light);
 
   border-left:
     4px solid var(--green);
@@ -1414,10 +1558,10 @@ textarea::placeholder {
     14px 16px;
 
   background:
-    var(--yellow-light);
+    var(--paper-light);
 
   border-left:
-    4px solid var(--yellow);
+    4px solid var(--orange);
 
   font-size:
     11px;
@@ -1434,7 +1578,7 @@ textarea::placeholder {
     14px 16px;
 
   background:
-    var(--red-light);
+    var(--paper-light);
 
   border-left:
     4px solid var(--red);
@@ -1479,6 +1623,9 @@ textarea::placeholder {
 
 .badge-yellow {
   background:
+    var(--paper-light);
+
+  border-color:
     var(--yellow);
 }
 
@@ -1534,11 +1681,21 @@ textarea::placeholder {
 
   text-decoration:
     none;
+
+  transition:
+    padding 140ms ease,
+    background 140ms ease;
 }
 
 .step-link:hover {
+  padding-left:
+    10px;
+
+  padding-right:
+    10px;
+
   background:
-    var(--yellow-light);
+    var(--paper-light);
 }
 
 .step-number {
@@ -1840,7 +1997,16 @@ textarea::placeholder {
    TABLET
    ============================================================ */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
+
+  .landing-intro-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(210px, 270px);
+
+    gap:
+      30px;
+  }
 
   .landing-choice-grid {
     grid-template-columns:
@@ -1900,6 +2066,11 @@ textarea::placeholder {
       42px;
   }
 
+  .landing-intro-grid {
+    grid-template-columns:
+      1fr;
+  }
+
   .landing-title {
     font-size:
       clamp(68px, 27vw, 110px);
@@ -1909,6 +2080,29 @@ textarea::placeholder {
     font-size:
       14px;
   }
+
+
+  /* SHAPES MOVE BELOW TITLE ON SMALL SCREENS */
+
+  .landing-shapes {
+    width:
+      190px;
+
+    max-width:
+      190px;
+
+    justify-self:
+      end;
+
+    margin-top:
+      8px;
+  }
+
+  .shape-line {
+    width:
+      4px;
+  }
+
 
   .landing-choice {
     min-height:
@@ -2024,6 +2218,28 @@ textarea::placeholder {
 
     gap:
       7px;
+  }
+
+}
+
+
+/* ============================================================
+   VERY SMALL PHONES
+   ============================================================ */
+
+@media (max-width: 390px) {
+
+  .landing-shapes {
+    width:
+      155px;
+
+    max-width:
+      155px;
+  }
+
+  .landing-choice {
+    min-height:
+      260px;
   }
 
 }
