@@ -10,19 +10,19 @@
 
   <meta
     name="description"
-    content="Prepare a demonstration offer for an MREO property."
+    content="Prepare an offer for a fictional MREO property."
   >
 
-  <title>MREO | Prepare Offer</title>
+  <title>MREO | Offer</title>
 
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- =========================================
+  <!-- =====================================================
        HEADER
-       ========================================= -->
+       ===================================================== -->
 
   <header class="site-header">
 
@@ -53,9 +53,9 @@
 
 
     <a
-      id="back-property-link"
+      id="back-link"
       class="back-link"
-      href="property.html?id=MREO-0001"
+      href="property.html"
     >
       ← Property
     </a>
@@ -63,301 +63,311 @@
   </header>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        MAIN
-       ========================================= -->
+       ===================================================== -->
 
-  <main class="page page-narrow">
+  <main class="page page-medium">
 
-    <!-- =====================================
-         INTRO
-         ===================================== -->
-
-    <section class="page-intro">
-
-      <p
-        id="offer-property-id"
-        class="page-eyebrow mono"
-      >
-        MREO-0001
-      </p>
-
-      <h1 class="page-title">
-        Prepare Offer
-      </h1>
-
-      <p
-        id="offer-property-address"
-        class="page-description"
-      >
-        4218 Maple Ridge Drive · Dallas, Texas
-      </p>
-
-    </section>
-
-
-    <!-- =====================================
-         PROPERTY PRICE
-         ===================================== -->
+    <!-- ===================================================
+         ERROR
+         =================================================== -->
 
     <section
-      class="detail-list"
-      style="margin-bottom: 42px;"
+      id="property-error"
+      class="error-message"
+      hidden
     >
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Current Price
-        </span>
-
-        <span
-          id="property-price"
-          class="detail-value"
-          style="
-            font-size: 26px;
-            font-weight: 900;
-            letter-spacing: -.04em;
-          "
-        >
-          $385,000
-        </span>
-
-      </div>
-
+      Property record not found.
     </section>
 
 
-    <!-- =====================================
-         OFFER FORM
-         ===================================== -->
+    <!-- ===================================================
+         CONTENT
+         =================================================== -->
 
-    <form
-      id="offer-form"
-      class="form"
+    <div
+      id="offer-content"
+      hidden
     >
 
-      <!-- OFFER PRICE -->
+      <!-- =================================================
+           INTRO
+           ================================================= -->
 
-      <div class="field">
+      <section class="page-intro">
 
-        <label for="offer-price">
-          Offer Price
-        </label>
+        <p class="page-eyebrow">
+          Purchase Offer
+        </p>
 
-        <input
-          id="offer-price"
-          name="offerPrice"
-          type="number"
-          min="1"
-          step="1000"
-          placeholder="Enter offer amount"
-          required
+        <h1 class="page-title">
+          Make an Offer
+        </h1>
+
+        <p
+          id="property-address"
+          class="page-description"
+        >
+          Property
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
+           CURRENT PRICE
+           ================================================= -->
+
+      <section
+        class="detail-list"
+        style="margin-top: 34px;"
+      >
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Current Price
+          </span>
+
+          <span
+            id="current-price"
+            class="detail-value"
+            style="
+              font-size: clamp(28px, 3vw, 38px);
+              font-weight: 900;
+            "
+          >
+            —
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           OFFER FORM
+           ================================================= -->
+
+      <form
+        id="offer-form"
+        class="form"
+        style="margin-top: 42px;"
+      >
+
+        <!-- ===============================================
+             OFFER PRICE
+             =============================================== -->
+
+        <div class="field">
+
+          <label for="offer-price">
+            Offer Price
+          </label>
+
+          <input
+            id="offer-price"
+            name="offerPrice"
+            type="number"
+
+            min="1"
+            step="1"
+
+            inputmode="numeric"
+            autocomplete="off"
+
+            placeholder="Enter offer amount"
+
+            required
+          >
+
+        </div>
+
+
+        <!-- ===============================================
+             FUNDING TYPE
+             =============================================== -->
+
+        <div class="field">
+
+          <label for="funding-type">
+            Funding Type
+          </label>
+
+          <select
+            id="funding-type"
+            name="fundingType"
+            required
+          >
+
+            <option value="Conventional Financing">
+              Conventional Financing
+            </option>
+
+            <option value="Cash">
+              Cash
+            </option>
+
+            <option value="FHA Financing">
+              FHA Financing
+            </option>
+
+            <option value="VA Financing">
+              VA Financing
+            </option>
+
+            <option value="Other Financing">
+              Other Financing
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- ===============================================
+             CLOSING TIME
+             =============================================== -->
+
+        <div class="field">
+
+          <label for="closing-time">
+            Closing Time
+          </label>
+
+          <select
+            id="closing-time"
+            name="closingTime"
+            required
+          >
+
+            <option value="7 days">
+              7 days
+            </option>
+
+            <option value="14 days">
+              14 days
+            </option>
+
+            <option
+              value="21 days"
+              selected
+            >
+              21 days
+            </option>
+
+            <option value="30 days">
+              30 days
+            </option>
+
+            <option value="45 days">
+              45 days
+            </option>
+
+            <option value="60 days">
+              60 days
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- ===============================================
+             INSPECTION
+             =============================================== -->
+
+        <div class="field">
+
+          <label for="inspection">
+            Inspection
+          </label>
+
+          <select
+            id="inspection"
+            name="inspection"
+            required
+          >
+
+            <option value="No Inspection">
+              No Inspection
+            </option>
+
+            <option value="3-Day Inspection">
+              3-Day Inspection
+            </option>
+
+            <option
+              value="5-Day Inspection"
+              selected
+            >
+              5-Day Inspection
+            </option>
+
+            <option value="7-Day Inspection">
+              7-Day Inspection
+            </option>
+
+            <option value="10-Day Inspection">
+              10-Day Inspection
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- ===============================================
+             SUBMIT
+             =============================================== -->
+
+        <div
+          class="button-row"
+          style="margin-top: 30px;"
         >
 
+          <button
+            class="primary-button"
+            type="submit"
+          >
+            Review Offer
+            <span aria-hidden="true">
+              →
+            </span>
+          </button>
+
+        </div>
+
+      </form>
+
+
+      <!-- =================================================
+           NOTICE
+           ================================================= -->
+
+      <div
+        class="status-message"
+        style="margin-top: 38px;"
+      >
+        This prototype does not submit a legally binding real-estate
+        offer. Offer information is fictional and is used only to
+        demonstrate the proposed MREO transaction workflow.
       </div>
 
-
-      <!-- FUNDING -->
-
-      <div class="field">
-
-        <label for="funding-type">
-          Funding Type
-        </label>
-
-        <select
-          id="funding-type"
-          name="fundingType"
-          required
-        >
-
-          <option value="">
-            Choose funding type
-          </option>
-
-          <option value="Confirmed Cash">
-            Confirmed Cash
-          </option>
-
-          <option value="Cash — Verification Pending">
-            Cash — Verification Pending
-          </option>
-
-          <option value="Conventional Financing">
-            Conventional Financing
-          </option>
-
-          <option value="Other Financing">
-            Other Financing
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <!-- CLOSING -->
-
-      <div class="field">
-
-        <label for="closing-time">
-          Closing Time
-        </label>
-
-        <select
-          id="closing-time"
-          name="closingTime"
-          required
-        >
-
-          <option value="">
-            Choose closing period
-          </option>
-
-          <option value="14">
-            14 days
-          </option>
-
-          <option value="21">
-            21 days
-          </option>
-
-          <option value="30">
-            30 days
-          </option>
-
-          <option value="45">
-            45 days
-          </option>
-
-          <option value="60">
-            60 days
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <!-- INSPECTION -->
-
-      <div class="field">
-
-        <label for="inspection">
-          Inspection
-        </label>
-
-        <select
-          id="inspection"
-          name="inspection"
-          required
-        >
-
-          <option value="">
-            Choose inspection term
-          </option>
-
-          <option value="No Inspection Contingency">
-            No Inspection Contingency
-          </option>
-
-          <option value="5-Day Inspection">
-            5-Day Inspection
-          </option>
-
-          <option value="7-Day Inspection">
-            7-Day Inspection
-          </option>
-
-          <option value="10-Day Inspection">
-            10-Day Inspection
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <!-- =====================================
-           CONTINUE
-           ===================================== -->
-
-      <div class="button-row">
-
-        <button
-          class="primary-button"
-          type="submit"
-        >
-          Review Offer
-          <span aria-hidden="true">→</span>
-        </button>
-
-      </div>
-
-    </form>
-
-
-    <!-- =====================================
-         PURCHASER PROFILE
-         ===================================== -->
-
-    <section
-      class="panel"
-      style="margin-top: 38px;"
-    >
-
-      <p class="eyebrow">
-        Purchaser Qualification
-      </p>
-
-      <h3>
-        Purchaser information is handled separately.
-      </h3>
-
-      <p class="muted">
-        MREO can associate an offer with identity, authority,
-        funding verification, purchasing history, and other
-        qualification information without crowding the offer form.
-      </p>
-
-
-      <div class="button-row">
-
-        <a
-          id="purchaser-profile-link"
-          class="secondary-button"
-          href="purchaser.html?property=MREO-0001"
-        >
-          Purchaser Profile
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================
-         NOTICE
-         ===================================== -->
-
-    <div class="status-message">
-      This is a fictional demonstration offer process. Completing
-      this form does not create, transmit, or submit a legally
-      binding real-estate offer.
     </div>
 
   </main>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        FOOTER
-       ========================================= -->
+       ===================================================== -->
 
   <footer class="site-footer">
 
     <p>
-      Fictional demonstration acquisition
+      MREO Purchase Offer
     </p>
 
     <p>
@@ -367,258 +377,786 @@
   </footer>
 
 
-  <!-- =========================================
-       DATA
-       ========================================= -->
+  <!-- =====================================================
+       SHARED PROPERTY DATA
+       ===================================================== -->
 
   <script src="data.js"></script>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        PAGE LOGIC
-       ========================================= -->
+       ===================================================== -->
 
   <script>
     (() => {
       "use strict";
 
 
-      /* -----------------------------------------
+      /* ===================================================
          URL
-         ----------------------------------------- */
+         =================================================== */
 
       const params =
-        new URLSearchParams(window.location.search);
-
-
-      const requestedId =
-        params.get("id") || "MREO-0001";
-
-
-      /* -----------------------------------------
-         FALLBACK PROPERTY
-         ----------------------------------------- */
-
-      const fallback = {
-
-        id:
-          "MREO-0001",
-
-        addressLine1:
-          "4218 Maple Ridge Drive",
-
-        location:
-          "Dallas, Texas",
-
-        price:
-          385000
-
-      };
-
-
-      /* -----------------------------------------
-         LOAD PROPERTY
-         ----------------------------------------- */
-
-      let property =
-        fallback;
-
-
-      if (
-        window.MREO_DATA &&
-        typeof window.MREO_DATA.getProperty === "function"
-      ) {
-
-        property =
-          window.MREO_DATA.getProperty(requestedId) ||
-          fallback;
-
-      }
-
-
-      const id =
-        property.id ||
-        requestedId;
-
-
-      const address =
-        property.addressLine1 ||
-        property.address ||
-        property.fullAddress ||
-        fallback.addressLine1;
-
-
-      const location =
-        property.location ||
-        [
-          property.city,
-          property.state
-        ]
-          .filter(Boolean)
-          .join(", ") ||
-        fallback.location;
-
-
-      const price =
-        Number(
-          property.price ??
-          property.listPrice ??
-          fallback.price
+        new URLSearchParams(
+          window.location.search
         );
 
 
-      /* -----------------------------------------
+      const requestedPropertyId =
+        params.get("id");
+
+
+      /* ===================================================
+         ELEMENTS
+         =================================================== */
+
+      const content =
+        document.getElementById(
+          "offer-content"
+        );
+
+
+      const errorBox =
+        document.getElementById(
+          "property-error"
+        );
+
+
+      const form =
+        document.getElementById(
+          "offer-form"
+        );
+
+
+      const offerPriceInput =
+        document.getElementById(
+          "offer-price"
+        );
+
+
+      const fundingTypeInput =
+        document.getElementById(
+          "funding-type"
+        );
+
+
+      const closingTimeInput =
+        document.getElementById(
+          "closing-time"
+        );
+
+
+      const inspectionInput =
+        document.getElementById(
+          "inspection"
+        );
+
+
+      /* ===================================================
          FORMATTER
-         ----------------------------------------- */
+         =================================================== */
 
       const currency =
         new Intl.NumberFormat(
           "en-US",
           {
-            style:
-              "currency",
-
-            currency:
-              "USD",
-
-            maximumFractionDigits:
-              0
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0
           }
         );
 
 
-      /* -----------------------------------------
-         RENDER PROPERTY
-         ----------------------------------------- */
+      /* ===================================================
+         HELPERS
+         =================================================== */
 
-      document.getElementById(
-        "offer-property-id"
-      ).textContent =
-        id;
+      function firstDefined(
+        ...values
+      ) {
 
+        for (const value of values) {
 
-      document.getElementById(
-        "offer-property-address"
-      ).textContent =
-        `${address} · ${location}`;
+          if (
+            value !== undefined &&
+            value !== null &&
+            value !== ""
+          ) {
 
+            return value;
 
-      document.getElementById(
-        "property-price"
-      ).textContent =
-        currency.format(price);
+          }
 
-
-      /* -----------------------------------------
-         LINKS
-         ----------------------------------------- */
-
-      const encodedId =
-        encodeURIComponent(id);
+        }
 
 
-      document.getElementById(
-        "back-property-link"
-      ).href =
-        `property.html?id=${encodedId}`;
+        return null;
+
+      }
 
 
-      document.getElementById(
-        "purchaser-profile-link"
-      ).href =
-        `purchaser.html?property=${encodedId}`;
+      function display(
+        value,
+        fallback = "Not available"
+      ) {
+
+        if (
+          value === undefined ||
+          value === null ||
+          value === ""
+        ) {
+
+          return fallback;
+
+        }
 
 
-      /* -----------------------------------------
-         FORM
-         ----------------------------------------- */
+        return String(value);
 
-      document.getElementById(
-        "offer-form"
-      ).addEventListener(
-        "submit",
-        (event) => {
-
-          event.preventDefault();
+      }
 
 
-          const offerPrice =
-            document.getElementById(
-              "offer-price"
-            ).value;
+      function numericValue(
+        value
+      ) {
+
+        if (
+          value === undefined ||
+          value === null ||
+          value === ""
+        ) {
+
+          return null;
+
+        }
 
 
-          const fundingType =
-            document.getElementById(
-              "funding-type"
-            ).value;
-
-
-          const closingTime =
-            document.getElementById(
-              "closing-time"
-            ).value;
-
-
-          const inspection =
-            document.getElementById(
-              "inspection"
-            ).value;
-
-
-          const reviewParams =
-            new URLSearchParams();
-
-
-          reviewParams.set(
-            "id",
-            id
+        const parsed =
+          Number(
+            String(value).replace(
+              /[$,\s]/g,
+              ""
+            )
           );
 
 
-          reviewParams.set(
-            "price",
-            offerPrice
+        return Number.isFinite(parsed)
+          ? parsed
+          : null;
+
+      }
+
+
+      function propertyUrl(
+        pageName,
+        propertyId
+      ) {
+
+        return (
+          pageName +
+          "?id=" +
+          encodeURIComponent(
+            propertyId
+          )
+        );
+
+      }
+
+
+      /* ===================================================
+         PROPERTY RECORD
+         =================================================== */
+
+      function getPropertyRecord() {
+
+        if (
+          !requestedPropertyId ||
+          !window.MREO_DATA
+        ) {
+
+          return null;
+
+        }
+
+
+        /*
+          Preferred data.js method.
+        */
+
+        if (
+          typeof window.MREO_DATA.getProperty ===
+          "function"
+        ) {
+
+          const property =
+            window.MREO_DATA.getProperty(
+              requestedPropertyId
+            );
+
+
+          if (property) {
+            return property;
+          }
+
+        }
+
+
+        /*
+          Compatibility fallback.
+        */
+
+        if (
+          Array.isArray(
+            window.MREO_DATA.properties
+          )
+        ) {
+
+          return (
+            window.MREO_DATA.properties.find(
+              property => {
+
+                const id =
+                  firstDefined(
+                    property.id,
+                    property.propertyId
+                  );
+
+
+                return (
+                  String(id).toUpperCase() ===
+                  String(requestedPropertyId).toUpperCase()
+                );
+
+              }
+            ) ||
+            null
+          );
+
+        }
+
+
+        return null;
+
+      }
+
+
+      /* ===================================================
+         LOAD PREVIOUS DRAFT
+
+         If the user comes back from Review Offer, restore
+         the values rather than starting over.
+         =================================================== */
+
+      function restoreDraft(
+        propertyId
+      ) {
+
+        const possibleKeys =
+          [
+            "mreo-offer-draft",
+            "mreo-offer",
+            "mreo-offer-" + propertyId
+          ];
+
+
+        for (
+          const key
+          of possibleKeys
+        ) {
+
+          try {
+
+            const saved =
+              sessionStorage.getItem(
+                key
+              );
+
+
+            if (!saved) {
+              continue;
+            }
+
+
+            const draft =
+              JSON.parse(
+                saved
+              );
+
+
+            if (
+              draft.propertyId &&
+              String(
+                draft.propertyId
+              ).toUpperCase() !==
+              String(
+                propertyId
+              ).toUpperCase()
+            ) {
+
+              continue;
+
+            }
+
+
+            const savedPrice =
+              firstDefined(
+                draft.offerPrice,
+                draft.price
+              );
+
+
+            if (
+              savedPrice !== null
+            ) {
+
+              offerPriceInput.value =
+                savedPrice;
+
+            }
+
+
+            const savedFunding =
+              firstDefined(
+                draft.fundingType,
+                draft.funding
+              );
+
+
+            if (
+              savedFunding &&
+              optionExists(
+                fundingTypeInput,
+                savedFunding
+              )
+            ) {
+
+              fundingTypeInput.value =
+                savedFunding;
+
+            }
+
+
+            const savedClosing =
+              firstDefined(
+                draft.closingTime,
+                draft.closing
+              );
+
+
+            if (
+              savedClosing &&
+              optionExists(
+                closingTimeInput,
+                savedClosing
+              )
+            ) {
+
+              closingTimeInput.value =
+                savedClosing;
+
+            }
+
+
+            const savedInspection =
+              firstDefined(
+                draft.inspection,
+                draft.inspectionPeriod
+              );
+
+
+            if (
+              savedInspection &&
+              optionExists(
+                inspectionInput,
+                savedInspection
+              )
+            ) {
+
+              inspectionInput.value =
+                savedInspection;
+
+            }
+
+
+            break;
+
+          } catch (error) {
+
+            console.warn(
+              "Could not restore saved offer:",
+              error
+            );
+
+          }
+
+        }
+
+      }
+
+
+      function optionExists(
+        selectElement,
+        value
+      ) {
+
+        return Array.from(
+          selectElement.options
+        ).some(
+          option =>
+            option.value === value
+        );
+
+      }
+
+
+      /* ===================================================
+         RENDER
+         =================================================== */
+
+      function render() {
+
+        const property =
+          getPropertyRecord();
+
+
+        if (!property) {
+
+          errorBox.hidden =
+            false;
+
+
+          content.hidden =
+            true;
+
+
+          return;
+
+        }
+
+
+        const propertyId =
+          firstDefined(
+            property.id,
+            property.propertyId,
+            requestedPropertyId
           );
 
 
-          reviewParams.set(
-            "funding",
-            fundingType
+        const address =
+          firstDefined(
+            property.address,
+            property.streetAddress,
+            property.location
           );
 
 
-          reviewParams.set(
-            "closing",
-            closingTime
+        const city =
+          firstDefined(
+            property.city
           );
 
 
-          reviewParams.set(
-            "inspection",
-            inspection
+        const state =
+          firstDefined(
+            property.state
           );
 
 
-          window.location.href =
-            `offer-review.html?${reviewParams.toString()}`;
+        const zip =
+          firstDefined(
+            property.zip,
+            property.zipCode,
+            property.postalCode
+          );
+
+
+        const locationParts =
+          [
+            city,
+            state,
+            zip
+          ].filter(Boolean);
+
+
+        let locationText =
+          display(
+            address
+          );
+
+
+        if (
+          locationParts.length > 0
+        ) {
+
+          locationText +=
+            " · " +
+            locationParts.join(", ");
+
+        }
+
+
+        /* -------------------------------------------------
+           PRICE
+           ------------------------------------------------- */
+
+        const currentPrice =
+          numericValue(
+            firstDefined(
+              property.price,
+              property.listPrice,
+              property.askingPrice,
+              property.directoryPrice
+            )
+          );
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          locationText;
+
+
+        document.getElementById(
+          "current-price"
+        ).textContent =
+          currentPrice !== null
+            ? currency.format(
+                currentPrice
+              )
+            : "Not available";
+
+
+        /* -------------------------------------------------
+           BACK LINK
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "back-link"
+        ).href =
+          propertyUrl(
+            "property.html",
+            propertyId
+          );
+
+
+        /* -------------------------------------------------
+           DOCUMENT TITLE
+           ------------------------------------------------- */
+
+        document.title =
+          propertyId +
+          " Offer | MREO";
+
+
+        /* -------------------------------------------------
+           RESTORE DRAFT
+           ------------------------------------------------- */
+
+        restoreDraft(
+          propertyId
+        );
+
+
+        content.hidden =
+          false;
+
+
+        /* -------------------------------------------------
+           SUBMIT
+           ------------------------------------------------- */
+
+        form.addEventListener(
+          "submit",
+          event => {
+
+            event.preventDefault();
+
+
+            /*
+              Browser validation should already catch this,
+              but we validate explicitly as well.
+
+              Any POSITIVE WHOLE-DOLLAR AMOUNT is allowed.
+            */
+
+            const offerPrice =
+              Number(
+                offerPriceInput.value
+              );
+
+
+            if (
+              !Number.isInteger(
+                offerPrice
+              ) ||
+              offerPrice < 1
+            ) {
+
+              offerPriceInput.setCustomValidity(
+                "Enter a whole-dollar offer amount greater than zero."
+              );
+
+
+              offerPriceInput.reportValidity();
+
+
+              return;
+
+            }
+
+
+            offerPriceInput.setCustomValidity(
+              ""
+            );
+
+
+            const offer =
+              {
+                propertyId:
+                  propertyId,
+
+                propertyAddress:
+                  locationText,
+
+                currentPrice:
+                  currentPrice,
+
+                offerPrice:
+                  offerPrice,
+
+                fundingType:
+                  fundingTypeInput.value,
+
+                closingTime:
+                  closingTimeInput.value,
+
+                inspection:
+                  inspectionInput.value,
+
+                createdAt:
+                  new Date().toISOString()
+              };
+
+
+            /* ---------------------------------------------
+               SAVE OFFER
+
+               Several compatibility keys are written so
+               existing prototype pages can access the draft.
+               --------------------------------------------- */
+
+            try {
+
+              const serialized =
+                JSON.stringify(
+                  offer
+                );
+
+
+              sessionStorage.setItem(
+                "mreo-offer-draft",
+                serialized
+              );
+
+
+              sessionStorage.setItem(
+                "mreo-offer",
+                serialized
+              );
+
+
+              sessionStorage.setItem(
+                "mreo-offer-" +
+                propertyId,
+                serialized
+              );
+
+
+              sessionStorage.setItem(
+                "mreo-offer-price",
+                String(
+                  offerPrice
+                )
+              );
+
+
+              sessionStorage.setItem(
+                "mreo-offer-funding-type",
+                fundingTypeInput.value
+              );
+
+
+              sessionStorage.setItem(
+                "mreo-offer-closing-time",
+                closingTimeInput.value
+              );
+
+
+              sessionStorage.setItem(
+                "mreo-offer-inspection",
+                inspectionInput.value
+              );
+
+            } catch (error) {
+
+              console.warn(
+                "Could not save offer draft:",
+                error
+              );
+
+            }
+
+
+            /* ---------------------------------------------
+               REVIEW PAGE
+
+               Property ID is preserved in the URL.
+               --------------------------------------------- */
+
+            window.location.href =
+              propertyUrl(
+                "offer-review.html",
+                propertyId
+              );
+
+          }
+        );
+
+      }
+
+
+      /* ===================================================
+         CLEAR CUSTOM VALIDITY WHEN USER EDITS PRICE
+         =================================================== */
+
+      offerPriceInput.addEventListener(
+        "input",
+        () => {
+
+          offerPriceInput.setCustomValidity(
+            ""
+          );
 
         }
       );
 
 
-      /* -----------------------------------------
-         PAGE
-         ----------------------------------------- */
-
-      document.title =
-        `${id} | Prepare MREO Offer`;
-
+      /* ===================================================
+         CURRENT YEAR
+         =================================================== */
 
       document.getElementById(
         "current-year"
       ).textContent =
         new Date().getFullYear();
+
+
+      /* ===================================================
+         START
+         =================================================== */
+
+      render();
 
     })();
   </script>
