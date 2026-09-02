@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="View ongoing property operations information for an MREO property."
+    content="View operations information for a fictional MREO property."
   >
 
   <title>MREO | Operations</title>
@@ -20,9 +20,9 @@
 
 <body>
 
-  <!-- =========================================
+  <!-- =====================================================
        HEADER
-       ========================================= -->
+       ===================================================== -->
 
   <header class="site-header">
 
@@ -53,9 +53,9 @@
 
 
     <a
-      id="back-property-link"
+      id="back-link"
       class="back-link"
-      href="property.html?id=MREO-0001"
+      href="property.html"
     >
       ← Property
     </a>
@@ -63,126 +63,165 @@
   </header>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        MAIN
-       ========================================= -->
+       ===================================================== -->
 
   <main class="page page-medium">
 
-    <!-- =====================================
-         INTRO
-         ===================================== -->
-
-    <section class="page-intro">
-
-      <p
-        id="operations-property-id"
-        class="page-eyebrow mono"
-      >
-        MREO-0001
-      </p>
-
-      <h1 class="page-title">
-        Operations
-      </h1>
-
-      <p
-        id="operations-property-address"
-        class="page-description"
-      >
-        4218 Maple Ridge Drive · Dallas, Texas
-      </p>
-
-    </section>
-
-
-    <!-- =====================================
-         SIMPLE STATUS
-         ===================================== -->
+    <!-- ===================================================
+         ERROR
+         =================================================== -->
 
     <section
-      class="detail-list"
-      style="margin-bottom: 42px;"
+      id="property-error"
+      class="error-message"
+      hidden
     >
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Operations Status
-        </span>
-
-        <span
-          id="operations-status"
-          class="detail-value"
-          style="
-            font-size: 20px;
-            font-weight: 900;
-          "
-        >
-          Not Yet Operating
-        </span>
-
-      </div>
-
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Occupancy
-        </span>
-
-        <span
-          id="operations-occupancy"
-          class="detail-value"
-        >
-          Not recorded
-        </span>
-
-      </div>
-
+      Property record not found.
     </section>
 
 
-    <!-- =====================================
-         OPERATIONS SECTIONS
-         ===================================== -->
+    <!-- ===================================================
+         CONTENT
+         =================================================== -->
 
-    <section>
+    <div
+      id="operations-content"
+      hidden
+    >
 
-      <p class="page-eyebrow">
-        Property Operations
-      </p>
+      <!-- =================================================
+           INTRO
+           ================================================= -->
+
+      <section class="page-intro">
+
+        <p class="page-eyebrow">
+          Property Record
+        </p>
+
+        <h1 class="page-title">
+          Operations
+        </h1>
+
+        <p
+          id="property-address"
+          class="page-description"
+        >
+          Property
+        </p>
+
+      </section>
 
 
-      <div class="choice-grid">
+      <!-- =================================================
+           OPERATIONS SNAPSHOT
+           ================================================= -->
 
-        <!-- RENT -->
+      <section
+        class="detail-list"
+        style="margin-top: 34px;"
+      >
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Property ID
+          </span>
+
+          <span
+            id="property-id"
+            class="detail-value mono"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Operations Status
+          </span>
+
+          <span
+            id="operations-status"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Monthly Rent
+          </span>
+
+          <span
+            id="monthly-rent"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Estimated Equity
+          </span>
+
+          <span
+            id="estimated-equity"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           OPERATIONS CATEGORIES
+           ALL NUMBERS REMOVED
+           ================================================= -->
+
+      <section
+        class="choice-grid"
+        style="margin-top: 38px;"
+      >
+
+        <!-- =================================================
+             RENT
+             ================================================= -->
 
         <a
           id="rent-link"
           class="choice-card"
-          href="operations-rent.html?id=MREO-0001"
+          href="operations-rent.html"
         >
-
-          <span class="choice-card-number">
-            01
-          </span>
 
           <div class="choice-card-content">
 
-            <p class="card-label">
-              Income
-            </p>
-
-            <h3>
+            <h2>
               Rent
-            </h3>
+            </h2>
 
             <p>
-              View occupancy, rent, and property income information.
+              Review tenant, rent collection, income, and property-cash-flow information.
             </p>
 
           </div>
+
 
           <span
             class="choice-card-arrow"
@@ -194,33 +233,28 @@
         </a>
 
 
-        <!-- MAINTENANCE -->
+        <!-- =================================================
+             MAINTENANCE
+             ================================================= -->
 
         <a
           id="maintenance-link"
           class="choice-card blue"
-          href="operations-maintenance.html?id=MREO-0001"
+          href="operations-maintenance.html"
         >
-
-          <span class="choice-card-number">
-            02
-          </span>
 
           <div class="choice-card-content">
 
-            <p class="card-label">
-              Property Care
-            </p>
-
-            <h3>
+            <h2>
               Maintenance
-            </h3>
+            </h2>
 
             <p>
-              View current maintenance issues and service activity.
+              Review repairs, service activity, maintenance needs, and operational work.
             </p>
 
           </div>
+
 
           <span
             class="choice-card-arrow"
@@ -232,33 +266,28 @@
         </a>
 
 
-        <!-- INSURANCE -->
+        <!-- =================================================
+             INSURANCE
+             ================================================= -->
 
         <a
           id="insurance-link"
           class="choice-card green"
-          href="operations-insurance.html?id=MREO-0001"
+          href="operations-insurance.html"
         >
-
-          <span class="choice-card-number">
-            03
-          </span>
 
           <div class="choice-card-content">
 
-            <p class="card-label">
-              Protection
-            </p>
-
-            <h3>
+            <h2>
               Insurance
-            </h3>
+            </h2>
 
             <p>
-              View insurance status and important coverage records.
+              Review insurance status, coverage information, and property-risk records.
             </p>
 
           </div>
+
 
           <span
             class="choice-card-arrow"
@@ -270,33 +299,28 @@
         </a>
 
 
-        <!-- EQUITY / RESALE -->
+        <!-- =================================================
+             EQUITY
+             ================================================= -->
 
         <a
           id="equity-link"
           class="choice-card red"
-          href="operations-equity.html?id=MREO-0001"
+          href="operations-equity.html"
         >
-
-          <span class="choice-card-number">
-            04
-          </span>
 
           <div class="choice-card-content">
 
-            <p class="card-label">
-              Ownership
-            </p>
-
-            <h3>
-              Equity &amp; Resale
-            </h3>
+            <h2>
+              Equity
+            </h2>
 
             <p>
-              View estimated equity and readiness for a future sale.
+              Review estimated equity, property value, and resale-readiness information.
             </p>
 
           </div>
+
 
           <span
             class="choice-card-arrow"
@@ -307,36 +331,63 @@
 
         </a>
 
+      </section>
+
+
+      <!-- =================================================
+           OPERATIONS NOTE
+           ================================================= -->
+
+      <section
+        class="panel"
+        style="margin-top: 38px;"
+      >
+
+        <p class="page-eyebrow">
+          Operating Record
+        </p>
+
+        <h3>
+          Property operations remain connected to the asset record.
+        </h3>
+
+        <p class="muted">
+          Rent, maintenance, insurance, equity, tenant activity,
+          and other operating information can remain associated
+          with the property's persistent MREO record throughout
+          ownership and management.
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
+           DISCLAIMER
+           ================================================= -->
+
+      <div
+        class="status-message"
+        style="margin-top: 34px;"
+      >
+        Operations information shown in this prototype is fictional
+        demonstration data. Rent, equity, insurance, maintenance,
+        and resale-readiness figures are illustrative and are not
+        guarantees, appraisals, or professional recommendations.
       </div>
 
-    </section>
-
-
-    <!-- =====================================
-         NOTICE
-         ===================================== -->
-
-    <div
-      class="status-message"
-      style="margin-top: 34px;"
-    >
-      Rent, maintenance, insurance, equity, and resale information
-      shown in this prototype is fictional demonstration data.
-      Actual property operations would depend on the owner,
-      tenant, service providers, insurers, and other participants.
     </div>
 
   </main>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        FOOTER
-       ========================================= -->
+       ===================================================== -->
 
   <footer class="site-footer">
 
     <p>
-      Fictional demonstration property operations
+      MREO Operations
     </p>
 
     <p>
@@ -346,25 +397,25 @@
   </footer>
 
 
-  <!-- =========================================
-       DATA
-       ========================================= -->
+  <!-- =====================================================
+       SHARED DATA
+       ===================================================== -->
 
   <script src="data.js"></script>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        PAGE LOGIC
-       ========================================= -->
+       ===================================================== -->
 
   <script>
     (() => {
       "use strict";
 
 
-      /* -----------------------------------------
+      /* ===================================================
          URL
-         ----------------------------------------- */
+         =================================================== */
 
       const params =
         new URLSearchParams(
@@ -372,232 +423,501 @@
         );
 
 
-      const requestedId =
-        params.get("id") ||
-        "MREO-0001";
+      const requestedPropertyId =
+        params.get("id");
 
 
-      /* -----------------------------------------
-         FALLBACK
-         ----------------------------------------- */
+      /* ===================================================
+         ELEMENTS
+         =================================================== */
 
-      const fallback = {
-
-        id:
-          "MREO-0001",
-
-        addressLine1:
-          "4218 Maple Ridge Drive",
-
-        location:
-          "Dallas, Texas",
-
-        operations: {
-          status:
-            "Not Yet Operating",
-
-          occupancy:
-            "Not recorded"
-        }
-
-      };
+      const content =
+        document.getElementById(
+          "operations-content"
+        );
 
 
-      /* -----------------------------------------
-         SPECIAL DEMONSTRATION RECORDS
-         ----------------------------------------- */
-
-      const demoOperationsRecords = {
-
-        "MREO-0004": {
-
-          status:
-            "Operating Rental",
-
-          occupancy:
-            "Tenant Occupied"
-
-        },
+      const errorBox =
+        document.getElementById(
+          "property-error"
+        );
 
 
-        "MREO-0018": {
+      /* ===================================================
+         FORMATTER
+         =================================================== */
 
-          status:
-            "Owner Retention",
-
-          occupancy:
-            "Owner Occupied"
-
-        },
-
-
-        "MREO-0020": {
-
-          status:
-            "Operating",
-
-          occupancy:
-            "Tenant Occupied"
-
-        }
-
-      };
+      const currencyFormatter =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0
+          }
+        );
 
 
-      /* -----------------------------------------
-         LOAD PROPERTY
-         ----------------------------------------- */
+      /* ===================================================
+         HELPERS
+         =================================================== */
 
-      let property =
-        fallback;
-
-
-      if (
-        window.MREO_DATA &&
-        typeof window.MREO_DATA.getProperty === "function"
+      function firstDefined(
+        ...values
       ) {
 
-        property =
-          window.MREO_DATA.getProperty(
-            requestedId
-          ) ||
-          fallback;
+        for (const value of values) {
+
+          if (
+            value !== undefined &&
+            value !== null &&
+            value !== ""
+          ) {
+
+            return value;
+
+          }
+
+        }
+
+
+        return null;
 
       }
 
 
-      const id =
-        property.id ||
-        requestedId;
+      function display(
+        value,
+        fallback = "Not available"
+      ) {
+
+        if (
+          value === undefined ||
+          value === null ||
+          value === ""
+        ) {
+
+          return fallback;
+
+        }
 
 
-      const address =
-        property.addressLine1 ||
-        property.address ||
-        property.fullAddress ||
-        fallback.addressLine1;
+        return String(value);
+
+      }
 
 
-      const location =
-        property.location ||
-        [
-          property.city,
-          property.state
-        ]
-          .filter(Boolean)
-          .join(", ") ||
-        fallback.location;
+      function formatCurrency(
+        value
+      ) {
+
+        if (
+          value === undefined ||
+          value === null ||
+          value === ""
+        ) {
+
+          return "Not available";
+
+        }
 
 
-      /* -----------------------------------------
-         OPERATIONS RECORD
-         ----------------------------------------- */
-
-      const demoRecord =
-        demoOperationsRecords[id] ||
-        {};
-
-
-      const operations =
-        property.operations ||
-        property.management ||
-        property.passport?.operations ||
-        {};
+        const number =
+          Number(
+            String(value).replace(
+              /[$,\s]/g,
+              ""
+            )
+          );
 
 
-      const status =
-        operations.status ||
-        operations.stage ||
-        demoRecord.status ||
-        fallback.operations.status;
+        if (
+          !Number.isFinite(number)
+        ) {
+
+          return String(value);
+
+        }
 
 
-      const occupancy =
-        operations.occupancy ||
-        operations.occupancyStatus ||
-        property.occupancy ||
-        demoRecord.occupancy ||
-        fallback.operations.occupancy;
+        return currencyFormatter.format(
+          number
+        );
+
+      }
 
 
-      /* -----------------------------------------
+      function propertyUrl(
+        pageName,
+        propertyId
+      ) {
+
+        return (
+          pageName +
+          "?id=" +
+          encodeURIComponent(
+            propertyId
+          )
+        );
+
+      }
+
+
+      /* ===================================================
+         GET PROPERTY
+         =================================================== */
+
+      function getPropertyRecord() {
+
+        if (
+          !requestedPropertyId ||
+          !window.MREO_DATA
+        ) {
+
+          return null;
+
+        }
+
+
+        if (
+          typeof window.MREO_DATA.getProperty ===
+          "function"
+        ) {
+
+          const property =
+            window.MREO_DATA.getProperty(
+              requestedPropertyId
+            );
+
+
+          if (property) {
+            return property;
+          }
+
+        }
+
+
+        if (
+          Array.isArray(
+            window.MREO_DATA.properties
+          )
+        ) {
+
+          return (
+            window.MREO_DATA.properties.find(
+              property => {
+
+                const id =
+                  firstDefined(
+                    property.id,
+                    property.propertyId
+                  );
+
+
+                return (
+                  String(id).toUpperCase() ===
+                  String(requestedPropertyId).toUpperCase()
+                );
+
+              }
+            ) ||
+            null
+          );
+
+        }
+
+
+        return null;
+
+      }
+
+
+      /* ===================================================
+         OPERATIONS DATA
+         =================================================== */
+
+      function getOperationsData(
+        property
+      ) {
+
+        if (
+          property.operations &&
+          typeof property.operations ===
+          "object"
+        ) {
+
+          return property.operations;
+
+        }
+
+
+        if (
+          property.operationsRecord &&
+          typeof property.operationsRecord ===
+          "object"
+        ) {
+
+          return property.operationsRecord;
+
+        }
+
+
+        if (
+          property.management &&
+          typeof property.management ===
+          "object"
+        ) {
+
+          return property.management;
+
+        }
+
+
+        return {};
+
+      }
+
+
+      /* ===================================================
          RENDER
-         ----------------------------------------- */
+         =================================================== */
 
-      document.getElementById(
-        "operations-property-id"
-      ).textContent =
-        id;
+      function render() {
 
-
-      document.getElementById(
-        "operations-property-address"
-      ).textContent =
-        `${address} · ${location}`;
+        const property =
+          getPropertyRecord();
 
 
-      document.getElementById(
-        "operations-status"
-      ).textContent =
-        status;
+        if (!property) {
+
+          errorBox.hidden =
+            false;
 
 
-      document.getElementById(
-        "operations-occupancy"
-      ).textContent =
-        occupancy;
+          content.hidden =
+            true;
 
 
-      /* -----------------------------------------
-         LINKS
-         ----------------------------------------- */
+          return;
 
-      const encodedId =
-        encodeURIComponent(id);
+        }
 
 
-      document.getElementById(
-        "back-property-link"
-      ).href =
-        `property.html?id=${encodedId}`;
+        const propertyId =
+          firstDefined(
+            property.id,
+            property.propertyId,
+            requestedPropertyId
+          );
 
 
-      document.getElementById(
-        "rent-link"
-      ).href =
-        `operations-rent.html?id=${encodedId}`;
+        const address =
+          firstDefined(
+            property.address,
+            property.streetAddress,
+            property.location
+          );
 
 
-      document.getElementById(
-        "maintenance-link"
-      ).href =
-        `operations-maintenance.html?id=${encodedId}`;
+        const city =
+          firstDefined(
+            property.city
+          );
 
 
-      document.getElementById(
-        "insurance-link"
-      ).href =
-        `operations-insurance.html?id=${encodedId}`;
+        const state =
+          firstDefined(
+            property.state
+          );
 
 
-      document.getElementById(
-        "equity-link"
-      ).href =
-        `operations-equity.html?id=${encodedId}`;
+        const zip =
+          firstDefined(
+            property.zip,
+            property.zipCode,
+            property.postalCode
+          );
 
 
-      /* -----------------------------------------
-         PAGE
-         ----------------------------------------- */
+        const locationParts =
+          [
+            city,
+            state,
+            zip
+          ].filter(Boolean);
 
-      document.title =
-        `${id} | MREO Operations`;
 
+        let addressText =
+          display(
+            address
+          );
+
+
+        if (
+          locationParts.length > 0
+        ) {
+
+          addressText +=
+            " · " +
+            locationParts.join(", ");
+
+        }
+
+
+        const operations =
+          getOperationsData(
+            property
+          );
+
+
+        /* -------------------------------------------------
+           IDENTITY
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "property-id"
+        ).textContent =
+          propertyId;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          addressText;
+
+
+        /* -------------------------------------------------
+           OPERATIONS STATUS
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "operations-status"
+        ).textContent =
+          display(
+            firstDefined(
+              operations.status,
+              operations.operatingStatus,
+              operations.stage,
+              property.operationsStatus,
+              property.status
+            )
+          );
+
+
+        /* -------------------------------------------------
+           RENT
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "monthly-rent"
+        ).textContent =
+          formatCurrency(
+            firstDefined(
+              operations.monthlyRent,
+              operations.rent,
+              operations.grossRent,
+              property.monthlyRent,
+              property.rent
+            )
+          );
+
+
+        /* -------------------------------------------------
+           EQUITY
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "estimated-equity"
+        ).textContent =
+          formatCurrency(
+            firstDefined(
+              operations.estimatedEquity,
+              operations.equity,
+              property.estimatedEquity,
+              property.equity
+            )
+          );
+
+
+        /* -------------------------------------------------
+           NAVIGATION
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "back-link"
+        ).href =
+          propertyUrl(
+            "property.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "rent-link"
+        ).href =
+          propertyUrl(
+            "operations-rent.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "maintenance-link"
+        ).href =
+          propertyUrl(
+            "operations-maintenance.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "insurance-link"
+        ).href =
+          propertyUrl(
+            "operations-insurance.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "equity-link"
+        ).href =
+          propertyUrl(
+            "operations-equity.html",
+            propertyId
+          );
+
+
+        /* -------------------------------------------------
+           DOCUMENT TITLE
+           ------------------------------------------------- */
+
+        document.title =
+          propertyId +
+          " Operations | MREO";
+
+
+        content.hidden =
+          false;
+
+      }
+
+
+      /* ===================================================
+         CURRENT YEAR
+         =================================================== */
 
       document.getElementById(
         "current-year"
       ).textContent =
         new Date().getFullYear();
+
+
+      /* ===================================================
+         START
+         =================================================== */
+
+      render();
 
     })();
   </script>
