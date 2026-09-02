@@ -15,24 +15,32 @@
 
   <title>MREO | Real Estate Protocol</title>
 
+  <!-- Main site styles -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Landing-page-only styles -->
+  <link rel="stylesheet" href="landing.css">
 </head>
 
 <body class="landing">
 
   <!-- =========================================
-       INTRO
+       MAIN
        ========================================= -->
 
   <main>
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
 
     <section class="landing-intro">
 
       <div class="landing-intro-grid">
 
-        <!-- ===================================
+        <!-- ===============================
              TITLE
-             =================================== -->
+             =============================== -->
 
         <div class="landing-intro-copy">
 
@@ -57,9 +65,9 @@
         </div>
 
 
-        <!-- ===================================
+        <!-- ===============================
              BAUHAUS SHAPES
-             =================================== -->
+             =============================== -->
 
         <div
           class="landing-shapes"
@@ -79,18 +87,18 @@
     </section>
 
 
-    <!-- =========================================
-         PRIMARY CHOICE
-         ========================================= -->
+    <!-- =====================================
+         BUY / SELL
+         ===================================== -->
 
     <section
       class="landing-choice-grid"
       aria-label="Choose Buy or Sell"
     >
 
-      <!-- =====================================
+      <!-- ===============================
            BUY
-           ===================================== -->
+           =============================== -->
 
       <a
         class="landing-choice landing-choice-buy"
@@ -105,8 +113,13 @@
         <div class="landing-choice-content">
 
           <span class="landing-choice-label">
-            Buy
+            BUY
           </span>
+
+
+          <p class="landing-choice-description">
+            Browse properties, review property information, and explore purchase opportunities.
+          </p>
 
         </div>
 
@@ -121,9 +134,9 @@
       </a>
 
 
-      <!-- =====================================
+      <!-- ===============================
            SELL
-           ===================================== -->
+           =============================== -->
 
       <a
         class="landing-choice landing-choice-sell"
@@ -138,8 +151,13 @@
         <div class="landing-choice-content">
 
           <span class="landing-choice-label">
-            Sell
+            SELL
           </span>
+
+
+          <p class="landing-choice-description">
+            Analyze a property and compare retention, sale, and value-recovery options.
+          </p>
 
         </div>
 
@@ -169,14 +187,14 @@
     </div>
 
 
-    <div>
+    <div class="landing-footer-links">
 
       <a href="protocol.html">
         Protocol
       </a>
 
       <span aria-hidden="true">
-        &nbsp;·&nbsp;
+        ·
       </span>
 
       <a href="status-disclosure.html">
@@ -195,7 +213,6 @@
   <script>
     (() => {
       "use strict";
-
 
       document.getElementById(
         "current-year"
