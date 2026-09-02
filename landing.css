@@ -1,6 +1,6 @@
 /* =========================================================
    MREO LANDING PAGE
-   CLEAN REBUILD
+   CLEAN REBUILD — REFINED
    ========================================================= */
 
 
@@ -12,7 +12,6 @@ body.landing {
   width: 100%;
   height: 100vh;
   height: 100svh;
-
   min-height: 100vh;
   min-height: 100svh;
 
@@ -35,7 +34,6 @@ body.landing {
 
 .landing-main {
   width: 100%;
-
   flex: 1 1 auto;
   min-height: 0;
 
@@ -43,10 +41,7 @@ body.landing {
   padding: 0;
 
   display: grid;
-
-  grid-template-rows:
-    minmax(0, 49%)
-    minmax(0, 51%);
+  grid-template-rows: minmax(0, 49%) minmax(0, 51%);
 }
 
 
@@ -61,21 +56,13 @@ body.landing {
   box-sizing: border-box;
 
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    360px;
-
+  grid-template-columns: minmax(0, 1fr) 330px;
   align-items: center;
-
   gap: 0;
 
-  padding:
-    24px
-    22px;
+  padding: 24px 22px;
 
-  border-bottom:
-    1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
 
   overflow: hidden;
 }
@@ -87,63 +74,40 @@ body.landing {
 
 .landing-copy {
   min-width: 0;
-
   align-self: center;
 }
 
-
 .landing-eyebrow {
-  margin:
-    0
-    0
-    15px;
+  margin: 0 0 15px;
 
-  font-size:
-    clamp(11px, 0.82vw, 14px);
-
+  font-size: clamp(11px, 0.82vw, 14px);
   line-height: 1;
-
   font-weight: 900;
-
   letter-spacing: 0.19em;
-
   text-transform: uppercase;
 
   color: var(--blue);
 }
 
-
 .landing-title {
   margin: 0;
 
-  font-size:
-    clamp(88px, 9.7vw, 160px);
-
+  font-size: clamp(88px, 9.7vw, 160px);
   line-height: 0.79;
-
   font-weight: 950;
-
   letter-spacing: -0.085em;
 
   color: var(--ink);
 }
 
-
 .landing-subtitle {
-  max-width: 840px;
+  max-width: 900px;
 
-  margin:
-    22px
-    0
-    0;
+  margin: 22px 0 0;
 
-  font-size:
-    clamp(17px, 1.25vw, 22px);
-
+  font-size: clamp(17px, 1.25vw, 22px);
   line-height: 1.35;
-
   font-weight: 750;
-
   letter-spacing: 0.035em;
 
   color: var(--muted);
@@ -153,46 +117,37 @@ body.landing {
 /* =========================================================
    SHAPE STAGE
 
-   The whole composition is intentionally moved left.
+   Moved farther left than before.
    ========================================================= */
 
 .landing-shape-stage {
-  width: 360px;
+  width: 330px;
   height: 100%;
-
-  min-height: 300px;
+  min-height: 290px;
 
   display: flex;
-
   align-items: center;
   justify-content: flex-start;
 
-  /*
-    This is the major leftward shift you asked for.
-  */
-  transform:
-    translateX(-105px);
+  transform: translateX(-145px);
 }
 
 
 /* =========================================================
    SHAPE COMPOSITION
 
-   Fixed geometry based on your reference image.
-
-                CIRCLE
-
-       /
-      /
-                    SQUARE
-
+   Based closely on the reference image:
+   - blue diagonal line at lower-left
+   - yellow circle above/right
+   - red square below the circle
+   - blue line separated from the circle
    ========================================================= */
 
 .landing-shape-composition {
   position: relative;
 
-  width: 300px;
-  height: 285px;
+  width: 280px;
+  height: 255px;
 
   flex: 0 0 auto;
 }
@@ -203,17 +158,15 @@ body.landing {
 .landing-shape-composition .shape-line {
   position: absolute;
 
-  width: 178px;
+  width: 150px;
   height: 6px;
 
-  left: 8px;
-  top: 160px;
+  left: -2px;
+  top: 155px;
 
   background: var(--blue);
 
-  transform:
-    rotate(-56deg);
-
+  transform: rotate(-56deg);
   transform-origin: center;
 }
 
@@ -223,14 +176,13 @@ body.landing {
 .landing-shape-composition .shape-circle {
   position: absolute;
 
-  width: 148px;
-  height: 148px;
+  width: 146px;
+  height: 146px;
 
-  left: 142px;
+  left: 122px;
   top: 0;
 
   border-radius: 50%;
-
   background: var(--yellow);
 }
 
@@ -240,11 +192,11 @@ body.landing {
 .landing-shape-composition .shape-square {
   position: absolute;
 
-  width: 72px;
-  height: 72px;
+  width: 74px;
+  height: 74px;
 
-  left: 157px;
-  top: 180px;
+  left: 146px;
+  top: 162px;
 
   background: var(--red);
 }
@@ -262,9 +214,7 @@ body.landing {
   padding: 0;
 
   display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 
@@ -280,30 +230,22 @@ body.landing {
   min-width: 0;
   min-height: 0;
 
-  padding:
-    24px
-    22px;
+  padding: 24px 22px;
 
   display: flex;
   flex-direction: column;
-
   justify-content: center;
 
   text-decoration: none;
-
   color: var(--ink);
 
   overflow: hidden;
 }
 
-
 .landing-choice-buy {
   background: var(--yellow);
-
-  border-right:
-    1px solid var(--ink);
+  border-right: 1px solid var(--ink);
 }
-
 
 .landing-choice-sell {
   background: var(--paper-light);
@@ -320,13 +262,9 @@ body.landing {
   top: 20px;
   left: 22px;
 
-  font-size:
-    clamp(11px, 0.78vw, 14px);
-
+  font-size: clamp(11px, 0.78vw, 14px);
   line-height: 1;
-
   font-weight: 900;
-
   letter-spacing: 0.04em;
 }
 
@@ -334,40 +272,30 @@ body.landing {
 /* =========================================================
    CHOICE INNER GROUP
 
-   This uses most of the card width.
-
-   The arrow is part of the same group rather than
-   being positioned at the far browser edge.
+   Wider than before so the cards don't feel half empty.
    ========================================================= */
 
 .landing-choice-center {
-  width: 88%;
-
-  max-width: 680px;
+  width: calc(100% - 36px);
+  max-width: none;
 
   margin: 0;
 
-  transform:
-    translateY(-10px);
+  transform: translateY(-8px);
 }
 
 
 /* =========================================================
-   BUY / SELL LABEL
+   LABEL
    ========================================================= */
 
 .landing-choice-label {
   display: block;
-
   margin: 0;
 
-  font-size:
-    clamp(50px, 4.6vw, 74px);
-
+  font-size: clamp(50px, 4.6vw, 74px);
   line-height: 0.94;
-
   font-weight: 950;
-
   letter-spacing: -0.055em;
 }
 
@@ -378,19 +306,12 @@ body.landing {
 
 .landing-choice-description {
   width: 100%;
-
   max-width: none;
 
-  margin:
-    14px
-    0
-    0;
+  margin: 14px 0 0;
 
-  font-size:
-    clamp(15px, 1.05vw, 18px);
-
+  font-size: clamp(15px, 1.05vw, 18px);
   line-height: 1.38;
-
   font-weight: 600;
 }
 
@@ -398,8 +319,8 @@ body.landing {
 /* =========================================================
    ARROW
 
-   Directly beneath the description and aligned with
-   the right edge of the content group.
+   Now uses the full inner group width, so there is much
+   less dead space to the right.
    ========================================================= */
 
 .landing-choice-arrow {
@@ -413,11 +334,8 @@ body.landing {
 
   text-align: right;
 
-  font-size:
-    clamp(30px, 2.4vw, 42px);
-
+  font-size: clamp(30px, 2.4vw, 42px);
   line-height: 1;
-
   font-weight: 400;
 }
 
@@ -427,17 +345,13 @@ body.landing {
    ========================================================= */
 
 @media (hover: hover) {
-
   .landing-choice {
-    transition:
-      filter 150ms ease;
+    transition: filter 150ms ease;
   }
 
   .landing-choice:hover {
-    filter:
-      brightness(0.97);
+    filter: brightness(0.97);
   }
-
 }
 
 
@@ -454,52 +368,36 @@ body.landing {
   box-sizing: border-box;
 
   margin: 0;
-
-  padding:
-    0
-    22px;
+  padding: 0 22px;
 
   display: flex;
-
   align-items: center;
   justify-content: space-between;
 
   gap: 20px;
 
-  border-top:
-    1px solid var(--ink);
+  border-top: 1px solid var(--ink);
 
-  background:
-    var(--paper);
+  background: var(--paper);
 
-  font-size:
-    12px;
-
+  font-size: 12px;
   line-height: 1;
-
   font-weight: 750;
-
   letter-spacing: 0.06em;
 }
 
-
 .landing-footer a {
   color: var(--ink);
-
   text-decoration: none;
 }
-
 
 .landing-footer a:hover {
   text-decoration: underline;
 }
 
-
 .landing-footer-links {
   display: flex;
-
   align-items: center;
-
   gap: 9px;
 }
 
@@ -508,38 +406,24 @@ body.landing {
    MEDIUM LAPTOPS
    ========================================================= */
 
-@media
-  (min-width: 761px)
-  and (max-width: 1250px) {
-
+@media (min-width: 761px) and (max-width: 1250px) {
   .landing-hero {
-    grid-template-columns:
-      minmax(0, 1fr)
-      310px;
+    grid-template-columns: minmax(0, 1fr) 285px;
   }
-
 
   .landing-shape-stage {
-    width: 310px;
-
-    transform:
-      translateX(-70px);
+    width: 285px;
+    transform: translateX(-105px);
   }
-
 
   .landing-shape-composition {
-    transform:
-      scale(0.90);
-
-    transform-origin:
-      center;
+    transform: scale(0.88);
+    transform-origin: center;
   }
-
 
   .landing-choice-center {
-    width: 92%;
+    width: calc(100% - 28px);
   }
-
 }
 
 
@@ -547,75 +431,52 @@ body.landing {
    SHORT LAPTOP SCREENS
    ========================================================= */
 
-@media
-  (min-width: 761px)
-  and (max-height: 760px) {
-
+@media (min-width: 761px) and (max-height: 760px) {
   .landing-main {
-    grid-template-rows:
-      minmax(0, 47%)
-      minmax(0, 53%);
+    grid-template-rows: minmax(0, 47%) minmax(0, 53%);
   }
-
 
   .landing-hero {
     padding-top: 16px;
     padding-bottom: 16px;
   }
 
-
   .landing-title {
-    font-size:
-      clamp(74px, 8.5vw, 132px);
+    font-size: clamp(74px, 8.5vw, 132px);
   }
-
 
   .landing-subtitle {
     margin-top: 15px;
-
-    font-size:
-      clamp(15px, 1vw, 19px);
+    font-size: clamp(15px, 1vw, 19px);
   }
-
 
   .landing-shape-stage {
-    min-height: 230px;
+    min-height: 220px;
+    transform: translateX(-120px);
   }
-
 
   .landing-shape-composition {
-    transform:
-      scale(0.82);
-
-    transform-origin:
-      center;
+    transform: scale(0.80);
+    transform-origin: center;
   }
-
 
   .landing-choice-center {
-    transform:
-      translateY(-6px);
+    transform: translateY(-4px);
   }
-
 
   .landing-choice-description {
     margin-top: 10px;
-
-    font-size:
-      clamp(14px, 0.95vw, 16px);
+    font-size: clamp(14px, 0.95vw, 16px);
   }
-
 
   .landing-choice-arrow {
     margin-top: 12px;
   }
 
-
   .landing-footer {
     flex-basis: 44px;
     min-height: 44px;
   }
-
 }
 
 
@@ -624,10 +485,8 @@ body.landing {
    ========================================================= */
 
 @media (max-width: 760px) {
-
   body.landing {
     height: auto;
-
     min-height: 100vh;
     min-height: 100svh;
 
@@ -635,49 +494,32 @@ body.landing {
     overflow-y: auto;
   }
 
-
   .landing-main {
     display: block;
   }
-
-
-  /* HERO */
 
   .landing-hero {
     display: block;
 
     min-height: auto;
 
-    padding:
-      32px
-      18px
-      34px;
+    padding: 32px 18px 34px;
   }
 
-
   .landing-title {
-    font-size:
-      clamp(78px, 27vw, 124px);
-
+    font-size: clamp(78px, 27vw, 124px);
     line-height: 0.81;
   }
 
-
   .landing-subtitle {
     margin-top: 20px;
-
-    font-size:
-      clamp(17px, 5vw, 21px);
+    font-size: clamp(17px, 5vw, 21px);
   }
-
-
-  /* MOBILE SHAPES */
 
   .landing-shape-stage {
     width: 100%;
-    height: 220px;
-
-    min-height: 220px;
+    height: 210px;
+    min-height: 210px;
 
     margin-top: 20px;
 
@@ -686,87 +528,57 @@ body.landing {
     justify-content: flex-start;
   }
 
-
   .landing-shape-composition {
-    width: 245px;
+    width: 240px;
     height: 215px;
 
-    transform:
-      scale(0.78);
-
-    transform-origin:
-      top left;
+    transform: scale(0.78);
+    transform-origin: top left;
   }
-
-
-  /* STACK BUY / SELL */
 
   .landing-choices {
     display: block;
   }
 
-
   .landing-choice {
     min-height: 255px;
-
-    padding:
-      22px
-      18px;
+    padding: 22px 18px;
   }
-
 
   .landing-choice-buy {
     border-right: 0;
-
-    border-bottom:
-      1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
   }
-
 
   .landing-choice-number {
     top: 18px;
     left: 18px;
   }
 
-
   .landing-choice-center {
     width: 100%;
-    max-width: none;
-
-    transform:
-      translateY(-4px);
+    transform: translateY(-2px);
   }
-
 
   .landing-choice-label {
-    font-size:
-      clamp(52px, 16vw, 74px);
+    font-size: clamp(52px, 16vw, 74px);
   }
-
 
   .landing-choice-description {
     font-size: 16px;
-
     line-height: 1.42;
   }
 
-
   .landing-choice-arrow {
     margin-top: 14px;
-
     font-size: 38px;
   }
-
-
-  /* FOOTER */
 
   .landing-footer {
     min-height: auto;
     flex-basis: auto;
 
-    padding:
-      20px
-      18px;
+    padding: 20px 18px;
 
     align-items: flex-start;
     flex-direction: column;
@@ -775,5 +587,4 @@ body.landing {
 
     line-height: 1.4;
   }
-
 }
