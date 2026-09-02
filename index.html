@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="MREO prototype: a property operating network for decision support, acquisition, reconstruction, settlement, management, and productive ownership."
+    content="MREO is a prototype property operating network connecting property intelligence, owner decisions, qualified purchasers, reconstruction, settlement, management, and productive ownership."
   >
 
   <title>MREO | Property Operating Network</title>
@@ -18,15 +18,16 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="landing-page">
+
   <!-- =========================================
-       GLOBAL HEADER
+       SITE HEADER
        ========================================= -->
 
   <header class="site-header">
     <a
       class="brand"
-      href="#top"
+      href="index.html"
       aria-label="MREO home"
     >
       <span
@@ -48,43 +49,53 @@
       class="desktop-nav"
       aria-label="Primary navigation"
     >
-      <a href="#passport">Passport</a>
-      <a href="#pathways">Pathways</a>
-      <a href="#exchange">Exchange</a>
-      <a href="#reconstruction">Reconstruction</a>
-      <a href="#settlement">Settlement</a>
-      <a href="#operations">Operations</a>
+      <a href="properties.html">
+        Properties
+      </a>
+
+      <a href="seller.html">
+        Sell
+      </a>
+
+      <a href="buyer.html">
+        Buy
+      </a>
+
+      <a href="institutional.html">
+        Institutional
+      </a>
+
+      <a href="intelligence.html">
+        Intelligence
+      </a>
     </nav>
 
     <a
       class="header-action"
-      href="#search"
+      href="seller.html"
     >
       Analyze Property
     </a>
   </header>
 
 
-  <!-- =========================================
-       MAIN
-       ========================================= -->
-
-  <main id="top">
+  <main>
 
     <!-- =========================================
          HERO
          ========================================= -->
 
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-copy">
+    <section class="landing-hero">
+      <div class="landing-hero-grid">
+
+        <div class="landing-hero-copy">
           <p class="eyebrow">
-            Beyond property search
+            Real estate beyond the listing
           </p>
 
           <h1>
             Don't just find
-            <span>real estate.</span>
+            <span>property.</span>
 
             <strong>
               Operate it.
@@ -94,107 +105,229 @@
           <p class="hero-description">
             MREO is a prototype property operating network designed
             to connect property intelligence, owner decisions,
-            verified purchasers, reconstruction, settlement,
-            professional services, and ongoing ownership within
-            one continuous infrastructure.
+            qualified purchasers, reconstruction, settlement,
+            professional services, management, and productive
+            ownership within one continuous infrastructure.
           </p>
 
           <div class="hero-actions">
             <a
               class="primary-button"
-              href="#search"
+              href="properties.html"
             >
-              Analyze a property
-              <span aria-hidden="true">→</span>
+              Explore Properties
+
+              <span aria-hidden="true">
+                →
+              </span>
             </a>
 
             <a
-              class="text-button"
-              href="#network-model"
+              class="secondary-button"
+              href="seller.html"
             >
-              See how MREO works
+              Analyze My Property
             </a>
           </div>
         </div>
 
-        <div
-          class="hero-system-map"
-          aria-label="MREO property lifecycle"
-        >
-          <div class="system-map-header">
-            <span>Property lifecycle</span>
-            <strong>One continuous record</strong>
+
+        <!-- PROPERTY SYSTEM -->
+
+        <div class="hero-operating-system">
+          <div class="system-window-header">
+            <div>
+              <span class="system-status-dot"></span>
+
+              <span>
+                MREO Property Network
+              </span>
+            </div>
+
+            <span>
+              Prototype
+            </span>
           </div>
 
-          <div class="lifecycle">
-            <div class="lifecycle-item is-active">
-              <span class="lifecycle-number">01</span>
+          <div class="system-property">
+            <span class="system-property-label">
+              Property
+            </span>
+
+            <div class="system-property-address">
+              <span class="system-house-mark">
+                M
+              </span>
 
               <div>
-                <strong>Understand</strong>
-                <small>Property + owner objective</small>
+                <strong>
+                  4218 Maple Ridge Drive
+                </strong>
+
+                <small>
+                  Dallas, Texas
+                </small>
               </div>
             </div>
 
-            <div class="lifecycle-connector"></div>
+            <div class="system-property-status">
+              <span>
+                Passport active
+              </span>
 
-            <div class="lifecycle-item">
-              <span class="lifecycle-number">02</span>
+              <strong>
+                91% ready
+              </strong>
+            </div>
+          </div>
+
+          <div class="system-network-lines">
+
+            <a
+              class="system-node node-intelligence"
+              href="property.html?id=MREO-0001"
+            >
+              <span>
+                01
+              </span>
 
               <div>
-                <strong>Decide</strong>
-                <small>Compare property pathways</small>
+                <strong>
+                  Intelligence
+                </strong>
+
+                <small>
+                  Property Passport
+                </small>
               </div>
-            </div>
+            </a>
 
-            <div class="lifecycle-connector"></div>
-
-            <div class="lifecycle-item">
-              <span class="lifecycle-number">03</span>
+            <a
+              class="system-node node-pathways"
+              href="seller.html"
+            >
+              <span>
+                02
+              </span>
 
               <div>
-                <strong>Transact</strong>
-                <small>Qualified demand + settlement</small>
+                <strong>
+                  Pathways
+                </strong>
+
+                <small>
+                  Owner decisions
+                </small>
               </div>
-            </div>
+            </a>
 
-            <div class="lifecycle-connector"></div>
-
-            <div class="lifecycle-item">
-              <span class="lifecycle-number">04</span>
+            <a
+              class="system-node node-exchange"
+              href="exchange.html"
+            >
+              <span>
+                03
+              </span>
 
               <div>
-                <strong>Improve</strong>
-                <small>Reconstruction + capital</small>
+                <strong>
+                  Exchange
+                </strong>
+
+                <small>
+                  Qualified demand
+                </small>
               </div>
-            </div>
+            </a>
 
-            <div class="lifecycle-connector"></div>
-
-            <div class="lifecycle-item">
-              <span class="lifecycle-number">05</span>
+            <a
+              class="system-node node-reconstruction"
+              href="reconstruction.html"
+            >
+              <span>
+                04
+              </span>
 
               <div>
-                <strong>Operate</strong>
-                <small>Management + productive ownership</small>
+                <strong>
+                  Reconstruction
+                </strong>
+
+                <small>
+                  Capital + execution
+                </small>
               </div>
-            </div>
+            </a>
+
+            <a
+              class="system-node node-settlement"
+              href="settlement.html"
+            >
+              <span>
+                05
+              </span>
+
+              <div>
+                <strong>
+                  Settlement
+                </strong>
+
+                <small>
+                  Closing workflow
+                </small>
+              </div>
+            </a>
+
+            <a
+              class="system-node node-operations"
+              href="operations.html"
+            >
+              <span>
+                06
+              </span>
+
+              <div>
+                <strong>
+                  Operations
+                </strong>
+
+                <small>
+                  After closing
+                </small>
+              </div>
+            </a>
+
           </div>
         </div>
+
       </div>
 
-      <div class="hero-comparison">
-        <div class="comparison-label">
-          <span>Typical property portal</span>
-          <strong>Search → Lead → Transaction</strong>
+
+      <!-- POSITIONING STRIP -->
+
+      <div class="hero-positioning-strip">
+        <div>
+          <span>
+            Conventional property portal
+          </span>
+
+          <strong>
+            Search → Lead → Transaction
+          </strong>
         </div>
 
-        <div class="comparison-arrow" aria-hidden="true">
+        <div
+          class="positioning-arrow"
+          aria-hidden="true"
+        >
           →
         </div>
 
-        <div class="comparison-label comparison-label-mreo">
-          <span>MREO</span>
+        <div class="mreo-positioning">
+          <span>
+            MREO
+          </span>
+
           <strong>
             Understand → Decide → Execute → Improve → Operate
           </strong>
@@ -204,1043 +337,822 @@
 
 
     <!-- =========================================
-         PROPERTY SEARCH
+         FOUR ENTRY PATHS
          ========================================= -->
 
-    <section
-      id="search"
-      class="search-section"
-    >
+    <section class="entry-section">
       <div class="section-heading">
         <div>
           <p class="section-kicker">
-            Start with any property
+            Enter the network
           </p>
 
           <h2>
-            Build the property record.
+            One infrastructure.
+            <br>
+            Different starting points.
           </h2>
         </div>
 
         <p>
-          Search an address to initialize an MREO Property Passport.
-          Available structural and valuation data is retrieved through
-          the live MREO property-data service and combined with
-          demonstration transaction, reconstruction, and operating data.
+          MREO can begin with a homeowner deciding what to do,
+          a purchaser looking for opportunity, an institution
+          distributing inventory, or a professional providing
+          work around a property.
         </p>
       </div>
 
-      <div class="property-search-panel">
-        <form
-          id="property-search-form"
-          class="property-search-form"
-        >
-          <label for="property-search-input">
-            Property address
-          </label>
 
-          <div class="property-search-row">
-            <input
-              id="property-search-input"
-              name="address"
-              type="text"
-              autocomplete="street-address"
-              placeholder="5555 Richard Avenue, Dallas, TX 75206"
-              required
-            >
+      <div class="entry-grid">
 
-            <button
-              id="property-search-button"
-              class="primary-button search-submit-button"
-              type="submit"
-            >
-              Build Passport
-              <span aria-hidden="true">→</span>
-            </button>
+        <!-- SELLER -->
+
+        <article class="entry-card entry-card-seller">
+          <div class="entry-card-top">
+            <span class="entry-number">
+              01
+            </span>
+
+            <span class="entry-label">
+              Property owner
+            </span>
           </div>
-        </form>
 
-        <div class="demo-addresses">
-          <span>Try:</span>
+          <h3>
+            I have a property.
+          </h3>
 
-          <button
-            class="demo-address-button"
-            type="button"
-            data-demo-address="5555 Richard Avenue, Dallas, TX 75206"
+          <p>
+            Search your address, build a live property record,
+            compare realistic options, and understand whether
+            speed, value recovery, conventional sale, or continued
+            ownership best fits your objective.
+          </p>
+
+          <div class="entry-capabilities">
+            <span>
+              Live property lookup
+            </span>
+
+            <span>
+              Zillow review
+            </span>
+
+            <span>
+              RentCast data
+            </span>
+
+            <span>
+              Outcome analysis
+            </span>
+          </div>
+
+          <a
+            class="entry-link"
+            href="seller.html"
           >
-            Dallas example
-          </button>
+            Seller Decision Center
 
-          <button
-            class="demo-address-button"
-            type="button"
-            data-demo-address="1600 Pennsylvania Avenue NW, Washington, DC 20500"
+            <span aria-hidden="true">
+              →
+            </span>
+          </a>
+        </article>
+
+
+        <!-- BUYER -->
+
+        <article class="entry-card entry-card-buyer">
+          <div class="entry-card-top">
+            <span class="entry-number">
+              02
+            </span>
+
+            <span class="entry-label">
+              Purchaser
+            </span>
+          </div>
+
+          <h3>
+            I want to acquire property.
+          </h3>
+
+          <p>
+            Browse MREO inventory, inspect detailed Property
+            Passports, understand condition and transaction
+            readiness, and participate as qualified demand.
+          </p>
+
+          <div class="entry-capabilities">
+            <span>
+              Property marketplace
+            </span>
+
+            <span>
+              Verified records
+            </span>
+
+            <span>
+              Sealed bidding
+            </span>
+
+            <span>
+              Acquisition workspace
+            </span>
+          </div>
+
+          <a
+            class="entry-link"
+            href="buyer.html"
           >
-            Washington example
-          </button>
+            Buyer Acquisition Center
 
-          <button
-            class="demo-address-button"
-            type="button"
-            data-demo-address="350 Fifth Avenue, New York, NY 10118"
+            <span aria-hidden="true">
+              →
+            </span>
+          </a>
+        </article>
+
+
+        <!-- INSTITUTION -->
+
+        <article class="entry-card entry-card-institution">
+          <div class="entry-card-top">
+            <span class="entry-number">
+              03
+            </span>
+
+            <span class="entry-label">
+              Institution
+            </span>
+          </div>
+
+          <h3>
+            I manage property inventory.
+          </h3>
+
+          <p>
+            Turn portfolios into operational inventory with
+            standardized intake, readiness states, qualified
+            distribution, bidding, reconstruction, and disposition.
+          </p>
+
+          <div class="entry-capabilities">
+            <span>
+              Portfolio intake
+            </span>
+
+            <span>
+              Readiness pipeline
+            </span>
+
+            <span>
+              Global distribution
+            </span>
+
+            <span>
+              Portfolio intelligence
+            </span>
+          </div>
+
+          <a
+            class="entry-link"
+            href="institutional.html"
           >
-            New York example
-          </button>
-        </div>
+            Institutional Portfolio OS
 
-        <div
-          id="search-status"
-          class="search-status"
-          aria-live="polite"
-        >
-          <span class="status-dot"></span>
+            <span aria-hidden="true">
+              →
+            </span>
+          </a>
+        </article>
 
-          <span>
-            Enter an address to begin.
-          </span>
-        </div>
+
+        <!-- PROFESSIONAL -->
+
+        <article class="entry-card entry-card-professional">
+          <div class="entry-card-top">
+            <span class="entry-number">
+              04
+            </span>
+
+            <span class="entry-label">
+              Professional
+            </span>
+          </div>
+
+          <h3>
+            I provide property services.
+          </h3>
+
+          <p>
+            Property needs can become structured opportunities
+            for contractors, inspectors, title professionals,
+            managers, photographers, engineers, and other
+            qualified participants.
+          </p>
+
+          <div class="entry-capabilities">
+            <span>
+              Verified roles
+            </span>
+
+            <span>
+              Work opportunities
+            </span>
+
+            <span>
+              Attributed reports
+            </span>
+
+            <span>
+              Performance history
+            </span>
+          </div>
+
+          <a
+            class="entry-link"
+            href="reconstruction.html"
+          >
+            View Opportunity Network
+
+            <span aria-hidden="true">
+              →
+            </span>
+          </a>
+        </article>
+
       </div>
     </section>
 
 
     <!-- =========================================
-         PROPERTY COMMAND CENTER
+         PROPERTY MARKETPLACE PREVIEW
          ========================================= -->
 
-    <section
-      id="passport"
-      class="command-section"
-    >
-      <div class="command-header">
+    <section class="featured-properties-section">
+      <div class="section-heading">
         <div>
+          <p class="section-kicker">
+            MREO Property Marketplace
+          </p>
+
+          <h2>
+            Properties are more than listings.
+          </h2>
+        </div>
+
+        <p>
+          Each property can carry a persistent MREO Passport
+          containing its condition, valuation sources, pathway
+          status, transaction readiness, reconstruction information,
+          bidding activity, and operating history.
+        </p>
+      </div>
+
+
+      <div
+        id="featured-properties"
+        class="featured-property-grid"
+      >
+        <!--
+          Featured properties are inserted from data.js
+          so the same fictional MREO records are reused
+          throughout the entire prototype.
+        -->
+      </div>
+
+
+      <div class="section-action-row">
+        <a
+          class="primary-button"
+          href="properties.html"
+        >
+          View All 20 Properties
+
+          <span aria-hidden="true">
+            →
+          </span>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- =========================================
+         PROPERTY PASSPORT
+         ========================================= -->
+
+    <section class="passport-intro-section">
+      <div class="passport-intro-grid">
+
+        <div class="passport-intro-copy">
           <p class="section-kicker">
             MREO Property Passport
           </p>
 
-          <h2 id="property-display-address">
-            5555 Richard Avenue
+          <h2>
+            Give the property a persistent operating identity.
           </h2>
 
-          <p id="property-display-location">
-            Dallas, Texas 75206
+          <p>
+            Instead of rebuilding fragmented records every time
+            the property changes stage, MREO can organize the
+            asset around a continuing record whose sources,
+            decisions, documents, work, and transaction states
+            remain connected.
           </p>
-        </div>
-
-        <div class="passport-actions">
-          <a
-            id="zillow-link"
-            class="secondary-button"
-            href="https://www.zillow.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Review on Zillow
-          </a>
 
           <a
-            id="maps-link"
             class="secondary-button"
-            href="https://www.google.com/maps/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="property.html?id=MREO-0001"
           >
-            Map
+            Open Example Passport
           </a>
-
-          <button
-            id="share-passport-button"
-            class="primary-button"
-            type="button"
-          >
-            Share Passport
-          </button>
-        </div>
-      </div>
-
-      <div class="passport-status-bar">
-        <div>
-          <span class="passport-status-label">
-            Record status
-          </span>
-
-          <strong>
-            Active
-          </strong>
         </div>
 
-        <div>
-          <span class="passport-status-label">
-            Identity
-          </span>
 
-          <strong class="status-good">
-            Matched
-          </strong>
-        </div>
+        <div class="passport-demo">
 
-        <div>
-          <span class="passport-status-label">
-            Data sources
-          </span>
-
-          <strong id="source-count">
-            4
-          </strong>
-        </div>
-
-        <div>
-          <span class="passport-status-label">
-            Transaction readiness
-          </span>
-
-          <strong>
-            82%
-          </strong>
-        </div>
-
-        <div>
-          <span class="passport-status-label">
-            Last updated
-          </span>
-
-          <strong id="passport-last-updated">
-            Today
-          </strong>
-        </div>
-      </div>
-
-
-      <!-- SNAPSHOT -->
-
-      <div class="passport-grid">
-        <article class="passport-primary-card">
-          <div class="card-heading-row">
+          <div class="passport-demo-header">
             <div>
-              <span class="card-number">
-                01
+              <span>
+                MREO-0001
               </span>
 
-              <h3>
-                Property Snapshot
-              </h3>
+              <strong>
+                Property Passport
+              </strong>
             </div>
 
-            <span
-              id="property-type-badge"
-              class="record-badge"
-            >
-              Single Family
-            </span>
-          </div>
-
-          <div class="snapshot-value">
-            <span>
-              Automated value estimate
-            </span>
-
-            <strong id="estimated-value">
-              $929,000
-            </strong>
-
-            <small>
-              <span id="estimated-value-range">
-                $755,000 – $1,102,000
-              </span>
-
-              <button
-                class="source-link"
-                type="button"
-                data-open-source="valuation"
-              >
-                View source
-              </button>
-            </small>
-          </div>
-
-          <div class="snapshot-facts">
-            <div>
-              <span>Beds</span>
-              <strong id="property-beds">3</strong>
-            </div>
-
-            <div>
-              <span>Baths</span>
-              <strong id="property-baths">2.5</strong>
-            </div>
-
-            <div>
-              <span>Interior</span>
-              <strong id="property-sqft">1,825 sq ft</strong>
-            </div>
-
-            <div>
-              <span>Lot</span>
-              <strong id="property-lot">7,802 sq ft</strong>
-            </div>
-
-            <div>
-              <span>Year built</span>
-              <strong id="property-year">1915</strong>
-            </div>
-
-            <div>
-              <span>Public listing</span>
-              <strong id="property-listing-status">Not detected</strong>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- OWNER OBJECTIVE -->
-
-        <article class="passport-side-card owner-objective-card">
-          <div class="card-heading-row">
-            <div>
-              <span class="card-number">
-                02
-              </span>
-
-              <h3>
-                Owner Objective
-              </h3>
-            </div>
-          </div>
-
-          <p>
-            MREO begins with what the owner is trying to accomplish,
-            rather than assuming that listing the property is the
-            correct outcome.
-          </p>
-
-          <div
-            class="objective-options"
-            role="group"
-            aria-label="Owner objective"
-          >
-            <button
-              class="objective-button is-selected"
-              type="button"
-              data-objective="maximize"
-            >
-              Maximize value
-            </button>
-
-            <button
-              class="objective-button"
-              type="button"
-              data-objective="speed"
-            >
-              Sell quickly
-            </button>
-
-            <button
-              class="objective-button"
-              type="button"
-              data-objective="retain"
-            >
-              Keep property
-            </button>
-
-            <button
-              class="objective-button"
-              type="button"
-              data-objective="repair"
-            >
-              Improve before sale
-            </button>
-          </div>
-
-          <div class="objective-result">
-            <span>
-              Current MREO focus
-            </span>
-
-            <strong id="objective-result-text">
-              Compare net proceeds across sale and reconstruction pathways.
-            </strong>
-          </div>
-        </article>
-      </div>
-
-
-      <!-- PASSPORT RECORDS -->
-
-      <div class="record-matrix">
-        <article class="record-card">
-          <div class="record-card-top">
-            <span class="record-icon">
-              ID
-            </span>
-
-            <span class="record-state complete">
-              Verified
-            </span>
-          </div>
-
-          <h4>
-            Property Identity
-          </h4>
-
-          <p>
-            Address, parcel identity, jurisdiction,
-            geolocation, and authority record.
-          </p>
-
-          <button
-            class="record-action"
-            type="button"
-            data-record="identity"
-          >
-            Inspect record
-          </button>
-        </article>
-
-        <article class="record-card">
-          <div class="record-card-top">
-            <span class="record-icon">
-              VT
-            </span>
-
-            <span class="record-state complete">
-              3 sources
-            </span>
-          </div>
-
-          <h4>
-            Valuation
-          </h4>
-
-          <p>
-            Automated estimate, comparable evidence,
-            projected ARV, and seller assumptions.
-          </p>
-
-          <button
-            class="record-action"
-            type="button"
-            data-record="valuation"
-          >
-            Compare values
-          </button>
-        </article>
-
-        <article class="record-card">
-          <div class="record-card-top">
-            <span class="record-icon">
-              TL
-            </span>
-
-            <span class="record-state pending">
-              Review
-            </span>
-          </div>
-
-          <h4>
-            Title & Authority
-          </h4>
-
-          <p>
-            Ownership authority, title status,
-            lien review, and settlement prerequisites.
-          </p>
-
-          <button
-            class="record-action"
-            type="button"
-            data-record="title"
-          >
-            View requirements
-          </button>
-        </article>
-
-        <article class="record-card">
-          <div class="record-card-top">
-            <span class="record-icon">
-              PH
-            </span>
-
-            <span class="record-state complete">
-              Current
-            </span>
-          </div>
-
-          <h4>
-            Visual History
-          </h4>
-
-          <p>
-            Dated photographs, field observations,
-            video, inspections, and walkthroughs.
-          </p>
-
-          <button
-            class="record-action"
-            type="button"
-            data-record="visual"
-          >
-            Open timeline
-          </button>
-        </article>
-
-        <article class="record-card">
-          <div class="record-card-top">
-            <span class="record-icon">
-              RC
-            </span>
-
-            <span class="record-state active">
+            <span class="passport-live-badge">
               Active
             </span>
           </div>
 
-          <h4>
-            Reconstruction
-          </h4>
 
-          <p>
-            Scope of work, bids, controlled draws,
-            change orders, and milestone evidence.
-          </p>
-
-          <a
-            class="record-action"
-            href="#reconstruction"
-          >
-            Open workspace
-          </a>
-        </article>
-
-        <article class="record-card">
-          <div class="record-card-top">
-            <span class="record-icon">
-              TX
+          <div class="passport-demo-address">
+            <span class="passport-house">
+              M
             </span>
 
-            <span class="record-state active">
-              Ready
-            </span>
+            <div>
+              <strong>
+                4218 Maple Ridge Drive
+              </strong>
+
+              <small>
+                Dallas, TX 75229
+              </small>
+            </div>
           </div>
 
-          <h4>
-            Transaction
-          </h4>
 
-          <p>
-            Qualified buyers, bids, deposits,
-            contingencies, deadlines, and settlement.
-          </p>
+          <div class="passport-record-grid">
 
-          <a
-            class="record-action"
-            href="#exchange"
-          >
-            Open exchange
-          </a>
-        </article>
+            <div>
+              <span class="passport-record-code">
+                ID
+              </span>
 
-        <article class="record-card">
-          <div class="record-card-top">
-            <span class="record-icon">
-              OP
-            </span>
+              <strong>
+                Identity
+              </strong>
 
-            <span class="record-state pending">
-              Future
-            </span>
+              <small>
+                Verified
+              </small>
+            </div>
+
+            <div>
+              <span class="passport-record-code">
+                VT
+              </span>
+
+              <strong>
+                Valuation
+              </strong>
+
+              <small>
+                3 sources
+              </small>
+            </div>
+
+            <div>
+              <span class="passport-record-code">
+                TL
+              </span>
+
+              <strong>
+                Title
+              </strong>
+
+              <small>
+                Clear
+              </small>
+            </div>
+
+            <div>
+              <span class="passport-record-code">
+                PH
+              </span>
+
+              <strong>
+                Visual
+              </strong>
+
+              <small>
+                Current
+              </small>
+            </div>
+
+            <div>
+              <span class="passport-record-code">
+                RC
+              </span>
+
+              <strong>
+                Reconstruction
+              </strong>
+
+              <small>
+                Low need
+              </small>
+            </div>
+
+            <div>
+              <span class="passport-record-code">
+                TX
+              </span>
+
+              <strong>
+                Transaction
+              </strong>
+
+              <small>
+                Bid ready
+              </small>
+            </div>
+
+            <div>
+              <span class="passport-record-code">
+                OP
+              </span>
+
+              <strong>
+                Operations
+              </strong>
+
+              <small>
+                Available
+              </small>
+            </div>
+
+            <div class="passport-record-ai">
+              <span class="passport-record-code">
+                AI
+              </span>
+
+              <strong>
+                Intelligence
+              </strong>
+
+              <small>
+                Active
+              </small>
+            </div>
+
           </div>
+        </div>
 
-          <h4>
-            Operating History
-          </h4>
-
-          <p>
-            Management, tenants, maintenance,
-            insurance events, and future resale record.
-          </p>
-
-          <a
-            class="record-action"
-            href="#operations"
-          >
-            Preview operations
-          </a>
-        </article>
-
-        <article class="record-card record-card-dark">
-          <div class="record-card-top">
-            <span class="record-icon">
-              AI
-            </span>
-
-            <span class="record-state intelligent">
-              Live
-            </span>
-          </div>
-
-          <h4>
-            MREO Intelligence
-          </h4>
-
-          <p>
-            Interpret the record, identify missing
-            information, compare alternatives, and
-            prepare authorized actions.
-          </p>
-
-          <a
-            class="record-action"
-            href="#copilot"
-          >
-            Ask MREO
-          </a>
-        </article>
       </div>
     </section>
 
 
     <!-- =========================================
-         PATHWAYS
+         LIFECYCLE
          ========================================= -->
 
-    <section
-      id="pathways"
-      class="pathways-section"
-    >
-      <div class="section-heading">
+    <section class="lifecycle-section">
+      <div class="section-heading section-heading-light">
         <div>
           <p class="section-kicker">
-            Property Outcome Analysis
+            Continuous property infrastructure
           </p>
 
           <h2>
-            What should happen next?
-          </h2>
-        </div>
-
-        <p>
-          MREO compares economic outcomes rather than treating the
-          highest headline property value as the only relevant number.
-          Every pathway exposes assumptions, time, cost, uncertainty,
-          and expected owner proceeds.
-        </p>
-      </div>
-
-      <div class="pathway-summary-bar">
-        <div>
-          <span>Current owner priority</span>
-          <strong id="pathway-priority">
-            Maximize value
-          </strong>
-        </div>
-
-        <div>
-          <span>Model property value</span>
-          <strong id="pathway-model-value">
-            $929,000
-          </strong>
-        </div>
-
-        <div>
-          <span>MREO suggested review</span>
-          <strong id="pathway-recommendation">
-            Reconstruction-supported sale
-          </strong>
-        </div>
-      </div>
-
-      <div class="pathway-grid">
-
-        <!-- AS IS -->
-
-        <article
-          class="pathway-card"
-          data-pathway-card="asis"
-        >
-          <div class="pathway-card-header">
-            <span class="pathway-number">
-              A
-            </span>
-
-            <span class="pathway-speed">
-              Fastest
-            </span>
-          </div>
-
-          <h3>
-            Expedited As-Is Sale
-          </h3>
-
-          <p>
-            Distribute the property in its current condition
-            to verified purchasers and prioritize speed,
-            certainty, and limited seller preparation.
-          </p>
-
-          <div class="pathway-money">
-            <span>Modeled owner proceeds</span>
-            <strong id="asis-proceeds">
-              $650,300
-            </strong>
-          </div>
-
-          <div class="pathway-metrics">
-            <div>
-              <span>Time</span>
-              <strong>14–30 days</strong>
-            </div>
-
-            <div>
-              <span>Upfront owner cash</span>
-              <strong>$0</strong>
-            </div>
-
-            <div>
-              <span>Uncertainty</span>
-              <strong>Low</strong>
-            </div>
-          </div>
-
-          <button
-            class="pathway-select-button"
-            type="button"
-            data-select-pathway="asis"
-          >
-            Explore as-is pathway
-          </button>
-        </article>
-
-
-        <!-- CONVENTIONAL -->
-
-        <article
-          class="pathway-card"
-          data-pathway-card="conventional"
-        >
-          <div class="pathway-card-header">
-            <span class="pathway-number">
-              B
-            </span>
-
-            <span class="pathway-speed">
-              Market sale
-            </span>
-          </div>
-
-          <h3>
-            Conventional Sale
-          </h3>
-
-          <p>
-            Prepare and market the property through the
-            conventional market with professional representation
-            where appropriate.
-          </p>
-
-          <div class="pathway-money">
-            <span>Modeled owner proceeds</span>
-            <strong id="conventional-proceeds">
-              $836,100
-            </strong>
-          </div>
-
-          <div class="pathway-metrics">
-            <div>
-              <span>Time</span>
-              <strong>45–90 days</strong>
-            </div>
-
-            <div>
-              <span>Preparation</span>
-              <strong>Moderate</strong>
-            </div>
-
-            <div>
-              <span>Uncertainty</span>
-              <strong>Medium</strong>
-            </div>
-          </div>
-
-          <button
-            class="pathway-select-button"
-            type="button"
-            data-select-pathway="conventional"
-          >
-            Explore conventional sale
-          </button>
-        </article>
-
-
-        <!-- RECONSTRUCTION -->
-
-        <article
-          class="pathway-card pathway-card-featured is-selected"
-          data-pathway-card="reconstruction"
-        >
-          <div class="pathway-card-header">
-            <span class="pathway-number">
-              C
-            </span>
-
-            <span class="pathway-speed featured">
-              Highest modeled recovery
-            </span>
-          </div>
-
-          <h3>
-            Reconstruction-Supported Sale
-          </h3>
-
-          <p>
-            Coordinate financing, professional reconstruction,
-            milestone-controlled funding, and an improved-market
-            sale designed to recover value currently trapped
-            by property condition.
-          </p>
-
-          <div class="pathway-money">
-            <span>Modeled owner proceeds</span>
-            <strong id="reconstruction-proceeds">
-              $918,995
-            </strong>
-          </div>
-
-          <div class="pathway-metrics">
-            <div>
-              <span>Time</span>
-              <strong>90–150 days</strong>
-            </div>
-
-            <div>
-              <span>Owner cash</span>
-              <strong>Financing model</strong>
-            </div>
-
-            <div>
-              <span>Uncertainty</span>
-              <strong>Medium</strong>
-            </div>
-          </div>
-
-          <button
-            class="pathway-select-button"
-            type="button"
-            data-select-pathway="reconstruction"
-          >
-            Explore value recovery
-          </button>
-        </article>
-
-
-        <!-- HOLD -->
-
-        <article
-          class="pathway-card"
-          data-pathway-card="hold"
-        >
-          <div class="pathway-card-header">
-            <span class="pathway-number">
-              D
-            </span>
-
-            <span class="pathway-speed">
-              Retain ownership
-            </span>
-          </div>
-
-          <h3>
-            Improve & Operate
-          </h3>
-
-          <p>
-            Retain ownership while coordinating repair,
-            tenant placement, automated rent collection,
-            maintenance, and property operations.
-          </p>
-
-          <div class="pathway-money">
-            <span>Modeled monthly net</span>
-            <strong id="hold-monthly-income">
-              $3,150/mo
-            </strong>
-          </div>
-
-          <div class="pathway-metrics">
-            <div>
-              <span>Ownership</span>
-              <strong>Retained</strong>
-            </div>
-
-            <div>
-              <span>Liquidity</span>
-              <strong>Potential equity</strong>
-            </div>
-
-            <div>
-              <span>Management</span>
-              <strong>MREO network</strong>
-            </div>
-          </div>
-
-          <button
-            class="pathway-select-button"
-            type="button"
-            data-select-pathway="hold"
-          >
-            Explore ownership pathway
-          </button>
-        </article>
-      </div>
-
-      <div
-        id="pathway-detail-panel"
-        class="pathway-detail-panel"
-      >
-        <div>
-          <p class="section-kicker">
-            Selected pathway
-          </p>
-
-          <h3 id="selected-pathway-title">
-            Reconstruction-Supported Sale
-          </h3>
-
-          <p id="selected-pathway-description">
-            MREO coordinates financing, contractors, controlled
-            reconstruction draws, verification, and eventual market
-            distribution while making the assumptions and costs visible.
-          </p>
-        </div>
-
-        <div class="pathway-waterfall">
-          <div>
-            <span>Projected repaired value</span>
-            <strong id="waterfall-arv">
-              $1,068,350
-            </strong>
-          </div>
-
-          <div class="negative">
-            <span>Reconstruction</span>
-            <strong id="waterfall-repair">
-              − $93,000
-            </strong>
-          </div>
-
-          <div class="negative">
-            <span>Holding + transaction</span>
-            <strong id="waterfall-costs">
-              − $46,355
-            </strong>
-          </div>
-
-          <div class="negative">
-            <span>Financing / participation</span>
-            <strong id="waterfall-financing">
-              − $10,000
-            </strong>
-          </div>
-
-          <div class="total">
-            <span>Modeled owner proceeds</span>
-            <strong id="waterfall-net">
-              $918,995
-            </strong>
-          </div>
-        </div>
-
-        <p class="model-disclaimer">
-          Demonstration estimates only. Actual outcomes depend on
-          property condition, financing, market demand, title,
-          professional review, settlement expenses, and other factors.
-        </p>
-      </div>
-    </section>
-
-
-    <!-- =========================================
-         NETWORK MODEL
-         ========================================= -->
-
-    <section
-      id="network-model"
-      class="network-model-section"
-    >
-      <div class="section-heading light-heading">
-        <div>
-          <p class="section-kicker">
-            The operating network
-          </p>
-
-          <h2>
-            One property.
+            Closing is a transition.
             <br>
-            Many coordinated capabilities.
+            Not an endpoint.
           </h2>
         </div>
 
         <p>
-          Instead of sending the property into disconnected systems,
-          MREO keeps a persistent operational record while specialized
-          participants continue performing their legally distinct roles.
+          A property can remain inside the same operating network
+          as it moves from evaluation to sale, reconstruction,
+          settlement, financing, management, occupancy, and later
+          resale.
         </p>
       </div>
 
-      <div class="network-diagram">
-        <div class="network-center">
-          <span class="network-house">
-            M
+
+      <div class="lifecycle-track">
+
+        <a
+          class="lifecycle-stage"
+          href="seller.html"
+        >
+          <span class="stage-number">
+            01
+          </span>
+
+          <span class="stage-icon">
+            ?
+          </span>
+
+          <h3>
+            Understand
+          </h3>
+
+          <p>
+            Property facts, owner objective,
+            condition, and available alternatives.
+          </p>
+        </a>
+
+
+        <span
+          class="lifecycle-arrow"
+          aria-hidden="true"
+        >
+          →
+        </span>
+
+
+        <a
+          class="lifecycle-stage"
+          href="seller.html"
+        >
+          <span class="stage-number">
+            02
+          </span>
+
+          <span class="stage-icon">
+            Δ
+          </span>
+
+          <h3>
+            Decide
+          </h3>
+
+          <p>
+            Compare net outcomes instead of
+            relying on headline value alone.
+          </p>
+        </a>
+
+
+        <span
+          class="lifecycle-arrow"
+          aria-hidden="true"
+        >
+          →
+        </span>
+
+
+        <a
+          class="lifecycle-stage"
+          href="exchange.html"
+        >
+          <span class="stage-number">
+            03
+          </span>
+
+          <span class="stage-icon">
+            ⇄
+          </span>
+
+          <h3>
+            Exchange
+          </h3>
+
+          <p>
+            Qualified purchasers, sealed offers,
+            executable bids, and backups.
+          </p>
+        </a>
+
+
+        <span
+          class="lifecycle-arrow"
+          aria-hidden="true"
+        >
+          →
+        </span>
+
+
+        <a
+          class="lifecycle-stage"
+          href="reconstruction.html"
+        >
+          <span class="stage-number">
+            04
+          </span>
+
+          <span class="stage-icon">
+            +
+          </span>
+
+          <h3>
+            Improve
+          </h3>
+
+          <p>
+            Contractors, capital, milestones,
+            controlled draws, and change orders.
+          </p>
+        </a>
+
+
+        <span
+          class="lifecycle-arrow"
+          aria-hidden="true"
+        >
+          →
+        </span>
+
+
+        <a
+          class="lifecycle-stage"
+          href="settlement.html"
+        >
+          <span class="stage-number">
+            05
+          </span>
+
+          <span class="stage-icon">
+            ✓
+          </span>
+
+          <h3>
+            Settle
+          </h3>
+
+          <p>
+            Deposits, title, deadlines,
+            documents, approvals, and closing.
+          </p>
+        </a>
+
+
+        <span
+          class="lifecycle-arrow"
+          aria-hidden="true"
+        >
+          →
+        </span>
+
+
+        <a
+          class="lifecycle-stage"
+          href="operations.html"
+        >
+          <span class="stage-number">
+            06
+          </span>
+
+          <span class="stage-icon">
+            ∞
+          </span>
+
+          <h3>
+            Operate
+          </h3>
+
+          <p>
+            Tenants, rent, maintenance,
+            equity, insurance, and future resale.
+          </p>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================
+         SELLER VALUE RECOVERY
+         ========================================= -->
+
+    <section class="value-recovery-section">
+      <div class="value-recovery-copy">
+        <p class="section-kicker">
+          Seller Value Recovery
+        </p>
+
+        <h2>
+          A property may contain value the owner cannot presently reach.
+        </h2>
+
+        <p>
+          An owner may possess substantial property value while
+          lacking the reconstruction capital, contractor access,
+          time, or project-management capability required to
+          realize it. MREO can model a reconstruction-supported
+          pathway alongside an immediate sale rather than assuming
+          the first discounted offer is necessarily the best option.
+        </p>
+
+        <a
+          class="primary-button"
+          href="seller.html"
+        >
+          Compare Property Pathways
+
+          <span aria-hidden="true">
+            →
+          </span>
+        </a>
+      </div>
+
+
+      <div class="value-comparison-card">
+        <div class="value-comparison-header">
+          <span>
+            Illustrative property pathway
           </span>
 
           <strong>
-            Property
+            Net outcome comparison
+          </strong>
+        </div>
+
+
+        <div class="value-option">
+          <div>
+            <span>
+              Path A
+            </span>
+
+            <strong>
+              Expedited As-Is Sale
+            </strong>
+          </div>
+
+          <strong class="value-option-money">
+            $248,000
           </strong>
 
-          <small>
-            Persistent operational identity
-          </small>
+          <span class="value-option-time">
+            14–30 days
+          </span>
         </div>
 
-        <div class="network-node node-owner">
-          <span>Owner</span>
-          <strong>Objectives + authority</strong>
+
+        <div class="value-option featured">
+          <div>
+            <span>
+              Path B
+            </span>
+
+            <strong>
+              Reconstruction-Supported Sale
+            </strong>
+          </div>
+
+          <strong class="value-option-money">
+            $326,000
+          </strong>
+
+          <span class="value-option-time">
+            90–150 days
+          </span>
         </div>
 
-        <div class="network-node node-buyer">
-          <span>Purchasers</span>
-          <strong>Verified demand</strong>
+
+        <div class="value-difference">
+          <span>
+            Modeled difference
+          </span>
+
+          <strong>
+            +$78,000
+          </strong>
         </div>
 
-        <div class="network-node node-capital">
-          <span>Capital</span>
-          <strong>Acquisition + reconstruction</strong>
-        </div>
 
-        <div class="network-node node-professionals">
-          <span>Professionals</span>
-          <strong>Licensed + verified work</strong>
-        </div>
-
-        <div class="network-node node-settlement">
-          <span>Settlement</span>
-          <strong>Title + escrow + closing</strong>
-        </div>
-
-        <div class="network-node node-operations">
-          <span>Operations</span>
-          <strong>Management + maintenance</strong>
-        </div>
+        <p>
+          Demonstration only. Actual property outcomes depend
+          on repair cost, value, financing, market conditions,
+          title, settlement expenses, timing, and other factors.
+        </p>
       </div>
     </section>
 
 
     <!-- =========================================
-         GLOBAL EXCHANGE
+         EXCHANGE PREVIEW
          ========================================= -->
 
-    <section
-      id="exchange"
-      class="exchange-section"
-    >
+    <section class="exchange-preview-section">
       <div class="section-heading">
         <div>
           <p class="section-kicker">
@@ -1248,1990 +1160,364 @@
           </p>
 
           <h2>
-            Interest is not the same as capacity.
+            The highest offer isn't always the strongest offer.
           </h2>
         </div>
 
         <p>
-          MREO separates casual interest from executable demand.
-          Verified purchasers can submit sealed offers that are
-          evaluated not only by price, but by capital strength,
-          contingencies, speed, and execution risk.
+          MREO can distinguish price from execution by making
+          capital strength, contingencies, closing period,
+          deposits, and other transaction factors visible.
         </p>
       </div>
 
-      <div class="exchange-stats">
-        <div>
-          <strong>27</strong>
-          <span>Qualified purchasers</span>
-        </div>
 
-        <div>
-          <strong>8</strong>
-          <span>Sealed bids received</span>
-        </div>
+      <div class="exchange-preview">
 
-        <div>
-          <strong>5</strong>
-          <span>Capital confirmed</span>
-        </div>
-
-        <div>
-          <strong>3</strong>
-          <span>Backup-ready buyers</span>
-        </div>
-      </div>
-
-      <div class="exchange-layout">
-        <article class="bid-board">
-          <div class="panel-header">
-            <div>
-              <span class="panel-eyebrow">
-                Executable-Bid Scorecard
-              </span>
-
-              <h3>
-                Seller Decision Workspace
-              </h3>
-            </div>
-
-            <span class="sealed-badge">
-              Sealed bidding complete
-            </span>
-          </div>
-
-          <div class="bid-table-wrap">
-            <table class="bid-table">
-              <thead>
-                <tr>
-                  <th>Buyer</th>
-                  <th>Offer</th>
-                  <th>Capital</th>
-                  <th>Contingencies</th>
-                  <th>Close</th>
-                  <th>Execution</th>
-                  <th></th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr
-                  class="bid-row"
-                  data-bid-id="A"
-                >
-                  <td>
-                    <div class="buyer-identity">
-                      <span class="buyer-avatar">
-                        A
-                      </span>
-
-                      <div>
-                        <strong>Buyer A</strong>
-                        <small>Institutional</small>
-                      </div>
-                    </div>
-                  </td>
-
-                  <td class="bid-price">
-                    $905,000
-                  </td>
-
-                  <td>
-                    <span class="capital-state pending">
-                      Financing pending
-                    </span>
-                  </td>
-
-                  <td>
-                    Inspection + financing
-                  </td>
-
-                  <td>
-                    45 days
-                  </td>
-
-                  <td>
-                    <div class="execution-score">
-                      <strong>68</strong>
-                      <span>Medium</span>
-                    </div>
-                  </td>
-
-                  <td>
-                    <button
-                      class="bid-select-button"
-                      type="button"
-                      data-select-bid="A"
-                    >
-                      Review
-                    </button>
-                  </td>
-                </tr>
-
-                <tr
-                  class="bid-row bid-row-recommended"
-                  data-bid-id="B"
-                >
-                  <td>
-                    <div class="buyer-identity">
-                      <span class="buyer-avatar">
-                        B
-                      </span>
-
-                      <div>
-                        <strong>Buyer B</strong>
-                        <small>Verified cash</small>
-                      </div>
-                    </div>
-                  </td>
-
-                  <td class="bid-price">
-                    $892,000
-                  </td>
-
-                  <td>
-                    <span class="capital-state confirmed">
-                      Confirmed
-                    </span>
-                  </td>
-
-                  <td>
-                    Limited inspection
-                  </td>
-
-                  <td>
-                    14 days
-                  </td>
-
-                  <td>
-                    <div class="execution-score high">
-                      <strong>94</strong>
-                      <span>High</span>
-                    </div>
-                  </td>
-
-                  <td>
-                    <button
-                      class="bid-select-button"
-                      type="button"
-                      data-select-bid="B"
-                    >
-                      Review
-                    </button>
-                  </td>
-                </tr>
-
-                <tr
-                  class="bid-row"
-                  data-bid-id="C"
-                >
-                  <td>
-                    <div class="buyer-identity">
-                      <span class="buyer-avatar">
-                        C
-                      </span>
-
-                      <div>
-                        <strong>Buyer C</strong>
-                        <small>Acquisition group</small>
-                      </div>
-                    </div>
-                  </td>
-
-                  <td class="bid-price">
-                    $899,500
-                  </td>
-
-                  <td>
-                    <span class="capital-state partial">
-                      Partially confirmed
-                    </span>
-                  </td>
-
-                  <td>
-                    Inspection + assignment
-                  </td>
-
-                  <td>
-                    30 days
-                  </td>
-
-                  <td>
-                    <div class="execution-score">
-                      <strong>79</strong>
-                      <span>Medium-high</span>
-                    </div>
-                  </td>
-
-                  <td>
-                    <button
-                      class="bid-select-button"
-                      type="button"
-                      data-select-bid="C"
-                    >
-                      Review
-                    </button>
-                  </td>
-                </tr>
-
-                <tr
-                  class="bid-row"
-                  data-bid-id="D"
-                >
-                  <td>
-                    <div class="buyer-identity">
-                      <span class="buyer-avatar">
-                        D
-                      </span>
-
-                      <div>
-                        <strong>Buyer D</strong>
-                        <small>Owner occupant</small>
-                      </div>
-                    </div>
-                  </td>
-
-                  <td class="bid-price">
-                    $887,000
-                  </td>
-
-                  <td>
-                    <span class="capital-state confirmed">
-                      Pre-underwritten
-                    </span>
-                  </td>
-
-                  <td>
-                    Inspection
-                  </td>
-
-                  <td>
-                    21 days
-                  </td>
-
-                  <td>
-                    <div class="execution-score high">
-                      <strong>88</strong>
-                      <span>High</span>
-                    </div>
-                  </td>
-
-                  <td>
-                    <button
-                      class="bid-select-button"
-                      type="button"
-                      data-select-bid="D"
-                    >
-                      Review
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-
-        <!-- SELECTED BID -->
-
-        <aside class="selected-bid-panel">
-          <span class="panel-eyebrow">
-            Selected for review
+        <div class="exchange-preview-header">
+          <span>
+            Executable-Bid Scorecard
           </span>
 
-          <div class="selected-bid-name">
-            <span
-              id="selected-buyer-avatar"
-              class="buyer-avatar large"
-            >
-              B
+          <strong>
+            4218 Maple Ridge Drive
+          </strong>
+
+          <span class="sealed-badge">
+            Sealed bids
+          </span>
+        </div>
+
+
+        <div class="exchange-preview-row">
+          <div class="exchange-buyer">
+            <span>
+              A
             </span>
 
-            <div>
-              <h3 id="selected-buyer-name">
-                Buyer B
-              </h3>
-
-              <p id="selected-buyer-type">
-                Verified cash purchaser
-              </p>
-            </div>
-          </div>
-
-          <div class="selected-bid-price">
-            <span>Offer</span>
-
-            <strong id="selected-bid-price">
-              $892,000
+            <strong>
+              Buyer A
             </strong>
           </div>
 
-          <div class="selected-bid-checks">
-            <div class="check-row">
-              <span class="check-icon">
-                ✓
-              </span>
+          <strong>
+            $405,000
+          </strong>
 
-              <div>
-                <strong>
-                  Identity verified
-                </strong>
+          <span>
+            Financing pending
+          </span>
 
-                <small>
-                  Current through 2027
-                </small>
-              </div>
-            </div>
+          <span>
+            45 days
+          </span>
 
-            <div class="check-row">
-              <span class="check-icon">
-                ✓
-              </span>
-
-              <div>
-                <strong>
-                  Capital confirmed
-                </strong>
-
-                <small>
-                  Proof of funds current
-                </small>
-              </div>
-            </div>
-
-            <div class="check-row">
-              <span class="check-icon">
-                ✓
-              </span>
-
-              <div>
-                <strong>
-                  Deposit capacity confirmed
-                </strong>
-
-                <small>
-                  Activation ready
-                </small>
-              </div>
-            </div>
-
-            <div class="check-row">
-              <span class="check-icon">
-                ✓
-              </span>
-
-              <div>
-                <strong>
-                  14-day closing target
-                </strong>
-
-                <small>
-                  Limited inspection contingency
-                </small>
-              </div>
-            </div>
-          </div>
-
-          <div class="execution-probability">
-            <div>
-              <span>
-                Execution strength
-              </span>
-
-              <strong id="selected-execution-score">
-                94 / 100
-              </strong>
-            </div>
-
-            <div class="score-track">
-              <span
-                id="selected-execution-bar"
-                style="width: 94%;"
-              ></span>
-            </div>
+          <div class="exchange-score medium">
+            <strong>
+              68
+            </strong>
 
             <small>
-              Demonstration score based on transparent transaction
-              factors, not a guarantee of closing.
+              Execution
             </small>
           </div>
-
-          <button
-            id="activate-bid-button"
-            class="primary-button full-button"
-            type="button"
-          >
-            Select Buyer B
-          </button>
-        </aside>
-      </div>
-
-
-      <!-- BACKUP WATERFALL -->
-
-      <div class="backup-waterfall">
-        <div class="waterfall-heading">
-          <div>
-            <span class="panel-eyebrow">
-              Backup-Bidder Waterfall
-            </span>
-
-            <h3>
-              Keep qualified demand alive.
-            </h3>
-          </div>
-
-          <p>
-            If the selected purchaser fails an activation requirement,
-            the seller can move to a qualified backup without rebuilding
-            the transaction from zero.
-          </p>
         </div>
 
-        <div class="waterfall-steps">
-          <div class="waterfall-step selected">
-            <span class="waterfall-position">
-              Selected
+
+        <div class="exchange-preview-row recommended">
+          <div class="exchange-buyer">
+            <span>
+              B
             </span>
 
-            <strong>Buyer B</strong>
+            <strong>
+              Buyer B
+            </strong>
+          </div>
+
+          <strong>
+            $397,000
+          </strong>
+
+          <span>
+            Confirmed cash
+          </span>
+
+          <span>
+            14 days
+          </span>
+
+          <div class="exchange-score high">
+            <strong>
+              94
+            </strong>
 
             <small>
-              $892,000 · 94 execution score
+              Execution
             </small>
           </div>
+        </div>
 
-          <div class="waterfall-arrow">
-            →
-          </div>
 
-          <div class="waterfall-step">
-            <span class="waterfall-position">
-              Backup 1
+        <div class="exchange-preview-row">
+          <div class="exchange-buyer">
+            <span>
+              C
             </span>
 
-            <strong>Buyer D</strong>
+            <strong>
+              Buyer C
+            </strong>
+          </div>
+
+          <strong>
+            $402,000
+          </strong>
+
+          <span>
+            Partial confirmation
+          </span>
+
+          <span>
+            30 days
+          </span>
+
+          <div class="exchange-score">
+            <strong>
+              79
+            </strong>
 
             <small>
-              $887,000 · 88 execution score
-            </small>
-          </div>
-
-          <div class="waterfall-arrow">
-            →
-          </div>
-
-          <div class="waterfall-step">
-            <span class="waterfall-position">
-              Backup 2
-            </span>
-
-            <strong>Buyer C</strong>
-
-            <small>
-              $899,500 · 79 execution score
+              Execution
             </small>
           </div>
         </div>
+
+      </div>
+
+
+      <div class="section-action-row">
+        <a
+          class="secondary-button"
+          href="exchange.html"
+        >
+          Open Qualified Exchange
+        </a>
       </div>
     </section>
 
 
     <!-- =========================================
-         REMOTE VERIFICATION
+         INSTITUTIONAL PREVIEW
          ========================================= -->
 
-    <section class="verification-section">
-      <div class="verification-layout">
-        <div>
-          <p class="section-kicker">
-            MREO Field Verification
-          </p>
+    <section class="institutional-preview-section">
 
-          <h2>
-            Give remote buyers eyes on the ground.
-          </h2>
-
-          <p>
-            Verified local participants can provide current photographs,
-            geotagged video, authorized walkthroughs, construction
-            evidence, and observations without pretending to replace
-            licensed inspection or appraisal.
-          </p>
-
-          <button
-            id="request-verification-button"
-            class="primary-button"
-            type="button"
-          >
-            Request Field Verification
-          </button>
-        </div>
-
-        <div class="verification-console">
-          <div class="verification-video">
-            <div class="video-placeholder">
-              <span class="live-indicator">
-                LIVE
-              </span>
-
-              <div class="video-house">
-                <span></span>
-              </div>
-
-              <strong>
-                Authorized walkthrough
-              </strong>
-
-              <small>
-                Dallas field agent · 2:14 PM
-              </small>
-            </div>
-          </div>
-
-          <div class="verification-events">
-            <div>
-              <span>14:11</span>
-              <p>
-                Front exterior captured
-              </p>
-            </div>
-
-            <div>
-              <span>14:14</span>
-              <p>
-                Foundation perimeter requested
-              </p>
-            </div>
-
-            <div>
-              <span>14:17</span>
-              <p>
-                HVAC identification photographed
-              </p>
-            </div>
-
-            <div>
-              <span>14:21</span>
-              <p>
-                Buyer requested closer roofline view
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- =========================================
-         RECONSTRUCTION
-         ========================================= -->
-
-    <section
-      id="reconstruction"
-      class="reconstruction-section"
-    >
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">
-            Reconstruction workspace
-          </p>
-
-          <h2>
-            Turn repair into a managed process.
-          </h2>
-        </div>
-
-        <p>
-          Scope, bids, capital, progress, change orders, and
-          verified milestones stay attached to the property record.
-        </p>
-      </div>
-
-      <div class="reconstruction-dashboard">
-        <article class="budget-card">
-          <div class="panel-header">
-            <div>
-              <span class="panel-eyebrow">
-                Approved reconstruction plan
-              </span>
-
-              <h3>
-                Budget Control
-              </h3>
-            </div>
-
-            <span class="budget-status">
-              On budget
-            </span>
-          </div>
-
-          <div class="budget-total">
-            <span>Approved budget</span>
-            <strong>$93,000</strong>
-          </div>
-
-          <div class="budget-used">
-            <div>
-              <span>
-                Committed / drawn
-              </span>
-
-              <strong id="reconstruction-used">
-                $46,500
-              </strong>
-            </div>
-
-            <div class="budget-progress">
-              <span
-                id="reconstruction-budget-bar"
-                style="width: 50%;"
-              ></span>
-            </div>
-
-            <small id="reconstruction-budget-text">
-              50% of approved reconstruction budget
-            </small>
-          </div>
-
-          <div class="budget-lines">
-            <div>
-              <span>
-                Stabilization + demolition
-              </span>
-
-              <strong>
-                $16,000
-              </strong>
-            </div>
-
-            <div>
-              <span>
-                Structural + mechanical
-              </span>
-
-              <strong>
-                $31,000
-              </strong>
-            </div>
-
-            <div>
-              <span>
-                Interior completion
-              </span>
-
-              <strong>
-                $34,000
-              </strong>
-            </div>
-
-            <div>
-              <span>
-                Final + contingency
-              </span>
-
-              <strong>
-                $12,000
-              </strong>
-            </div>
-          </div>
-        </article>
-
-
-        <article class="milestone-card">
-          <div class="panel-header">
-            <div>
-              <span class="panel-eyebrow">
-                Controlled draws
-              </span>
-
-              <h3>
-                Milestone Verification
-              </h3>
-            </div>
-          </div>
-
-          <div class="milestone-list">
-            <button
-              class="milestone-item complete"
-              type="button"
-              data-milestone="1"
-            >
-              <span class="milestone-check">
-                ✓
-              </span>
-
-              <div>
-                <strong>
-                  Stabilization complete
-                </strong>
-
-                <small>
-                  $16,000 released · Verified Aug 12
-                </small>
-              </div>
-
-              <span class="milestone-state">
-                Complete
-              </span>
-            </button>
-
-            <button
-              class="milestone-item complete"
-              type="button"
-              data-milestone="2"
-            >
-              <span class="milestone-check">
-                ✓
-              </span>
-
-              <div>
-                <strong>
-                  Mechanical rough-in
-                </strong>
-
-                <small>
-                  $30,500 released · Verified Aug 28
-                </small>
-              </div>
-
-              <span class="milestone-state">
-                Complete
-              </span>
-            </button>
-
-            <button
-              class="milestone-item active"
-              type="button"
-              data-milestone="3"
-            >
-              <span class="milestone-check">
-                3
-              </span>
-
-              <div>
-                <strong>
-                  Interior completion
-                </strong>
-
-                <small>
-                  Documentation due Sep 8
-                </small>
-              </div>
-
-              <span class="milestone-state">
-                In progress
-              </span>
-            </button>
-
-            <button
-              class="milestone-item"
-              type="button"
-              data-milestone="4"
-            >
-              <span class="milestone-check">
-                4
-              </span>
-
-              <div>
-                <strong>
-                  Final completion
-                </strong>
-
-                <small>
-                  Final inspection + contingency reconciliation
-                </small>
-              </div>
-
-              <span class="milestone-state">
-                Pending
-              </span>
-            </button>
-          </div>
-        </article>
-
-
-        <article class="change-order-card">
-          <span class="panel-eyebrow">
-            Change control
-          </span>
-
-          <h3>
-            Change Order #03
-          </h3>
-
-          <p>
-            Plumbing inspection identified additional galvanized
-            supply lines requiring replacement.
-          </p>
-
-          <div class="change-order-money">
-            <span>Proposed increase</span>
-            <strong>+$6,800</strong>
-          </div>
-
-          <div class="change-order-impact">
-            <div>
-              <span>
-                Revised budget
-              </span>
-
-              <strong>
-                $99,800
-              </strong>
-            </div>
-
-            <div>
-              <span>
-                Effect on modeled proceeds
-              </span>
-
-              <strong class="negative-value">
-                −$6,800
-              </strong>
-            </div>
-          </div>
-
-          <div class="change-actions">
-            <button
-              id="approve-change-button"
-              class="primary-button"
-              type="button"
-            >
-              Approve change
-            </button>
-
-            <button
-              id="request-rebid-button"
-              class="secondary-button"
-              type="button"
-            >
-              Request competing bid
-            </button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-
-    <!-- =========================================
-         PROFESSIONAL NETWORK
-         ========================================= -->
-
-    <section class="professional-section">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">
-            Opportunity Team
-          </p>
-
-          <h2>
-            Every property creates a network of work.
-          </h2>
-        </div>
-
-        <p>
-          Verified professionals can be coordinated around the
-          property while their roles, credentials, proposals,
-          responsibilities, and work remain attributable.
-        </p>
-      </div>
-
-      <div class="professional-grid">
-        <article class="professional-card is-active">
-          <div class="professional-avatar">
-            CT
-          </div>
-
-          <span class="professional-role">
-            General Contractor
-          </span>
-
-          <h3>
-            Cedarline Construction
-          </h3>
-
-          <p>
-            Reconstruction lead
-          </p>
-
-          <div class="professional-meta">
-            <span>✓ Verified</span>
-            <span>4.9 performance</span>
-          </div>
-
-          <button
-            class="professional-button"
-            type="button"
-          >
-            View work
-          </button>
-        </article>
-
-        <article class="professional-card">
-          <div class="professional-avatar">
-            IN
-          </div>
-
-          <span class="professional-role">
-            Inspector
-          </span>
-
-          <h3>
-            North Texas Property Inspection
-          </h3>
-
-          <p>
-            Structural + systems review
-          </p>
-
-          <div class="professional-meta">
-            <span>✓ Verified</span>
-            <span>124 MREO records</span>
-          </div>
-
-          <button
-            class="professional-button"
-            type="button"
-          >
-            View report
-          </button>
-        </article>
-
-        <article class="professional-card">
-          <div class="professional-avatar">
-            TL
-          </div>
-
-          <span class="professional-role">
-            Title / Settlement
-          </span>
-
-          <h3>
-            Meridian Title Services
-          </h3>
-
-          <p>
-            Title review + closing
-          </p>
-
-          <div class="professional-meta">
-            <span>✓ Verified</span>
-            <span>Closing assigned</span>
-          </div>
-
-          <button
-            class="professional-button"
-            type="button"
-          >
-            Open workspace
-          </button>
-        </article>
-
-        <article class="professional-card">
-          <div class="professional-avatar">
-            PM
-          </div>
-
-          <span class="professional-role">
-            Property Management
-          </span>
-
-          <h3>
-            MREO Local Operations
-          </h3>
-
-          <p>
-            Tenant + maintenance coordination
-          </p>
-
-          <div class="professional-meta">
-            <span>✓ Verified</span>
-            <span>Post-close ready</span>
-          </div>
-
-          <button
-            class="professional-button"
-            type="button"
-          >
-            Preview plan
-          </button>
-        </article>
-      </div>
-    </section>
-
-
-    <!-- =========================================
-         SETTLEMENT
-         ========================================= -->
-
-    <section
-      id="settlement"
-      class="settlement-section"
-    >
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">
-            Programmable Settlement
-          </p>
-
-          <h2>
-            Make every obligation visible.
-          </h2>
-        </div>
-
-        <p>
-          Settlement remains legally controlled by the authorized
-          parties and professionals, while MREO coordinates documents,
-          deposits, deadlines, approvals, and status.
-        </p>
-      </div>
-
-      <div class="settlement-layout">
-        <article class="settlement-timeline">
-          <div class="panel-header">
-            <div>
-              <span class="panel-eyebrow">
-                Closing target
-              </span>
-
-              <h3>
-                September 28, 2026
-              </h3>
-            </div>
-
-            <span class="settlement-status">
-              On track
-            </span>
-          </div>
-
-          <div class="timeline-list">
-            <div class="timeline-item complete">
-              <span class="timeline-marker">
-                ✓
-              </span>
-
-              <div>
-                <strong>
-                  Purchase agreement executed
-                </strong>
-
-                <small>
-                  Completed Sep 2
-                </small>
-              </div>
-            </div>
-
-            <div class="timeline-item complete">
-              <span class="timeline-marker">
-                ✓
-              </span>
-
-              <div>
-                <strong>
-                  Earnest money confirmed
-                </strong>
-
-                <small>
-                  $25,000 · Regulated escrow
-                </small>
-              </div>
-            </div>
-
-            <div class="timeline-item active">
-              <span class="timeline-marker">
-                3
-              </span>
-
-              <div>
-                <strong>
-                  Title exceptions under review
-                </strong>
-
-                <small>
-                  One unreleased lien requires resolution
-                </small>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-marker">
-                4
-              </span>
-
-              <div>
-                <strong>
-                  Final financing / funds confirmation
-                </strong>
-
-                <small>
-                  Due Sep 20
-                </small>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-marker">
-                5
-              </span>
-
-              <div>
-                <strong>
-                  Settlement authorization
-                </strong>
-
-                <small>
-                  Professional approval required
-                </small>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-marker">
-                6
-              </span>
-
-              <div>
-                <strong>
-                  Closing
-                </strong>
-
-                <small>
-                  Target Sep 28
-                </small>
-              </div>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- OBLIGATIONS -->
-
-        <article class="obligation-panel">
-          <span class="panel-eyebrow">
-            Transaction obligations
-          </span>
-
-          <h3>
-            What remains?
-          </h3>
-
-          <div class="obligation-list">
-            <div>
-              <span class="obligation-priority high">
-                Required
-              </span>
-
-              <div>
-                <strong>
-                  Resolve unreleased lien
-                </strong>
-
-                <small>
-                  Assigned: Meridian Title
-                </small>
-              </div>
-
-              <span>
-                Sep 18
-              </span>
-            </div>
-
-            <div>
-              <span class="obligation-priority medium">
-                Buyer
-              </span>
-
-              <div>
-                <strong>
-                  Refresh proof of funds
-                </strong>
-
-                <small>
-                  Current document expires Sep 21
-                </small>
-              </div>
-
-              <span>
-                Sep 20
-              </span>
-            </div>
-
-            <div>
-              <span class="obligation-priority low">
-                Review
-              </span>
-
-              <div>
-                <strong>
-                  Final property condition acknowledgment
-                </strong>
-
-                <small>
-                  Awaiting purchaser signature
-                </small>
-              </div>
-
-              <span>
-                Sep 23
-              </span>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- MONEY -->
-
-        <article class="settlement-money-card">
-          <span class="panel-eyebrow">
-            Transaction assurance
-          </span>
-
-          <h3>
-            Funds remain distinct from network access.
-          </h3>
-
-          <div class="money-stack">
-            <div>
-              <span>
-                Purchase price
-              </span>
-
-              <strong>
-                $892,000
-              </strong>
-            </div>
-
-            <div>
-              <span>
-                Earnest money
-              </span>
-
-              <strong>
-                $25,000
-              </strong>
-            </div>
-
-            <div>
-              <span>
-                Escrow status
-              </span>
-
-              <strong class="status-good">
-                Confirmed
-              </strong>
-            </div>
-
-            <div>
-              <span>
-                MREO access
-              </span>
-
-              <strong>
-                Active
-              </strong>
-            </div>
-          </div>
-
-          <p>
-            Network eligibility does not constitute proof that a
-            participant can purchase property. Property-specific
-            deposits and settlement funds remain separately verified.
-          </p>
-        </article>
-      </div>
-    </section>
-
-
-    <!-- =========================================
-         POST ACQUISITION OPERATIONS
-         ========================================= -->
-
-    <section
-      id="operations"
-      class="operations-section"
-    >
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">
-            After closing
-          </p>
-
-          <h2>
-            Closing isn't the end of the property record.
-          </h2>
-        </div>
-
-        <p>
-          MREO can transition the same asset from acquisition into
-          reconstruction, management, financing, occupancy,
-          maintenance, and eventual resale.
-        </p>
-      </div>
-
-      <div class="operations-dashboard">
-        <article class="operation-summary-card">
-          <span class="panel-eyebrow">
-            Ownership dashboard
-          </span>
-
-          <h3>
-            Operating Property
-          </h3>
-
-          <div class="operation-property">
-            <div>
-              <span class="operation-house-icon">
-                M
-              </span>
-
-              <div>
-                <strong id="operation-property-address">
-                  5555 Richard Avenue
-                </strong>
-
-                <small>
-                  Dallas, Texas
-                </small>
-              </div>
-            </div>
-
-            <span class="operation-state">
-              Stabilized
-            </span>
-          </div>
-
-          <div class="operation-values">
-            <div>
-              <span>
-                Estimated equity
-              </span>
-
-              <strong>
-                $318,400
-              </strong>
-            </div>
-
-            <div>
-              <span>
-                Monthly rent
-              </span>
-
-              <strong>
-                $5,200
-              </strong>
-            </div>
-
-            <div>
-              <span>
-                Monthly operating net
-              </span>
-
-              <strong>
-                $3,150
-              </strong>
-            </div>
-
-            <div>
-              <span>
-                Occupancy
-              </span>
-
-              <strong class="status-good">
-                Occupied
-              </strong>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- MANAGEMENT -->
-
-        <article class="operation-card">
-          <span class="operation-icon">
-            $$
-          </span>
-
-          <h3>
-            Rent Collection
-          </h3>
-
-          <strong class="operation-large-number">
-            $5,200
-          </strong>
-
-          <p>
-            September rent collected automatically.
-          </p>
-
-          <span class="operation-badge good">
-            On time
-          </span>
-        </article>
-
-        <article class="operation-card">
-          <span class="operation-icon">
-            MT
-          </span>
-
-          <h3>
-            Maintenance
-          </h3>
-
-          <strong class="operation-large-number">
-            1
-          </strong>
-
-          <p>
-            Open service request: kitchen disposal.
-          </p>
-
-          <button
-            class="small-action-button"
-            type="button"
-          >
-            Coordinate repair
-          </button>
-        </article>
-
-        <article class="operation-card">
-          <span class="operation-icon">
-            EQ
-          </span>
-
-          <h3>
-            Equity Liquidity
-          </h3>
-
-          <strong class="operation-large-number">
-            $318K
-          </strong>
-
-          <p>
-            Estimated available equity before underwriting.
-          </p>
-
-          <button
-            class="small-action-button"
-            type="button"
-          >
-            Explore options
-          </button>
-        </article>
-
-        <article class="operation-card">
-          <span class="operation-icon">
-            IN
-          </span>
-
-          <h3>
-            Insurance
-          </h3>
-
-          <strong class="operation-large-number">
-            Active
-          </strong>
-
-          <p>
-            Property coverage verified through June 2027.
-          </p>
-
-          <span class="operation-badge good">
-            Current
-          </span>
-        </article>
-
-        <article class="operation-card">
-          <span class="operation-icon">
-            RS
-          </span>
-
-          <h3>
-            Resale Readiness
-          </h3>
-
-          <strong class="operation-large-number">
-            91%
-          </strong>
-
-          <p>
-            Most property records are already current.
-          </p>
-
-          <button
-            class="small-action-button"
-            type="button"
-          >
-            Prepare resale
-          </button>
-        </article>
-      </div>
-    </section>
-
-
-    <!-- =========================================
-         INSTITUTIONAL PORTFOLIO
-         ========================================= -->
-
-    <section class="institutional-section">
-      <div class="institutional-intro">
+      <div class="institutional-preview-copy">
         <p class="section-kicker">
           Institutional MREO
         </p>
 
         <h2>
-          From listings to operational inventory.
+          A portfolio should behave like operational inventory.
         </h2>
 
         <p>
-          Banks, servicers, funds, developers, receivers,
-          governments, insurers, and other authorized institutions
-          can treat portfolios as assets moving through documented
-          stages of readiness rather than as disconnected listings.
+          Institutional property can be classified by authority,
+          condition, occupancy, title, transaction readiness,
+          reconstruction status, and disposition pathway instead
+          of remaining an undifferentiated collection of listings.
         </p>
+
+        <a
+          class="primary-button"
+          href="institutional.html"
+        >
+          Open Institutional OS
+
+          <span aria-hidden="true">
+            →
+          </span>
+        </a>
       </div>
 
-      <div class="institutional-dashboard">
-        <div class="portfolio-header">
+
+      <div class="institutional-preview-dashboard">
+        <div class="institutional-preview-header">
           <div>
-            <span class="panel-eyebrow">
-              Demonstration portfolio
+            <span>
+              Demonstration Portfolio
             </span>
 
-            <h3>
-              Southwest Residential Portfolio
-            </h3>
-          </div>
-
-          <span class="portfolio-value">
-            $184.6M projected value
-          </span>
-        </div>
-
-        <div class="portfolio-stats">
-          <div>
-            <strong>2,716</strong>
-            <span>Total properties</span>
-          </div>
-
-          <div>
-            <strong>872</strong>
-            <span>Ready for bidding</span>
-          </div>
-
-          <div>
-            <strong>314</strong>
-            <span>Under contract</span>
-          </div>
-
-          <div>
-            <strong>442</strong>
-            <span>Reconstruction</span>
-          </div>
-
-          <div>
-            <strong>128</strong>
-            <span>Ready for resale</span>
-          </div>
-        </div>
-
-        <div class="portfolio-pipeline">
-          <div>
-            <div class="pipeline-label">
-              <span>
-                Intake / documentation
-              </span>
-
-              <strong>
-                18%
-              </strong>
-            </div>
-
-            <div class="pipeline-track">
-              <span style="width: 18%;"></span>
-            </div>
-          </div>
-
-          <div>
-            <div class="pipeline-label">
-              <span>
-                Market / bidding
-              </span>
-
-              <strong>
-                32%
-              </strong>
-            </div>
-
-            <div class="pipeline-track">
-              <span style="width: 32%;"></span>
-            </div>
-          </div>
-
-          <div>
-            <div class="pipeline-label">
-              <span>
-                Under contract
-              </span>
-
-              <strong>
-                12%
-              </strong>
-            </div>
-
-            <div class="pipeline-track">
-              <span style="width: 12%;"></span>
-            </div>
-          </div>
-
-          <div>
-            <div class="pipeline-label">
-              <span>
-                Reconstruction
-              </span>
-
-              <strong>
-                16%
-              </strong>
-            </div>
-
-            <div class="pipeline-track">
-              <span style="width: 16%;"></span>
-            </div>
-          </div>
-
-          <div>
-            <div class="pipeline-label">
-              <span>
-                Operating / resale
-              </span>
-
-              <strong>
-                22%
-              </strong>
-            </div>
-
-            <div class="pipeline-track">
-              <span style="width: 22%;"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-alerts">
-          <div class="portfolio-alert high">
-            <span>66</span>
-
-            <p>
-              Properties require title intervention
-            </p>
-          </div>
-
-          <div class="portfolio-alert medium">
-            <span>41</span>
-
-            <p>
-              Field verification older than 60 days
-            </p>
-          </div>
-
-          <div class="portfolio-alert normal">
-            <span>17</span>
-
-            <p>
-              Selected buyers missed activation deadlines
-            </p>
-          </div>
-
-          <div class="portfolio-alert good">
-            <span>15</span>
-
-            <p>
-              Backup buyers immediately available
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- =========================================
-         DATA / PROVENANCE
-         ========================================= -->
-
-    <section class="provenance-section">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">
-            Source-aware property intelligence
-          </p>
-
-          <h2>
-            Every number should say where it came from.
-          </h2>
-        </div>
-
-        <p>
-          MREO distinguishes automated estimates, appraisals,
-          broker opinions, comparable evidence, seller assumptions,
-          reconstruction models, and transaction records instead
-          of collapsing them into one unexplained number.
-        </p>
-      </div>
-
-      <div class="provenance-table-wrap">
-        <table class="provenance-table">
-          <thead>
-            <tr>
-              <th>Record</th>
-              <th>Value</th>
-              <th>Source</th>
-              <th>Type</th>
-              <th>Updated</th>
-              <th>Integrity</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>
-                Automated valuation
-              </td>
-
-              <td id="provenance-rentcast-value">
-                $929,000
-              </td>
-
-              <td>
-                RentCast
-              </td>
-
-              <td>
-                AVM
-              </td>
-
-              <td id="provenance-rentcast-date">
-                Today
-              </td>
-
-              <td>
-                <span class="integrity-state verified">
-                  ✓ Source recorded
-                </span>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                Broker opinion
-              </td>
-
-              <td>
-                $955,000
-              </td>
-
-              <td>
-                Demonstration broker
-              </td>
-
-              <td>
-                BPO
-              </td>
-
-              <td>
-                Aug 30
-              </td>
-
-              <td>
-                <span class="integrity-state verified">
-                  ✓ Signed
-                </span>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                Projected repaired value
-              </td>
-
-              <td id="provenance-arv-value">
-                $1,068,350
-              </td>
-
-              <td>
-                MREO scenario model
-              </td>
-
-              <td>
-                Projected ARV
-              </td>
-
-              <td>
-                Today
-              </td>
-
-              <td>
-                <span class="integrity-state modeled">
-                  Assumptions visible
-                </span>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                Reconstruction budget
-              </td>
-
-              <td>
-                $93,000
-              </td>
-
-              <td>
-                Cedarline Construction
-              </td>
-
-              <td>
-                Contractor proposal
-              </td>
-
-              <td>
-                Aug 8
-              </td>
-
-              <td>
-                <span class="integrity-state verified">
-                  ✓ Version locked
-                </span>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                Tax assessment
-              </td>
-
-              <td>
-                $812,440
-              </td>
-
-              <td>
-                Demonstration county record
-              </td>
-
-              <td>
-                Public record
-              </td>
-
-              <td>
-                2026
-              </td>
-
-              <td>
-                <span class="integrity-state verified">
-                  ✓ Source recorded
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-
-    <!-- =========================================
-         AI COPILOT
-         ========================================= -->
-
-    <section
-      id="copilot"
-      class="copilot-section"
-    >
-      <div class="copilot-copy">
-        <p class="section-kicker">
-          MREO Intelligence
-        </p>
-
-        <h2>
-          AI that understands the property workflow.
-        </h2>
-
-        <p>
-          Instead of merely answering search questions, an
-          authorized MREO agent can interpret structured records,
-          identify missing materials, compare alternatives,
-          monitor deadlines, and prepare limited workflow actions
-          for human approval.
-        </p>
-
-        <div class="copilot-actions">
-          <button
-            class="copilot-prompt-button"
-            type="button"
-            data-copilot-prompt="risk"
-          >
-            What could delay closing?
-          </button>
-
-          <button
-            class="copilot-prompt-button"
-            type="button"
-            data-copilot-prompt="pathway"
-          >
-            Compare seller pathways
-          </button>
-
-          <button
-            class="copilot-prompt-button"
-            type="button"
-            data-copilot-prompt="reconstruction"
-          >
-            Review reconstruction risk
-          </button>
-
-          <button
-            class="copilot-prompt-button"
-            type="button"
-            data-copilot-prompt="missing"
-          >
-            What records are missing?
-          </button>
-        </div>
-      </div>
-
-      <div class="copilot-console">
-        <div class="copilot-header">
-          <div>
-            <span class="copilot-status-dot"></span>
-
             <strong>
-              MREO Property Agent
+              Southwest Residential Assets
             </strong>
           </div>
 
-          <span>
-            Policy-bound · Human authorization required
-          </span>
+          <strong>
+            2,716 properties
+          </strong>
         </div>
 
-        <div
-          id="copilot-messages"
-          class="copilot-messages"
-          aria-live="polite"
-        >
-          <div class="copilot-message system-message">
+
+        <div class="institutional-preview-stats">
+
+          <div>
+            <strong>
+              872
+            </strong>
+
             <span>
-              MREO
+              Ready for bidding
+            </span>
+          </div>
+
+          <div>
+            <strong>
+              314
+            </strong>
+
+            <span>
+              Under contract
+            </span>
+          </div>
+
+          <div>
+            <strong>
+              442
+            </strong>
+
+            <span>
+              Reconstruction
+            </span>
+          </div>
+
+          <div>
+            <strong>
+              128
+            </strong>
+
+            <span>
+              Ready for resale
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="institutional-alerts">
+
+          <div>
+            <span class="alert-number alert-high">
+              66
             </span>
 
             <p>
-              I reviewed the current property record. The selected
-              buyer has strong execution capacity, reconstruction is
-              currently within the approved budget, and the principal
-              closing risk is an unreleased title lien requiring
-              resolution before settlement.
+              Title intervention required
             </p>
           </div>
 
-          <div class="copilot-action-card">
+          <div>
+            <span class="alert-number alert-medium">
+              41
+            </span>
+
+            <p>
+              Field verification outdated
+            </p>
+          </div>
+
+          <div>
+            <span class="alert-number alert-normal">
+              17
+            </span>
+
+            <p>
+              Buyer activation deadlines missed
+            </p>
+          </div>
+
+          <div>
+            <span class="alert-number alert-good">
+              15
+            </span>
+
+            <p>
+              Backup purchasers immediately available
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         MREO INTELLIGENCE
+         ========================================= -->
+
+    <section class="intelligence-preview-section">
+
+      <div class="intelligence-preview-grid">
+
+        <div class="intelligence-copy">
+          <p class="section-kicker">
+            MREO Intelligence
+          </p>
+
+          <h2>
+            AI that understands the property workflow.
+          </h2>
+
+          <p>
+            An authorized MREO agent can interpret structured
+            records, compare alternatives, identify missing
+            materials, monitor deadlines, and prepare limited
+            actions for human approval.
+          </p>
+
+          <a
+            class="secondary-button button-light"
+            href="intelligence.html"
+          >
+            Open MREO Intelligence
+          </a>
+        </div>
+
+
+        <div class="intelligence-console">
+
+          <div class="intelligence-console-header">
+            <div>
+              <span class="ai-status-dot"></span>
+
+              <strong>
+                MREO Property Agent
+              </strong>
+            </div>
+
+            <span>
+              Human authorization required
+            </span>
+          </div>
+
+
+          <div class="intelligence-message">
+            <span class="ai-avatar">
+              M
+            </span>
+
+            <p>
+              The selected purchaser has strong execution capacity.
+              The principal closing risk is an unreleased title lien.
+              Reconstruction remains within the approved budget,
+              although Milestone 3 documentation is due in seven days.
+            </p>
+          </div>
+
+
+          <div class="intelligence-action">
             <span>
               Recommended next action
             </span>
@@ -3241,229 +1527,200 @@
             </strong>
 
             <button
-              id="copilot-action-button"
               type="button"
+              data-demo-notification="AI prepared the lien-status request for human review."
             >
-              Prepare request
+              Prepare Request
             </button>
           </div>
+
         </div>
 
-        <form
-          id="copilot-form"
-          class="copilot-input"
-        >
-          <input
-            id="copilot-input"
-            type="text"
-            placeholder="Ask about this property..."
-            autocomplete="off"
-          >
-
-          <button
-            type="submit"
-            aria-label="Send question"
-          >
-            →
-          </button>
-        </form>
       </div>
+
     </section>
 
 
     <!-- =========================================
-         RECORD INTEGRITY / ARCHITECTURE
+         DIFFERENCE / FINAL POSITIONING
          ========================================= -->
 
-    <section class="integrity-section">
-      <div class="integrity-heading">
+    <section class="difference-section">
+
+      <div class="difference-heading">
         <p class="section-kicker">
-          Hybrid architecture
+          Why MREO is different
         </p>
 
         <h2>
-          Familiar interface.
+          Search is the front door.
           <br>
-          Verifiable infrastructure beneath it.
+          Execution is the product.
         </h2>
       </div>
 
-      <div class="architecture-flow">
-        <article class="architecture-card web2">
-          <span class="architecture-number">
+
+      <div class="difference-grid">
+
+        <article>
+          <span>
             01
           </span>
 
           <h3>
-            Web2 Experience
+            Property intelligence
           </h3>
 
           <p>
-            Familiar accounts, fast property search,
-            customer support, live transaction interfaces,
-            and conventional browser access.
+            Source-aware records rather than one unexplained
+            property number.
           </p>
-
-          <div class="architecture-tags">
-            <span>Accounts</span>
-            <span>REST</span>
-            <span>WebSockets</span>
-            <span>Database</span>
-          </div>
         </article>
 
-        <div class="architecture-arrow">
-          →
-        </div>
 
-        <article class="architecture-card web3">
-          <span class="architecture-number">
+        <article>
+          <span>
             02
           </span>
 
           <h3>
-            Web3 Readiness
+            Owner decision support
           </h3>
 
           <p>
-            Cryptographic identity, content-addressed
-            records, version integrity, exportable data,
-            and selective blockchain anchoring.
+            Compare what the owner can actually do instead of
+            assuming every property should simply be listed.
           </p>
-
-          <div class="architecture-tags">
-            <span>Hashes</span>
-            <span>Signatures</span>
-            <span>JSON-LD</span>
-            <span>Anchoring</span>
-          </div>
         </article>
 
-        <div class="architecture-arrow">
-          →
-        </div>
 
-        <article class="architecture-card web4">
-          <span class="architecture-number">
+        <article>
+          <span>
             03
           </span>
 
           <h3>
-            Web4 Intelligence
+            Qualified demand
           </h3>
 
           <p>
-            Semantic records, event-driven automation,
-            vector retrieval, and policy-governed
-            artificial-intelligence assistance.
+            Distinguish purchasers who can execute from people
+            who are merely interested.
           </p>
-
-          <div class="architecture-tags">
-            <span>Semantic data</span>
-            <span>Events</span>
-            <span>Agents</span>
-            <span>Permissions</span>
-          </div>
         </article>
-      </div>
 
-      <div class="record-integrity-demo">
-        <div>
+
+        <article>
           <span>
-            Current property package fingerprint
+            04
           </span>
 
-          <code id="property-hash">
-            sha256:7a9f4c2d8e1b...31ac
-          </code>
-        </div>
+          <h3>
+            Managed reconstruction
+          </h3>
 
-        <span class="integrity-state verified">
-          ✓ Record integrity verified
-        </span>
+          <p>
+            Connect capital, contractors, milestones,
+            verification, and budget controls.
+          </p>
+        </article>
+
+
+        <article>
+          <span>
+            05
+          </span>
+
+          <h3>
+            Coordinated settlement
+          </h3>
+
+          <p>
+            Keep deadlines, deposits, title requirements,
+            approvals, and professional roles visible.
+          </p>
+        </article>
+
+
+        <article>
+          <span>
+            06
+          </span>
+
+          <h3>
+            Post-acquisition operations
+          </h3>
+
+          <p>
+            Continue into tenants, rent, maintenance,
+            financing, insurance, equity, and resale.
+          </p>
+        </article>
+
       </div>
+
+
+      <div class="difference-statement">
+        <span>
+          MREO
+        </span>
+
+        <p>
+          A property operating network designed to coordinate
+          property, capital, intelligence, professional capability,
+          and transaction execution around one persistent asset.
+        </p>
+      </div>
+
     </section>
 
 
     <!-- =========================================
-         FINAL POSITIONING
+         FINAL CTA
          ========================================= -->
 
-    <section class="positioning-section">
-      <div class="positioning-grid">
-        <div>
-          <p class="section-kicker">
-            The difference
-          </p>
+    <section class="final-cta-section">
 
-          <h2>
-            Search is the front door.
-            <br>
-            Execution is the product.
-          </h2>
-        </div>
+      <div>
+        <p class="section-kicker">
+          Explore the prototype
+        </p>
 
-        <div class="positioning-copy">
-          <p>
-            A conventional property portal helps people discover
-            real estate.
-          </p>
+        <h2>
+          Start with a property.
+        </h2>
 
-          <p class="positioning-highlight">
-            MREO is designed to help people and institutions decide
-            what should happen to a property, assemble the people
-            and capital required to make it happen, execute the
-            process, and continue operating the asset afterward.
-          </p>
-        </div>
+        <p>
+          Browse the MREO demonstration inventory or enter a real
+          address to see how the operating network can begin.
+        </p>
       </div>
 
-      <div class="positioning-statement">
-        <span>
-          Property search
-        </span>
 
-        <span aria-hidden="true">
-          +
-        </span>
+      <div class="final-cta-actions">
 
-        <span>
-          Decision intelligence
-        </span>
+        <a
+          class="primary-button"
+          href="properties.html"
+        >
+          Browse 20 Properties
 
-        <span aria-hidden="true">
-          +
-        </span>
+          <span aria-hidden="true">
+            →
+          </span>
+        </a>
 
-        <span>
-          Qualified exchange
-        </span>
+        <a
+          class="secondary-button"
+          href="seller.html"
+        >
+          Analyze an Address
+        </a>
 
-        <span aria-hidden="true">
-          +
-        </span>
-
-        <span>
-          Reconstruction
-        </span>
-
-        <span aria-hidden="true">
-          +
-        </span>
-
-        <span>
-          Settlement
-        </span>
-
-        <span aria-hidden="true">
-          +
-        </span>
-
-        <span>
-          Operations
-        </span>
       </div>
+
     </section>
+
   </main>
 
 
@@ -3472,10 +1729,11 @@
        ========================================= -->
 
   <footer class="site-footer">
-    <div>
+
+    <div class="footer-brand-column">
       <a
         class="footer-brand"
-        href="#top"
+        href="index.html"
       >
         MREO
       </a>
@@ -3485,71 +1743,71 @@
       </p>
     </div>
 
+
+    <nav
+      class="footer-nav"
+      aria-label="Footer navigation"
+    >
+      <a href="properties.html">
+        Properties
+      </a>
+
+      <a href="seller.html">
+        Seller
+      </a>
+
+      <a href="buyer.html">
+        Buyer
+      </a>
+
+      <a href="exchange.html">
+        Exchange
+      </a>
+
+      <a href="reconstruction.html">
+        Reconstruction
+      </a>
+
+      <a href="settlement.html">
+        Settlement
+      </a>
+
+      <a href="operations.html">
+        Operations
+      </a>
+
+      <a href="institutional.html">
+        Institutional
+      </a>
+
+      <a href="intelligence.html">
+        Intelligence
+      </a>
+    </nav>
+
+
     <p class="footer-disclaimer">
-      Demonstration prototype only. The interface contains fictional
-      transaction, portfolio, professional, reconstruction, settlement,
-      and operating information for illustrative purposes. Live property
-      searches may retrieve third-party property data. Nothing shown
-      constitutes legal, brokerage, appraisal, lending, investment,
-      title, construction, tax, or financial advice, nor a binding offer
-      to purchase, sell, finance, or manage real property.
+      Demonstration prototype only. Fictional property,
+      transaction, portfolio, professional, reconstruction,
+      settlement, and operating data is used throughout portions
+      of this website for illustration. Live address searches may
+      retrieve third-party property data. Nothing displayed
+      constitutes legal, brokerage, appraisal, lending,
+      investment, title, tax, construction, insurance, or
+      financial advice, nor a binding offer to buy, sell,
+      finance, manage, or invest in real property.
     </p>
 
-    <p>
+
+    <p class="footer-copyright">
       © <span id="current-year">2026</span> MREO
     </p>
+
   </footer>
 
 
   <!-- =========================================
-       GENERIC DETAIL MODAL
-       ========================================= -->
-
-  <div
-    id="detail-modal"
-    class="modal-overlay"
-    hidden
-  >
-    <div
-      class="modal-card"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-title"
-    >
-      <div class="modal-header">
-        <div>
-          <span
-            id="modal-kicker"
-            class="panel-eyebrow"
-          >
-            MREO Record
-          </span>
-
-          <h2 id="modal-title">
-            Record Detail
-          </h2>
-        </div>
-
-        <button
-          id="modal-close-button"
-          class="modal-close-button"
-          type="button"
-          aria-label="Close"
-        >
-          ×
-        </button>
-      </div>
-
-      <div
-        id="modal-content"
-        class="modal-content"
-      ></div>
-    </div>
-  </div>
-
-
-  <!-- =========================================
-       NOTIFICATION
+       GLOBAL DEMO NOTIFICATION
        ========================================= -->
 
   <div
@@ -3558,30 +1816,28 @@
     aria-live="polite"
     hidden
   >
-    <span
-      id="notification-icon"
-      class="notification-icon"
-    >
+    <span class="notification-icon">
       ✓
     </span>
 
     <div>
-      <strong id="notification-title">
-        Updated
+      <strong>
+        MREO
       </strong>
 
       <p id="notification-message">
-        The MREO record has been updated.
+        Prototype action completed.
       </p>
     </div>
   </div>
 
 
   <!-- =========================================
-       SCRIPTS
+       SHARED DATA + JAVASCRIPT
        ========================================= -->
 
   <script src="data.js"></script>
   <script src="app.js"></script>
+
 </body>
 </html>
