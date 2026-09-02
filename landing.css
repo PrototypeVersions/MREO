@@ -3,7 +3,7 @@
    ========================================================= */
 
 body.landing {
-  --landing-edge: 16px;
+  --landing-edge: 20px;
 
   width: 100%;
   max-width: none;
@@ -60,7 +60,7 @@ body.landing {
 
   margin: 0;
   padding:
-    clamp(18px, 3vh, 30px)
+    clamp(18px, 2.8vh, 28px)
     var(--landing-edge);
 
   box-sizing: border-box;
@@ -86,16 +86,16 @@ body.landing {
   display: grid;
 
   /*
-    Slightly narrower right-side area so the shapes
-    shift left with the composition.
+    Wider right column so the shape composition can move
+    much farther left inside it.
   */
   grid-template-columns:
-    minmax(0, 1.86fr)
-    minmax(180px, 0.30fr);
+    minmax(0, 1.36fr)
+    minmax(300px, 0.84fr);
 
   align-items: center;
 
-  gap: clamp(2px, 0.8vw, 10px);
+  gap: 0;
 
   border: 0;
 }
@@ -135,7 +135,7 @@ body.landing {
 .landing .landing-title {
   margin: 0;
 
-  font-size: clamp(86px, 9.6vw, 158px);
+  font-size: clamp(86px, 9.4vw, 156px);
   line-height: 0.8;
 
   font-weight: 950;
@@ -153,11 +153,11 @@ body.landing {
     0
     0;
 
-  font-size: clamp(16px, 1.18vw, 21px);
+  font-size: clamp(16px, 1.15vw, 21px);
   line-height: 1.35;
 
   font-weight: 750;
-  letter-spacing: 0.035em;
+  letter-spacing: 0.03em;
 
   color: var(--muted);
 }
@@ -174,7 +174,7 @@ body.landing {
   max-width: none;
 
   height: 100%;
-  min-height: 220px;
+  min-height: 230px;
 
   margin: 0;
   padding: 0;
@@ -184,16 +184,21 @@ body.landing {
 }
 
 
-/* BLUE LINE */
+/*
+  Shape layout modeled more closely on the reference:
+  blue line on the left,
+  yellow circle above right,
+  red square below the circle.
+*/
 
 .landing .shape-line {
   position: absolute;
 
-  width: clamp(122px, 9vw, 168px);
+  width: clamp(130px, 10vw, 180px);
   height: 6px;
 
-  left: 4%;
-  top: 66%;
+  left: 18%;
+  top: 67%;
 
   background: var(--blue);
 
@@ -205,32 +210,28 @@ body.landing {
 }
 
 
-/* YELLOW CIRCLE */
-
 .landing .shape-circle {
   position: absolute;
 
-  width: clamp(96px, 8.4vw, 138px);
-  height: clamp(96px, 8.4vw, 138px);
+  width: clamp(100px, 8.8vw, 146px);
+  height: clamp(100px, 8.8vw, 146px);
 
-  left: 40%;
-  top: 8%;
+  left: 50%;
+  top: 9%;
 
   border-radius: 50%;
   background: var(--yellow);
 }
 
 
-/* RED SQUARE */
-
 .landing .shape-square {
   position: absolute;
 
-  width: clamp(54px, 4.6vw, 76px);
-  height: clamp(54px, 4.6vw, 76px);
+  width: clamp(56px, 4.8vw, 80px);
+  height: clamp(56px, 4.8vw, 80px);
 
-  left: 54%;
-  top: 68%;
+  left: 60%;
+  top: 70%;
 
   background: var(--red);
 }
@@ -252,11 +253,11 @@ body.landing {
   display: grid;
 
   /*
-    Equal widths: Sell becomes as small as Buy.
+    Divider moved much more left.
   */
   grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
+    minmax(0, 0.40fr)
+    minmax(0, 0.60fr);
 
   border: 0;
 }
@@ -344,11 +345,14 @@ body.landing {
    ========================================================= */
 
 .landing .landing-choice-content {
-  width: min(100%, 500px);
+  width: min(100%, 420px);
 
   margin: 0;
 
-  transform: translateY(-18px);
+  /*
+    Lift the content higher in the box.
+  */
+  transform: translateY(-22px);
 }
 
 
@@ -357,7 +361,7 @@ body.landing {
 
   margin: 0;
 
-  font-size: clamp(50px, 4.5vw, 72px);
+  font-size: clamp(50px, 4.4vw, 70px);
   line-height: 0.95;
 
   font-weight: 950;
@@ -369,14 +373,14 @@ body.landing {
 
 .landing .landing-choice-description {
   width: 100%;
-  max-width: 500px;
+  max-width: 420px;
 
   margin:
     clamp(10px, 1.2vh, 16px)
     0
     0;
 
-  font-size: clamp(15px, 1.03vw, 18px);
+  font-size: clamp(15px, 1.02vw, 18px);
   line-height: 1.38;
 
   font-weight: 600;
@@ -389,14 +393,14 @@ body.landing {
 /* =========================================================
    ARROWS
 
-   Both arrows are aligned under the same-width text block,
-   which moves the Sell arrow left into a better position.
+   Both arrows shift left because their alignment block is
+   narrower. They remain directly beneath the small text.
    ========================================================= */
 
 .landing .landing-choice-arrow {
   display: block;
 
-  width: min(100%, 500px);
+  width: min(100%, 420px);
 
   margin-top: clamp(8px, 1vh, 12px);
 
@@ -491,26 +495,26 @@ body.landing {
 
   .landing .landing-subtitle {
     margin-top: 14px;
-    font-size: clamp(15px, 1.05vw, 19px);
+    font-size: clamp(15px, 1.02vw, 19px);
   }
 
   .landing .landing-shapes {
-    min-height: 180px;
+    min-height: 190px;
   }
 
   .landing .shape-line {
-    left: 5%;
-    top: 66%;
+    left: 14%;
+    top: 69%;
   }
 
   .landing .shape-circle {
-    left: 38%;
+    left: 47%;
     top: 8%;
   }
 
   .landing .shape-square {
-    left: 52%;
-    top: 69%;
+    left: 58%;
+    top: 72%;
   }
 
   .landing .landing-choice {
@@ -523,7 +527,7 @@ body.landing {
   }
 
   .landing .landing-choice-content {
-    transform: translateY(-12px);
+    transform: translateY(-16px);
   }
 
   .landing .landing-choice-label {
@@ -613,15 +617,15 @@ body.landing {
     width: 128px;
     height: 5px;
 
-    left: 4%;
-    top: 66%;
+    left: 10%;
+    top: 67%;
   }
 
   .landing .shape-circle {
     width: 94px;
     height: 94px;
 
-    left: 40%;
+    left: 42%;
     top: 4%;
   }
 
@@ -629,8 +633,8 @@ body.landing {
     width: 56px;
     height: 56px;
 
-    left: 52%;
-    top: 67%;
+    left: 54%;
+    top: 69%;
   }
 
   .landing .landing-choice-grid {
