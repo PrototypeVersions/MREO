@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Confirm and submit a fictional demonstration offer for an MREO property."
+  >
+
+  <title>MREO | Confirm Offer</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <button
+      id="back-review-button"
+      class="back-link"
+      type="button"
+      style="
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        padding: 0;
+      "
+    >
+      ← Review Offer
+    </button>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="confirm-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1 class="page-title">
+        Confirm Offer
+      </h1>
+
+      <p
+        id="confirm-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         OFFER TERMS
+         ===================================== -->
+
+    <section class="detail-list">
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Offer Price
+        </span>
+
+        <span
+          id="confirm-price"
+          class="detail-value"
+          style="
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -.04em;
+          "
+        >
+          $397,000
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Funding
+        </span>
+
+        <span
+          id="confirm-funding"
+          class="detail-value"
+        >
+          Confirmed Cash
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Closing Time
+        </span>
+
+        <span
+          id="confirm-closing"
+          class="detail-value"
+        >
+          14 days
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Inspection
+        </span>
+
+        <span
+          id="confirm-inspection"
+          class="detail-value"
+        >
+          No Inspection Contingency
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         CONFIRMATION
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 34px;"
+    >
+
+      <p class="eyebrow">
+        Final Step
+      </p>
+
+      <h3>
+        Submit this demonstration offer?
+      </h3>
+
+      <p class="muted">
+        The offer will be recorded only inside this prototype.
+        No real purchaser, seller, broker, title company, lender,
+        or other participant will receive it.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         ACTIONS
+         ===================================== -->
+
+    <div class="button-row">
+
+      <button
+        id="back-button"
+        class="secondary-button"
+        type="button"
+      >
+        Back to Review
+      </button>
+
+
+      <button
+        id="submit-offer-button"
+        class="primary-button"
+        type="button"
+      >
+        Submit Demonstration Offer
+        <span aria-hidden="true">→</span>
+      </button>
+
+    </div>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="confirmation-result"
+      hidden
+      style="margin-top: 42px;"
+    >
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Status
+          </span>
+
+          <span
+            class="detail-value"
+            style="
+              font-size: 20px;
+              font-weight: 900;
+            "
+          >
+            Demonstration Offer Recorded
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <section
+        class="panel"
+        style="margin-top: 30px;"
+      >
+
+        <p class="eyebrow">
+          Next
+        </p>
+
+        <h3>
+          The offer can now enter qualification and comparison.
+        </h3>
+
+        <p class="muted">
+          In an operational MREO system, the purchaser record,
+          funding evidence, and offer terms could be reviewed
+          before the offer enters the qualified bidding process.
+        </p>
+
+      </section>
+
+
+      <div class="button-row">
+
+        <a
+          id="purchaser-link"
+          class="primary-button"
+          href="purchaser.html?property=MREO-0001"
+        >
+          Purchaser Profile
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="property-link"
+          class="secondary-button"
+          href="property.html?id=MREO-0001"
+        >
+          Return to Property
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 34px;"
+    >
+      This page is part of a fictional prototype. Clicking
+      “Submit Demonstration Offer” does not create or transmit
+      a legally binding real-estate offer.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration acquisition
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      const requestedId =
+        params.get("id") ||
+        "MREO-0001";
+
+
+      const offerPrice =
+        Number(
+          params.get("price") ||
+          397000
+        );
+
+
+      const funding =
+        params.get("funding") ||
+        "Confirmed Cash";
+
+
+      const closing =
+        params.get("closing") ||
+        "14";
+
+
+      const inspection =
+        params.get("inspection") ||
+        "No Inspection Contingency";
+
+
+      /* -----------------------------------------
+         FALLBACK
+         ----------------------------------------- */
+
+      const fallback = {
+
+        id:
+          "MREO-0001",
+
+        addressLine1:
+          "4218 Maple Ridge Drive",
+
+        location:
+          "Dallas, Texas"
+
+      };
+
+
+      /* -----------------------------------------
+         LOAD PROPERTY
+         ----------------------------------------- */
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+
+        property =
+          window.MREO_DATA.getProperty(
+            requestedId
+          ) ||
+          fallback;
+
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      /* -----------------------------------------
+         FORMAT
+         ----------------------------------------- */
+
+      const currency =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            style:
+              "currency",
+
+            currency:
+              "USD",
+
+            maximumFractionDigits:
+              0
+          }
+        );
+
+
+      /* -----------------------------------------
+         RENDER
+         ----------------------------------------- */
+
+      document.getElementById(
+        "confirm-property-id"
+      ).textContent =
+        id;
+
+
+      document.getElementById(
+        "confirm-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      document.getElementById(
+        "confirm-price"
+      ).textContent =
+        currency.format(
+          offerPrice
+        );
+
+
+      document.getElementById(
+        "confirm-funding"
+      ).textContent =
+        funding;
+
+
+      document.getElementById(
+        "confirm-closing"
+      ).textContent =
+        `${closing} days`;
+
+
+      document.getElementById(
+        "confirm-inspection"
+      ).textContent =
+        inspection;
+
+
+      /* -----------------------------------------
+         BACK
+         ----------------------------------------- */
+
+      function goBack() {
+
+        if (
+          window.history.length > 1
+        ) {
+
+          window.history.back();
+
+        } else {
+
+          const reviewParams =
+            new URLSearchParams();
+
+
+          reviewParams.set(
+            "id",
+            id
+          );
+
+
+          reviewParams.set(
+            "price",
+            offerPrice
+          );
+
+
+          reviewParams.set(
+            "funding",
+            funding
+          );
+
+
+          reviewParams.set(
+            "closing",
+            closing
+          );
+
+
+          reviewParams.set(
+            "inspection",
+            inspection
+          );
+
+
+          window.location.href =
+            `offer-review.html?${reviewParams.toString()}`;
+
+        }
+
+      }
+
+
+      document.getElementById(
+        "back-review-button"
+      ).addEventListener(
+        "click",
+        goBack
+      );
+
+
+      document.getElementById(
+        "back-button"
+      ).addEventListener(
+        "click",
+        goBack
+      );
+
+
+      /* -----------------------------------------
+         SUBMIT DEMONSTRATION OFFER
+         ----------------------------------------- */
+
+      document.getElementById(
+        "submit-offer-button"
+      ).addEventListener(
+        "click",
+        () => {
+
+          const button =
+            document.getElementById(
+              "submit-offer-button"
+            );
+
+
+          button.disabled =
+            true;
+
+
+          button.textContent =
+            "Offer Recorded";
+
+
+          document.getElementById(
+            "confirmation-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "confirmation-result"
+          ).scrollIntoView(
+            {
+              behavior:
+                "smooth",
+
+              block:
+                "start"
+            }
+          );
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      const encodedId =
+        encodeURIComponent(id);
+
+
+      document.getElementById(
+        "purchaser-link"
+      ).href =
+        `purchaser.html?property=${encodedId}`;
+
+
+      document.getElementById(
+        "property-link"
+      ).href =
+        `property.html?id=${encodedId}`;
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.title =
+        `${id} | Confirm MREO Offer`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
