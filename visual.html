@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="View the visual record for an MREO Property Passport."
+    content="View the visual record for a fictional MREO property."
   >
 
   <title>MREO | Visual Record</title>
@@ -20,9 +20,9 @@
 
 <body>
 
-  <!-- =========================================
+  <!-- =====================================================
        HEADER
-       ========================================= -->
+       ===================================================== -->
 
   <header class="site-header">
 
@@ -53,208 +53,280 @@
 
 
     <a
-      id="back-passport-link"
+      id="back-link"
       class="back-link"
-      href="passport.html?id=MREO-0001"
+      href="passport.html"
     >
-      ← Passport
+      ← Property Passport
     </a>
 
   </header>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        MAIN
-       ========================================= -->
+       ===================================================== -->
 
-  <main class="page page-narrow">
+  <main class="page page-medium">
 
-    <!-- =====================================
-         INTRO
-         ===================================== -->
+    <!-- ===================================================
+         ERROR
+         =================================================== -->
 
-    <section class="page-intro">
-
-      <p
-        id="visual-property-id"
-        class="page-eyebrow mono"
-      >
-        MREO-0001
-      </p>
-
-      <h1 class="page-title">
-        Visual Record
-      </h1>
-
-      <p
-        id="visual-property-address"
-        class="page-description"
-      >
-        4218 Maple Ridge Drive · Dallas, Texas
-      </p>
-
+    <section
+      id="property-error"
+      class="error-message"
+      hidden
+    >
+      Property record not found.
     </section>
 
 
-    <!-- =====================================
-         MAIN IMAGE
-         ===================================== -->
+    <!-- ===================================================
+         CONTENT
+         =================================================== -->
 
-    <section class="panel">
+    <div
+      id="visual-content"
+      hidden
+    >
 
-      <div class="property-image">
+      <!-- =================================================
+           INTRO
+           ================================================= -->
+
+      <section class="page-intro">
+
+        <p class="page-eyebrow">
+          Property Passport · Visual Record
+        </p>
+
+
+        <h1 class="page-title">
+          Visual Record
+        </h1>
+
+
+        <p
+          id="property-address"
+          class="page-description"
+        >
+          Property
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
+           PRIMARY PROPERTY IMAGE
+           ================================================= -->
+
+      <section
+        id="image-section"
+        style="
+          margin-top: 34px;
+          border: 1px solid var(--ink);
+          background: var(--paper-light);
+          overflow: hidden;
+        "
+      >
 
         <img
-          id="visual-main-image"
-          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85"
-          alt="Fictional MREO demonstration property"
-        >
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================
-         VISUAL STATUS
-         ===================================== -->
-
-    <section
-      class="detail-list"
-      style="margin-top: 30px;"
-    >
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Visual Record Status
-        </span>
-
-        <span
-          id="visual-status"
-          class="detail-value"
+          id="property-image"
+          alt=""
           style="
-            font-size: 20px;
-            font-weight: 900;
+            display: block;
+            width: 100%;
+            height: clamp(300px, 52vw, 620px);
+            object-fit: cover;
+            background: var(--paper-dark);
           "
         >
-          Current
-        </span>
 
+      </section>
+
+
+      <!-- =================================================
+           IMAGE RECORD
+           ================================================= -->
+
+      <section
+        class="detail-list"
+        style="margin-top: 28px;"
+      >
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Property ID
+          </span>
+
+          <span
+            id="property-id"
+            class="detail-value mono"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Record
+          </span>
+
+          <span class="detail-value">
+            Primary Property Photograph
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Visual Status
+          </span>
+
+          <span
+            id="visual-status"
+            class="detail-value"
+          >
+            Current Demonstration Record
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Image Source
+          </span>
+
+          <span class="detail-value">
+            MREO Property Record
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           CONSISTENCY NOTE
+           ================================================= -->
+
+      <div
+        class="status-message"
+        style="margin-top: 30px;"
+      >
+        This primary photograph is linked to the property's
+        persistent MREO record. The same image is used on
+        Browse Properties, the main property page, and this
+        Visual Record.
       </div>
 
 
-      <div class="detail-row">
+      <!-- =================================================
+           NEXT STEP
+           ================================================= -->
 
-        <span class="detail-label">
-          Last Verification
-        </span>
+      <section
+        class="page-intro"
+        style="margin-top: 54px;"
+      >
 
-        <span
-          id="visual-last-verification"
-          class="detail-value"
+        <p class="page-eyebrow">
+          Next
+        </p>
+
+        <h2
+          class="page-title"
           style="
-            font-size: 20px;
-            font-weight: 900;
+            font-size: clamp(38px, 5vw, 68px);
           "
         >
-          Current demonstration record
-        </span>
+          Field Verification
+        </h2>
 
-      </div>
+        <p class="page-description">
+          Review how current property conditions can be documented
+          by authorized local participants.
+        </p>
+
+      </section>
 
 
-      <div class="detail-row">
+      <section
+        class="choice-grid"
+        style="margin-top: 28px;"
+      >
 
-        <span class="detail-label">
-          Record Type
-        </span>
-
-        <span
-          id="visual-record-type"
-          class="detail-value"
+        <a
+          id="field-verification-link"
+          class="choice-card blue"
+          href="field-verification.html"
         >
-          Property photography
-        </span>
 
+          <span class="choice-card-number">
+            01
+          </span>
+
+
+          <div class="choice-card-content">
+
+            <h3>
+              Field Verification
+            </h3>
+
+            <p>
+              View photographs, walkthrough status, and field-record information.
+            </p>
+
+          </div>
+
+
+          <span
+            class="choice-card-arrow"
+            aria-hidden="true"
+          >
+            →
+          </span>
+
+        </a>
+
+      </section>
+
+
+      <!-- =================================================
+           DISCLAIMER
+           ================================================= -->
+
+      <div
+        class="status-message"
+        style="margin-top: 40px;"
+      >
+        This is a fictional demonstration property. Visual records
+        shown in the prototype do not constitute an inspection,
+        appraisal, or independent verification of property condition.
       </div>
 
-    </section>
-
-
-    <!-- =====================================
-         SIMPLE EXPLANATION
-         ===================================== -->
-
-    <section
-      class="panel"
-      style="margin-top: 30px;"
-    >
-
-      <p class="eyebrow">
-        Visual Evidence
-      </p>
-
-      <h3>
-        See the property before going deeper.
-      </h3>
-
-      <p class="muted">
-        MREO can keep current photographs, video, walkthroughs,
-        and field-verification records connected to the property.
-      </p>
-
-    </section>
-
-
-    <!-- =====================================
-         NEXT ACTION
-         ===================================== -->
-
-    <div class="button-row">
-
-      <a
-        id="field-verification-link"
-        class="primary-button"
-        href="field-verification.html?id=MREO-0001"
-      >
-        Field Verification
-        <span aria-hidden="true">→</span>
-      </a>
-
-
-      <a
-        id="property-link"
-        class="secondary-button"
-        href="property.html?id=MREO-0001"
-      >
-        Property
-      </a>
-
-    </div>
-
-
-    <!-- =====================================
-         NOTICE
-         ===================================== -->
-
-    <div class="status-message">
-      Visual records can help remote participants understand current
-      property conditions, but they do not replace an inspection,
-      appraisal, engineering review, or other professional evaluation.
     </div>
 
   </main>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        FOOTER
-       ========================================= -->
+       ===================================================== -->
 
   <footer class="site-footer">
 
     <p>
-      Fictional demonstration visual record
+      MREO Visual Record
     </p>
 
     <p>
@@ -264,221 +336,522 @@
   </footer>
 
 
-  <!-- =========================================
-       DATA
-       ========================================= -->
+  <!-- =====================================================
+       SHARED DATA
+       ===================================================== -->
 
   <script src="data.js"></script>
 
+  <script src="property-images.js"></script>
 
-  <!-- =========================================
+
+  <!-- =====================================================
        PAGE LOGIC
-       ========================================= -->
+       ===================================================== -->
 
   <script>
     (() => {
       "use strict";
 
 
-      /* -----------------------------------------
-         PROPERTY
-         ----------------------------------------- */
+      /* ===================================================
+         URL
+         =================================================== */
 
       const params =
-        new URLSearchParams(window.location.search);
-
-      const requestedId =
-        params.get("id") || "MREO-0001";
-
-
-      const fallback = {
-        id: "MREO-0001",
-
-        addressLine1:
-          "4218 Maple Ridge Drive",
-
-        location:
-          "Dallas, Texas",
-
-        image:
-          "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85",
-
-        visualHistory: []
-      };
+        new URLSearchParams(
+          window.location.search
+        );
 
 
-      let property =
-        fallback;
+      const requestedPropertyId =
+        params.get("id");
 
 
-      if (
-        window.MREO_DATA &&
-        typeof window.MREO_DATA.getProperty === "function"
-      ) {
-        property =
-          window.MREO_DATA.getProperty(requestedId) ||
-          fallback;
-      }
+      /* ===================================================
+         ELEMENTS
+         =================================================== */
+
+      const content =
+        document.getElementById(
+          "visual-content"
+        );
 
 
-      const id =
-        property.id ||
-        requestedId;
+      const errorBox =
+        document.getElementById(
+          "property-error"
+        );
 
 
-      const address =
-        property.addressLine1 ||
-        property.address ||
-        property.fullAddress ||
-        fallback.addressLine1;
-
-
-      const location =
-        property.location ||
-        [
-          property.city,
-          property.state
-        ]
-          .filter(Boolean)
-          .join(", ") ||
-        fallback.location;
-
-
-      const image =
-        property.image ||
-        property.heroImage ||
-        fallback.image;
-
-
-      /* -----------------------------------------
-         VISUAL RECORD
-         ----------------------------------------- */
-
-      const visualRecord =
-        property.passport?.visual ||
-        property.visual ||
-        {};
-
-
-      const history =
-        Array.isArray(property.visualHistory)
-          ? property.visualHistory
-          : [];
-
-
-      const latestHistory =
-        history.length > 0
-          ? history[0]
-          : null;
-
-
-      const status =
-        visualRecord.status ||
-        visualRecord.readiness ||
-        latestHistory?.status ||
-        "Current";
-
-
-      const lastVerification =
-        visualRecord.lastVerification ||
-        visualRecord.updated ||
-        latestHistory?.date ||
-        latestHistory?.updated ||
-        "Current demonstration record";
-
-
-      const recordType =
-        visualRecord.type ||
-        latestHistory?.type ||
-        latestHistory?.label ||
-        "Property photography";
-
-
-      /* -----------------------------------------
-         RENDER
-         ----------------------------------------- */
-
-      document.getElementById(
-        "visual-property-id"
-      ).textContent = id;
-
-
-      document.getElementById(
-        "visual-property-address"
-      ).textContent =
-        `${address} · ${location}`;
-
-
-      document.getElementById(
-        "visual-status"
-      ).textContent =
-        status;
-
-
-      document.getElementById(
-        "visual-last-verification"
-      ).textContent =
-        lastVerification;
-
-
-      document.getElementById(
-        "visual-record-type"
-      ).textContent =
-        recordType;
+      const imageSection =
+        document.getElementById(
+          "image-section"
+        );
 
 
       const imageElement =
         document.getElementById(
-          "visual-main-image"
+          "property-image"
         );
 
 
-      imageElement.src =
-        image;
+      /* ===================================================
+         HELPERS
+         =================================================== */
+
+      function firstDefined(
+        ...values
+      ) {
+
+        for (const value of values) {
+
+          if (
+            value !== undefined &&
+            value !== null &&
+            value !== ""
+          ) {
+
+            return value;
+
+          }
+
+        }
 
 
-      imageElement.alt =
-        `Fictional visual record for ${address}`;
+        return null;
+
+      }
 
 
-      /* -----------------------------------------
-         LINKS
-         ----------------------------------------- */
+      function display(
+        value
+      ) {
 
-      const encodedId =
-        encodeURIComponent(id);
+        if (
+          value === undefined ||
+          value === null ||
+          value === ""
+        ) {
 
+          return "Not available";
 
-      document.getElementById(
-        "back-passport-link"
-      ).href =
-        `passport.html?id=${encodedId}`;
-
-
-      document.getElementById(
-        "field-verification-link"
-      ).href =
-        `field-verification.html?id=${encodedId}`;
+        }
 
 
-      document.getElementById(
-        "property-link"
-      ).href =
-        `property.html?id=${encodedId}`;
+        return String(value);
+
+      }
 
 
-      /* -----------------------------------------
-         PAGE
-         ----------------------------------------- */
+      function propertyUrl(
+        pageName,
+        propertyId
+      ) {
 
-      document.title =
-        `${id} | MREO Visual Record`;
+        return (
+          pageName +
+          "?id=" +
+          encodeURIComponent(
+            propertyId
+          )
+        );
 
+      }
+
+
+      /* ===================================================
+         GET PROPERTY RECORD
+         =================================================== */
+
+      function getPropertyRecord() {
+
+        if (
+          !requestedPropertyId ||
+          !window.MREO_DATA
+        ) {
+
+          return null;
+
+        }
+
+
+        /*
+          Preferred data.js method.
+        */
+
+        if (
+          typeof window.MREO_DATA.getProperty ===
+          "function"
+        ) {
+
+          const property =
+            window.MREO_DATA.getProperty(
+              requestedPropertyId
+            );
+
+
+          if (property) {
+            return property;
+          }
+
+        }
+
+
+        /*
+          Compatibility fallback.
+        */
+
+        if (
+          Array.isArray(
+            window.MREO_DATA.properties
+          )
+        ) {
+
+          return (
+            window.MREO_DATA.properties.find(
+              property => {
+
+                const id =
+                  firstDefined(
+                    property.id,
+                    property.propertyId
+                  );
+
+
+                return (
+                  String(id).toUpperCase() ===
+                  String(requestedPropertyId).toUpperCase()
+                );
+
+              }
+            ) ||
+            null
+          );
+
+        }
+
+
+        return null;
+
+      }
+
+
+      /* ===================================================
+         VISUAL METADATA
+         =================================================== */
+
+      function getVisualRecord(
+        property
+      ) {
+
+        if (
+          property.visual &&
+          typeof property.visual ===
+          "object"
+        ) {
+
+          return property.visual;
+
+        }
+
+
+        if (
+          property.visualRecord &&
+          typeof property.visualRecord ===
+          "object"
+        ) {
+
+          return property.visualRecord;
+
+        }
+
+
+        return {};
+
+      }
+
+
+      /* ===================================================
+         RENDER
+         =================================================== */
+
+      async function render() {
+
+        const property =
+          getPropertyRecord();
+
+
+        if (!property) {
+
+          errorBox.hidden =
+            false;
+
+
+          content.hidden =
+            true;
+
+
+          return;
+
+        }
+
+
+        const propertyId =
+          firstDefined(
+            property.id,
+            property.propertyId,
+            requestedPropertyId
+          );
+
+
+        const address =
+          firstDefined(
+            property.address,
+            property.streetAddress,
+            property.location
+          );
+
+
+        const city =
+          firstDefined(
+            property.city
+          );
+
+
+        const state =
+          firstDefined(
+            property.state
+          );
+
+
+        const zip =
+          firstDefined(
+            property.zip,
+            property.zipCode,
+            property.postalCode
+          );
+
+
+        const locationParts =
+          [
+            city,
+            state,
+            zip
+          ].filter(Boolean);
+
+
+        let addressText =
+          display(
+            address
+          );
+
+
+        if (
+          locationParts.length > 0
+        ) {
+
+          addressText +=
+            " · " +
+            locationParts.join(", ");
+
+        }
+
+
+        /* -------------------------------------------------
+           BASIC TEXT
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          addressText;
+
+
+        document.getElementById(
+          "property-id"
+        ).textContent =
+          propertyId;
+
+
+        /* -------------------------------------------------
+           VISUAL STATUS
+
+           Use existing data when data.js contains it.
+           Otherwise keep the demonstration status generic.
+           ------------------------------------------------- */
+
+        const visual =
+          getVisualRecord(
+            property
+          );
+
+
+        const visualStatus =
+          firstDefined(
+            visual.status,
+            visual.verificationStatus,
+            property.visualStatus,
+            "Current Demonstration Record"
+          );
+
+
+        document.getElementById(
+          "visual-status"
+        ).textContent =
+          visualStatus;
+
+
+        /* -------------------------------------------------
+           NAVIGATION
+
+           Preserve property ID everywhere.
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "back-link"
+        ).href =
+          propertyUrl(
+            "passport.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "field-verification-link"
+        ).href =
+          propertyUrl(
+            "field-verification.html",
+            propertyId
+          );
+
+
+        /* -------------------------------------------------
+           CANONICAL IMAGE
+
+           The Browse Properties photograph is authoritative.
+
+           These other image fields are fallbacks ONLY.
+           They will not replace a Browse-page image.
+           ------------------------------------------------- */
+
+        const fallbackImage =
+          firstDefined(
+            property.image,
+            property.photo,
+            property.imageUrl,
+            property.photoUrl,
+
+            visual.primaryImage,
+            visual.image,
+            visual.imageUrl,
+            visual.photo,
+            visual.photoUrl
+          );
+
+
+        let canonicalImage =
+          null;
+
+
+        if (
+          window.MREO_IMAGES &&
+          typeof window.MREO_IMAGES.apply ===
+          "function"
+        ) {
+
+          canonicalImage =
+            await window.MREO_IMAGES.apply(
+              imageElement,
+              propertyId,
+              fallbackImage
+            );
+
+        } else if (
+          fallbackImage
+        ) {
+
+          /*
+            Emergency fallback only if property-images.js
+            does not load.
+          */
+
+          imageElement.src =
+            fallbackImage;
+
+
+          canonicalImage =
+            fallbackImage;
+
+        }
+
+
+        if (!canonicalImage) {
+
+          imageSection.hidden =
+            true;
+
+        }
+
+
+        imageElement.alt =
+          "Primary property photograph for " +
+          display(
+            address
+          );
+
+
+        /* -------------------------------------------------
+           TITLE
+           ------------------------------------------------- */
+
+        document.title =
+          propertyId +
+          " Visual Record | MREO";
+
+
+        content.hidden =
+          false;
+
+      }
+
+
+      /* ===================================================
+         BROKEN IMAGE HANDLING
+         =================================================== */
+
+      imageElement.addEventListener(
+        "error",
+        () => {
+
+          console.warn(
+            "The canonical visual-record image could not be loaded for:",
+            requestedPropertyId
+          );
+
+
+          imageSection.hidden =
+            true;
+
+        }
+      );
+
+
+      /* ===================================================
+         CURRENT YEAR
+         =================================================== */
 
       document.getElementById(
         "current-year"
       ).textContent =
         new Date().getFullYear();
+
+
+      /* ===================================================
+         START
+         =================================================== */
+
+      render();
 
     })();
   </script>
