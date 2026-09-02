@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Open the individual records contained in an MREO Property Passport."
+    content="View the Property Passport for a fictional MREO property."
   >
 
   <title>MREO | Property Passport</title>
@@ -20,9 +20,9 @@
 
 <body>
 
-  <!-- =========================================
+  <!-- =====================================================
        HEADER
-       ========================================= -->
+       ===================================================== -->
 
   <header class="site-header">
 
@@ -53,9 +53,9 @@
 
 
     <a
-      id="back-property-link"
+      id="back-link"
       class="back-link"
-      href="property.html?id=MREO-0001"
+      href="property.html"
     >
       ← Property
     </a>
@@ -63,248 +63,258 @@
   </header>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        MAIN
-       ========================================= -->
+       ===================================================== -->
 
   <main class="page page-medium">
 
-    <!-- =====================================
-         INTRO
-         ===================================== -->
-
-    <section class="page-intro">
-
-      <p
-        id="passport-property-id"
-        class="page-eyebrow mono"
-      >
-        MREO-0001
-      </p>
-
-      <h1 class="page-title">
-        Property Passport
-      </h1>
-
-      <p
-        id="passport-property-address"
-        class="page-description"
-      >
-        4218 Maple Ridge Drive · Dallas, Texas
-      </p>
-
-    </section>
-
-
-    <!-- =====================================
-         SIMPLE EXPLANATION
-         ===================================== -->
+    <!-- ===================================================
+         ERROR
+         =================================================== -->
 
     <section
-      class="panel panel-yellow"
-      style="margin-bottom: 28px;"
+      id="property-error"
+      class="error-message"
+      hidden
     >
-
-      <p class="eyebrow">
-        One Property Record
-      </p>
-
-      <h3>
-        Choose what you want to inspect.
-      </h3>
-
-      <p>
-        MREO keeps different kinds of property information separate,
-        attributable, and connected to the same property.
-      </p>
-
+      Property record not found.
     </section>
 
 
-    <!-- =====================================
-         PASSPORT RECORDS
-         ===================================== -->
+    <!-- ===================================================
+         CONTENT
+         =================================================== -->
 
-    <section
-      class="choice-grid"
-      aria-label="Property Passport records"
+    <div
+      id="passport-content"
+      hidden
     >
 
-      <!-- VALUATION -->
+      <!-- =================================================
+           INTRO
+           ================================================= -->
 
-      <a
-        id="valuation-link"
-        class="choice-card"
-        href="valuation.html?id=MREO-0001"
+      <section class="page-intro">
+
+        <p
+          id="property-id"
+          class="page-eyebrow"
+        >
+          Property Passport
+        </p>
+
+
+        <h1 class="page-title">
+          Property Passport
+        </h1>
+
+
+        <p
+          id="property-address"
+          class="page-description"
+        >
+          Property
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
+           PASSPORT NOTE
+           ================================================= -->
+
+      <section
+        class="panel"
+        style="margin-top: 34px;"
       >
 
-        <span class="choice-card-number">
-          01
-        </span>
+        <p class="page-eyebrow">
+          Persistent Property Record
+        </p>
+
+        <h3>
+          One property. One evolving record.
+        </h3>
+
+        <p class="muted">
+          The Property Passport is designed to preserve important
+          property information as the asset moves through evaluation,
+          bidding, settlement, reconstruction, and operation.
+        </p>
+
+      </section>
 
 
-        <div class="choice-card-content">
+      <!-- =================================================
+           FOUR PASSPORT CATEGORIES
+           ================================================= -->
 
-          <p class="card-label">
-            Value
-          </p>
-
-          <h3>
-            Valuation
-          </h3>
-
-          <p>
-            View asking price, estimates, projected value, and where
-            those numbers came from.
-          </p>
-
-        </div>
-
-
-        <span
-          class="choice-card-arrow"
-          aria-hidden="true"
-        >
-          →
-        </span>
-
-      </a>
-
-
-      <!-- TITLE -->
-
-      <a
-        id="title-link"
-        class="choice-card blue"
-        href="title.html?id=MREO-0001"
+      <section
+        class="choice-grid"
+        style="margin-top: 34px;"
       >
 
-        <span class="choice-card-number">
-          02
-        </span>
+        <!-- =================================================
+             VALUATION
+             ================================================= -->
 
-
-        <div class="choice-card-content">
-
-          <p class="card-label">
-            Ownership
-          </p>
-
-          <h3>
-            Title
-          </h3>
-
-          <p>
-            View title readiness, seller authority, and known
-            title issues.
-          </p>
-
-        </div>
-
-
-        <span
-          class="choice-card-arrow"
-          aria-hidden="true"
+        <a
+          id="valuation-link"
+          class="choice-card"
+          href="valuation.html"
         >
-          →
-        </span>
 
-      </a>
+          <div class="choice-card-content">
+
+            <h2>
+              Valuation
+            </h2>
+
+            <p>
+              Review property value estimates and the sources behind them.
+            </p>
+
+          </div>
 
 
-      <!-- VISUAL -->
+          <span
+            class="choice-card-arrow"
+            aria-hidden="true"
+          >
+            →
+          </span>
 
-      <a
-        id="visual-link"
-        class="choice-card green"
-        href="visual.html?id=MREO-0001"
+        </a>
+
+
+        <!-- =================================================
+             TITLE
+             ================================================= -->
+
+        <a
+          id="title-link"
+          class="choice-card blue"
+          href="title.html"
+        >
+
+          <div class="choice-card-content">
+
+            <h2>
+              Title
+            </h2>
+
+            <p>
+              Review title status, recorded issues, and property-specific interventions.
+            </p>
+
+          </div>
+
+
+          <span
+            class="choice-card-arrow"
+            aria-hidden="true"
+          >
+            →
+          </span>
+
+        </a>
+
+
+        <!-- =================================================
+             VISUAL RECORD
+             ================================================= -->
+
+        <a
+          id="visual-link"
+          class="choice-card green"
+          href="visual.html"
+        >
+
+          <div class="choice-card-content">
+
+            <h2>
+              Visual Record
+            </h2>
+
+            <p>
+              Review the primary property image and available field-verification records.
+            </p>
+
+          </div>
+
+
+          <span
+            class="choice-card-arrow"
+            aria-hidden="true"
+          >
+            →
+          </span>
+
+        </a>
+
+
+        <!-- =================================================
+             TRANSACTION
+             ================================================= -->
+
+        <a
+          id="transaction-link"
+          class="choice-card red"
+          href="transaction.html"
+        >
+
+          <div class="choice-card-content">
+
+            <h2>
+              Transaction
+            </h2>
+
+            <p>
+              Review bidding, buyer selection, settlement, and transaction status.
+            </p>
+
+          </div>
+
+
+          <span
+            class="choice-card-arrow"
+            aria-hidden="true"
+          >
+            →
+          </span>
+
+        </a>
+
+      </section>
+
+
+      <!-- =================================================
+           RECORD PRINCIPLE
+           ================================================= -->
+
+      <div
+        class="status-message"
+        style="margin-top: 40px;"
       >
+        Information that is missing, uncertain, outdated, or subject
+        to further verification should remain visible as such rather
+        than being silently replaced or treated as confirmed.
+      </div>
 
-        <span class="choice-card-number">
-          03
-        </span>
-
-
-        <div class="choice-card-content">
-
-          <p class="card-label">
-            Property Evidence
-          </p>
-
-          <h3>
-            Visual Record
-          </h3>
-
-          <p>
-            View property images, walkthrough information, and
-            field-verification records.
-          </p>
-
-        </div>
-
-
-        <span
-          class="choice-card-arrow"
-          aria-hidden="true"
-        >
-          →
-        </span>
-
-      </a>
-
-
-      <!-- TRANSACTION -->
-
-      <a
-        id="transaction-link"
-        class="choice-card red"
-        href="transaction.html?id=MREO-0001"
-      >
-
-        <span class="choice-card-number">
-          04
-        </span>
-
-
-        <div class="choice-card-content">
-
-          <p class="card-label">
-            Sale
-          </p>
-
-          <h3>
-            Transaction Record
-          </h3>
-
-          <p>
-            View buyer demand, bidding, contract, and settlement status.
-          </p>
-
-        </div>
-
-
-        <span
-          class="choice-card-arrow"
-          aria-hidden="true"
-        >
-          →
-        </span>
-
-      </a>
-
-    </section>
+    </div>
 
   </main>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        FOOTER
-       ========================================= -->
+       ===================================================== -->
 
   <footer class="site-footer">
 
     <p>
-      Fictional demonstration Property Passport
+      MREO Property Passport
     </p>
 
     <p>
@@ -314,116 +324,367 @@
   </footer>
 
 
-  <!-- =========================================
-       DATA
-       ========================================= -->
+  <!-- =====================================================
+       SHARED DATA
+       ===================================================== -->
 
   <script src="data.js"></script>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        PAGE LOGIC
-       ========================================= -->
+       ===================================================== -->
 
   <script>
     (() => {
       "use strict";
 
+
+      /* ===================================================
+         URL
+         =================================================== */
+
       const params =
-        new URLSearchParams(window.location.search);
-
-      const propertyId =
-        params.get("id") || "MREO-0001";
-
-
-      let property = null;
+        new URLSearchParams(
+          window.location.search
+        );
 
 
-      if (
-        window.MREO_DATA &&
-        typeof window.MREO_DATA.getProperty === "function"
+      const requestedPropertyId =
+        params.get("id");
+
+
+      /* ===================================================
+         ELEMENTS
+         =================================================== */
+
+      const content =
+        document.getElementById(
+          "passport-content"
+        );
+
+
+      const errorBox =
+        document.getElementById(
+          "property-error"
+        );
+
+
+      /* ===================================================
+         HELPERS
+         =================================================== */
+
+      function firstDefined(
+        ...values
       ) {
-        property =
-          window.MREO_DATA.getProperty(propertyId);
+
+        for (const value of values) {
+
+          if (
+            value !== undefined &&
+            value !== null &&
+            value !== ""
+          ) {
+
+            return value;
+
+          }
+
+        }
+
+
+        return null;
+
       }
 
 
-      const id =
-        property?.id ||
-        propertyId;
+      function display(
+        value,
+        fallback = "Not available"
+      ) {
+
+        if (
+          value === undefined ||
+          value === null ||
+          value === ""
+        ) {
+
+          return fallback;
+
+        }
 
 
-      const address =
-        property?.addressLine1 ||
-        property?.address ||
-        property?.fullAddress ||
-        "4218 Maple Ridge Drive";
+        return String(value);
+
+      }
 
 
-      const location =
-        property?.location ||
-        [
-          property?.city,
-          property?.state
-        ]
-          .filter(Boolean)
-          .join(", ") ||
-        "Dallas, Texas";
+      function propertyUrl(
+        pageName,
+        propertyId
+      ) {
+
+        return (
+          pageName +
+          "?id=" +
+          encodeURIComponent(
+            propertyId
+          )
+        );
+
+      }
 
 
-      document.getElementById(
-        "passport-property-id"
-      ).textContent = id;
+      /* ===================================================
+         GET PROPERTY
+         =================================================== */
+
+      function getPropertyRecord() {
+
+        if (
+          !requestedPropertyId ||
+          !window.MREO_DATA
+        ) {
+
+          return null;
+
+        }
 
 
-      document.getElementById(
-        "passport-property-address"
-      ).textContent =
-        `${address} · ${location}`;
+        if (
+          typeof window.MREO_DATA.getProperty ===
+          "function"
+        ) {
+
+          const property =
+            window.MREO_DATA.getProperty(
+              requestedPropertyId
+            );
 
 
-      const encodedId =
-        encodeURIComponent(id);
+          if (property) {
+            return property;
+          }
+
+        }
 
 
-      document.getElementById(
-        "back-property-link"
-      ).href =
-        `property.html?id=${encodedId}`;
+        if (
+          Array.isArray(
+            window.MREO_DATA.properties
+          )
+        ) {
+
+          return (
+            window.MREO_DATA.properties.find(
+              property => {
+
+                const id =
+                  firstDefined(
+                    property.id,
+                    property.propertyId
+                  );
 
 
-      document.getElementById(
-        "valuation-link"
-      ).href =
-        `valuation.html?id=${encodedId}`;
+                return (
+                  String(id).toUpperCase() ===
+                  String(requestedPropertyId).toUpperCase()
+                );
+
+              }
+            ) ||
+            null
+          );
+
+        }
 
 
-      document.getElementById(
-        "title-link"
-      ).href =
-        `title.html?id=${encodedId}`;
+        return null;
+
+      }
 
 
-      document.getElementById(
-        "visual-link"
-      ).href =
-        `visual.html?id=${encodedId}`;
+      /* ===================================================
+         RENDER
+         =================================================== */
+
+      function render() {
+
+        const property =
+          getPropertyRecord();
 
 
-      document.getElementById(
-        "transaction-link"
-      ).href =
-        `transaction.html?id=${encodedId}`;
+        if (!property) {
+
+          errorBox.hidden =
+            false;
 
 
-      document.title =
-        `${id} | MREO Property Passport`;
+          content.hidden =
+            true;
 
+
+          return;
+
+        }
+
+
+        const propertyId =
+          firstDefined(
+            property.id,
+            property.propertyId,
+            requestedPropertyId
+          );
+
+
+        const address =
+          firstDefined(
+            property.address,
+            property.streetAddress,
+            property.location
+          );
+
+
+        const city =
+          firstDefined(
+            property.city
+          );
+
+
+        const state =
+          firstDefined(
+            property.state
+          );
+
+
+        const zip =
+          firstDefined(
+            property.zip,
+            property.zipCode,
+            property.postalCode
+          );
+
+
+        const locationParts =
+          [
+            city,
+            state,
+            zip
+          ].filter(Boolean);
+
+
+        let addressText =
+          display(
+            address
+          );
+
+
+        if (
+          locationParts.length > 0
+        ) {
+
+          addressText +=
+            " · " +
+            locationParts.join(", ");
+
+        }
+
+
+        /* -------------------------------------------------
+           PROPERTY IDENTITY
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "property-id"
+        ).textContent =
+          propertyId;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          addressText;
+
+
+        /* -------------------------------------------------
+           NAVIGATION
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "back-link"
+        ).href =
+          propertyUrl(
+            "property.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "valuation-link"
+        ).href =
+          propertyUrl(
+            "valuation.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "title-link"
+        ).href =
+          propertyUrl(
+            "title.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "visual-link"
+        ).href =
+          propertyUrl(
+            "visual.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "transaction-link"
+        ).href =
+          propertyUrl(
+            "transaction.html",
+            propertyId
+          );
+
+
+        /* -------------------------------------------------
+           DOCUMENT TITLE
+           ------------------------------------------------- */
+
+        document.title =
+          propertyId +
+          " Property Passport | MREO";
+
+
+        content.hidden =
+          false;
+
+      }
+
+
+      /* ===================================================
+         CURRENT YEAR
+         =================================================== */
 
       document.getElementById(
         "current-year"
       ).textContent =
         new Date().getFullYear();
+
+
+      /* ===================================================
+         START
+         =================================================== */
+
+      render();
 
     })();
   </script>
