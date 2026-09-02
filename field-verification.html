@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View field-verification status and evidence for an MREO property."
+  >
+
+  <title>MREO | Field Verification</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-visual-link"
+      class="back-link"
+      href="visual.html?id=MREO-0001"
+    >
+      ← Visual Record
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="verification-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1 class="page-title">
+        Field Verification
+      </h1>
+
+      <p
+        id="verification-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         VERIFICATION STATUS
+         ===================================== -->
+
+    <section class="detail-list">
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Verification Status
+        </span>
+
+        <span
+          id="verification-status"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          Current
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Verified By
+        </span>
+
+        <span
+          id="verification-provider"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          MREO Field Network
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Evidence Available
+        </span>
+
+        <span
+          id="verification-evidence"
+          class="detail-value"
+        >
+          Photos and walkthrough
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SIMPLE EXPLANATION
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 30px;"
+    >
+
+      <p class="eyebrow">
+        Remote Verification
+      </p>
+
+      <h3>
+        Get a current view of the property.
+      </h3>
+
+      <p class="muted">
+        MREO can coordinate current photographs, video,
+        or an authorized walkthrough when the owner or
+        purchaser cannot visit the property directly.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         ACTIONS
+         ===================================== -->
+
+    <div class="button-row">
+
+      <a
+        id="evidence-link"
+        class="primary-button"
+        href="field-evidence.html?id=MREO-0001"
+      >
+        View Evidence
+        <span aria-hidden="true">→</span>
+      </a>
+
+
+      <button
+        id="request-verification-button"
+        class="secondary-button"
+        type="button"
+      >
+        Request New Verification
+      </button>
+
+    </div>
+
+
+    <!-- =====================================
+         REQUEST RESULT
+         ===================================== -->
+
+    <div
+      id="verification-request-message"
+      class="status-message"
+      hidden
+    >
+      A demonstration field-verification request has been prepared.
+      No real service has been ordered.
+    </div>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div class="status-message">
+      Field verification is supplementary property evidence.
+      It does not replace inspection, appraisal, engineering,
+      title review, or other professional evaluation.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration field record
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         PROPERTY
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+      const requestedId =
+        params.get("id") || "MREO-0001";
+
+
+      const fallback = {
+        id: "MREO-0001",
+
+        addressLine1:
+          "4218 Maple Ridge Drive",
+
+        location:
+          "Dallas, Texas",
+
+        visualHistory: [],
+
+        professionals: []
+      };
+
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+        property =
+          window.MREO_DATA.getProperty(requestedId) ||
+          fallback;
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      /* -----------------------------------------
+         FIELD / VISUAL RECORD
+         ----------------------------------------- */
+
+      const visualRecord =
+        property.passport?.visual ||
+        property.visual ||
+        {};
+
+
+      const history =
+        Array.isArray(property.visualHistory)
+          ? property.visualHistory
+          : [];
+
+
+      const fieldRecord =
+        history.find((item) => {
+
+          const text =
+            JSON.stringify(item)
+              .toLowerCase();
+
+          return (
+            text.includes("field") ||
+            text.includes("walkthrough") ||
+            text.includes("video") ||
+            text.includes("verification")
+          );
+
+        }) ||
+        history[0] ||
+        {};
+
+
+      const professionals =
+        Array.isArray(property.professionals)
+          ? property.professionals
+          : [];
+
+
+      const fieldProfessional =
+        professionals.find((professional) => {
+
+          const text =
+            JSON.stringify(professional)
+              .toLowerCase();
+
+          return (
+            text.includes("field") ||
+            text.includes("verification")
+          );
+
+        });
+
+
+      const status =
+        fieldRecord.status ||
+        visualRecord.status ||
+        "Current";
+
+
+      const provider =
+        fieldRecord.provider ||
+        fieldRecord.verifiedBy ||
+        fieldProfessional?.name ||
+        "MREO Field Network";
+
+
+      let evidence =
+        fieldRecord.evidence ||
+        fieldRecord.type ||
+        visualRecord.evidence ||
+        "Photos and walkthrough";
+
+
+      if (Array.isArray(evidence)) {
+        evidence =
+          evidence.join(", ");
+      }
+
+
+      /* -----------------------------------------
+         RENDER
+         ----------------------------------------- */
+
+      document.getElementById(
+        "verification-property-id"
+      ).textContent =
+        id;
+
+
+      document.getElementById(
+        "verification-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      document.getElementById(
+        "verification-status"
+      ).textContent =
+        status;
+
+
+      document.getElementById(
+        "verification-provider"
+      ).textContent =
+        provider;
+
+
+      document.getElementById(
+        "verification-evidence"
+      ).textContent =
+        evidence;
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      const encodedId =
+        encodeURIComponent(id);
+
+
+      document.getElementById(
+        "back-visual-link"
+      ).href =
+        `visual.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "evidence-link"
+      ).href =
+        `field-evidence.html?id=${encodedId}`;
+
+
+      /* -----------------------------------------
+         REQUEST ACTION
+         ----------------------------------------- */
+
+      document.getElementById(
+        "request-verification-button"
+      ).addEventListener(
+        "click",
+        () => {
+
+          document.getElementById(
+            "verification-request-message"
+          ).hidden = false;
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.title =
+        `${id} | MREO Field Verification`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
