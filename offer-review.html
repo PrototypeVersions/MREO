@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Review a demonstration MREO property offer before continuing."
+  >
+
+  <title>MREO | Review Offer</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <button
+      id="back-offer-button"
+      class="back-link"
+      type="button"
+      style="
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        padding: 0;
+      "
+    >
+      ← Edit Offer
+    </button>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="review-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1 class="page-title">
+        Review Offer
+      </h1>
+
+      <p
+        id="review-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         OFFER SUMMARY
+         ===================================== -->
+
+    <section class="detail-list">
+
+      <!-- PRICE -->
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Offer Price
+        </span>
+
+        <span
+          id="review-price"
+          class="detail-value"
+          style="
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -.04em;
+          "
+        >
+          $397,000
+        </span>
+
+      </div>
+
+
+      <!-- FUNDING -->
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Funding
+        </span>
+
+        <span
+          id="review-funding"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          Confirmed Cash
+        </span>
+
+      </div>
+
+
+      <!-- CLOSING -->
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Closing Time
+        </span>
+
+        <span
+          id="review-closing"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          14 days
+        </span>
+
+      </div>
+
+
+      <!-- INSPECTION -->
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Inspection
+        </span>
+
+        <span
+          id="review-inspection"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          No Inspection Contingency
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         ACTIONS
+         ===================================== -->
+
+    <div
+      class="button-row"
+      style="margin-top: 38px;"
+    >
+
+      <button
+        id="edit-offer-button"
+        class="secondary-button"
+        type="button"
+      >
+        Edit Offer
+      </button>
+
+
+      <a
+        id="continue-link"
+        class="primary-button"
+        href="offer-confirm.html?id=MREO-0001"
+      >
+        Continue
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div class="status-message">
+      Nothing has been submitted. This is a fictional demonstration
+      of how offer terms could move through an MREO acquisition workflow.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration offer
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL PARAMETERS
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      const requestedId =
+        params.get("id") ||
+        "MREO-0001";
+
+
+      const offerPrice =
+        Number(
+          params.get("price") ||
+          397000
+        );
+
+
+      const funding =
+        params.get("funding") ||
+        "Confirmed Cash";
+
+
+      const closing =
+        params.get("closing") ||
+        "14";
+
+
+      const inspection =
+        params.get("inspection") ||
+        "No Inspection Contingency";
+
+
+      /* -----------------------------------------
+         FALLBACK PROPERTY
+         ----------------------------------------- */
+
+      const fallback = {
+
+        id:
+          "MREO-0001",
+
+        addressLine1:
+          "4218 Maple Ridge Drive",
+
+        location:
+          "Dallas, Texas"
+
+      };
+
+
+      /* -----------------------------------------
+         LOAD PROPERTY
+         ----------------------------------------- */
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+
+        property =
+          window.MREO_DATA.getProperty(
+            requestedId
+          ) ||
+          fallback;
+
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      /* -----------------------------------------
+         FORMATTER
+         ----------------------------------------- */
+
+      const currency =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            style:
+              "currency",
+
+            currency:
+              "USD",
+
+            maximumFractionDigits:
+              0
+          }
+        );
+
+
+      /* -----------------------------------------
+         PROPERTY
+         ----------------------------------------- */
+
+      document.getElementById(
+        "review-property-id"
+      ).textContent =
+        id;
+
+
+      document.getElementById(
+        "review-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      /* -----------------------------------------
+         OFFER VALUES
+         ----------------------------------------- */
+
+      document.getElementById(
+        "review-price"
+      ).textContent =
+        currency.format(
+          offerPrice
+        );
+
+
+      document.getElementById(
+        "review-funding"
+      ).textContent =
+        funding;
+
+
+      document.getElementById(
+        "review-closing"
+      ).textContent =
+        `${closing} days`;
+
+
+      document.getElementById(
+        "review-inspection"
+      ).textContent =
+        inspection;
+
+
+      /* -----------------------------------------
+         CONTINUE LINK
+         ----------------------------------------- */
+
+      const continueParams =
+        new URLSearchParams();
+
+
+      continueParams.set(
+        "id",
+        id
+      );
+
+
+      continueParams.set(
+        "price",
+        offerPrice
+      );
+
+
+      continueParams.set(
+        "funding",
+        funding
+      );
+
+
+      continueParams.set(
+        "closing",
+        closing
+      );
+
+
+      continueParams.set(
+        "inspection",
+        inspection
+      );
+
+
+      document.getElementById(
+        "continue-link"
+      ).href =
+        `offer-confirm.html?${continueParams.toString()}`;
+
+
+      /* -----------------------------------------
+         EDIT OFFER
+         ----------------------------------------- */
+
+      function editOffer() {
+
+        if (
+          window.history.length > 1
+        ) {
+
+          window.history.back();
+
+        } else {
+
+          window.location.href =
+            `offer.html?id=${encodeURIComponent(id)}`;
+
+        }
+
+      }
+
+
+      document.getElementById(
+        "edit-offer-button"
+      ).addEventListener(
+        "click",
+        editOffer
+      );
+
+
+      document.getElementById(
+        "back-offer-button"
+      ).addEventListener(
+        "click",
+        editOffer
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.title =
+        `${id} | Review MREO Offer`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
