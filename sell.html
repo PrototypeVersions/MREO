@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Enter the MREO seller pathway: analyze a property or explore possible property pathways."
+    content="Explore MREO property seller tools and seller pathways."
   >
 
   <title>MREO | Sell</title>
@@ -20,9 +20,9 @@
 
 <body>
 
-  <!-- =========================================
+  <!-- =====================================================
        HEADER
-       ========================================= -->
+       ===================================================== -->
 
   <header class="site-header">
 
@@ -56,21 +56,21 @@
       class="back-link"
       href="index.html"
     >
-      ← Back
+      ← Home
     </a>
 
   </header>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        MAIN
-       ========================================= -->
+       ===================================================== -->
 
-  <main class="page">
+  <main class="page page-medium">
 
-    <!-- =====================================
+    <!-- ===================================================
          INTRO
-         ===================================== -->
+         =================================================== -->
 
     <section class="page-intro">
 
@@ -78,51 +78,48 @@
         Sell
       </p>
 
+
       <h1 class="page-title">
-        Start with the property.
+        What would you like to do?
       </h1>
 
+
       <p class="page-description">
-        Analyze a specific address or explore the different ways
-        MREO could help a property owner move forward.
+        Review your property and explore potential sale,
+        retention, and value-recovery pathways.
       </p>
 
     </section>
 
 
-    <!-- =====================================
-         CHOICES
-         ===================================== -->
+    <!-- ===================================================
+         SELLER CHOICES
+         NUMBERS REMOVED
+         =================================================== -->
 
     <section
       class="choice-grid"
-      aria-label="Seller options"
+      style="margin-top: 40px;"
     >
 
-      <!-- ANALYZE PROPERTY -->
+      <!-- =================================================
+           PROPERTY ANALYSIS
+           ================================================= -->
 
       <a
         class="choice-card"
         href="property-analysis.html"
       >
 
-        <span class="choice-card-number">
-          01
-        </span>
-
-
         <div class="choice-card-content">
 
-          <p class="card-label">
-            Property
-          </p>
-
           <h2>
-            Analyze My Property
+            Property Analysis
           </h2>
 
           <p>
-            Enter an address and build a preliminary MREO property record.
+            Enter a property address and review available
+            property and valuation information.
           </p>
 
         </div>
@@ -138,31 +135,24 @@
       </a>
 
 
-      <!-- SELLER OPTIONS -->
+      <!-- =================================================
+           SELLER OPTIONS
+           ================================================= -->
 
       <a
         class="choice-card blue"
         href="seller-options.html"
       >
 
-        <span class="choice-card-number">
-          02
-        </span>
-
-
         <div class="choice-card-content">
 
-          <p class="card-label">
-            Pathways
-          </p>
-
           <h2>
-            Explore Seller Options
+            Seller Options
           </h2>
 
           <p>
-            Compare different ways a property owner might sell,
-            improve, or retain the property.
+            Explore retention, conventional sale, expedited
+            as-is, short-sale, and value-recovery pathways.
           </p>
 
         </div>
@@ -179,17 +169,45 @@
 
     </section>
 
+
+    <!-- ===================================================
+         SELLER PRINCIPLE
+         =================================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 40px;"
+    >
+
+      <p class="page-eyebrow">
+        Owner Objective
+      </p>
+
+
+      <h3>
+        Selling is not always the first or only option.
+      </h3>
+
+
+      <p class="muted">
+        MREO is designed to begin with the owner's objective
+        and available property information before presenting
+        possible transaction or recovery pathways.
+      </p>
+
+    </section>
+
   </main>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        FOOTER
-       ========================================= -->
+       ===================================================== -->
 
   <footer class="site-footer">
 
     <p>
-      Demonstration prototype
+      MREO Sell
     </p>
 
     <p>
@@ -199,8 +217,14 @@
   </footer>
 
 
+  <!-- =====================================================
+       CURRENT YEAR
+       ===================================================== -->
+
   <script>
-    document.getElementById("current-year").textContent =
+    document.getElementById(
+      "current-year"
+    ).textContent =
       new Date().getFullYear();
   </script>
 
