@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View settlement funding information for an MREO property transaction."
+  >
+
+  <title>MREO | Settlement Funds</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-settlement-details-link"
+      class="back-link"
+      href="settlement-details.html?id=MREO-0001"
+    >
+      ← Settlement Details
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="funds-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1 class="page-title">
+        Settlement Funds
+      </h1>
+
+      <p
+        id="funds-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         FUNDING
+         ===================================== -->
+
+    <section class="detail-list">
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Earnest Money
+        </span>
+
+        <span
+          id="earnest-money"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          Not yet recorded
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Purchaser Funding
+        </span>
+
+        <span
+          id="funding-status"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          Not yet confirmed
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Funds Required
+        </span>
+
+        <span
+          id="funds-required"
+          class="detail-value"
+        >
+          Pending settlement calculation
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Funds Status
+        </span>
+
+        <span
+          id="funds-ready"
+          class="detail-value"
+        >
+          Not yet ready
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SIMPLE EXPLANATION
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 32px;"
+    >
+
+      <p class="eyebrow">
+        Funds Control
+      </p>
+
+      <h3 id="funds-heading">
+        Funding must be confirmed before closing.
+      </h3>
+
+      <p
+        id="funds-description"
+        class="muted"
+      >
+        MREO can track funding requirements and confirmations while
+        settlement funds remain under the control of the appropriate
+        regulated financial or settlement participants.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         NAVIGATION
+         ===================================== -->
+
+    <div class="button-row">
+
+      <a
+        id="settlement-details-link"
+        class="primary-button"
+        href="settlement-details.html?id=MREO-0001"
+      >
+        Settlement Details
+      </a>
+
+
+      <a
+        id="bidding-link"
+        class="secondary-button"
+        href="bidding.html?id=MREO-0001"
+      >
+        View Buyer Offer
+      </a>
+
+    </div>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div class="status-message">
+      MREO can coordinate funding information, but it does not
+      hold or release settlement funds in this prototype. Actual
+      money movement would occur through the appropriate regulated
+      financial, escrow, title, or settlement institution.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration settlement funds
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+
+      const requestedId =
+        params.get("id") || "MREO-0001";
+
+
+      /* -----------------------------------------
+         FALLBACK
+         ----------------------------------------- */
+
+      const fallback = {
+
+        id:
+          "MREO-0001",
+
+        addressLine1:
+          "4218 Maple Ridge Drive",
+
+        location:
+          "Dallas, Texas",
+
+        settlement: {
+
+          funds: {
+            earnestMoney:
+              null,
+
+            fundingStatus:
+              "Not yet confirmed",
+
+            fundsRequired:
+              null,
+
+            ready:
+              false
+          }
+
+        }
+
+      };
+
+
+      /* -----------------------------------------
+         SPECIAL DEMONSTRATION RECORDS
+         ----------------------------------------- */
+
+      const demoFundsRecords = {
+
+        "MREO-0016": {
+
+          earnestMoney:
+            25000,
+
+          fundingStatus:
+            "Proof-of-funds refresh required",
+
+          fundsRequired:
+            null,
+
+          ready:
+            false
+
+        },
+
+
+        "MREO-0020": {
+
+          earnestMoney:
+            18500,
+
+          fundingStatus:
+            "Confirmed",
+
+          fundsRequired:
+            0,
+
+          ready:
+            true
+
+        }
+
+      };
+
+
+      /* -----------------------------------------
+         LOAD PROPERTY
+         ----------------------------------------- */
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+
+        property =
+          window.MREO_DATA.getProperty(requestedId) ||
+          fallback;
+
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      /* -----------------------------------------
+         FUNDS RECORD
+         ----------------------------------------- */
+
+      const demoRecord =
+        demoFundsRecords[id] ||
+        {};
+
+
+      const settlement =
+        property.settlement ||
+        property.transaction?.settlement ||
+        property.passport?.transaction?.settlement ||
+        {};
+
+
+      const funds =
+        settlement.funds ||
+        settlement.funding ||
+        {};
+
+
+      const earnestMoneyRaw =
+        funds.earnestMoney ??
+        settlement.earnestMoney ??
+        property.earnestMoney ??
+        demoRecord.earnestMoney ??
+        fallback.settlement.funds.earnestMoney;
+
+
+      const earnestMoney =
+        earnestMoneyRaw === null ||
+        earnestMoneyRaw === undefined ||
+        earnestMoneyRaw === ""
+          ? null
+          : Number(earnestMoneyRaw);
+
+
+      const fundingStatus =
+        funds.fundingStatus ||
+        funds.status ||
+        settlement.fundingStatus ||
+        demoRecord.fundingStatus ||
+        fallback.settlement.funds.fundingStatus;
+
+
+      const fundsRequiredRaw =
+        funds.fundsRequired ??
+        funds.remainingFunds ??
+        settlement.fundsRequired ??
+        demoRecord.fundsRequired ??
+        fallback.settlement.funds.fundsRequired;
+
+
+      const fundsRequired =
+        fundsRequiredRaw === null ||
+        fundsRequiredRaw === undefined ||
+        fundsRequiredRaw === ""
+          ? null
+          : Number(fundsRequiredRaw);
+
+
+      const ready =
+        funds.ready === true ||
+        funds.confirmed === true ||
+        demoRecord.ready === true ||
+        String(fundingStatus)
+          .toLowerCase()
+          .includes("confirmed");
+
+
+      /* -----------------------------------------
+         FORMAT
+         ----------------------------------------- */
+
+      const currency =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0
+          }
+        );
+
+
+      /* -----------------------------------------
+         RENDER PROPERTY
+         ----------------------------------------- */
+
+      document.getElementById(
+        "funds-property-id"
+      ).textContent =
+        id;
+
+
+      document.getElementById(
+        "funds-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      /* -----------------------------------------
+         RENDER FUNDS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "earnest-money"
+      ).textContent =
+        earnestMoney !== null &&
+        Number.isFinite(earnestMoney)
+          ? currency.format(earnestMoney)
+          : "Not yet recorded";
+
+
+      document.getElementById(
+        "funding-status"
+      ).textContent =
+        fundingStatus;
+
+
+      document.getElementById(
+        "funds-required"
+      ).textContent =
+        fundsRequired !== null &&
+        Number.isFinite(fundsRequired)
+          ? (
+              fundsRequired === 0
+                ? "No remaining funds"
+                : currency.format(fundsRequired)
+            )
+          : "Pending settlement calculation";
+
+
+      document.getElementById(
+        "funds-ready"
+      ).textContent =
+        ready
+          ? "Ready"
+          : "Not yet ready";
+
+
+      /* -----------------------------------------
+         EXPLANATION
+         ----------------------------------------- */
+
+      const heading =
+        document.getElementById(
+          "funds-heading"
+        );
+
+
+      const description =
+        document.getElementById(
+          "funds-description"
+        );
+
+
+      if (ready) {
+
+        heading.textContent =
+          "Funding is confirmed.";
+
+
+        description.textContent =
+          "The demonstration record indicates that the required funding condition has been satisfied for settlement.";
+
+      } else if (
+        String(fundingStatus)
+          .toLowerCase()
+          .includes("refresh")
+      ) {
+
+        heading.textContent =
+          "Updated proof of funds is required.";
+
+
+        description.textContent =
+          "The purchaser must provide current funding confirmation before this settlement requirement can be marked complete.";
+
+      } else {
+
+        heading.textContent =
+          "Funding must be confirmed before closing.";
+
+
+        description.textContent =
+          "MREO can track funding requirements and confirmations while settlement funds remain under the control of the appropriate regulated financial or settlement participants.";
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      const encodedId =
+        encodeURIComponent(id);
+
+
+      document.getElementById(
+        "back-settlement-details-link"
+      ).href =
+        `settlement-details.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "settlement-details-link"
+      ).href =
+        `settlement-details.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "bidding-link"
+      ).href =
+        `bidding.html?id=${encodedId}`;
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.title =
+        `${id} | MREO Settlement Funds`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
