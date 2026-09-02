@@ -4,17 +4,15 @@
 
 
 /* =========================================================
-   DESKTOP STRUCTURE
+   RESET OLD LANDING-SPECIFIC WIDTHS
 
-   On laptop and desktop:
-   - everything fits inside one viewport
-   - no vertical scrolling
-   - intro takes roughly half the screen
-   - Buy / Sell take the other half
+   These rules prevent older styles.css rules from causing
+   the horizontal lines to stop short of the viewport edges.
    ========================================================= */
 
 body.landing {
   width: 100%;
+  max-width: none;
 
   min-height: 100vh;
   min-height: 100svh;
@@ -23,6 +21,7 @@ body.landing {
   height: 100svh;
 
   margin: 0;
+  padding: 0;
 
   display: flex;
   flex-direction: column;
@@ -34,11 +33,13 @@ body.landing {
 }
 
 
-/* =========================================================
-   MAIN GRID
-   ========================================================= */
-
 .landing main {
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+  padding: 0;
+
   flex: 1 1 auto;
 
   min-height: 0;
@@ -56,17 +57,26 @@ body.landing {
    ========================================================= */
 
 .landing .landing-intro {
+  width: 100%;
+  max-width: none;
+
   min-height: 0;
+
+  margin: 0;
+  padding:
+    clamp(24px, 4vh, 46px)
+    clamp(32px, 6vw, 96px);
 
   box-sizing: border-box;
 
   display: flex;
   align-items: center;
 
-  padding:
-    clamp(24px, 4vh, 46px)
-    clamp(32px, 6vw, 96px);
-
+  /*
+    IMPORTANT:
+    This is the full-width divider.
+  */
+  border: 0;
   border-bottom: 1px solid var(--ink);
 
   overflow: hidden;
@@ -75,7 +85,11 @@ body.landing {
 
 .landing .landing-intro-grid {
   width: 100%;
+  max-width: none;
   height: 100%;
+
+  margin: 0;
+  padding: 0;
 
   display: grid;
 
@@ -86,16 +100,27 @@ body.landing {
   align-items: center;
 
   gap: clamp(30px, 5vw, 90px);
+
+  /*
+    Remove any old inner rule.
+  */
+  border: 0;
 }
 
 
 .landing .landing-intro-copy {
   min-width: 0;
+
+  margin: 0;
+  padding: 0;
 }
 
 
 .landing .landing-brand {
+  max-width: none;
+
   margin: 0;
+  padding: 0;
 }
 
 
@@ -177,9 +202,16 @@ body.landing {
   position: relative;
 
   width: 100%;
+  max-width: none;
+
   height: 100%;
 
   min-height: 245px;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
 
   overflow: visible;
 }
@@ -251,7 +283,13 @@ body.landing {
    ========================================================= */
 
 .landing .landing-choice-grid {
+  width: 100%;
+  max-width: none;
+
   min-height: 0;
+
+  margin: 0;
+  padding: 0;
 
   display: grid;
 
@@ -269,10 +307,15 @@ body.landing {
 .landing .landing-choice {
   position: relative;
 
+  width: 100%;
+  max-width: none;
+
   box-sizing: border-box;
 
   min-width: 0;
   min-height: 0;
+
+  margin: 0;
 
   padding:
     clamp(27px, 3vh, 42px)
@@ -286,13 +329,18 @@ body.landing {
 
   color: var(--ink);
 
+  border: 0;
+
   overflow: hidden;
 
   transition:
-    transform 160ms ease,
     filter 160ms ease;
 }
 
+
+/*
+  The only internal divider in the Buy/Sell region.
+*/
 
 .landing .landing-choice:first-child {
   border-right: 1px solid var(--ink);
@@ -435,14 +483,22 @@ body.landing {
 
 /* =========================================================
    FOOTER
+
+   The border is applied to the FOOTER ITSELF so that it
+   extends from the absolute left edge to the absolute right.
    ========================================================= */
 
 .landing .landing-footer {
+  width: 100%;
+  max-width: none;
+
   flex: 0 0 50px;
 
   min-height: 50px;
 
   box-sizing: border-box;
+
+  margin: 0;
 
   padding:
     0
@@ -454,6 +510,7 @@ body.landing {
 
   gap: 20px;
 
+  border: 0;
   border-top: 1px solid var(--ink);
 
   background: var(--paper);
@@ -489,9 +546,6 @@ body.landing {
 
 /* =========================================================
    SHORTER LAPTOP SCREENS
-
-   Keeps everything visible even when the browser window
-   is not especially tall.
    ========================================================= */
 
 @media
@@ -567,8 +621,6 @@ body.landing {
    PHONE / SMALL TABLET
 
    Intentionally scrollable.
-   It is better to preserve hierarchy and readability than
-   force the entire page into one phone viewport.
    ========================================================= */
 
 @media (max-width: 760px) {
