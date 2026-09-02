@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Explore an expedited as-is property sale through the MREO demonstration seller process."
+  >
+
+  <title>MREO | Expedited As-Is</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-options-link"
+      class="back-link"
+      href="seller-options.html"
+    >
+      ← Seller Options
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Seller Path · 03
+      </p>
+
+      <h1 class="page-title">
+        Expedited As-Is
+      </h1>
+
+      <p class="page-description">
+        Explore a faster sale without first completing major property improvements.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="asis-form"
+      class="form"
+    >
+
+      <!-- ===================================
+           DESIRED SPEED
+           =================================== -->
+
+      <div class="field">
+
+        <label for="sale-speed">
+          Desired Speed
+        </label>
+
+        <select
+          id="sale-speed"
+          name="saleSpeed"
+          required
+        >
+
+          <option value="">
+            How quickly would you like to move?
+          </option>
+
+          <option value="As quickly as practical">
+            As quickly as practical
+          </option>
+
+          <option value="Within 14 days">
+            Within 14 days
+          </option>
+
+          <option value="Within 30 days">
+            Within 30 days
+          </option>
+
+          <option value="Within 60 days">
+            Within 60 days
+          </option>
+
+          <option value="Speed is helpful but not essential">
+            Speed is helpful but not essential
+          </option>
+
+          <option value="Not sure">
+            Not sure
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           PROPERTY PREPARATION
+           =================================== -->
+
+      <div class="field">
+
+        <label for="preparation-preference">
+          Property Preparation
+        </label>
+
+        <select
+          id="preparation-preference"
+          name="preparationPreference"
+          required
+        >
+
+          <option value="">
+            How much preparation do you want to complete first?
+          </option>
+
+          <option value="Sell in current condition">
+            Sell in current condition
+          </option>
+
+          <option value="Only basic cleaning or minor preparation">
+            Only basic cleaning or minor preparation
+          </option>
+
+          <option value="Complete a few important repairs">
+            Complete a few important repairs
+          </option>
+
+          <option value="Unsure whether repairs are worthwhile">
+            Unsure whether repairs are worthwhile
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           OFFER COMPARISON
+           =================================== -->
+
+      <div class="field">
+
+        <label for="offer-preference">
+          Offer Comparison
+        </label>
+
+        <select
+          id="offer-preference"
+          name="offerPreference"
+          required
+        >
+
+          <option value="">
+            How would you prefer to consider offers?
+          </option>
+
+          <option value="Compare several qualified offers">
+            Compare several qualified offers
+          </option>
+
+          <option value="Prioritize fastest executable offer">
+            Prioritize fastest executable offer
+          </option>
+
+          <option value="Prioritize strongest net proceeds">
+            Prioritize strongest net proceeds
+          </option>
+
+          <option value="Prioritize funding certainty">
+            Prioritize funding certainty
+          </option>
+
+          <option value="Best overall executable offer">
+            Best overall executable offer
+          </option>
+
+          <option value="Not sure">
+            Not sure
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           SAVE
+           =================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Continue
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="asis-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <p class="page-eyebrow">
+        As-Is Review
+      </p>
+
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Desired Speed
+          </span>
+
+          <span
+            id="result-speed"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Preparation
+          </span>
+
+          <span
+            id="result-preparation"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Offer Preference
+          </span>
+
+          <span
+            id="result-offers"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================
+           NEXT
+           =================================== -->
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Next
+        </p>
+
+        <h3 id="asis-heading">
+          Review the purchaser requirements.
+        </h3>
+
+        <p
+          id="asis-description"
+          class="muted"
+        >
+          An expedited sale can move faster when purchaser
+          qualification and transaction requirements are
+          established before offers are compared.
+        </p>
+
+      </section>
+
+
+      <div class="button-row">
+
+        <a
+          id="buyers-link"
+          class="primary-button"
+          href="seller-asis-buyers.html"
+        >
+          Qualified Buyers
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="seller-options-link"
+          class="secondary-button"
+          href="seller-options.html"
+        >
+          Compare Seller Paths
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         AS-IS PRINCIPLE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      An expedited as-is pathway is intended to reduce the
+      preparation burden before a sale. The property can be
+      presented in its current documented condition while qualified
+      purchasers compete on price and transaction terms.
+    </div>
+
+
+    <!-- =====================================
+         IMPORTANT DISTINCTION
+         ===================================== -->
+
+    <div class="status-message">
+      “As-is” does not mean that known defects, title issues, or
+      required disclosures disappear. Property condition and other
+      material information should remain visible in the property
+      record and transaction process.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      This demonstration does not create an actual property offer,
+      listing, auction, purchaser qualification, inspection waiver,
+      or sale agreement. The availability and legal effect of an
+      as-is transaction depend on the property and jurisdiction.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO expedited as-is pathway
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      document.getElementById(
+        "buyers-link"
+      ).href =
+        withAddress(
+          "seller-asis-buyers.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      let savedSpeed =
+        null;
+
+
+      let savedPreparation =
+        null;
+
+
+      let savedOffers =
+        null;
+
+
+      try {
+
+        savedSpeed =
+          sessionStorage.getItem(
+            "mreo-seller-asis-speed"
+          );
+
+
+        savedPreparation =
+          sessionStorage.getItem(
+            "mreo-seller-asis-preparation"
+          );
+
+
+        savedOffers =
+          sessionStorage.getItem(
+            "mreo-seller-asis-offer-preference"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore as-is review:",
+          error
+        );
+
+      }
+
+
+      if (savedSpeed) {
+
+        document.getElementById(
+          "sale-speed"
+        ).value =
+          savedSpeed;
+
+      }
+
+
+      if (savedPreparation) {
+
+        document.getElementById(
+          "preparation-preference"
+        ).value =
+          savedPreparation;
+
+      }
+
+
+      if (savedOffers) {
+
+        document.getElementById(
+          "offer-preference"
+        ).value =
+          savedOffers;
+
+      }
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "asis-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const speed =
+            document.getElementById(
+              "sale-speed"
+            ).value;
+
+
+          const preparation =
+            document.getElementById(
+              "preparation-preference"
+            ).value;
+
+
+          const offers =
+            document.getElementById(
+              "offer-preference"
+            ).value;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-asis-speed",
+              speed
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-asis-preparation",
+              preparation
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-asis-offer-preference",
+              offers
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-selected-pathway",
+              "Expedited As-Is"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save as-is review:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RESULT
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-speed"
+          ).textContent =
+            speed;
+
+
+          document.getElementById(
+            "result-preparation"
+          ).textContent =
+            preparation;
+
+
+          document.getElementById(
+            "result-offers"
+          ).textContent =
+            offers;
+
+
+          /* -----------------------------------
+             CONTEXTUAL MESSAGE
+             ----------------------------------- */
+
+          const heading =
+            document.getElementById(
+              "asis-heading"
+            );
+
+
+          const description =
+            document.getElementById(
+              "asis-description"
+            );
+
+
+          if (
+            speed ===
+            "Within 14 days"
+          ) {
+
+            heading.textContent =
+              "Execution certainty will be especially important.";
+
+
+            description.textContent =
+              "A very short target period increases the importance of confirmed purchaser funds, limited unresolved conditions, and realistic closing requirements.";
+
+          } else if (
+            preparation ===
+            "Sell in current condition"
+          ) {
+
+            heading.textContent =
+              "The owner prefers to avoid pre-sale rehabilitation.";
+
+
+            description.textContent =
+              "The next step can focus on qualified purchasers that are prepared to evaluate and acquire the property in its documented current condition.";
+
+          } else if (
+            offers ===
+            "Best overall executable offer"
+          ) {
+
+            heading.textContent =
+              "Offers should be compared on execution as well as price.";
+
+
+            description.textContent =
+              "Purchaser funding, closing time, inspection terms, concessions, deposits, and other conditions can remain visible when the seller compares offers.";
+
+          } else {
+
+            heading.textContent =
+              "Review the purchaser requirements.";
+
+
+            description.textContent =
+              "An expedited sale can move faster when purchaser qualification and transaction requirements are established before offers are compared.";
+
+          }
+
+
+          document.getElementById(
+            "asis-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "asis-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
