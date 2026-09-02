@@ -1,0 +1,753 @@
+/* =========================================================
+   MREO LANDING PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   DESKTOP STRUCTURE
+
+   On laptop and desktop:
+   - everything fits inside one viewport
+   - no vertical scrolling
+   - intro takes roughly half the screen
+   - Buy / Sell take the other half
+   ========================================================= */
+
+body.landing {
+  width: 100%;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  height: 100vh;
+  height: 100svh;
+
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: var(--paper);
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.landing main {
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-rows:
+    minmax(0, 52%)
+    minmax(0, 48%);
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.landing .landing-intro {
+  min-height: 0;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  padding:
+    clamp(24px, 4vh, 46px)
+    clamp(32px, 6vw, 96px);
+
+  border-bottom: 1px solid var(--ink);
+
+  overflow: hidden;
+}
+
+
+.landing .landing-intro-grid {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(260px, 0.65fr);
+
+  align-items: center;
+
+  gap: clamp(30px, 5vw, 90px);
+}
+
+
+.landing .landing-intro-copy {
+  min-width: 0;
+}
+
+
+.landing .landing-brand {
+  margin: 0;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.landing .landing-eyebrow {
+  margin:
+    0
+    0
+    clamp(16px, 2vh, 24px);
+
+  font-size:
+    clamp(11px, 0.85vw, 14px);
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: 0.19em;
+
+  text-transform: uppercase;
+
+  color: var(--blue);
+}
+
+
+/* =========================================================
+   MREO TITLE
+   ========================================================= */
+
+.landing .landing-title {
+  margin: 0;
+
+  font-size:
+    clamp(90px, 11vw, 172px);
+
+  line-height: 0.8;
+
+  font-weight: 950;
+
+  letter-spacing: -0.085em;
+
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
+
+.landing .landing-subtitle {
+  max-width: 760px;
+
+  margin:
+    clamp(25px, 3vh, 38px)
+    0
+    0;
+
+  font-size:
+    clamp(18px, 1.55vw, 27px);
+
+  line-height: 1.35;
+
+  font-weight: 750;
+
+  letter-spacing: 0.055em;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   BAUHAUS SHAPES
+   ========================================================= */
+
+.landing .landing-shapes {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 245px;
+
+  overflow: visible;
+}
+
+
+/* YELLOW CIRCLE */
+
+.landing .shape-circle {
+  position: absolute;
+
+  width:
+    clamp(105px, 10vw, 155px);
+
+  height:
+    clamp(105px, 10vw, 155px);
+
+  right: 3%;
+  top: 4%;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+}
+
+
+/* RED SQUARE */
+
+.landing .shape-square {
+  position: absolute;
+
+  width:
+    clamp(62px, 5.3vw, 86px);
+
+  height:
+    clamp(62px, 5.3vw, 86px);
+
+  right: 14%;
+  bottom: 8%;
+
+  background: var(--red);
+}
+
+
+/* BLUE LINE */
+
+.landing .shape-line {
+  position: absolute;
+
+  width:
+    clamp(150px, 13vw, 210px);
+
+  height: 6px;
+
+  left: 8%;
+  top: 55%;
+
+  background: var(--blue);
+
+  transform:
+    translateY(-50%)
+    rotate(-56deg);
+
+  transform-origin: center;
+}
+
+
+/* =========================================================
+   BUY / SELL GRID
+   ========================================================= */
+
+.landing .landing-choice-grid {
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  border: 0;
+}
+
+
+/* =========================================================
+   SHARED CHOICE
+   ========================================================= */
+
+.landing .landing-choice {
+  position: relative;
+
+  box-sizing: border-box;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding:
+    clamp(27px, 3vh, 42px)
+    clamp(32px, 4vw, 64px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  text-decoration: none;
+
+  color: var(--ink);
+
+  overflow: hidden;
+
+  transition:
+    transform 160ms ease,
+    filter 160ms ease;
+}
+
+
+.landing .landing-choice:first-child {
+  border-right: 1px solid var(--ink);
+}
+
+
+/* =========================================================
+   BUY
+   ========================================================= */
+
+.landing .landing-choice-buy {
+  background: var(--yellow);
+}
+
+
+/* =========================================================
+   SELL
+   ========================================================= */
+
+.landing .landing-choice-sell {
+  background: var(--paper-light);
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+@media (hover: hover) {
+
+  .landing .landing-choice:hover {
+    filter: brightness(0.97);
+  }
+
+}
+
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.landing .landing-choice-number {
+  display: block;
+
+  font-size:
+    clamp(11px, 0.8vw, 14px);
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: 0.04em;
+
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   CHOICE CONTENT
+   ========================================================= */
+
+.landing .landing-choice-content {
+  width: min(100%, 590px);
+
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+/* =========================================================
+   BIG BUY / SELL TEXT
+   ========================================================= */
+
+.landing .landing-choice-label {
+  display: block;
+
+  margin: 0;
+
+  font-size:
+    clamp(46px, 4.8vw, 78px);
+
+  line-height: 0.95;
+
+  font-weight: 950;
+
+  letter-spacing: -0.055em;
+
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   BUY / SELL DESCRIPTION
+   ========================================================= */
+
+.landing .landing-choice-description {
+  max-width: 510px;
+
+  margin:
+    clamp(14px, 1.8vh, 22px)
+    0
+    0;
+
+  font-size:
+    clamp(15px, 1.12vw, 19px);
+
+  line-height: 1.45;
+
+  font-weight: 600;
+
+  letter-spacing: 0;
+
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   ARROW
+   ========================================================= */
+
+.landing .landing-choice-arrow {
+  position: absolute;
+
+  right:
+    clamp(30px, 3vw, 52px);
+
+  bottom:
+    clamp(26px, 3vh, 42px);
+
+  font-size:
+    clamp(28px, 2.8vw, 46px);
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.landing .landing-footer {
+  flex: 0 0 50px;
+
+  min-height: 50px;
+
+  box-sizing: border-box;
+
+  padding:
+    0
+    clamp(32px, 6vw, 96px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-top: 1px solid var(--ink);
+
+  background: var(--paper);
+
+  font-size: 12px;
+  line-height: 1;
+
+  font-weight: 750;
+
+  letter-spacing: 0.06em;
+}
+
+
+.landing .landing-footer a {
+  color: var(--ink);
+
+  text-decoration: none;
+}
+
+
+.landing .landing-footer a:hover {
+  text-decoration: underline;
+}
+
+
+.landing .landing-footer-links {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+/* =========================================================
+   SHORTER LAPTOP SCREENS
+
+   Keeps everything visible even when the browser window
+   is not especially tall.
+   ========================================================= */
+
+@media
+  (min-width: 761px)
+  and (max-height: 760px) {
+
+  .landing main {
+    grid-template-rows:
+      minmax(0, 50%)
+      minmax(0, 50%);
+  }
+
+
+  .landing .landing-intro {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+
+  .landing .landing-eyebrow {
+    margin-bottom: 13px;
+  }
+
+
+  .landing .landing-title {
+    font-size:
+      clamp(78px, 9.5vw, 140px);
+  }
+
+
+  .landing .landing-subtitle {
+    margin-top: 20px;
+
+    font-size:
+      clamp(16px, 1.3vw, 22px);
+  }
+
+
+  .landing .landing-shapes {
+    min-height: 200px;
+  }
+
+
+  .landing .landing-choice {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+
+  .landing .landing-choice-label {
+    font-size:
+      clamp(40px, 4vw, 64px);
+  }
+
+
+  .landing .landing-choice-description {
+    margin-top: 12px;
+
+    font-size:
+      clamp(14px, 1vw, 17px);
+  }
+
+
+  .landing .landing-footer {
+    flex-basis: 44px;
+    min-height: 44px;
+  }
+
+}
+
+
+/* =========================================================
+   PHONE / SMALL TABLET
+
+   Intentionally scrollable.
+   It is better to preserve hierarchy and readability than
+   force the entire page into one phone viewport.
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  body.landing {
+    height: auto;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+
+  .landing main {
+    display: block;
+  }
+
+
+  /* INTRO */
+
+  .landing .landing-intro {
+    min-height: auto;
+
+    padding:
+      36px
+      22px
+      40px;
+
+    overflow: visible;
+  }
+
+
+  .landing .landing-intro-grid {
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 26px;
+  }
+
+
+  .landing .landing-title {
+    font-size:
+      clamp(78px, 27vw, 126px);
+
+    line-height: 0.82;
+  }
+
+
+  .landing .landing-subtitle {
+    max-width: 100%;
+
+    margin-top: 24px;
+
+    font-size:
+      clamp(17px, 5vw, 22px);
+
+    line-height: 1.4;
+  }
+
+
+  /* SHAPES */
+
+  .landing .landing-shapes {
+    width: 100%;
+    height: 165px;
+
+    min-height: 165px;
+  }
+
+
+  .landing .shape-circle {
+    width: 90px;
+    height: 90px;
+
+    right: 3%;
+    top: 0;
+  }
+
+
+  .landing .shape-square {
+    width: 56px;
+    height: 56px;
+
+    right: 19%;
+    bottom: 0;
+  }
+
+
+  .landing .shape-line {
+    width: 135px;
+    height: 5px;
+
+    left: 8%;
+    top: 59%;
+  }
+
+
+  /* BUY / SELL */
+
+  .landing .landing-choice-grid {
+    display: block;
+  }
+
+
+  .landing .landing-choice {
+    min-height: 270px;
+
+    padding:
+      28px
+      24px
+      34px;
+  }
+
+
+  .landing .landing-choice:first-child {
+    border-right: 0;
+
+    border-bottom: 1px solid var(--ink);
+  }
+
+
+  .landing .landing-choice-content {
+    margin:
+      55px
+      0
+      30px;
+  }
+
+
+  .landing .landing-choice-label {
+    font-size:
+      clamp(52px, 16vw, 74px);
+  }
+
+
+  .landing .landing-choice-description {
+    max-width: 420px;
+
+    margin-top: 16px;
+
+    padding-right: 40px;
+
+    font-size: 16px;
+
+    line-height: 1.45;
+  }
+
+
+  .landing .landing-choice-arrow {
+    right: 24px;
+    bottom: 28px;
+
+    font-size: 38px;
+  }
+
+
+  /* FOOTER */
+
+  .landing .landing-footer {
+    min-height: auto;
+
+    flex-basis: auto;
+
+    padding:
+      20px
+      22px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    line-height: 1.4;
+  }
+
+}
