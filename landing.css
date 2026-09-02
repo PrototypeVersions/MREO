@@ -4,13 +4,12 @@
 
 
 /* =========================================================
-   RESET OLD LANDING-SPECIFIC WIDTHS
-
-   These rules prevent older styles.css rules from causing
-   the horizontal lines to stop short of the viewport edges.
+   GLOBAL LANDING SETTINGS
    ========================================================= */
 
 body.landing {
+  --landing-edge: clamp(14px, 1.6vw, 26px);
+
   width: 100%;
   max-width: none;
 
@@ -33,6 +32,10 @@ body.landing {
 }
 
 
+/* =========================================================
+   MAIN
+   ========================================================= */
+
 .landing main {
   width: 100%;
   max-width: none;
@@ -41,7 +44,6 @@ body.landing {
   padding: 0;
 
   flex: 1 1 auto;
-
   min-height: 0;
 
   display: grid;
@@ -63,19 +65,22 @@ body.landing {
   min-height: 0;
 
   margin: 0;
+
+  /*
+    MUCH SMALLER LEFT / RIGHT MARGIN.
+
+    The MREO text will now sit quite close to the
+    left edge of the screen.
+  */
   padding:
     clamp(24px, 4vh, 46px)
-    clamp(32px, 6vw, 96px);
+    var(--landing-edge);
 
   box-sizing: border-box;
 
   display: flex;
   align-items: center;
 
-  /*
-    IMPORTANT:
-    This is the full-width divider.
-  */
   border: 0;
   border-bottom: 1px solid var(--ink);
 
@@ -94,16 +99,17 @@ body.landing {
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1.35fr)
-    minmax(260px, 0.65fr);
+    minmax(0, 1.38fr)
+    minmax(260px, 0.62fr);
 
   align-items: center;
 
-  gap: clamp(30px, 5vw, 90px);
-
   /*
-    Remove any old inner rule.
+    Reduced gap so the right-side shapes can move
+    closer to the outer edge.
   */
+  gap: clamp(18px, 3vw, 54px);
+
   border: 0;
 }
 
@@ -205,7 +211,6 @@ body.landing {
   max-width: none;
 
   height: 100%;
-
   min-height: 245px;
 
   margin: 0;
@@ -228,7 +233,10 @@ body.landing {
   height:
     clamp(105px, 10vw, 155px);
 
-  right: 3%;
+  /*
+    Almost against the right edge.
+  */
+  right: 0;
   top: 4%;
 
   border-radius: 50%;
@@ -248,7 +256,10 @@ body.landing {
   height:
     clamp(62px, 5.3vw, 86px);
 
-  right: 14%;
+  /*
+    Considerably farther right than before.
+  */
+  right: 4%;
   bottom: 8%;
 
   background: var(--red);
@@ -265,7 +276,11 @@ body.landing {
 
   height: 6px;
 
-  left: 8%;
+  /*
+    Also allows the overall shapes composition
+    to occupy more of the available right side.
+  */
+  left: 3%;
   top: 55%;
 
   background: var(--blue);
@@ -317,13 +332,16 @@ body.landing {
 
   margin: 0;
 
+  /*
+    Much less empty room on the outer edges
+    of BUY and SELL.
+  */
   padding:
-    clamp(27px, 3vh, 42px)
-    clamp(32px, 4vw, 64px);
+    clamp(24px, 3vh, 38px)
+    var(--landing-edge);
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   text-decoration: none;
 
@@ -338,9 +356,7 @@ body.landing {
 }
 
 
-/*
-  The only internal divider in the Buy/Sell region.
-*/
+/* CENTER DIVIDER */
 
 .landing .landing-choice:first-child {
   border-right: 1px solid var(--ink);
@@ -385,6 +401,8 @@ body.landing {
 .landing .landing-choice-number {
   display: block;
 
+  flex: 0 0 auto;
+
   font-size:
     clamp(11px, 0.8vw, 14px);
 
@@ -400,13 +418,20 @@ body.landing {
 
 /* =========================================================
    CHOICE CONTENT
+
+   The explanatory text and arrow now share exactly
+   the same width.
    ========================================================= */
 
 .landing .landing-choice-content {
-  width: min(100%, 590px);
+  width: min(100%, 510px);
 
+  /*
+    Push the BUY / SELL group downward naturally,
+    while leaving the arrow directly beneath it.
+  */
   margin-top: auto;
-  margin-bottom: auto;
+  margin-bottom: 0;
 }
 
 
@@ -437,7 +462,8 @@ body.landing {
    ========================================================= */
 
 .landing .landing-choice-description {
-  max-width: 510px;
+  width: 100%;
+  max-width: none;
 
   margin:
     clamp(14px, 1.8vh, 22px)
@@ -459,16 +485,29 @@ body.landing {
 
 /* =========================================================
    ARROW
+
+   No longer floating in the corner.
+
+   Its width is exactly the same as the description,
+   and the arrow is aligned to the right-hand edge of
+   that description.
    ========================================================= */
 
 .landing .landing-choice-arrow {
-  position: absolute;
+  position: static;
 
-  right:
-    clamp(30px, 3vw, 52px);
+  display: block;
 
-  bottom:
-    clamp(26px, 3vh, 42px);
+  width: min(100%, 510px);
+
+  margin-top:
+    clamp(10px, 1.3vh, 16px);
+
+  flex: 0 0 auto;
+
+  align-self: flex-start;
+
+  text-align: right;
 
   font-size:
     clamp(28px, 2.8vw, 46px);
@@ -483,9 +522,6 @@ body.landing {
 
 /* =========================================================
    FOOTER
-
-   The border is applied to the FOOTER ITSELF so that it
-   extends from the absolute left edge to the absolute right.
    ========================================================= */
 
 .landing .landing-footer {
@@ -500,9 +536,13 @@ body.landing {
 
   margin: 0;
 
+  /*
+    Footer text also comes much closer to the
+    outer edges.
+  */
   padding:
     0
-    clamp(32px, 6vw, 96px);
+    var(--landing-edge);
 
   display: flex;
   align-items: center;
@@ -590,8 +630,8 @@ body.landing {
 
 
   .landing .landing-choice {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 22px;
+    padding-bottom: 22px;
   }
 
 
@@ -602,10 +642,18 @@ body.landing {
 
 
   .landing .landing-choice-description {
-    margin-top: 12px;
+    margin-top: 11px;
 
     font-size:
       clamp(14px, 1vw, 17px);
+  }
+
+
+  .landing .landing-choice-arrow {
+    margin-top: 8px;
+
+    font-size:
+      clamp(25px, 2.3vw, 38px);
   }
 
 
@@ -626,6 +674,8 @@ body.landing {
 @media (max-width: 760px) {
 
   body.landing {
+    --landing-edge: 18px;
+
     height: auto;
 
     min-height: 100vh;
@@ -647,9 +697,9 @@ body.landing {
     min-height: auto;
 
     padding:
-      36px
-      22px
-      40px;
+      34px
+      var(--landing-edge)
+      38px;
 
     overflow: visible;
   }
@@ -662,7 +712,7 @@ body.landing {
 
     grid-template-columns: 1fr;
 
-    gap: 26px;
+    gap: 24px;
   }
 
 
@@ -700,7 +750,7 @@ body.landing {
     width: 90px;
     height: 90px;
 
-    right: 3%;
+    right: 0;
     top: 0;
   }
 
@@ -709,7 +759,7 @@ body.landing {
     width: 56px;
     height: 56px;
 
-    right: 19%;
+    right: 5%;
     bottom: 0;
   }
 
@@ -718,7 +768,7 @@ body.landing {
     width: 135px;
     height: 5px;
 
-    left: 8%;
+    left: 2%;
     top: 59%;
   }
 
@@ -734,9 +784,9 @@ body.landing {
     min-height: 270px;
 
     padding:
-      28px
-      24px
-      34px;
+      26px
+      var(--landing-edge)
+      30px;
   }
 
 
@@ -748,10 +798,9 @@ body.landing {
 
 
   .landing .landing-choice-content {
-    margin:
-      55px
-      0
-      30px;
+    width: 100%;
+
+    margin-top: 52px;
   }
 
 
@@ -762,11 +811,11 @@ body.landing {
 
 
   .landing .landing-choice-description {
-    max-width: 420px;
+    width: 100%;
 
-    margin-top: 16px;
+    margin-top: 15px;
 
-    padding-right: 40px;
+    padding: 0;
 
     font-size: 16px;
 
@@ -774,9 +823,17 @@ body.landing {
   }
 
 
+  /*
+    On phones the arrow also sits directly beneath
+    the right side of its explanatory text.
+  */
+
   .landing .landing-choice-arrow {
-    right: 24px;
-    bottom: 28px;
+    width: 100%;
+
+    margin-top: 12px;
+
+    text-align: right;
 
     font-size: 38px;
   }
@@ -791,7 +848,7 @@ body.landing {
 
     padding:
       20px
-      22px;
+      var(--landing-edge);
 
     align-items: flex-start;
 
