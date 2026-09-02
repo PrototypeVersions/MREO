@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View title requirements associated with settlement of an MREO property transaction."
+  >
+
+  <title>MREO | Settlement Title</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-settlement-details-link"
+      class="back-link"
+      href="settlement-details.html?id=MREO-0001"
+    >
+      ← Settlement Details
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="title-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1 class="page-title">
+        Settlement Title
+      </h1>
+
+      <p
+        id="title-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         TITLE REQUIREMENT
+         ===================================== -->
+
+    <section class="detail-list">
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Title Requirement
+        </span>
+
+        <span
+          id="title-requirement"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          No unresolved requirement
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Status
+        </span>
+
+        <span
+          id="title-status"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          Clear
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Responsible Party
+        </span>
+
+        <span
+          id="title-responsible-party"
+          class="detail-value"
+        >
+          Settlement provider
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         WHAT MUST HAPPEN
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 32px;"
+    >
+
+      <p class="eyebrow">
+        Closing Requirement
+      </p>
+
+      <h3 id="title-action-heading">
+        No title action is currently blocking closing.
+      </h3>
+
+      <p
+        id="title-action-description"
+        class="muted"
+      >
+        The demonstration settlement record does not currently
+        identify an unresolved title condition.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         NAVIGATION
+         ===================================== -->
+
+    <div class="button-row">
+
+      <a
+        id="settlement-details-link"
+        class="primary-button"
+        href="settlement-details.html?id=MREO-0001"
+      >
+        Settlement Details
+      </a>
+
+
+      <a
+        id="property-title-link"
+        class="secondary-button"
+        href="title.html?id=MREO-0001"
+      >
+        Property Title Record
+      </a>
+
+    </div>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div class="status-message">
+      MREO can track title requirements and their status, but
+      legal determinations regarding ownership, liens, title
+      insurance, and marketable title remain with the appropriate
+      professional or regulated participants.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration settlement title
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+
+      const requestedId =
+        params.get("id") || "MREO-0001";
+
+
+      /* -----------------------------------------
+         FALLBACK PROPERTY
+         ----------------------------------------- */
+
+      const fallback = {
+
+        id:
+          "MREO-0001",
+
+        addressLine1:
+          "4218 Maple Ridge Drive",
+
+        location:
+          "Dallas, Texas",
+
+        settlement: {
+
+          title: {
+            requirement:
+              "No unresolved requirement",
+
+            status:
+              "Clear",
+
+            responsibleParty:
+              "Settlement provider",
+
+            action:
+              "No title action is currently blocking closing.",
+
+            description:
+              "The demonstration settlement record does not currently identify an unresolved title condition."
+          }
+
+        }
+
+      };
+
+
+      /* -----------------------------------------
+         SPECIAL DEMONSTRATION RECORDS
+         ----------------------------------------- */
+
+      const demoTitleRecords = {
+
+        "MREO-0008": {
+
+          requirement:
+            "Release of prior lien",
+
+          status:
+            "Intervention Required",
+
+          responsibleParty:
+            "Title / settlement provider",
+
+          action:
+            "The prior lien must be resolved before closing.",
+
+          description:
+            "An unreleased prior lien remains associated with the property record. Settlement cannot proceed until the issue is reviewed and the required release or other resolution is obtained."
+
+        },
+
+
+        "MREO-0016": {
+
+          requirement:
+            "Lien resolution",
+
+          status:
+            "Pending",
+
+          responsibleParty:
+            "Title / settlement provider",
+
+          action:
+            "Resolve the outstanding lien item.",
+
+          description:
+            "Lien resolution is one of the remaining requirements in the active settlement. The title participant must confirm that the issue has been satisfactorily resolved before closing."
+
+        },
+
+
+        "MREO-0020": {
+
+          requirement:
+            "Completed",
+
+          status:
+            "Resolved",
+
+          responsibleParty:
+            "Settlement provider",
+
+          action:
+            "No further title action is required.",
+
+          description:
+            "The property completed settlement on April 14, 2026, and no remaining title requirement is recorded in this demonstration."
+
+        }
+
+      };
+
+
+      /* -----------------------------------------
+         LOAD PROPERTY
+         ----------------------------------------- */
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+
+        property =
+          window.MREO_DATA.getProperty(requestedId) ||
+          fallback;
+
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      /* -----------------------------------------
+         TITLE RECORD
+         ----------------------------------------- */
+
+      const demoRecord =
+        demoTitleRecords[id] ||
+        {};
+
+
+      const settlement =
+        property.settlement ||
+        property.transaction?.settlement ||
+        property.passport?.transaction?.settlement ||
+        {};
+
+
+      const settlementTitle =
+        settlement.title ||
+        settlement.titleRequirement ||
+        {};
+
+
+      const propertyTitle =
+        property.title ||
+        property.passport?.title ||
+        {};
+
+
+      const requirement =
+        settlementTitle.requirement ||
+        settlementTitle.issue ||
+        settlementTitle.label ||
+        demoRecord.requirement ||
+        (
+          Array.isArray(propertyTitle.exceptions) &&
+          propertyTitle.exceptions.length > 0
+            ? normalizeException(
+                propertyTitle.exceptions[0]
+              )
+            : fallback.settlement.title.requirement
+        );
+
+
+      const status =
+        settlementTitle.status ||
+        demoRecord.status ||
+        (
+          requirement ===
+          fallback.settlement.title.requirement
+            ? "Clear"
+            : "Pending"
+        );
+
+
+      const responsibleParty =
+        settlementTitle.responsibleParty ||
+        settlementTitle.owner ||
+        settlementTitle.provider ||
+        demoRecord.responsibleParty ||
+        fallback.settlement.title.responsibleParty;
+
+
+      const action =
+        settlementTitle.action ||
+        settlementTitle.requiredAction ||
+        demoRecord.action ||
+        (
+          status.toLowerCase() === "clear"
+            ? fallback.settlement.title.action
+            : "The identified title requirement must be resolved before closing."
+        );
+
+
+      const description =
+        settlementTitle.description ||
+        demoRecord.description ||
+        (
+          status.toLowerCase() === "clear"
+            ? fallback.settlement.title.description
+            : "The settlement record identifies a title item that remains open and must be addressed before the transaction can close."
+        );
+
+
+      /* -----------------------------------------
+         RENDER PROPERTY
+         ----------------------------------------- */
+
+      document.getElementById(
+        "title-property-id"
+      ).textContent =
+        id;
+
+
+      document.getElementById(
+        "title-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      /* -----------------------------------------
+         RENDER TITLE REQUIREMENT
+         ----------------------------------------- */
+
+      document.getElementById(
+        "title-requirement"
+      ).textContent =
+        requirement;
+
+
+      document.getElementById(
+        "title-status"
+      ).textContent =
+        status;
+
+
+      document.getElementById(
+        "title-responsible-party"
+      ).textContent =
+        responsibleParty;
+
+
+      document.getElementById(
+        "title-action-heading"
+      ).textContent =
+        action;
+
+
+      document.getElementById(
+        "title-action-description"
+      ).textContent =
+        description;
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      const encodedId =
+        encodeURIComponent(id);
+
+
+      document.getElementById(
+        "back-settlement-details-link"
+      ).href =
+        `settlement-details.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "settlement-details-link"
+      ).href =
+        `settlement-details.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "property-title-link"
+      ).href =
+        `title.html?id=${encodedId}`;
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.title =
+        `${id} | MREO Settlement Title`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+
+      /* -----------------------------------------
+         EXCEPTION HELPER
+         ----------------------------------------- */
+
+      function normalizeException(exception) {
+
+        if (
+          typeof exception === "string"
+        ) {
+          return exception;
+        }
+
+
+        if (
+          exception &&
+          typeof exception === "object"
+        ) {
+
+          return (
+            exception.label ||
+            exception.name ||
+            exception.description ||
+            "Title exception"
+          );
+
+        }
+
+
+        return "Title exception";
+
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
