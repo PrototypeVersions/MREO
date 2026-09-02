@@ -215,15 +215,9 @@ body.landing {
 
   width: 51%;
 
-  /*
-    Slightly thicker than before.
-  */
   height:
     clamp(4px, 0.48vw, 8px);
 
-  /*
-    Slightly farther right than before.
-  */
   left: 1%;
 
   top: 62%;
@@ -374,7 +368,7 @@ body.landing {
 
 
 /* =========================================================
-   BUY / SELL
+   BUY / SELL LABEL
    ========================================================= */
 
 .landing-choice-label {
@@ -417,11 +411,33 @@ body.landing {
 
 
 /* =========================================================
-   ARROWS REMOVED
+   BUY / SELL ARROWS
    ========================================================= */
 
 .landing-choice-arrow {
-  display: none !important;
+  position: static;
+
+  display: block;
+
+  /*
+    Keep the arrow tied to the text area rather than
+    floating at the extreme edge of the box.
+  */
+  width: min(100%, 650px);
+
+  margin-top:
+    clamp(12px, 1.5vh, 18px);
+
+  text-align: right;
+
+  font-size:
+    clamp(30px, 2.4vw, 42px);
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  color: var(--ink);
 }
 
 
@@ -578,6 +594,11 @@ body.landing {
     width: 100%;
   }
 
+
+  .landing-choice-arrow {
+    width: min(100%, 560px);
+  }
+
 }
 
 
@@ -727,6 +748,15 @@ body.landing {
     font-size: 16px;
 
     line-height: 1.42;
+  }
+
+
+  .landing-choice-arrow {
+    width: 100%;
+
+    margin-top: 14px;
+
+    font-size: 38px;
   }
 
 
