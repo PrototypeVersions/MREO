@@ -1,18 +1,20 @@
 /* =========================================================
    MREO LANDING PAGE
+   CLEAN REBUILD
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
    ========================================================= */
 
 body.landing {
-  --landing-edge: 20px;
-
   width: 100%;
-  max-width: none;
+  height: 100vh;
+  height: 100svh;
 
   min-height: 100vh;
   min-height: 100svh;
-
-  height: 100vh;
-  height: 100svh;
 
   margin: 0;
   padding: 0;
@@ -31,101 +33,73 @@ body.landing {
    MAIN
    ========================================================= */
 
-.landing main {
+.landing-main {
   width: 100%;
-  max-width: 100%;
-
-  margin: 0;
-  padding: 0;
 
   flex: 1 1 auto;
   min-height: 0;
 
+  margin: 0;
+  padding: 0;
+
   display: grid;
 
   grid-template-rows:
-    minmax(0, 50%)
-    minmax(0, 50%);
+    minmax(0, 49%)
+    minmax(0, 51%);
 }
 
 
 /* =========================================================
-   INTRO
+   HERO
    ========================================================= */
 
-.landing .landing-intro {
+.landing-hero {
   width: 100%;
-  max-width: 100%;
-
   min-height: 0;
 
   box-sizing: border-box;
-
-  margin: 0;
-
-  padding:
-    clamp(18px, 2.8vh, 28px)
-    var(--landing-edge);
-
-  display: flex;
-  align-items: center;
-
-  border: 0;
-  border-bottom: 1px solid var(--ink);
-
-  overflow: hidden;
-}
-
-
-.landing .landing-intro-grid {
-  width: 100%;
-  height: 100%;
-
-  margin: 0;
-  padding: 0;
 
   display: grid;
 
   grid-template-columns:
     minmax(0, 1fr)
-    310px;
+    360px;
 
   align-items: center;
 
-  gap: 10px;
+  gap: 0;
 
-  border: 0;
-}
+  padding:
+    24px
+    22px;
 
+  border-bottom:
+    1px solid var(--ink);
 
-.landing .landing-intro-copy {
-  min-width: 0;
-
-  margin: 0;
-  padding: 0;
-}
-
-
-.landing .landing-brand {
-  max-width: none;
-
-  margin: 0;
-  padding: 0;
+  overflow: hidden;
 }
 
 
 /* =========================================================
-   TITLE
+   LEFT COPY
    ========================================================= */
 
-.landing .landing-eyebrow {
+.landing-copy {
+  min-width: 0;
+
+  align-self: center;
+}
+
+
+.landing-eyebrow {
   margin:
     0
     0
-    clamp(10px, 1.3vh, 16px);
+    15px;
 
   font-size:
-    clamp(11px, 0.8vw, 14px);
+    clamp(11px, 0.82vw, 14px);
 
   line-height: 1;
 
@@ -139,13 +113,13 @@ body.landing {
 }
 
 
-.landing .landing-title {
+.landing-title {
   margin: 0;
 
   font-size:
-    clamp(86px, 9.4vw, 156px);
+    clamp(88px, 9.7vw, 160px);
 
-  line-height: 0.8;
+  line-height: 0.79;
 
   font-weight: 950;
 
@@ -155,67 +129,85 @@ body.landing {
 }
 
 
-.landing .landing-subtitle {
-  max-width: 900px;
+.landing-subtitle {
+  max-width: 840px;
 
   margin:
-    clamp(16px, 1.8vh, 24px)
+    22px
     0
     0;
 
   font-size:
-    clamp(16px, 1.15vw, 21px);
+    clamp(17px, 1.25vw, 22px);
 
   line-height: 1.35;
 
   font-weight: 750;
 
-  letter-spacing: 0.03em;
+  letter-spacing: 0.035em;
 
   color: var(--muted);
 }
 
 
 /* =========================================================
-   SHAPES
+   SHAPE STAGE
 
-   Tightened significantly to match your reference image.
+   The whole composition is intentionally moved left.
+   ========================================================= */
 
-        CIRCLE
-      / 
-   LINE   SQUARE
+.landing-shape-stage {
+  width: 360px;
+  height: 100%;
+
+  min-height: 300px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  /*
+    This is the major leftward shift you asked for.
+  */
+  transform:
+    translateX(-105px);
+}
+
+
+/* =========================================================
+   SHAPE COMPOSITION
+
+   Fixed geometry based on your reference image.
+
+                CIRCLE
+
+       /
+      /
+                    SQUARE
 
    ========================================================= */
 
-.landing .landing-shapes {
+.landing-shape-composition {
   position: relative;
 
-  width: 280px;
-  height: 270px;
+  width: 300px;
+  height: 285px;
 
-  min-height: 0;
-
-  justify-self: end;
-
-  margin: 0 18px 0 0;
-  padding: 0;
-
-  border: 0;
-
-  overflow: visible;
+  flex: 0 0 auto;
 }
 
 
 /* BLUE LINE */
 
-.landing .shape-line {
+.landing-shape-composition .shape-line {
   position: absolute;
 
-  width: 155px;
+  width: 178px;
   height: 6px;
 
-  left: 3px;
-  top: 154px;
+  left: 8px;
+  top: 160px;
 
   background: var(--blue);
 
@@ -228,14 +220,14 @@ body.landing {
 
 /* YELLOW CIRCLE */
 
-.landing .shape-circle {
+.landing-shape-composition .shape-circle {
   position: absolute;
 
-  width: 126px;
-  height: 126px;
+  width: 148px;
+  height: 148px;
 
-  left: 118px;
-  top: 5px;
+  left: 142px;
+  top: 0;
 
   border-radius: 50%;
 
@@ -245,14 +237,14 @@ body.landing {
 
 /* RED SQUARE */
 
-.landing .shape-square {
+.landing-shape-composition .shape-square {
   position: absolute;
 
-  width: 70px;
-  height: 70px;
+  width: 72px;
+  height: 72px;
 
-  left: 130px;
-  top: 169px;
+  left: 157px;
+  top: 180px;
 
   background: var(--red);
 }
@@ -262,10 +254,8 @@ body.landing {
    BUY / SELL
    ========================================================= */
 
-.landing .landing-choice-grid {
+.landing-choices {
   width: 100%;
-  max-width: 100%;
-
   min-height: 0;
 
   margin: 0;
@@ -275,8 +265,6 @@ body.landing {
 
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
-
-  border: 0;
 }
 
 
@@ -284,21 +272,17 @@ body.landing {
    CHOICE BOX
    ========================================================= */
 
-.landing .landing-choice {
+.landing-choice {
   position: relative;
-
-  width: 100%;
 
   box-sizing: border-box;
 
   min-width: 0;
   min-height: 0;
 
-  margin: 0;
-
   padding:
-    clamp(18px, 2vh, 26px)
-    var(--landing-edge);
+    24px
+    22px;
 
   display: flex;
   flex-direction: column;
@@ -309,36 +293,20 @@ body.landing {
 
   color: var(--ink);
 
-  border: 0;
-
   overflow: hidden;
-
-  transition:
-    filter 160ms ease;
 }
 
 
-.landing .landing-choice:first-child {
-  border-right: 1px solid var(--ink);
-}
-
-
-.landing .landing-choice-buy {
+.landing-choice-buy {
   background: var(--yellow);
+
+  border-right:
+    1px solid var(--ink);
 }
 
 
-.landing .landing-choice-sell {
+.landing-choice-sell {
   background: var(--paper-light);
-}
-
-
-@media (hover: hover) {
-
-  .landing .landing-choice:hover {
-    filter: brightness(0.97);
-  }
-
 }
 
 
@@ -346,16 +314,11 @@ body.landing {
    NUMBER
    ========================================================= */
 
-.landing .landing-choice-number {
+.landing-choice-number {
   position: absolute;
 
-  top:
-    clamp(16px, 1.8vh, 24px);
-
-  left:
-    var(--landing-edge);
-
-  display: block;
+  top: 20px;
+  left: 22px;
 
   font-size:
     clamp(11px, 0.78vw, 14px);
@@ -365,47 +328,47 @@ body.landing {
   font-weight: 900;
 
   letter-spacing: 0.04em;
-
-  color: var(--ink);
 }
 
 
 /* =========================================================
-   CONTENT
+   CHOICE INNER GROUP
 
-   IMPORTANT:
-   The content now uses almost the entire horizontal width
-   of each card rather than stopping at 420px.
+   This uses most of the card width.
 
-   This removes much of the empty-looking right side.
+   The arrow is part of the same group rather than
+   being positioned at the far browser edge.
    ========================================================= */
 
-.landing .landing-choice-content {
-  width: calc(100% - 60px);
-  max-width: none;
+.landing-choice-center {
+  width: 88%;
+
+  max-width: 680px;
 
   margin: 0;
 
   transform:
-    translateY(-18px);
+    translateY(-10px);
 }
 
 
-.landing .landing-choice-label {
+/* =========================================================
+   BUY / SELL LABEL
+   ========================================================= */
+
+.landing-choice-label {
   display: block;
 
   margin: 0;
 
   font-size:
-    clamp(50px, 4.4vw, 70px);
+    clamp(50px, 4.6vw, 74px);
 
-  line-height: 0.95;
+  line-height: 0.94;
 
   font-weight: 950;
 
   letter-spacing: -0.055em;
-
-  color: var(--ink);
 }
 
 
@@ -413,65 +376,68 @@ body.landing {
    DESCRIPTION
    ========================================================= */
 
-.landing .landing-choice-description {
+.landing-choice-description {
   width: 100%;
-  max-width: 650px;
+
+  max-width: none;
 
   margin:
-    clamp(10px, 1.2vh, 16px)
+    14px
     0
     0;
 
   font-size:
-    clamp(15px, 1.02vw, 18px);
+    clamp(15px, 1.05vw, 18px);
 
   line-height: 1.38;
 
   font-weight: 600;
-
-  letter-spacing: 0;
-
-  color: var(--ink);
 }
 
 
 /* =========================================================
    ARROW
 
-   Explicitly reset old styles.css absolute positioning.
-
-   The arrow now belongs to the content block itself.
+   Directly beneath the description and aligned with
+   the right edge of the content group.
    ========================================================= */
 
-.landing .landing-choice-arrow {
+.landing-choice-arrow {
   position: static;
-
-  right: auto;
-  bottom: auto;
-  left: auto;
-  top: auto;
 
   display: block;
 
-  width: calc(100% - 60px);
+  width: 100%;
 
-  max-width: none;
-
-  margin-top:
-    clamp(8px, 1vh, 12px);
-
-  align-self: flex-start;
+  margin-top: 18px;
 
   text-align: right;
 
   font-size:
-    clamp(30px, 2.3vw, 40px);
+    clamp(30px, 2.4vw, 42px);
 
   line-height: 1;
 
   font-weight: 400;
+}
 
-  color: var(--ink);
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+@media (hover: hover) {
+
+  .landing-choice {
+    transition:
+      filter 150ms ease;
+  }
+
+  .landing-choice:hover {
+    filter:
+      brightness(0.97);
+  }
+
 }
 
 
@@ -479,12 +445,10 @@ body.landing {
    FOOTER
    ========================================================= */
 
-.landing .landing-footer {
+.landing-footer {
   width: 100%;
-  max-width: 100%;
 
   flex: 0 0 50px;
-
   min-height: 50px;
 
   box-sizing: border-box;
@@ -493,7 +457,7 @@ body.landing {
 
   padding:
     0
-    var(--landing-edge);
+    22px;
 
   display: flex;
 
@@ -502,12 +466,14 @@ body.landing {
 
   gap: 20px;
 
-  border: 0;
-  border-top: 1px solid var(--ink);
+  border-top:
+    1px solid var(--ink);
 
-  background: var(--paper);
+  background:
+    var(--paper);
 
-  font-size: 12px;
+  font-size:
+    12px;
 
   line-height: 1;
 
@@ -517,19 +483,19 @@ body.landing {
 }
 
 
-.landing .landing-footer a {
+.landing-footer a {
   color: var(--ink);
 
   text-decoration: none;
 }
 
 
-.landing .landing-footer a:hover {
+.landing-footer a:hover {
   text-decoration: underline;
 }
 
 
-.landing .landing-footer-links {
+.landing-footer-links {
   display: flex;
 
   align-items: center;
@@ -539,105 +505,114 @@ body.landing {
 
 
 /* =========================================================
-   SHORTER LAPTOP SCREENS
+   MEDIUM LAPTOPS
+   ========================================================= */
+
+@media
+  (min-width: 761px)
+  and (max-width: 1250px) {
+
+  .landing-hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      310px;
+  }
+
+
+  .landing-shape-stage {
+    width: 310px;
+
+    transform:
+      translateX(-70px);
+  }
+
+
+  .landing-shape-composition {
+    transform:
+      scale(0.90);
+
+    transform-origin:
+      center;
+  }
+
+
+  .landing-choice-center {
+    width: 92%;
+  }
+
+}
+
+
+/* =========================================================
+   SHORT LAPTOP SCREENS
    ========================================================= */
 
 @media
   (min-width: 761px)
   and (max-height: 760px) {
 
-  .landing main {
+  .landing-main {
     grid-template-rows:
-      minmax(0, 48%)
-      minmax(0, 52%);
+      minmax(0, 47%)
+      minmax(0, 53%);
   }
 
 
-  .landing .landing-intro {
+  .landing-hero {
     padding-top: 16px;
     padding-bottom: 16px;
   }
 
 
-  .landing .landing-title {
+  .landing-title {
     font-size:
-      clamp(72px, 8.4vw, 132px);
+      clamp(74px, 8.5vw, 132px);
   }
 
 
-  .landing .landing-subtitle {
-    margin-top: 14px;
+  .landing-subtitle {
+    margin-top: 15px;
 
     font-size:
-      clamp(15px, 1.02vw, 19px);
+      clamp(15px, 1vw, 19px);
   }
 
 
-  .landing .landing-shapes {
-    width: 245px;
-    height: 205px;
-
-    margin-right: 12px;
+  .landing-shape-stage {
+    min-height: 230px;
   }
 
 
-  .landing .shape-line {
-    width: 135px;
-
-    left: 0;
-    top: 123px;
-  }
-
-
-  .landing .shape-circle {
-    width: 108px;
-    height: 108px;
-
-    left: 103px;
-    top: 0;
-  }
-
-
-  .landing .shape-square {
-    width: 60px;
-    height: 60px;
-
-    left: 115px;
-    top: 138px;
-  }
-
-
-  .landing .landing-choice-content {
+  .landing-shape-composition {
     transform:
-      translateY(-14px);
+      scale(0.82);
+
+    transform-origin:
+      center;
   }
 
 
-  .landing .landing-choice-label {
-    font-size:
-      clamp(42px, 3.9vw, 60px);
+  .landing-choice-center {
+    transform:
+      translateY(-6px);
   }
 
 
-  .landing .landing-choice-description {
-    margin-top: 8px;
+  .landing-choice-description {
+    margin-top: 10px;
 
     font-size:
       clamp(14px, 0.95vw, 16px);
   }
 
 
-  .landing .landing-choice-arrow {
-    margin-top: 6px;
-
-    font-size:
-      clamp(26px, 1.9vw, 34px);
+  .landing-choice-arrow {
+    margin-top: 12px;
   }
 
 
-  .landing .landing-footer {
+  .landing-footer {
     flex-basis: 44px;
-
     min-height: 44px;
   }
 
@@ -651,8 +626,6 @@ body.landing {
 @media (max-width: 760px) {
 
   body.landing {
-    --landing-edge: 18px;
-
     height: auto;
 
     min-height: 100vh;
@@ -663,113 +636,86 @@ body.landing {
   }
 
 
-  .landing main {
+  .landing-main {
     display: block;
   }
 
 
-  .landing .landing-intro {
+  /* HERO */
+
+  .landing-hero {
+    display: block;
+
     min-height: auto;
 
     padding:
-      28px
-      var(--landing-edge)
-      32px;
-
-    overflow: visible;
+      32px
+      18px
+      34px;
   }
 
 
-  .landing .landing-intro-grid {
-    height: auto;
-
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 18px;
-  }
-
-
-  .landing .landing-title {
+  .landing-title {
     font-size:
-      clamp(78px, 27vw, 126px);
+      clamp(78px, 27vw, 124px);
 
-    line-height: 0.82;
+    line-height: 0.81;
   }
 
 
-  .landing .landing-subtitle {
-    max-width: 100%;
-
-    margin-top: 18px;
+  .landing-subtitle {
+    margin-top: 20px;
 
     font-size:
-      clamp(17px, 5vw, 22px);
-
-    line-height: 1.4;
+      clamp(17px, 5vw, 21px);
   }
 
 
-  /* TIGHT MOBILE SHAPE GROUP */
+  /* MOBILE SHAPES */
 
-  .landing .landing-shapes {
-    width: 235px;
-    height: 210px;
+  .landing-shape-stage {
+    width: 100%;
+    height: 220px;
 
-    justify-self: start;
+    min-height: 220px;
 
-    margin: 0;
+    margin-top: 20px;
+
+    transform: none;
+
+    justify-content: flex-start;
   }
 
 
-  .landing .shape-line {
-    width: 130px;
-    height: 5px;
+  .landing-shape-composition {
+    width: 245px;
+    height: 215px;
 
-    left: 0;
-    top: 128px;
+    transform:
+      scale(0.78);
+
+    transform-origin:
+      top left;
   }
 
 
-  .landing .shape-circle {
-    width: 100px;
-    height: 100px;
+  /* STACK BUY / SELL */
 
-    left: 102px;
-    top: 0;
-  }
-
-
-  .landing .shape-square {
-    width: 56px;
-    height: 56px;
-
-    left: 113px;
-    top: 145px;
-  }
-
-
-  /* BUY / SELL STACK */
-
-  .landing .landing-choice-grid {
+  .landing-choices {
     display: block;
   }
 
 
-  .landing .landing-choice {
-    min-height: 235px;
+  .landing-choice {
+    min-height: 255px;
 
     padding:
-      16px
-      var(--landing-edge)
-      22px;
-
-    justify-content: center;
+      22px
+      18px;
   }
 
 
-  .landing .landing-choice:first-child {
+  .landing-choice-buy {
     border-right: 0;
 
     border-bottom:
@@ -777,62 +723,52 @@ body.landing {
   }
 
 
-  .landing .landing-choice-number {
-    top: 16px;
-
-    left: var(--landing-edge);
+  .landing-choice-number {
+    top: 18px;
+    left: 18px;
   }
 
 
-  .landing .landing-choice-content {
+  .landing-choice-center {
     width: 100%;
-    max-width: 100%;
+    max-width: none;
 
     transform:
-      translateY(-8px);
+      translateY(-4px);
   }
 
 
-  .landing .landing-choice-label {
+  .landing-choice-label {
     font-size:
       clamp(52px, 16vw, 74px);
   }
 
 
-  .landing .landing-choice-description {
-    width: 100%;
-    max-width: 100%;
-
-    margin-top: 12px;
-
+  .landing-choice-description {
     font-size: 16px;
 
     line-height: 1.42;
   }
 
 
-  .landing .landing-choice-arrow {
-    width: 100%;
-
-    margin-top: 10px;
-
-    text-align: right;
+  .landing-choice-arrow {
+    margin-top: 14px;
 
     font-size: 38px;
   }
 
 
-  .landing .landing-footer {
-    min-height: auto;
+  /* FOOTER */
 
+  .landing-footer {
+    min-height: auto;
     flex-basis: auto;
 
     padding:
       20px
-      var(--landing-edge);
+      18px;
 
     align-items: flex-start;
-
     flex-direction: column;
 
     gap: 12px;
