@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Explore a lender-approved short-sale pathway through the MREO demonstration seller process."
+  >
+
+  <title>MREO | Short Sale</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-options-link"
+      class="back-link"
+      href="seller-options.html"
+    >
+      ← Seller Options
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Seller Path · 04
+      </p>
+
+      <h1 class="page-title">
+        Short Sale
+      </h1>
+
+      <p class="page-description">
+        Explore a sale that may require lender or servicer approval.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="short-sale-form"
+      class="form"
+    >
+
+      <!-- ===================================
+           AMOUNT OWED
+           =================================== -->
+
+      <div class="field">
+
+        <label for="amount-owed">
+          Approximate Amount Owed
+        </label>
+
+        <input
+          id="amount-owed"
+          name="amountOwed"
+          type="number"
+          min="0"
+          step="1000"
+          placeholder="Enter approximate amount"
+          required
+        >
+
+      </div>
+
+
+      <!-- ===================================
+           ESTIMATED PROPERTY VALUE
+           =================================== -->
+
+      <div class="field">
+
+        <label for="estimated-value">
+          Estimated Property Value
+        </label>
+
+        <input
+          id="estimated-value"
+          name="estimatedValue"
+          type="number"
+          min="0"
+          step="1000"
+          placeholder="Enter estimated value"
+          required
+        >
+
+      </div>
+
+
+      <!-- ===================================
+           LENDER / SERVICER STATUS
+           =================================== -->
+
+      <div class="field">
+
+        <label for="lender-status">
+          Lender / Servicer Status
+        </label>
+
+        <select
+          id="lender-status"
+          name="lenderStatus"
+          required
+        >
+
+          <option value="">
+            Choose current status
+          </option>
+
+          <option value="No lender contact yet">
+            No lender contact yet
+          </option>
+
+          <option value="Initial contact made">
+            Initial contact made
+          </option>
+
+          <option value="Loss-mitigation review started">
+            Loss-mitigation review started
+          </option>
+
+          <option value="Short-sale package requested">
+            Short-sale package requested
+          </option>
+
+          <option value="Short-sale review underway">
+            Short-sale review underway
+          </option>
+
+          <option value="Approval received">
+            Approval received
+          </option>
+
+          <option value="Status uncertain">
+            Status uncertain
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           SAVE
+           =================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Review Short-Sale Position
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="short-sale-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <p class="page-eyebrow">
+        Short-Sale Review
+      </p>
+
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Approximate Amount Owed
+          </span>
+
+          <span
+            id="result-owed"
+            class="detail-value"
+            style="
+              font-size: 20px;
+              font-weight: 900;
+            "
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Estimated Property Value
+          </span>
+
+          <span
+            id="result-value"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Difference
+          </span>
+
+          <span
+            id="result-difference"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Lender / Servicer
+          </span>
+
+          <span
+            id="result-lender-status"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================
+           CONTEXTUAL RESULT
+           =================================== -->
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Current Position
+        </p>
+
+        <h3 id="short-sale-heading">
+          Lender review may be required.
+        </h3>
+
+        <p
+          id="short-sale-description"
+          class="muted"
+        >
+          A short-sale pathway generally requires coordination
+          among the owner, lender or servicer, purchaser, settlement
+          participants, and other required parties.
+        </p>
+
+      </section>
+
+
+      <div class="button-row">
+
+        <a
+          id="requirements-link"
+          class="primary-button"
+          href="seller-short-sale-requirements.html"
+        >
+          Review Requirements
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="seller-options-link"
+          class="secondary-button"
+          href="seller-options.html"
+        >
+          Compare Seller Paths
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         KEY DISTINCTION
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      A short sale is different from an ordinary sale because the
+      seller may be seeking approval for a transaction in which
+      expected sale proceeds are insufficient to satisfy the amount
+      owed against the property. Approval cannot be assumed.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      This prototype does not determine mortgage balances, property
+      value, deficiency liability, foreclosure status, lender approval,
+      tax consequences, or eligibility for any loss-mitigation option.
+      Owners should obtain appropriate legal, tax, lending, and
+      real-estate advice for their circumstances.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO short-sale pathway
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      document.getElementById(
+        "requirements-link"
+      ).href =
+        withAddress(
+          "seller-short-sale-requirements.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ANALYSIS VALUE
+         ----------------------------------------- */
+
+      try {
+
+        const savedAnalysis =
+          sessionStorage.getItem(
+            "mreo-seller-property-analysis"
+          );
+
+
+        if (savedAnalysis) {
+
+          const analysis =
+            JSON.parse(
+              savedAnalysis
+            );
+
+
+          const estimatedValue =
+            Number(
+              analysis.estimatedValue
+            );
+
+
+          if (
+            Number.isFinite(
+              estimatedValue
+            ) &&
+            estimatedValue > 0
+          ) {
+
+            document.getElementById(
+              "estimated-value"
+            ).value =
+              Math.round(
+                estimatedValue
+              );
+
+          }
+
+        }
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore property analysis:",
+          error
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      let savedOwed =
+        null;
+
+
+      let savedValue =
+        null;
+
+
+      let savedLenderStatus =
+        null;
+
+
+      try {
+
+        savedOwed =
+          sessionStorage.getItem(
+            "mreo-seller-short-sale-owed"
+          );
+
+
+        savedValue =
+          sessionStorage.getItem(
+            "mreo-seller-short-sale-value"
+          );
+
+
+        savedLenderStatus =
+          sessionStorage.getItem(
+            "mreo-seller-short-sale-lender-status"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore short-sale information:",
+          error
+        );
+
+      }
+
+
+      if (savedOwed) {
+
+        document.getElementById(
+          "amount-owed"
+        ).value =
+          savedOwed;
+
+      }
+
+
+      /*
+        A previously saved value takes priority over
+        the automated property-analysis estimate.
+      */
+
+      if (savedValue) {
+
+        document.getElementById(
+          "estimated-value"
+        ).value =
+          savedValue;
+
+      }
+
+
+      if (savedLenderStatus) {
+
+        document.getElementById(
+          "lender-status"
+        ).value =
+          savedLenderStatus;
+
+      }
+
+
+      /* -----------------------------------------
+         CURRENCY
+         ----------------------------------------- */
+
+      const currency =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0
+          }
+        );
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "short-sale-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const amountOwed =
+            Number(
+              document.getElementById(
+                "amount-owed"
+              ).value
+            );
+
+
+          const estimatedValue =
+            Number(
+              document.getElementById(
+                "estimated-value"
+              ).value
+            );
+
+
+          const lenderStatus =
+            document.getElementById(
+              "lender-status"
+            ).value;
+
+
+          if (
+            !Number.isFinite(amountOwed) ||
+            !Number.isFinite(estimatedValue)
+          ) {
+
+            return;
+
+          }
+
+
+          const difference =
+            estimatedValue -
+            amountOwed;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-short-sale-owed",
+              String(amountOwed)
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-short-sale-value",
+              String(estimatedValue)
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-short-sale-lender-status",
+              lenderStatus
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-selected-pathway",
+              "Short Sale"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save short-sale review:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RESULT
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-owed"
+          ).textContent =
+            currency.format(
+              amountOwed
+            );
+
+
+          document.getElementById(
+            "result-value"
+          ).textContent =
+            currency.format(
+              estimatedValue
+            );
+
+
+          document.getElementById(
+            "result-lender-status"
+          ).textContent =
+            lenderStatus;
+
+
+          const differenceElement =
+            document.getElementById(
+              "result-difference"
+            );
+
+
+          const heading =
+            document.getElementById(
+              "short-sale-heading"
+            );
+
+
+          const description =
+            document.getElementById(
+              "short-sale-description"
+            );
+
+
+          if (difference < 0) {
+
+            const shortfall =
+              Math.abs(
+                difference
+              );
+
+
+            differenceElement.textContent =
+              `${currency.format(shortfall)} below amount owed`;
+
+
+            heading.textContent =
+              "The entered figures show a potential shortfall.";
+
+
+            description.textContent =
+              "Because the estimated property value is below the approximate amount owed, a sale at that value may require lender or servicer review and approval before it can proceed.";
+
+          } else if (difference > 0) {
+
+            differenceElement.textContent =
+              `${currency.format(difference)} above amount owed`;
+
+
+            heading.textContent =
+              "The entered figures do not show a simple value shortfall.";
+
+
+            description.textContent =
+              "Based only on these two user-entered figures, estimated value exceeds the approximate amount owed. Other transaction costs, liens, payoff amounts, and circumstances could still materially affect the actual position.";
+
+          } else {
+
+            differenceElement.textContent =
+              "Approximately equal";
+
+
+            heading.textContent =
+              "The entered figures are approximately equal.";
+
+
+            description.textContent =
+              "Transaction expenses, additional liens, payoff figures, and lender requirements could determine whether a short-sale review is relevant.";
+
+          }
+
+
+          document.getElementById(
+            "short-sale-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "short-sale-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
