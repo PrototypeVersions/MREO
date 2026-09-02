@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View estimated equity and resale readiness for an MREO property."
+  >
+
+  <title>MREO | Equity & Resale</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-operations-link"
+      class="back-link"
+      href="operations.html?id=MREO-0001"
+    >
+      ← Operations
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="equity-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1 class="page-title">
+        Equity &amp; Resale
+      </h1>
+
+      <p
+        id="equity-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         EQUITY SUMMARY
+         ===================================== -->
+
+    <section class="detail-list">
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Estimated Equity
+        </span>
+
+        <span
+          id="estimated-equity"
+          class="detail-value"
+          style="
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -.04em;
+          "
+        >
+          —
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Resale Readiness
+        </span>
+
+        <span
+          id="resale-readiness"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          Not assessed
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Ownership Disposition
+        </span>
+
+        <span
+          id="ownership-disposition"
+          class="detail-value"
+        >
+          Hold
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         CURRENT POSITION
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 34px;"
+    >
+
+      <p class="eyebrow">
+        Current Position
+      </p>
+
+      <h3 id="equity-heading">
+        No resale decision is active.
+      </h3>
+
+      <p
+        id="equity-description"
+        class="muted"
+      >
+        This property is not currently marked for resale in the
+        demonstration record.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         NAVIGATION
+         ===================================== -->
+
+    <div class="button-row">
+
+      <a
+        id="operations-link"
+        class="primary-button"
+        href="operations.html?id=MREO-0001"
+      >
+        Operations
+      </a>
+
+
+      <a
+        id="property-link"
+        class="secondary-button"
+        href="property.html?id=MREO-0001"
+      >
+        Property
+      </a>
+
+    </div>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div class="status-message">
+      Equity and resale-readiness figures shown in this prototype
+      are fictional demonstration data. Estimated equity is not an
+      appraisal, payoff statement, investment valuation, or
+      guarantee of resale proceeds.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration ownership record
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      const requestedId =
+        params.get("id") ||
+        "MREO-0001";
+
+
+      /* -----------------------------------------
+         FALLBACK
+         ----------------------------------------- */
+
+      const fallback = {
+
+        id:
+          "MREO-0001",
+
+        addressLine1:
+          "4218 Maple Ridge Drive",
+
+        location:
+          "Dallas, Texas",
+
+        operations: {
+
+          equity:
+            null,
+
+          resaleReadiness:
+            null,
+
+          disposition:
+            "Hold"
+
+        }
+
+      };
+
+
+      /* -----------------------------------------
+         SPECIAL DEMONSTRATION RECORDS
+         ----------------------------------------- */
+
+      const demoEquityRecords = {
+
+        "MREO-0004": {
+
+          equity:
+            161000,
+
+          resaleReadiness:
+            82,
+
+          disposition:
+            "Hold / Operating Rental",
+
+          heading:
+            "The property is being held as an operating rental.",
+
+          description:
+            "The demonstration record shows positive estimated equity, while the current ownership strategy remains continued operation rather than immediate resale."
+
+        },
+
+
+        "MREO-0018": {
+
+          equity:
+            null,
+
+          resaleReadiness:
+            null,
+
+          disposition:
+            "Owner Retention",
+
+          heading:
+            "The owner's current objective is retention.",
+
+          description:
+            "MREO does not assume that every property should be sold. This demonstration record keeps the property in an owner-retention pathway."
+
+        },
+
+
+        "MREO-0020": {
+
+          equity:
+            128000,
+
+          resaleReadiness:
+            98,
+
+          disposition:
+            "Hold / Resale Ready",
+
+          heading:
+            "The property is operating and highly resale-ready.",
+
+          description:
+            "Reconstruction is complete, the property is tenant occupied, and the demonstration record indicates strong readiness for a future resale if the owner chooses."
+
+        }
+
+      };
+
+
+      /* -----------------------------------------
+         LOAD PROPERTY
+         ----------------------------------------- */
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+
+        property =
+          window.MREO_DATA.getProperty(
+            requestedId
+          ) ||
+          fallback;
+
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      /* -----------------------------------------
+         OPERATIONS RECORD
+         ----------------------------------------- */
+
+      const demoRecord =
+        demoEquityRecords[id] ||
+        {};
+
+
+      const operations =
+        property.operations ||
+        property.management ||
+        property.passport?.operations ||
+        {};
+
+
+      const equity =
+        toNumberOrNull(
+          operations.equity ??
+          operations.estimatedEquity ??
+          property.equity ??
+          property.estimatedEquity ??
+          demoRecord.equity ??
+          fallback.operations.equity
+        );
+
+
+      const resaleReadinessRaw =
+        operations.resaleReadiness ??
+        operations.readiness ??
+        property.resaleReadiness ??
+        demoRecord.resaleReadiness ??
+        fallback.operations.resaleReadiness;
+
+
+      const resaleReadiness =
+        toNumberOrNull(
+          resaleReadinessRaw
+        );
+
+
+      const disposition =
+        operations.disposition ||
+        operations.ownershipDisposition ||
+        property.disposition ||
+        demoRecord.disposition ||
+        fallback.operations.disposition;
+
+
+      /* -----------------------------------------
+         FORMAT
+         ----------------------------------------- */
+
+      const currency =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            style:
+              "currency",
+
+            currency:
+              "USD",
+
+            maximumFractionDigits:
+              0
+          }
+        );
+
+
+      /* -----------------------------------------
+         RENDER PROPERTY
+         ----------------------------------------- */
+
+      document.getElementById(
+        "equity-property-id"
+      ).textContent =
+        id;
+
+
+      document.getElementById(
+        "equity-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      /* -----------------------------------------
+         RENDER VALUES
+         ----------------------------------------- */
+
+      document.getElementById(
+        "estimated-equity"
+      ).textContent =
+        equity !== null
+          ? currency.format(equity)
+          : "Not estimated";
+
+
+      document.getElementById(
+        "resale-readiness"
+      ).textContent =
+        resaleReadiness !== null
+          ? `${Math.round(resaleReadiness)} / 100`
+          : "Not assessed";
+
+
+      document.getElementById(
+        "ownership-disposition"
+      ).textContent =
+        disposition;
+
+
+      /* -----------------------------------------
+         CURRENT POSITION
+         ----------------------------------------- */
+
+      const heading =
+        document.getElementById(
+          "equity-heading"
+        );
+
+
+      const description =
+        document.getElementById(
+          "equity-description"
+        );
+
+
+      if (
+        demoRecord.heading
+      ) {
+
+        heading.textContent =
+          demoRecord.heading;
+
+
+        description.textContent =
+          demoRecord.description;
+
+      } else if (
+        resaleReadiness !== null &&
+        resaleReadiness >= 90
+      ) {
+
+        heading.textContent =
+          "The property is highly resale-ready.";
+
+
+        description.textContent =
+          "The demonstration record indicates that the property is in a strong position for future resale if the owner elects to sell.";
+
+      } else if (
+        resaleReadiness !== null
+      ) {
+
+        heading.textContent =
+          "Resale readiness is being tracked.";
+
+
+        description.textContent =
+          "The property can continue operating while its condition, records, and market readiness are maintained over time.";
+
+      } else {
+
+        heading.textContent =
+          "No resale decision is active.";
+
+
+        description.textContent =
+          "This property is not currently marked for resale in the demonstration record.";
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      const encodedId =
+        encodeURIComponent(id);
+
+
+      document.getElementById(
+        "back-operations-link"
+      ).href =
+        `operations.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "operations-link"
+      ).href =
+        `operations.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "property-link"
+      ).href =
+        `property.html?id=${encodedId}`;
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.title =
+        `${id} | MREO Equity & Resale`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+
+      /* -----------------------------------------
+         NUMBER HELPER
+         ----------------------------------------- */
+
+      function toNumberOrNull(value) {
+
+        if (
+          value === null ||
+          value === undefined ||
+          value === ""
+        ) {
+          return null;
+        }
+
+
+        const number =
+          Number(value);
+
+
+        return Number.isFinite(number)
+          ? number
+          : null;
+
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
