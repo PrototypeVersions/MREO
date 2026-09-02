@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View field evidence associated with an MREO property."
+  >
+
+  <title>MREO | Field Evidence</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-verification-link"
+      class="back-link"
+      href="field-verification.html?id=MREO-0001"
+    >
+      ← Field Verification
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="evidence-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1 class="page-title">
+        Field Evidence
+      </h1>
+
+      <p
+        id="evidence-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         VERIFICATION DATE
+         ===================================== -->
+
+    <section class="detail-list">
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Field Record
+        </span>
+
+        <span
+          id="evidence-date"
+          class="detail-value"
+        >
+          Current demonstration record
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         EVIDENCE ITEMS
+         ===================================== -->
+
+    <section
+      class="step-list"
+      style="margin-top: 36px;"
+    >
+
+      <!-- EXTERIOR PHOTOS -->
+
+      <div class="step-link">
+
+        <span class="step-number">
+          01
+        </span>
+
+        <div class="step-content">
+
+          <strong>
+            Exterior Photos
+          </strong>
+
+          <small id="photo-status">
+            Available · Demonstration record
+          </small>
+
+        </div>
+
+        <span
+          class="step-arrow"
+          aria-hidden="true"
+        >
+          ✓
+        </span>
+
+      </div>
+
+
+      <!-- WALKTHROUGH -->
+
+      <div class="step-link">
+
+        <span class="step-number">
+          02
+        </span>
+
+        <div class="step-content">
+
+          <strong>
+            Walkthrough Video
+          </strong>
+
+          <small id="walkthrough-status">
+            Available · Demonstration record
+          </small>
+
+        </div>
+
+        <span
+          class="step-arrow"
+          aria-hidden="true"
+        >
+          ✓
+        </span>
+
+      </div>
+
+
+      <!-- LOCATION -->
+
+      <div class="step-link">
+
+        <span class="step-number">
+          03
+        </span>
+
+        <div class="step-content">
+
+          <strong>
+            Location Verification
+          </strong>
+
+          <small id="location-status">
+            Property location associated with field record
+          </small>
+
+        </div>
+
+        <span
+          class="step-arrow"
+          aria-hidden="true"
+        >
+          ✓
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         MAIN EVIDENCE IMAGE
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 36px;"
+    >
+
+      <p class="eyebrow">
+        Exterior Record
+      </p>
+
+      <div
+        class="property-image"
+        style="margin-top: 18px;"
+      >
+
+        <img
+          id="evidence-image"
+          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85"
+          alt="Fictional MREO field evidence"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         NAVIGATION
+         ===================================== -->
+
+    <div class="button-row">
+
+      <a
+        id="verification-link"
+        class="primary-button"
+        href="field-verification.html?id=MREO-0001"
+      >
+        Field Verification
+      </a>
+
+
+      <a
+        id="visual-link"
+        class="secondary-button"
+        href="visual.html?id=MREO-0001"
+      >
+        Visual Record
+      </a>
+
+    </div>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div class="status-message">
+      The photographs, video references, verification status,
+      and field records shown in this marketplace are fictional
+      demonstration materials.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration field evidence
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         PROPERTY
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+      const requestedId =
+        params.get("id") || "MREO-0001";
+
+
+      const fallback = {
+
+        id:
+          "MREO-0001",
+
+        addressLine1:
+          "4218 Maple Ridge Drive",
+
+        location:
+          "Dallas, Texas",
+
+        image:
+          "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85",
+
+        visualHistory:
+          []
+
+      };
+
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+
+        property =
+          window.MREO_DATA.getProperty(requestedId) ||
+          fallback;
+
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      const image =
+        property.image ||
+        property.heroImage ||
+        fallback.image;
+
+
+      /* -----------------------------------------
+         FIELD RECORD
+         ----------------------------------------- */
+
+      const history =
+        Array.isArray(property.visualHistory)
+          ? property.visualHistory
+          : [];
+
+
+      const fieldRecord =
+        history.find((item) => {
+
+          const text =
+            JSON.stringify(item)
+              .toLowerCase();
+
+          return (
+            text.includes("field") ||
+            text.includes("walkthrough") ||
+            text.includes("video") ||
+            text.includes("verification")
+          );
+
+        }) ||
+        history[0] ||
+        {};
+
+
+      const recordDate =
+        fieldRecord.date ||
+        fieldRecord.updated ||
+        fieldRecord.verifiedAt ||
+        "Current demonstration record";
+
+
+      /* -----------------------------------------
+         EVIDENCE
+         ----------------------------------------- */
+
+      let evidence =
+        fieldRecord.evidence ||
+        property.visual?.evidence ||
+        property.passport?.visual?.evidence ||
+        [];
+
+
+      if (typeof evidence === "string") {
+        evidence = [evidence];
+      }
+
+
+      if (!Array.isArray(evidence)) {
+        evidence = [];
+      }
+
+
+      const evidenceText =
+        evidence
+          .join(" ")
+          .toLowerCase();
+
+
+      const hasPhotos =
+        evidence.length === 0 ||
+        evidenceText.includes("photo") ||
+        evidenceText.includes("image");
+
+
+      const hasWalkthrough =
+        evidence.length === 0 ||
+        evidenceText.includes("walkthrough") ||
+        evidenceText.includes("video");
+
+
+      const hasLocation =
+        evidence.length === 0 ||
+        evidenceText.includes("location") ||
+        evidenceText.includes("geo") ||
+        evidenceText.includes("address");
+
+
+      /* -----------------------------------------
+         RENDER PROPERTY
+         ----------------------------------------- */
+
+      document.getElementById(
+        "evidence-property-id"
+      ).textContent =
+        id;
+
+
+      document.getElementById(
+        "evidence-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      document.getElementById(
+        "evidence-date"
+      ).textContent =
+        recordDate;
+
+
+      /* -----------------------------------------
+         RENDER EVIDENCE STATUS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "photo-status"
+      ).textContent =
+        hasPhotos
+          ? "Available · Demonstration record"
+          : "Not currently recorded";
+
+
+      document.getElementById(
+        "walkthrough-status"
+      ).textContent =
+        hasWalkthrough
+          ? "Available · Demonstration record"
+          : "Not currently recorded";
+
+
+      document.getElementById(
+        "location-status"
+      ).textContent =
+        hasLocation
+          ? "Property location associated with field record"
+          : "Location verification not currently recorded";
+
+
+      /* -----------------------------------------
+         IMAGE
+         ----------------------------------------- */
+
+      const imageElement =
+        document.getElementById(
+          "evidence-image"
+        );
+
+
+      imageElement.src =
+        image;
+
+
+      imageElement.alt =
+        `Fictional field evidence for ${address}`;
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      const encodedId =
+        encodeURIComponent(id);
+
+
+      document.getElementById(
+        "back-verification-link"
+      ).href =
+        `field-verification.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "verification-link"
+      ).href =
+        `field-verification.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "visual-link"
+      ).href =
+        `visual.html?id=${encodedId}`;
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.title =
+        `${id} | MREO Field Evidence`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
