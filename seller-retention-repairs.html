@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Record property repair needs within the MREO demonstration owner-retention pathway."
+  >
+
+  <title>MREO | Retention Repairs</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-retention-options-link"
+      class="back-link"
+      href="seller-retention-options.html"
+    >
+      ← Retention Options
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Owner Retention · Repairs
+      </p>
+
+      <h1 class="page-title">
+        Repair Needs
+      </h1>
+
+      <p class="page-description">
+        Identify whether property condition is making continued ownership difficult.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="repairs-form"
+      class="form"
+    >
+
+      <!-- ===================================
+           REPAIR LEVEL
+           =================================== -->
+
+      <div class="field">
+
+        <label for="repair-level">
+          Repair Level
+        </label>
+
+        <select
+          id="repair-level"
+          name="repairLevel"
+          required
+        >
+
+          <option value="">
+            Choose repair level
+          </option>
+
+          <option value="Routine maintenance">
+            Routine maintenance
+          </option>
+
+          <option value="Minor repairs">
+            Minor repairs
+          </option>
+
+          <option value="Moderate repairs">
+            Moderate repairs
+          </option>
+
+          <option value="Major rehabilitation">
+            Major rehabilitation
+          </option>
+
+          <option value="Condition uncertain">
+            Condition uncertain
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           PRIMARY REPAIR NEED
+           =================================== -->
+
+      <div class="field">
+
+        <label for="repair-need">
+          Primary Repair Need
+        </label>
+
+        <select
+          id="repair-need"
+          name="repairNeed"
+          required
+        >
+
+          <option value="">
+            Choose the main repair need
+          </option>
+
+          <option value="Roof or exterior">
+            Roof or exterior
+          </option>
+
+          <option value="Plumbing">
+            Plumbing
+          </option>
+
+          <option value="Electrical">
+            Electrical
+          </option>
+
+          <option value="HVAC">
+            HVAC
+          </option>
+
+          <option value="Kitchen or bathroom">
+            Kitchen or bathroom
+          </option>
+
+          <option value="Water or storm damage">
+            Water or storm damage
+          </option>
+
+          <option value="Interior rehabilitation">
+            Interior rehabilitation
+          </option>
+
+          <option value="Multiple repair needs">
+            Multiple repair needs
+          </option>
+
+          <option value="Unknown">
+            Unknown
+          </option>
+
+          <option value="Other">
+            Other
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           EFFECT ON OWNERSHIP
+           =================================== -->
+
+      <div class="field">
+
+        <label for="ownership-effect">
+          Effect on Continued Ownership
+        </label>
+
+        <select
+          id="ownership-effect"
+          name="ownershipEffect"
+          required
+        >
+
+          <option value="">
+            How much are repairs affecting your ability to keep the property?
+          </option>
+
+          <option value="Little or no effect">
+            Little or no effect
+          </option>
+
+          <option value="Manageable if repairs are coordinated">
+            Manageable if repairs are coordinated
+          </option>
+
+          <option value="Manageable if financing is available">
+            Manageable if financing is available
+          </option>
+
+          <option value="Repairs are a major obstacle">
+            Repairs are a major obstacle
+          </option>
+
+          <option value="Uncertain">
+            Uncertain
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           SAVE
+           =================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Save Repair Review
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="repairs-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <p class="page-eyebrow">
+        Repair Review
+      </p>
+
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Repair Level
+          </span>
+
+          <span
+            id="result-level"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Primary Need
+          </span>
+
+          <span
+            id="result-need"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Ownership Effect
+          </span>
+
+          <span
+            id="result-effect"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================
+           NEXT STEP
+           =================================== -->
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Retention Record
+        </p>
+
+        <h3 id="repair-heading">
+          Repair needs have been recorded.
+        </h3>
+
+        <p
+          id="repair-description"
+          class="muted"
+        >
+          The property-condition issue can now remain connected to
+          the owner's broader retention decision.
+        </p>
+
+      </section>
+
+
+      <div class="button-row">
+
+        <a
+          id="return-retention-options-link"
+          class="primary-button"
+          href="seller-retention-options.html"
+        >
+          Retention Options
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="seller-options-link"
+          class="secondary-button"
+          href="seller-options.html"
+        >
+          All Seller Options
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         MREO ROLE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      In a full MREO workflow, repair needs could be connected to
+      inspection, estimates, reconstruction scope, qualified local
+      professionals, project milestones, and funding coordination
+      without requiring the owner to surrender the property merely
+      because repairs are needed.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      This page does not diagnose property condition, estimate repair
+      costs, determine code compliance, approve financing, or replace
+      an inspection, contractor estimate, engineering review, or other
+      professional evaluation.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO owner-retention repair review
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-retention-options-link"
+      ).href =
+        withAddress(
+          "seller-retention-options.html"
+        );
+
+
+      document.getElementById(
+        "return-retention-options-link"
+      ).href =
+        withAddress(
+          "seller-retention-options.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      let savedLevel =
+        null;
+
+
+      let savedNeed =
+        null;
+
+
+      let savedEffect =
+        null;
+
+
+      try {
+
+        savedLevel =
+          sessionStorage.getItem(
+            "mreo-seller-repair-level"
+          );
+
+
+        savedNeed =
+          sessionStorage.getItem(
+            "mreo-seller-repair-need"
+          );
+
+
+        savedEffect =
+          sessionStorage.getItem(
+            "mreo-seller-repair-ownership-effect"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore repair review:",
+          error
+        );
+
+      }
+
+
+      if (savedLevel) {
+
+        document.getElementById(
+          "repair-level"
+        ).value =
+          savedLevel;
+
+      }
+
+
+      if (savedNeed) {
+
+        document.getElementById(
+          "repair-need"
+        ).value =
+          savedNeed;
+
+      }
+
+
+      if (savedEffect) {
+
+        document.getElementById(
+          "ownership-effect"
+        ).value =
+          savedEffect;
+
+      }
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "repairs-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const repairLevel =
+            document.getElementById(
+              "repair-level"
+            ).value;
+
+
+          const repairNeed =
+            document.getElementById(
+              "repair-need"
+            ).value;
+
+
+          const ownershipEffect =
+            document.getElementById(
+              "ownership-effect"
+            ).value;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-repair-level",
+              repairLevel
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-repair-need",
+              repairNeed
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-repair-ownership-effect",
+              ownershipEffect
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-retention-repairs",
+              "complete"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save repair review:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RESULT
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-level"
+          ).textContent =
+            repairLevel;
+
+
+          document.getElementById(
+            "result-need"
+          ).textContent =
+            repairNeed;
+
+
+          document.getElementById(
+            "result-effect"
+          ).textContent =
+            ownershipEffect;
+
+
+          /* -----------------------------------
+             SIMPLE CONTEXTUAL MESSAGE
+             ----------------------------------- */
+
+          const heading =
+            document.getElementById(
+              "repair-heading"
+            );
+
+
+          const description =
+            document.getElementById(
+              "repair-description"
+            );
+
+
+          if (
+            ownershipEffect ===
+            "Little or no effect"
+          ) {
+
+            heading.textContent =
+              "Repairs do not currently appear to prevent retention.";
+
+
+            description.textContent =
+              "The owner can continue comparing other factors affecting the decision to keep the property.";
+
+          } else if (
+            ownershipEffect ===
+            "Manageable if repairs are coordinated"
+          ) {
+
+            heading.textContent =
+              "Coordination may be the central issue.";
+
+
+            description.textContent =
+              "The demonstration workflow can treat repair coordination as a property-management problem rather than automatically turning it into a sale decision.";
+
+          } else if (
+            ownershipEffect ===
+            "Manageable if financing is available"
+          ) {
+
+            heading.textContent =
+              "Repair funding may affect retention.";
+
+
+            description.textContent =
+              "The repair need can remain connected to the owner's decision while financing or reconstruction alternatives are separately evaluated.";
+
+          } else if (
+            ownershipEffect ===
+            "Repairs are a major obstacle"
+          ) {
+
+            heading.textContent =
+              "Property condition is a major retention issue.";
+
+
+            description.textContent =
+              "The owner can continue evaluating repair support or compare retention with the separate Seller Value Recovery pathway.";
+
+          } else {
+
+            heading.textContent =
+              "Repair feasibility remains uncertain.";
+
+
+            description.textContent =
+              "Additional property-condition information may be needed before the owner can evaluate the retention pathway.";
+
+          }
+
+
+          document.getElementById(
+            "repairs-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "repairs-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
