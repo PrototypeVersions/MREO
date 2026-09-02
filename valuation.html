@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View valuation information for an MREO Property Passport."
+  >
+
+  <title>MREO | Valuation</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-passport-link"
+      class="back-link"
+      href="passport.html?id=MREO-0001"
+    >
+      ← Passport
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="valuation-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1 class="page-title">
+        Valuation
+      </h1>
+
+      <p
+        id="valuation-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         VALUES
+         ===================================== -->
+
+    <section class="detail-list">
+
+      <!-- CURRENT PRICE -->
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Current Price
+        </span>
+
+        <span
+          id="valuation-price"
+          class="detail-value"
+          style="
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -.04em;
+          "
+        >
+          $385,000
+        </span>
+
+      </div>
+
+
+      <!-- ESTIMATED VALUE -->
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Estimated Value
+        </span>
+
+        <span
+          id="valuation-estimate"
+          class="detail-value"
+          style="
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -.04em;
+          "
+        >
+          $398,000
+        </span>
+
+      </div>
+
+
+      <!-- ARV -->
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Projected Repaired Value
+        </span>
+
+        <span
+          id="valuation-arv"
+          class="detail-value"
+          style="
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -.04em;
+          "
+        >
+          $438,000
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SIMPLE EXPLANATION
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 30px;"
+    >
+
+      <p class="eyebrow">
+        Important
+      </p>
+
+      <h3>
+        These numbers do not mean the same thing.
+      </h3>
+
+      <p class="muted">
+        MREO keeps asking price, estimated value, and projected
+        repaired value separate rather than treating them as one
+        unquestioned property value.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         NEXT ACTION
+         ===================================== -->
+
+    <div class="button-row">
+
+      <a
+        id="valuation-sources-link"
+        class="primary-button"
+        href="valuation-sources.html?id=MREO-0001"
+      >
+        View Sources
+        <span aria-hidden="true">→</span>
+      </a>
+
+
+      <a
+        id="valuation-property-link"
+        class="secondary-button"
+        href="property.html?id=MREO-0001"
+      >
+        Property
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration valuation
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+      const requestedId =
+        params.get("id") || "MREO-0001";
+
+
+      const fallback = {
+        id: "MREO-0001",
+        addressLine1: "4218 Maple Ridge Drive",
+        location: "Dallas, Texas",
+        price: 385000,
+        estimatedValue: 398000,
+        arv: 438000
+      };
+
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+        property =
+          window.MREO_DATA.getProperty(requestedId) ||
+          fallback;
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      const price =
+        Number(
+          property.price ??
+          property.listPrice ??
+          fallback.price
+        );
+
+
+      const estimatedValue =
+        Number(
+          property.estimatedValue ??
+          property.estimate ??
+          property.passport?.valuation?.estimatedValue ??
+          property.passport?.valuation?.estimate ??
+          fallback.estimatedValue
+        );
+
+
+      const arv =
+        Number(
+          property.arv ??
+          property.projectedARV ??
+          property.projectedRepairedValue ??
+          property.passport?.valuation?.arv ??
+          property.passport?.valuation?.projectedRepairedValue ??
+          fallback.arv
+        );
+
+
+      const currency =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0
+          }
+        );
+
+
+      document.getElementById(
+        "valuation-property-id"
+      ).textContent = id;
+
+
+      document.getElementById(
+        "valuation-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      document.getElementById(
+        "valuation-price"
+      ).textContent =
+        currency.format(price);
+
+
+      document.getElementById(
+        "valuation-estimate"
+      ).textContent =
+        currency.format(estimatedValue);
+
+
+      document.getElementById(
+        "valuation-arv"
+      ).textContent =
+        currency.format(arv);
+
+
+      const encodedId =
+        encodeURIComponent(id);
+
+
+      document.getElementById(
+        "back-passport-link"
+      ).href =
+        `passport.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "valuation-sources-link"
+      ).href =
+        `valuation-sources.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "valuation-property-link"
+      ).href =
+        `property.html?id=${encodedId}`;
+
+
+      document.title =
+        `${id} | MREO Valuation`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
