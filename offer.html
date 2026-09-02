@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Prepare a demonstration offer for an MREO property."
+  >
+
+  <title>MREO | Prepare Offer</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-property-link"
+      class="back-link"
+      href="property.html?id=MREO-0001"
+    >
+      ← Property
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="offer-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1 class="page-title">
+        Prepare Offer
+      </h1>
+
+      <p
+        id="offer-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY PRICE
+         ===================================== -->
+
+    <section
+      class="detail-list"
+      style="margin-bottom: 42px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Current Price
+        </span>
+
+        <span
+          id="property-price"
+          class="detail-value"
+          style="
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -.04em;
+          "
+        >
+          $385,000
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         OFFER FORM
+         ===================================== -->
+
+    <form
+      id="offer-form"
+      class="form"
+    >
+
+      <!-- OFFER PRICE -->
+
+      <div class="field">
+
+        <label for="offer-price">
+          Offer Price
+        </label>
+
+        <input
+          id="offer-price"
+          name="offerPrice"
+          type="number"
+          min="1"
+          step="1000"
+          placeholder="Enter offer amount"
+          required
+        >
+
+      </div>
+
+
+      <!-- FUNDING -->
+
+      <div class="field">
+
+        <label for="funding-type">
+          Funding Type
+        </label>
+
+        <select
+          id="funding-type"
+          name="fundingType"
+          required
+        >
+
+          <option value="">
+            Choose funding type
+          </option>
+
+          <option value="Confirmed Cash">
+            Confirmed Cash
+          </option>
+
+          <option value="Cash — Verification Pending">
+            Cash — Verification Pending
+          </option>
+
+          <option value="Conventional Financing">
+            Conventional Financing
+          </option>
+
+          <option value="Other Financing">
+            Other Financing
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- CLOSING -->
+
+      <div class="field">
+
+        <label for="closing-time">
+          Closing Time
+        </label>
+
+        <select
+          id="closing-time"
+          name="closingTime"
+          required
+        >
+
+          <option value="">
+            Choose closing period
+          </option>
+
+          <option value="14">
+            14 days
+          </option>
+
+          <option value="21">
+            21 days
+          </option>
+
+          <option value="30">
+            30 days
+          </option>
+
+          <option value="45">
+            45 days
+          </option>
+
+          <option value="60">
+            60 days
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- INSPECTION -->
+
+      <div class="field">
+
+        <label for="inspection">
+          Inspection
+        </label>
+
+        <select
+          id="inspection"
+          name="inspection"
+          required
+        >
+
+          <option value="">
+            Choose inspection term
+          </option>
+
+          <option value="No Inspection Contingency">
+            No Inspection Contingency
+          </option>
+
+          <option value="5-Day Inspection">
+            5-Day Inspection
+          </option>
+
+          <option value="7-Day Inspection">
+            7-Day Inspection
+          </option>
+
+          <option value="10-Day Inspection">
+            10-Day Inspection
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- =====================================
+           CONTINUE
+           ===================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Review Offer
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         PURCHASER PROFILE
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 38px;"
+    >
+
+      <p class="eyebrow">
+        Purchaser Qualification
+      </p>
+
+      <h3>
+        Purchaser information is handled separately.
+      </h3>
+
+      <p class="muted">
+        MREO can associate an offer with identity, authority,
+        funding verification, purchasing history, and other
+        qualification information without crowding the offer form.
+      </p>
+
+
+      <div class="button-row">
+
+        <a
+          id="purchaser-profile-link"
+          class="secondary-button"
+          href="purchaser.html?property=MREO-0001"
+        >
+          Purchaser Profile
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div class="status-message">
+      This is a fictional demonstration offer process. Completing
+      this form does not create, transmit, or submit a legally
+      binding real-estate offer.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration acquisition
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+
+      const requestedId =
+        params.get("id") || "MREO-0001";
+
+
+      /* -----------------------------------------
+         FALLBACK PROPERTY
+         ----------------------------------------- */
+
+      const fallback = {
+
+        id:
+          "MREO-0001",
+
+        addressLine1:
+          "4218 Maple Ridge Drive",
+
+        location:
+          "Dallas, Texas",
+
+        price:
+          385000
+
+      };
+
+
+      /* -----------------------------------------
+         LOAD PROPERTY
+         ----------------------------------------- */
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+
+        property =
+          window.MREO_DATA.getProperty(requestedId) ||
+          fallback;
+
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      const price =
+        Number(
+          property.price ??
+          property.listPrice ??
+          fallback.price
+        );
+
+
+      /* -----------------------------------------
+         FORMATTER
+         ----------------------------------------- */
+
+      const currency =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            style:
+              "currency",
+
+            currency:
+              "USD",
+
+            maximumFractionDigits:
+              0
+          }
+        );
+
+
+      /* -----------------------------------------
+         RENDER PROPERTY
+         ----------------------------------------- */
+
+      document.getElementById(
+        "offer-property-id"
+      ).textContent =
+        id;
+
+
+      document.getElementById(
+        "offer-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      document.getElementById(
+        "property-price"
+      ).textContent =
+        currency.format(price);
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      const encodedId =
+        encodeURIComponent(id);
+
+
+      document.getElementById(
+        "back-property-link"
+      ).href =
+        `property.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "purchaser-profile-link"
+      ).href =
+        `purchaser.html?property=${encodedId}`;
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "offer-form"
+      ).addEventListener(
+        "submit",
+        (event) => {
+
+          event.preventDefault();
+
+
+          const offerPrice =
+            document.getElementById(
+              "offer-price"
+            ).value;
+
+
+          const fundingType =
+            document.getElementById(
+              "funding-type"
+            ).value;
+
+
+          const closingTime =
+            document.getElementById(
+              "closing-time"
+            ).value;
+
+
+          const inspection =
+            document.getElementById(
+              "inspection"
+            ).value;
+
+
+          const reviewParams =
+            new URLSearchParams();
+
+
+          reviewParams.set(
+            "id",
+            id
+          );
+
+
+          reviewParams.set(
+            "price",
+            offerPrice
+          );
+
+
+          reviewParams.set(
+            "funding",
+            fundingType
+          );
+
+
+          reviewParams.set(
+            "closing",
+            closingTime
+          );
+
+
+          reviewParams.set(
+            "inspection",
+            inspection
+          );
+
+
+          window.location.href =
+            `offer-review.html?${reviewParams.toString()}`;
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.title =
+        `${id} | Prepare MREO Offer`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
