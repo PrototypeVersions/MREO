@@ -15,70 +15,53 @@
 
   <title>MREO | Real Estate Protocol</title>
 
-  <!-- Main site styles -->
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Landing-page-only styles -->
   <link rel="stylesheet" href="landing.css">
 </head>
 
 <body class="landing">
 
-  <!-- =========================================
-       MAIN
-       ========================================= -->
+  <main class="landing-main">
 
-  <main>
+    <!-- =========================================
+         TOP / HERO
+         ========================================= -->
 
-    <!-- =====================================
-         INTRO
-         ===================================== -->
+    <section class="landing-hero">
 
-    <section class="landing-intro">
+      <div class="landing-copy">
 
-      <div class="landing-intro-grid">
+        <p class="landing-eyebrow">
+          Real Estate Protocol
+        </p>
 
-        <!-- ===============================
-             TITLE
-             =============================== -->
+        <h1 class="landing-title">
+          MREO
+        </h1>
 
-        <div class="landing-intro-copy">
+        <p class="landing-subtitle">
+          Real Estate, Acquisition, Distribution, and Management Protocol
+        </p>
 
-          <div class="landing-brand">
-
-            <p class="landing-eyebrow">
-              Real Estate Protocol
-            </p>
+      </div>
 
 
-            <h1 class="landing-title">
-              MREO
-            </h1>
+      <!-- =====================================
+           FIXED SHAPE COMPOSITION
+           ===================================== -->
 
+      <div
+        class="landing-shape-stage"
+        aria-hidden="true"
+      >
 
-            <p class="landing-subtitle">
-              Real Estate, Acquisition, Distribution, and Management Protocol
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- ===============================
-             BAUHAUS SHAPES
-             =============================== -->
-
-        <div
-          class="landing-shapes"
-          aria-hidden="true"
-        >
+        <div class="landing-shape-composition">
 
           <div class="shape-line"></div>
 
-          <div class="shape-square"></div>
-
           <div class="shape-circle"></div>
+
+          <div class="shape-square"></div>
 
         </div>
 
@@ -87,18 +70,16 @@
     </section>
 
 
-    <!-- =====================================
+    <!-- =========================================
          BUY / SELL
-         ===================================== -->
+         ========================================= -->
 
     <section
-      class="landing-choice-grid"
+      class="landing-choices"
       aria-label="Choose Buy or Sell"
     >
 
-      <!-- ===============================
-           BUY
-           =============================== -->
+      <!-- BUY -->
 
       <a
         class="landing-choice landing-choice-buy"
@@ -109,34 +90,29 @@
           01
         </span>
 
-
-        <div class="landing-choice-content">
+        <div class="landing-choice-center">
 
           <span class="landing-choice-label">
             BUY
           </span>
 
-
           <p class="landing-choice-description">
             Browse properties, review property information, and explore purchase opportunities.
           </p>
 
+          <span
+            class="landing-choice-arrow"
+            aria-hidden="true"
+          >
+            →
+          </span>
+
         </div>
-
-
-        <span
-          class="landing-choice-arrow"
-          aria-hidden="true"
-        >
-          →
-        </span>
 
       </a>
 
 
-      <!-- ===============================
-           SELL
-           =============================== -->
+      <!-- SELL -->
 
       <a
         class="landing-choice landing-choice-sell"
@@ -147,27 +123,24 @@
           02
         </span>
 
-
-        <div class="landing-choice-content">
+        <div class="landing-choice-center">
 
           <span class="landing-choice-label">
             SELL
           </span>
 
-
           <p class="landing-choice-description">
             Analyze a property and compare retention, sale, and value-recovery options.
           </p>
 
+          <span
+            class="landing-choice-arrow"
+            aria-hidden="true"
+          >
+            →
+          </span>
+
         </div>
-
-
-        <span
-          class="landing-choice-arrow"
-          aria-hidden="true"
-        >
-          →
-        </span>
 
       </a>
 
@@ -182,12 +155,11 @@
 
   <footer class="landing-footer">
 
-    <div>
+    <span>
       MREO · <span id="current-year">2026</span>
-    </div>
+    </span>
 
-
-    <div class="landing-footer-links">
+    <span class="landing-footer-links">
 
       <a href="protocol.html">
         Protocol
@@ -201,25 +173,16 @@
         Project Status
       </a>
 
-    </div>
+    </span>
 
   </footer>
 
 
-  <!-- =========================================
-       PAGE LOGIC
-       ========================================= -->
-
   <script>
-    (() => {
-      "use strict";
-
-      document.getElementById(
-        "current-year"
-      ).textContent =
-        new Date().getFullYear();
-
-    })();
+    document.getElementById(
+      "current-year"
+    ).textContent =
+      new Date().getFullYear();
   </script>
 
 </body>
