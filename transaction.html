@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View the transaction status for an MREO property."
+  >
+
+  <title>MREO | Transaction Record</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-passport-link"
+      class="back-link"
+      href="passport.html?id=MREO-0001"
+    >
+      ← Passport
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="transaction-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1 class="page-title">
+        Transaction Record
+      </h1>
+
+      <p
+        id="transaction-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         TRANSACTION STATUS
+         ===================================== -->
+
+    <section class="detail-list">
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Transaction Stage
+        </span>
+
+        <span
+          id="transaction-stage"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          Active Bidding
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Qualified Buyers
+        </span>
+
+        <span
+          id="transaction-buyers"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          14
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Offers Received
+        </span>
+
+        <span
+          id="transaction-offers"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          3
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SIMPLE STATUS
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 30px;"
+    >
+
+      <p class="eyebrow">
+        Current Status
+      </p>
+
+      <h3 id="transaction-status-heading">
+        Offers are being evaluated.
+      </h3>
+
+      <p
+        id="transaction-status-description"
+        class="muted"
+      >
+        The seller can compare qualified offers based on both
+        price and the likelihood that each offer can actually close.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         NEXT
+         ===================================== -->
+
+    <section style="margin-top: 42px;">
+
+      <div class="choice-grid">
+
+        <!-- BIDDING -->
+
+        <a
+          id="bidding-link"
+          class="choice-card blue"
+          href="bidding.html?id=MREO-0001"
+        >
+
+          <span class="choice-card-number">
+            01
+          </span>
+
+          <div class="choice-card-content">
+
+            <p class="card-label">
+              Offers
+            </p>
+
+            <h3>
+              Bidding
+            </h3>
+
+            <p>
+              Compare the qualified offers currently associated
+              with this property.
+            </p>
+
+          </div>
+
+          <span
+            class="choice-card-arrow"
+            aria-hidden="true"
+          >
+            →
+          </span>
+
+        </a>
+
+
+        <!-- SETTLEMENT -->
+
+        <a
+          id="settlement-link"
+          class="choice-card green"
+          href="settlement.html?id=MREO-0001"
+        >
+
+          <span class="choice-card-number">
+            02
+          </span>
+
+          <div class="choice-card-content">
+
+            <p class="card-label">
+              Closing
+            </p>
+
+            <h3>
+              Settlement
+            </h3>
+
+            <p>
+              View closing progress, required items, and settlement status.
+            </p>
+
+          </div>
+
+          <span
+            class="choice-card-arrow"
+            aria-hidden="true"
+          >
+            →
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div class="status-message">
+      All purchasers, bids, transaction stages, and settlement
+      information shown in this marketplace are fictional
+      demonstration records.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration transaction
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         PROPERTY
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+      const requestedId =
+        params.get("id") || "MREO-0001";
+
+
+      const fallback = {
+
+        id:
+          "MREO-0001",
+
+        addressLine1:
+          "4218 Maple Ridge Drive",
+
+        location:
+          "Dallas, Texas",
+
+        transaction: {
+          stage:
+            "Active Bidding",
+
+          qualifiedBuyers:
+            14,
+
+          offers:
+            3
+        },
+
+        bids:
+          []
+
+      };
+
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+
+        property =
+          window.MREO_DATA.getProperty(requestedId) ||
+          fallback;
+
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      /* -----------------------------------------
+         TRANSACTION DATA
+         ----------------------------------------- */
+
+      const transaction =
+        property.transaction ||
+        property.passport?.transaction ||
+        {};
+
+
+      const bids =
+        Array.isArray(property.bids)
+          ? property.bids
+          : [];
+
+
+      const stage =
+        transaction.stage ||
+        transaction.status ||
+        property.stage ||
+        property.status ||
+        "Active Bidding";
+
+
+      const qualifiedBuyers =
+        Number(
+          transaction.qualifiedBuyers ??
+          property.qualifiedBuyers ??
+          property.buyerCount ??
+          fallback.transaction.qualifiedBuyers
+        );
+
+
+      const offers =
+        Number(
+          transaction.offers ??
+          transaction.offerCount ??
+          property.offerCount ??
+          property.bidCount ??
+          (
+            bids.length > 0
+              ? bids.length
+              : fallback.transaction.offers
+          )
+        );
+
+
+      /* -----------------------------------------
+         RENDER PROPERTY
+         ----------------------------------------- */
+
+      document.getElementById(
+        "transaction-property-id"
+      ).textContent =
+        id;
+
+
+      document.getElementById(
+        "transaction-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      /* -----------------------------------------
+         RENDER STATUS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "transaction-stage"
+      ).textContent =
+        stage;
+
+
+      document.getElementById(
+        "transaction-buyers"
+      ).textContent =
+        qualifiedBuyers.toLocaleString("en-US");
+
+
+      document.getElementById(
+        "transaction-offers"
+      ).textContent =
+        offers.toLocaleString("en-US");
+
+
+      /* -----------------------------------------
+         STATUS MESSAGE
+         ----------------------------------------- */
+
+      const heading =
+        document.getElementById(
+          "transaction-status-heading"
+        );
+
+
+      const description =
+        document.getElementById(
+          "transaction-status-description"
+        );
+
+
+      const stageText =
+        String(stage).toLowerCase();
+
+
+      if (
+        stageText.includes("settlement") ||
+        stageText.includes("contract") ||
+        stageText.includes("closing")
+      ) {
+
+        heading.textContent =
+          "The transaction is moving toward closing.";
+
+
+        description.textContent =
+          "The selected purchaser and settlement participants can track the remaining requirements before the property closes.";
+
+      } else if (
+        stageText.includes("closed") ||
+        stageText.includes("complete")
+      ) {
+
+        heading.textContent =
+          "The transaction is complete.";
+
+
+        description.textContent =
+          "The property has completed the transaction stage and its record can continue into reconstruction or ongoing operations.";
+
+      } else if (
+        offers > 0
+      ) {
+
+        heading.textContent =
+          "Offers are being evaluated.";
+
+
+        description.textContent =
+          "The seller can compare qualified offers based on both price and the likelihood that each offer can actually close.";
+
+      } else {
+
+        heading.textContent =
+          "The property is open to qualified buyers.";
+
+
+        description.textContent =
+          "Qualified purchasers can review the property and prepare an offer.";
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      const encodedId =
+        encodeURIComponent(id);
+
+
+      document.getElementById(
+        "back-passport-link"
+      ).href =
+        `passport.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "bidding-link"
+      ).href =
+        `bidding.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "settlement-link"
+      ).href =
+        `settlement.html?id=${encodedId}`;
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.title =
+        `${id} | MREO Transaction Record`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
