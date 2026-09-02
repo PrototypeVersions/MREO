@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Review short-sale lender requirements through the MREO demonstration seller process."
+  >
+
+  <title>MREO | Short Sale Requirements</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-short-sale-link"
+      class="back-link"
+      href="seller-short-sale.html"
+    >
+      ← Short Sale
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Short Sale · Requirements
+      </p>
+
+      <h1 class="page-title">
+        Lender Requirements
+      </h1>
+
+      <p class="page-description">
+        Track the information that may be needed before a short sale can be reviewed.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="requirements-form"
+      class="form"
+    >
+
+      <!-- ===================================
+           LENDER PACKAGE
+           =================================== -->
+
+      <div class="field">
+
+        <label for="lender-package">
+          Lender Package
+        </label>
+
+        <select
+          id="lender-package"
+          name="lenderPackage"
+          required
+        >
+
+          <option value="">
+            Choose package status
+          </option>
+
+          <option value="Not started">
+            Not started
+          </option>
+
+          <option value="Requirements requested">
+            Requirements requested
+          </option>
+
+          <option value="Documents being gathered">
+            Documents being gathered
+          </option>
+
+          <option value="Package submitted">
+            Package submitted
+          </option>
+
+          <option value="Additional documents requested">
+            Additional documents requested
+          </option>
+
+          <option value="Package complete">
+            Package complete
+          </option>
+
+          <option value="Status uncertain">
+            Status uncertain
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           PROPERTY / OFFER INFORMATION
+           =================================== -->
+
+      <div class="field">
+
+        <label for="property-offer-status">
+          Property / Offer Information
+        </label>
+
+        <select
+          id="property-offer-status"
+          name="propertyOfferStatus"
+          required
+        >
+
+          <option value="">
+            Choose information status
+          </option>
+
+          <option value="No offer yet">
+            No offer yet
+          </option>
+
+          <option value="Property information being prepared">
+            Property information being prepared
+          </option>
+
+          <option value="Potential offer identified">
+            Potential offer identified
+          </option>
+
+          <option value="Signed offer available">
+            Signed offer available
+          </option>
+
+          <option value="Property and offer information submitted">
+            Property and offer information submitted
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           APPROVAL STATUS
+           =================================== -->
+
+      <div class="field">
+
+        <label for="approval-status">
+          Approval Status
+        </label>
+
+        <select
+          id="approval-status"
+          name="approvalStatus"
+          required
+        >
+
+          <option value="">
+            Choose approval status
+          </option>
+
+          <option value="Not submitted for approval">
+            Not submitted for approval
+          </option>
+
+          <option value="Under lender review">
+            Under lender review
+          </option>
+
+          <option value="Additional information requested">
+            Additional information requested
+          </option>
+
+          <option value="Conditional approval">
+            Conditional approval
+          </option>
+
+          <option value="Approved">
+            Approved
+          </option>
+
+          <option value="Declined">
+            Declined
+          </option>
+
+          <option value="Status uncertain">
+            Status uncertain
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           SAVE
+           =================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Save Requirements
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="requirements-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <p class="page-eyebrow">
+        Short-Sale Record
+      </p>
+
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Lender Package
+          </span>
+
+          <span
+            id="result-package"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Property / Offer
+          </span>
+
+          <span
+            id="result-property-offer"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Approval
+          </span>
+
+          <span
+            id="result-approval"
+            class="detail-value"
+            style="
+              font-size: 20px;
+              font-weight: 900;
+            "
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================
+           NEXT
+           =================================== -->
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Next
+        </p>
+
+        <h3 id="requirements-heading">
+          Continue to approval review.
+        </h3>
+
+        <p
+          id="requirements-description"
+          class="muted"
+        >
+          A short sale cannot be treated like an ordinary seller-controlled
+          transaction when lender or servicer approval is still required.
+        </p>
+
+      </section>
+
+
+      <div class="button-row">
+
+        <a
+          id="approval-link"
+          class="primary-button"
+          href="seller-short-sale-approval.html"
+        >
+          Approval Review
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="seller-options-link"
+          class="secondary-button"
+          href="seller-options.html"
+        >
+          Compare Seller Paths
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         COORDINATION PRINCIPLE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      In a full MREO workflow, the property record could keep
+      lender requirements, owner documents, purchaser information,
+      proposed sale terms, deadlines, title information, and
+      approval status connected throughout the process.
+    </div>
+
+
+    <!-- =====================================
+         IMPORTANT LIMIT
+         ===================================== -->
+
+    <div class="status-message">
+      Lenders and servicers determine their own short-sale
+      requirements and approval standards. MREO cannot assume
+      approval, waive required documents, determine any deficiency
+      balance, or bind a lender or servicer to a proposed transaction.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      This prototype is for demonstration only and does not submit
+      documents to any lender, servicer, investor, mortgage insurer,
+      government agency, purchaser, settlement provider, or other party.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO short-sale requirements
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-short-sale-link"
+      ).href =
+        withAddress(
+          "seller-short-sale.html"
+        );
+
+
+      document.getElementById(
+        "approval-link"
+      ).href =
+        withAddress(
+          "seller-short-sale-approval.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      let savedPackage =
+        null;
+
+
+      let savedPropertyOffer =
+        null;
+
+
+      let savedApproval =
+        null;
+
+
+      try {
+
+        savedPackage =
+          sessionStorage.getItem(
+            "mreo-seller-short-sale-package"
+          );
+
+
+        savedPropertyOffer =
+          sessionStorage.getItem(
+            "mreo-seller-short-sale-property-offer"
+          );
+
+
+        savedApproval =
+          sessionStorage.getItem(
+            "mreo-seller-short-sale-approval-status"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore short-sale requirements:",
+          error
+        );
+
+      }
+
+
+      if (savedPackage) {
+
+        document.getElementById(
+          "lender-package"
+        ).value =
+          savedPackage;
+
+      }
+
+
+      if (savedPropertyOffer) {
+
+        document.getElementById(
+          "property-offer-status"
+        ).value =
+          savedPropertyOffer;
+
+      }
+
+
+      if (savedApproval) {
+
+        document.getElementById(
+          "approval-status"
+        ).value =
+          savedApproval;
+
+      }
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "requirements-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const lenderPackage =
+            document.getElementById(
+              "lender-package"
+            ).value;
+
+
+          const propertyOffer =
+            document.getElementById(
+              "property-offer-status"
+            ).value;
+
+
+          const approvalStatus =
+            document.getElementById(
+              "approval-status"
+            ).value;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-short-sale-package",
+              lenderPackage
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-short-sale-property-offer",
+              propertyOffer
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-short-sale-approval-status",
+              approvalStatus
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-short-sale-requirements",
+              "complete"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save short-sale requirements:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RESULT
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-package"
+          ).textContent =
+            lenderPackage;
+
+
+          document.getElementById(
+            "result-property-offer"
+          ).textContent =
+            propertyOffer;
+
+
+          document.getElementById(
+            "result-approval"
+          ).textContent =
+            approvalStatus;
+
+
+          /* -----------------------------------
+             CONTEXTUAL MESSAGE
+             ----------------------------------- */
+
+          const heading =
+            document.getElementById(
+              "requirements-heading"
+            );
+
+
+          const description =
+            document.getElementById(
+              "requirements-description"
+            );
+
+
+          if (
+            approvalStatus ===
+            "Approved"
+          ) {
+
+            heading.textContent =
+              "Lender approval is recorded.";
+
+
+            description.textContent =
+              "The next step can focus on the approval terms and whether the proposed transaction remains capable of closing under those conditions.";
+
+          } else if (
+            approvalStatus ===
+            "Conditional approval"
+          ) {
+
+            heading.textContent =
+              "Approval conditions remain important.";
+
+
+            description.textContent =
+              "A conditional approval may depend on price, closing date, purchaser terms, documentation, or other requirements that must remain visible before closing.";
+
+          } else if (
+            approvalStatus ===
+            "Under lender review"
+          ) {
+
+            heading.textContent =
+              "The transaction remains subject to lender review.";
+
+
+            description.textContent =
+              "The proposed sale should not be treated as approved while the lender or servicer review remains open.";
+
+          } else if (
+            approvalStatus ===
+            "Additional information requested"
+          ) {
+
+            heading.textContent =
+              "Additional information is still required.";
+
+
+            description.textContent =
+              "The outstanding request should remain connected to the property record so the review does not appear complete before the required information is supplied.";
+
+          } else if (
+            approvalStatus ===
+            "Declined"
+          ) {
+
+            heading.textContent =
+              "The current short-sale proposal is not approved.";
+
+
+            description.textContent =
+              "The owner may need to review the lender response and other available ownership or sale pathways rather than assuming this transaction can proceed.";
+
+          } else {
+
+            heading.textContent =
+              "Continue to approval review.";
+
+
+            description.textContent =
+              "A short sale cannot be treated like an ordinary seller-controlled transaction when lender or servicer approval is still required.";
+
+          }
+
+
+          document.getElementById(
+            "requirements-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "requirements-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
