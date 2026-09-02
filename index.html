@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="MREO is a real estate acquisition, distribution, coordination, custody, and management protocol."
+    content="MREO: Real Estate, Acquisition, Distribution, and Management Protocol."
   >
 
   <title>MREO | Real Estate Protocol</title>
@@ -18,51 +18,60 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="landing-page">
+<body class="landing">
 
-  <main class="landing">
+  <!-- =========================================
+       INTRO
+       ========================================= -->
 
-    <!-- =========================================
-         BRAND / TITLE
-         ========================================= -->
+  <main>
 
     <section class="landing-intro">
 
-      <a
-        class="landing-brand"
-        href="index.html"
-        aria-label="MREO home"
-      >
-        MREO
-      </a>
-
-      <p class="landing-eyebrow">
-        Real Estate Protocol
-      </p>
-
       <div class="landing-intro-grid">
+
+        <!-- ===================================
+             TITLE
+             =================================== -->
 
         <div class="landing-intro-copy">
 
-          <h1 class="landing-title">
-            MREO
-          </h1>
+          <div class="landing-brand">
 
-          <p class="landing-subtitle">
-            Real Estate, Acquisition, Distribution,
-            and Management Protocol
-          </p>
+            <p class="landing-eyebrow">
+              Real Estate Protocol
+            </p>
+
+
+            <h1 class="landing-title">
+              MREO
+            </h1>
+
+
+            <p class="landing-subtitle">
+              Real Estate, Acquisition, Distribution, and Management Protocol
+            </p>
+
+          </div>
 
         </div>
 
+
+        <!-- ===================================
+             BAUHAUS SHAPES
+             =================================== -->
 
         <div
           class="landing-shapes"
           aria-hidden="true"
         >
-          <span class="shape-line"></span>
-          <span class="shape-square"></span>
-          <span class="shape-circle"></span>
+
+          <div class="shape-line"></div>
+
+          <div class="shape-square"></div>
+
+          <div class="shape-circle"></div>
+
         </div>
 
       </div>
@@ -71,15 +80,17 @@
 
 
     <!-- =========================================
-         TWO ENTRY OPTIONS
+         PRIMARY CHOICE
          ========================================= -->
 
     <section
       class="landing-choice-grid"
-      aria-label="Choose how to enter MREO"
+      aria-label="Choose Buy or Sell"
     >
 
-      <!-- BUY -->
+      <!-- =====================================
+           BUY
+           ===================================== -->
 
       <a
         class="landing-choice landing-choice-buy"
@@ -90,21 +101,15 @@
           01
         </span>
 
+
         <div class="landing-choice-content">
 
           <span class="landing-choice-label">
-            I want to
+            Buy
           </span>
 
-          <h2>
-            Buy
-          </h2>
-
-          <p>
-            Explore property opportunities and acquisition tools.
-          </p>
-
         </div>
+
 
         <span
           class="landing-choice-arrow"
@@ -116,7 +121,9 @@
       </a>
 
 
-      <!-- SELL -->
+      <!-- =====================================
+           SELL
+           ===================================== -->
 
       <a
         class="landing-choice landing-choice-sell"
@@ -127,21 +134,15 @@
           02
         </span>
 
+
         <div class="landing-choice-content">
 
           <span class="landing-choice-label">
-            I want to
+            Sell
           </span>
 
-          <h2>
-            Sell
-          </h2>
-
-          <p>
-            Analyze a property and compare possible paths forward.
-          </p>
-
         </div>
+
 
         <span
           class="landing-choice-arrow"
@@ -154,31 +155,54 @@
 
     </section>
 
-
-    <!-- =========================================
-         MINIMAL FOOTER
-         ========================================= -->
-
-    <footer class="landing-footer">
-
-      <p>
-        Demonstration prototype
-      </p>
-
-      <p>
-        MREO
-        <span aria-hidden="true">·</span>
-        <span id="current-year">2026</span>
-      </p>
-
-    </footer>
-
   </main>
 
 
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="landing-footer">
+
+    <div>
+      MREO · <span id="current-year">2026</span>
+    </div>
+
+
+    <div>
+
+      <a href="protocol.html">
+        Protocol
+      </a>
+
+      <span aria-hidden="true">
+        &nbsp;·&nbsp;
+      </span>
+
+      <a href="status-disclosure.html">
+        Project Status
+      </a>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
   <script>
-    document.getElementById("current-year").textContent =
-      new Date().getFullYear();
+    (() => {
+      "use strict";
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
   </script>
 
 </body>
