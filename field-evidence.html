@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="View field evidence associated with an MREO property."
+    content="View field evidence for a fictional MREO property."
   >
 
   <title>MREO | Field Evidence</title>
@@ -20,9 +20,9 @@
 
 <body>
 
-  <!-- =========================================
+  <!-- =====================================================
        HEADER
-       ========================================= -->
+       ===================================================== -->
 
   <header class="site-header">
 
@@ -53,9 +53,9 @@
 
 
     <a
-      id="back-verification-link"
+      id="back-link"
       class="back-link"
-      href="field-verification.html?id=MREO-0001"
+      href="field-verification.html"
     >
       ← Field Verification
     </a>
@@ -63,240 +63,343 @@
   </header>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        MAIN
-       ========================================= -->
+       ===================================================== -->
 
-  <main class="page page-narrow">
+  <main class="page page-medium">
 
-    <!-- =====================================
-         INTRO
-         ===================================== -->
-
-    <section class="page-intro">
-
-      <p
-        id="evidence-property-id"
-        class="page-eyebrow mono"
-      >
-        MREO-0001
-      </p>
-
-      <h1 class="page-title">
-        Field Evidence
-      </h1>
-
-      <p
-        id="evidence-property-address"
-        class="page-description"
-      >
-        4218 Maple Ridge Drive · Dallas, Texas
-      </p>
-
-    </section>
-
-
-    <!-- =====================================
-         VERIFICATION DATE
-         ===================================== -->
-
-    <section class="detail-list">
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Field Record
-        </span>
-
-        <span
-          id="evidence-date"
-          class="detail-value"
-        >
-          Current demonstration record
-        </span>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================
-         EVIDENCE ITEMS
-         ===================================== -->
+    <!-- ===================================================
+         ERROR
+         =================================================== -->
 
     <section
-      class="step-list"
-      style="margin-top: 36px;"
+      id="property-error"
+      class="error-message"
+      hidden
     >
-
-      <!-- EXTERIOR PHOTOS -->
-
-      <div class="step-link">
-
-        <span class="step-number">
-          01
-        </span>
-
-        <div class="step-content">
-
-          <strong>
-            Exterior Photos
-          </strong>
-
-          <small id="photo-status">
-            Available · Demonstration record
-          </small>
-
-        </div>
-
-        <span
-          class="step-arrow"
-          aria-hidden="true"
-        >
-          ✓
-        </span>
-
-      </div>
-
-
-      <!-- WALKTHROUGH -->
-
-      <div class="step-link">
-
-        <span class="step-number">
-          02
-        </span>
-
-        <div class="step-content">
-
-          <strong>
-            Walkthrough Video
-          </strong>
-
-          <small id="walkthrough-status">
-            Available · Demonstration record
-          </small>
-
-        </div>
-
-        <span
-          class="step-arrow"
-          aria-hidden="true"
-        >
-          ✓
-        </span>
-
-      </div>
-
-
-      <!-- LOCATION -->
-
-      <div class="step-link">
-
-        <span class="step-number">
-          03
-        </span>
-
-        <div class="step-content">
-
-          <strong>
-            Location Verification
-          </strong>
-
-          <small id="location-status">
-            Property location associated with field record
-          </small>
-
-        </div>
-
-        <span
-          class="step-arrow"
-          aria-hidden="true"
-        >
-          ✓
-        </span>
-
-      </div>
-
+      Property record not found.
     </section>
 
 
-    <!-- =====================================
-         MAIN EVIDENCE IMAGE
-         ===================================== -->
+    <!-- ===================================================
+         PAGE CONTENT
+         =================================================== -->
 
-    <section
-      class="panel"
-      style="margin-top: 36px;"
+    <div
+      id="field-evidence-content"
+      hidden
     >
 
-      <p class="eyebrow">
-        Exterior Record
-      </p>
+      <!-- =================================================
+           INTRO
+           ================================================= -->
 
-      <div
-        class="property-image"
-        style="margin-top: 18px;"
+      <section class="page-intro">
+
+        <p class="page-eyebrow">
+          Property Passport · Field Verification
+        </p>
+
+        <h1 class="page-title">
+          Field Evidence
+        </h1>
+
+        <p
+          id="property-address"
+          class="page-description"
+        >
+          Property
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
+           PRIMARY PROPERTY IMAGE
+
+           IMPORTANT:
+           This uses the canonical property image shared with
+           Browse Properties, property.html, and visual.html.
+           ================================================= -->
+
+      <section
+        id="image-section"
+        style="
+          margin-top: 34px;
+          border: 1px solid var(--ink);
+          background: var(--paper-light);
+          overflow: hidden;
+        "
       >
 
         <img
-          id="evidence-image"
-          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85"
-          alt="Fictional MREO field evidence"
+          id="property-image"
+          alt=""
+          style="
+            display: block;
+            width: 100%;
+            height: clamp(300px, 52vw, 620px);
+            object-fit: cover;
+            background: var(--paper-dark);
+          "
         >
+
+      </section>
+
+
+      <!-- =================================================
+           PRIMARY EVIDENCE RECORD
+           ================================================= -->
+
+      <section
+        class="detail-list"
+        style="margin-top: 28px;"
+      >
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Property ID
+          </span>
+
+          <span
+            id="property-id"
+            class="detail-value mono"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Evidence Type
+          </span>
+
+          <span
+            id="evidence-type"
+            class="detail-value"
+          >
+            Current Property Photograph
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Field Source
+          </span>
+
+          <span
+            id="field-source"
+            class="detail-value"
+          >
+            Demonstration Field Record
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Photo Status
+          </span>
+
+          <span
+            id="photo-status"
+            class="detail-value"
+          >
+            Current Demonstration Record
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Geotagged Video
+          </span>
+
+          <span
+            id="video-status"
+            class="detail-value"
+          >
+            Not recorded in this demonstration
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Walkthrough
+          </span>
+
+          <span
+            id="walkthrough-status"
+            class="detail-value"
+          >
+            Not recorded in this demonstration
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Access Status
+          </span>
+
+          <span
+            id="access-status"
+            class="detail-value"
+          >
+            Property-specific authorization required
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           FIELD NOTE
+           ================================================= -->
+
+      <section
+        class="panel"
+        style="margin-top: 34px;"
+      >
+
+        <p class="page-eyebrow">
+          Field Note
+        </p>
+
+        <h3 id="field-note-title">
+          Current visual evidence
+        </h3>
+
+        <p
+          id="field-note"
+          class="muted"
+        >
+          Field evidence can provide current visual information
+          about a property while preserving the source and status
+          of the record.
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
+           PERSISTENT RECORD NOTE
+           ================================================= -->
+
+      <div
+        class="status-message"
+        style="margin-top: 30px;"
+      >
+        The primary property photograph is connected to the same
+        persistent MREO property record used throughout the prototype.
+        The main image shown here therefore matches the image shown on
+        Browse Properties, the main property page, and the Visual Record.
+      </div>
+
+
+      <!-- =================================================
+           REMOTE VERIFICATION NOTE
+           ================================================= -->
+
+      <section
+        class="panel"
+        style="margin-top: 34px;"
+      >
+
+        <p class="page-eyebrow">
+          Remote Verification
+        </p>
+
+        <h3>
+          Visual evidence does not replace professional inspection.
+        </h3>
+
+        <p class="muted">
+          Current photographs, geotagged video, construction
+          documentation, and authorized walkthroughs can help a remote
+          participant understand present property conditions. Professional
+          interpretation may still require an inspector, engineer,
+          contractor, appraiser, or other qualified participant.
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
+           NAVIGATION
+           ================================================= -->
+
+      <div
+        class="button-row"
+        style="margin-top: 34px;"
+      >
+
+        <a
+          id="visual-link"
+          class="secondary-button"
+          href="visual.html"
+        >
+          ← Visual Record
+        </a>
+
+
+        <a
+          id="property-link"
+          class="primary-button"
+          href="property.html"
+        >
+          Property Overview
+          <span aria-hidden="true">→</span>
+        </a>
 
       </div>
 
-    </section>
 
+      <!-- =================================================
+           DISCLAIMER
+           ================================================= -->
 
-    <!-- =====================================
-         NAVIGATION
-         ===================================== -->
-
-    <div class="button-row">
-
-      <a
-        id="verification-link"
-        class="primary-button"
-        href="field-verification.html?id=MREO-0001"
+      <div
+        class="status-message"
+        style="margin-top: 40px;"
       >
-        Field Verification
-      </a>
+        This page contains fictional demonstration records. Field evidence
+        shown in the MREO prototype does not constitute an inspection,
+        appraisal, engineering opinion, title determination, or guarantee
+        of property condition.
+      </div>
 
-
-      <a
-        id="visual-link"
-        class="secondary-button"
-        href="visual.html?id=MREO-0001"
-      >
-        Visual Record
-      </a>
-
-    </div>
-
-
-    <!-- =====================================
-         NOTICE
-         ===================================== -->
-
-    <div class="status-message">
-      The photographs, video references, verification status,
-      and field records shown in this marketplace are fictional
-      demonstration materials.
     </div>
 
   </main>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        FOOTER
-       ========================================= -->
+       ===================================================== -->
 
   <footer class="site-footer">
 
     <p>
-      Fictional demonstration field evidence
+      MREO Field Evidence
     </p>
 
     <p>
@@ -306,286 +409,807 @@
   </footer>
 
 
-  <!-- =========================================
-       DATA
-       ========================================= -->
+  <!-- =====================================================
+       SHARED DATA
+       ===================================================== -->
 
   <script src="data.js"></script>
 
+  <!--
+    Canonical property image system.
 
-  <!-- =========================================
+    Browse Properties remains the authoritative source
+    for the property's primary photograph.
+  -->
+  <script src="property-images.js"></script>
+
+
+  <!-- =====================================================
        PAGE LOGIC
-       ========================================= -->
+       ===================================================== -->
 
   <script>
     (() => {
       "use strict";
 
 
-      /* -----------------------------------------
-         PROPERTY
-         ----------------------------------------- */
+      /* ===================================================
+         URL
+         =================================================== */
 
       const params =
-        new URLSearchParams(window.location.search);
-
-      const requestedId =
-        params.get("id") || "MREO-0001";
-
-
-      const fallback = {
-
-        id:
-          "MREO-0001",
-
-        addressLine1:
-          "4218 Maple Ridge Drive",
-
-        location:
-          "Dallas, Texas",
-
-        image:
-          "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85",
-
-        visualHistory:
-          []
-
-      };
-
-
-      let property =
-        fallback;
-
-
-      if (
-        window.MREO_DATA &&
-        typeof window.MREO_DATA.getProperty === "function"
-      ) {
-
-        property =
-          window.MREO_DATA.getProperty(requestedId) ||
-          fallback;
-
-      }
-
-
-      const id =
-        property.id ||
-        requestedId;
-
-
-      const address =
-        property.addressLine1 ||
-        property.address ||
-        property.fullAddress ||
-        fallback.addressLine1;
-
-
-      const location =
-        property.location ||
-        [
-          property.city,
-          property.state
-        ]
-          .filter(Boolean)
-          .join(", ") ||
-        fallback.location;
-
-
-      const image =
-        property.image ||
-        property.heroImage ||
-        fallback.image;
-
-
-      /* -----------------------------------------
-         FIELD RECORD
-         ----------------------------------------- */
-
-      const history =
-        Array.isArray(property.visualHistory)
-          ? property.visualHistory
-          : [];
-
-
-      const fieldRecord =
-        history.find((item) => {
-
-          const text =
-            JSON.stringify(item)
-              .toLowerCase();
-
-          return (
-            text.includes("field") ||
-            text.includes("walkthrough") ||
-            text.includes("video") ||
-            text.includes("verification")
-          );
-
-        }) ||
-        history[0] ||
-        {};
-
-
-      const recordDate =
-        fieldRecord.date ||
-        fieldRecord.updated ||
-        fieldRecord.verifiedAt ||
-        "Current demonstration record";
-
-
-      /* -----------------------------------------
-         EVIDENCE
-         ----------------------------------------- */
-
-      let evidence =
-        fieldRecord.evidence ||
-        property.visual?.evidence ||
-        property.passport?.visual?.evidence ||
-        [];
-
-
-      if (typeof evidence === "string") {
-        evidence = [evidence];
-      }
-
-
-      if (!Array.isArray(evidence)) {
-        evidence = [];
-      }
-
-
-      const evidenceText =
-        evidence
-          .join(" ")
-          .toLowerCase();
-
-
-      const hasPhotos =
-        evidence.length === 0 ||
-        evidenceText.includes("photo") ||
-        evidenceText.includes("image");
-
-
-      const hasWalkthrough =
-        evidence.length === 0 ||
-        evidenceText.includes("walkthrough") ||
-        evidenceText.includes("video");
-
-
-      const hasLocation =
-        evidence.length === 0 ||
-        evidenceText.includes("location") ||
-        evidenceText.includes("geo") ||
-        evidenceText.includes("address");
-
-
-      /* -----------------------------------------
-         RENDER PROPERTY
-         ----------------------------------------- */
-
-      document.getElementById(
-        "evidence-property-id"
-      ).textContent =
-        id;
-
-
-      document.getElementById(
-        "evidence-property-address"
-      ).textContent =
-        `${address} · ${location}`;
-
-
-      document.getElementById(
-        "evidence-date"
-      ).textContent =
-        recordDate;
-
-
-      /* -----------------------------------------
-         RENDER EVIDENCE STATUS
-         ----------------------------------------- */
-
-      document.getElementById(
-        "photo-status"
-      ).textContent =
-        hasPhotos
-          ? "Available · Demonstration record"
-          : "Not currently recorded";
-
-
-      document.getElementById(
-        "walkthrough-status"
-      ).textContent =
-        hasWalkthrough
-          ? "Available · Demonstration record"
-          : "Not currently recorded";
-
-
-      document.getElementById(
-        "location-status"
-      ).textContent =
-        hasLocation
-          ? "Property location associated with field record"
-          : "Location verification not currently recorded";
-
-
-      /* -----------------------------------------
-         IMAGE
-         ----------------------------------------- */
-
-      const imageElement =
-        document.getElementById(
-          "evidence-image"
+        new URLSearchParams(
+          window.location.search
         );
 
 
-      imageElement.src =
-        image;
+      const requestedPropertyId =
+        params.get("id");
 
 
-      imageElement.alt =
-        `Fictional field evidence for ${address}`;
+      /* ===================================================
+         ELEMENTS
+         =================================================== */
+
+      const content =
+        document.getElementById(
+          "field-evidence-content"
+        );
 
 
-      /* -----------------------------------------
-         LINKS
-         ----------------------------------------- */
-
-      const encodedId =
-        encodeURIComponent(id);
+      const errorBox =
+        document.getElementById(
+          "property-error"
+        );
 
 
-      document.getElementById(
-        "back-verification-link"
-      ).href =
-        `field-verification.html?id=${encodedId}`;
+      const imageSection =
+        document.getElementById(
+          "image-section"
+        );
 
 
-      document.getElementById(
-        "verification-link"
-      ).href =
-        `field-verification.html?id=${encodedId}`;
+      const imageElement =
+        document.getElementById(
+          "property-image"
+        );
 
 
-      document.getElementById(
-        "visual-link"
-      ).href =
-        `visual.html?id=${encodedId}`;
+      /* ===================================================
+         HELPERS
+         =================================================== */
+
+      function firstDefined(
+        ...values
+      ) {
+
+        for (const value of values) {
+
+          if (
+            value !== undefined &&
+            value !== null &&
+            value !== ""
+          ) {
+
+            return value;
+
+          }
+
+        }
 
 
-      /* -----------------------------------------
-         PAGE
-         ----------------------------------------- */
+        return null;
 
-      document.title =
-        `${id} | MREO Field Evidence`;
+      }
 
+
+      function display(
+        value,
+        fallback = "Not available"
+      ) {
+
+        if (
+          value === undefined ||
+          value === null ||
+          value === ""
+        ) {
+
+          return fallback;
+
+        }
+
+
+        return String(value);
+
+      }
+
+
+      function makePropertyUrl(
+        pageName,
+        propertyId
+      ) {
+
+        return (
+          pageName +
+          "?id=" +
+          encodeURIComponent(
+            propertyId
+          )
+        );
+
+      }
+
+
+      /* ===================================================
+         FIND PROPERTY
+         =================================================== */
+
+      function getPropertyRecord() {
+
+        if (
+          !requestedPropertyId ||
+          !window.MREO_DATA
+        ) {
+
+          return null;
+
+        }
+
+
+        if (
+          typeof window.MREO_DATA.getProperty ===
+          "function"
+        ) {
+
+          const property =
+            window.MREO_DATA.getProperty(
+              requestedPropertyId
+            );
+
+
+          if (property) {
+            return property;
+          }
+
+        }
+
+
+        if (
+          Array.isArray(
+            window.MREO_DATA.properties
+          )
+        ) {
+
+          return (
+            window.MREO_DATA.properties.find(
+              property => {
+
+                const id =
+                  firstDefined(
+                    property.id,
+                    property.propertyId
+                  );
+
+
+                return (
+                  String(id).toUpperCase() ===
+                  String(requestedPropertyId).toUpperCase()
+                );
+
+              }
+            ) ||
+            null
+          );
+
+        }
+
+
+        return null;
+
+      }
+
+
+      /* ===================================================
+         FIELD-EVIDENCE OBJECT
+
+         Supports several possible data.js structures.
+         =================================================== */
+
+      function getFieldEvidence(
+        property
+      ) {
+
+        if (
+          property.fieldEvidence &&
+          typeof property.fieldEvidence ===
+          "object"
+        ) {
+
+          return property.fieldEvidence;
+
+        }
+
+
+        if (
+          property.fieldVerification &&
+          typeof property.fieldVerification ===
+          "object"
+        ) {
+
+          return property.fieldVerification;
+
+        }
+
+
+        if (
+          property.visual &&
+          typeof property.visual ===
+          "object"
+        ) {
+
+          if (
+            property.visual.fieldEvidence &&
+            typeof property.visual.fieldEvidence ===
+            "object"
+          ) {
+
+            return property.visual.fieldEvidence;
+
+          }
+
+
+          return property.visual;
+
+        }
+
+
+        if (
+          property.visualRecord &&
+          typeof property.visualRecord ===
+          "object"
+        ) {
+
+          return property.visualRecord;
+
+        }
+
+
+        return {};
+
+      }
+
+
+      /* ===================================================
+         PROPERTY-SPECIFIC DEMONSTRATION FALLBACKS
+
+         Used only when data.js does not already contain
+         equivalent field-verification information.
+         =================================================== */
+
+      function getDemoFieldFallback(
+        propertyId
+      ) {
+
+        const id =
+          String(
+            propertyId
+          ).toUpperCase();
+
+
+        /*
+          MREO-0015:
+          Remote-owner example specifically includes field
+          network activity, geotagged exterior video, and
+          an authorized walkthrough.
+        */
+
+        if (
+          id === "MREO-0015"
+        ) {
+
+          return {
+            source:
+              "MREO Field Network — Dallas",
+
+            photoStatus:
+              "Current field photographs available",
+
+            videoStatus:
+              "Geotagged exterior video available",
+
+            walkthroughStatus:
+              "Authorized walkthrough available",
+
+            accessStatus:
+              "Authorized property access recorded",
+
+            noteTitle:
+              "Remote-owner field record",
+
+            note:
+              "The property is represented through current field photography, geotagged exterior video, and an authorized walkthrough so the remote owner can maintain a current visual record."
+          };
+
+        }
+
+
+        /*
+          MREO-0012:
+          International-qualified-buyer property with remote
+          verification context.
+        */
+
+        if (
+          id === "MREO-0012"
+        ) {
+
+          return {
+            source:
+              "MREO Field Network",
+
+            photoStatus:
+              "Current remote-verification photographs available",
+
+            videoStatus:
+              "Remote visual verification available",
+
+            walkthroughStatus:
+              "Remote walkthrough supported",
+
+            accessStatus:
+              "Authorized access required",
+
+            noteTitle:
+              "Remote purchaser verification",
+
+            note:
+              "The visual record supports qualified remote purchasers by providing current property evidence before deeper professional diligence is undertaken."
+          };
+
+        }
+
+
+        return {
+          source:
+            "Demonstration Field Record",
+
+          photoStatus:
+            "Current demonstration photograph",
+
+          videoStatus:
+            "Not recorded in this demonstration",
+
+          walkthroughStatus:
+            "Not recorded in this demonstration",
+
+          accessStatus:
+            "Property-specific authorization required",
+
+          noteTitle:
+            "Current visual evidence",
+
+          note:
+            "Field evidence can preserve current property photographs and other authorized visual records while keeping their source and verification status identifiable."
+        };
+
+      }
+
+
+      /* ===================================================
+         RENDER
+         =================================================== */
+
+      async function render() {
+
+        const property =
+          getPropertyRecord();
+
+
+        if (!property) {
+
+          errorBox.hidden =
+            false;
+
+
+          content.hidden =
+            true;
+
+
+          return;
+
+        }
+
+
+        const propertyId =
+          firstDefined(
+            property.id,
+            property.propertyId,
+            requestedPropertyId
+          );
+
+
+        const address =
+          firstDefined(
+            property.address,
+            property.streetAddress,
+            property.location
+          );
+
+
+        const city =
+          firstDefined(
+            property.city
+          );
+
+
+        const state =
+          firstDefined(
+            property.state
+          );
+
+
+        const zip =
+          firstDefined(
+            property.zip,
+            property.zipCode,
+            property.postalCode
+          );
+
+
+        const locationParts =
+          [
+            city,
+            state,
+            zip
+          ].filter(Boolean);
+
+
+        let addressText =
+          display(
+            address
+          );
+
+
+        if (
+          locationParts.length > 0
+        ) {
+
+          addressText +=
+            " · " +
+            locationParts.join(", ");
+
+        }
+
+
+        /* -------------------------------------------------
+           BASIC IDENTITY
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "property-id"
+        ).textContent =
+          propertyId;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          addressText;
+
+
+        /* -------------------------------------------------
+           FIELD EVIDENCE
+           ------------------------------------------------- */
+
+        const evidence =
+          getFieldEvidence(
+            property
+          );
+
+
+        const fallback =
+          getDemoFieldFallback(
+            propertyId
+          );
+
+
+        const evidenceType =
+          firstDefined(
+            evidence.evidenceType,
+            evidence.type,
+            evidence.recordType,
+            "Current Property Photograph"
+          );
+
+
+        const source =
+          firstDefined(
+            evidence.source,
+            evidence.fieldSource,
+            evidence.provider,
+            evidence.participant,
+            fallback.source
+          );
+
+
+        const photoStatus =
+          firstDefined(
+            evidence.photoStatus,
+            evidence.photographStatus,
+            evidence.status,
+            fallback.photoStatus
+          );
+
+
+        const videoStatus =
+          firstDefined(
+            evidence.videoStatus,
+            evidence.geotaggedVideo,
+            evidence.geotaggedVideoStatus,
+            evidence.video,
+            fallback.videoStatus
+          );
+
+
+        const walkthroughStatus =
+          firstDefined(
+            evidence.walkthroughStatus,
+            evidence.walkthrough,
+            evidence.interiorWalkthrough,
+            fallback.walkthroughStatus
+          );
+
+
+        const accessStatus =
+          firstDefined(
+            evidence.accessStatus,
+            evidence.authorization,
+            evidence.access,
+            fallback.accessStatus
+          );
+
+
+        const noteTitle =
+          firstDefined(
+            evidence.noteTitle,
+            evidence.title,
+            fallback.noteTitle
+          );
+
+
+        const note =
+          firstDefined(
+            evidence.note,
+            evidence.description,
+            evidence.summary,
+            fallback.note
+          );
+
+
+        document.getElementById(
+          "evidence-type"
+        ).textContent =
+          display(
+            evidenceType
+          );
+
+
+        document.getElementById(
+          "field-source"
+        ).textContent =
+          display(
+            source
+          );
+
+
+        document.getElementById(
+          "photo-status"
+        ).textContent =
+          display(
+            photoStatus
+          );
+
+
+        document.getElementById(
+          "video-status"
+        ).textContent =
+          display(
+            videoStatus
+          );
+
+
+        document.getElementById(
+          "walkthrough-status"
+        ).textContent =
+          display(
+            walkthroughStatus
+          );
+
+
+        document.getElementById(
+          "access-status"
+        ).textContent =
+          display(
+            accessStatus
+          );
+
+
+        document.getElementById(
+          "field-note-title"
+        ).textContent =
+          display(
+            noteTitle
+          );
+
+
+        document.getElementById(
+          "field-note"
+        ).textContent =
+          display(
+            note
+          );
+
+
+        /* -------------------------------------------------
+           NAVIGATION
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "back-link"
+        ).href =
+          makePropertyUrl(
+            "field-verification.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "visual-link"
+        ).href =
+          makePropertyUrl(
+            "visual.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "property-link"
+        ).href =
+          makePropertyUrl(
+            "property.html",
+            propertyId
+          );
+
+
+        /* -------------------------------------------------
+           CANONICAL PROPERTY IMAGE
+
+           THIS IS THE IMPORTANT FIX.
+
+           The Browse Properties photograph remains
+           authoritative.
+
+           Field-evidence-specific image values can only act
+           as emergency fallbacks if the canonical image
+           cannot be discovered.
+           ------------------------------------------------- */
+
+        const fallbackImage =
+          firstDefined(
+            property.image,
+            property.photo,
+            property.imageUrl,
+            property.photoUrl,
+
+            evidence.primaryImage,
+            evidence.image,
+            evidence.imageUrl,
+            evidence.photo,
+            evidence.photoUrl
+          );
+
+
+        let canonicalImage =
+          null;
+
+
+        if (
+          window.MREO_IMAGES &&
+          typeof window.MREO_IMAGES.apply ===
+          "function"
+        ) {
+
+          canonicalImage =
+            await window.MREO_IMAGES.apply(
+              imageElement,
+              propertyId,
+              fallbackImage
+            );
+
+        } else if (
+          fallbackImage
+        ) {
+
+          imageElement.src =
+            fallbackImage;
+
+
+          canonicalImage =
+            fallbackImage;
+
+        }
+
+
+        if (!canonicalImage) {
+
+          imageSection.hidden =
+            true;
+
+        }
+
+
+        imageElement.alt =
+          "Field evidence photograph for " +
+          display(
+            address
+          );
+
+
+        /* -------------------------------------------------
+           DOCUMENT TITLE
+           ------------------------------------------------- */
+
+        document.title =
+          propertyId +
+          " Field Evidence | MREO";
+
+
+        /* -------------------------------------------------
+           SHOW PAGE
+           ------------------------------------------------- */
+
+        content.hidden =
+          false;
+
+      }
+
+
+      /* ===================================================
+         BROKEN IMAGE
+         =================================================== */
+
+      imageElement.addEventListener(
+        "error",
+        () => {
+
+          console.warn(
+            "Canonical field-evidence image could not be loaded for:",
+            requestedPropertyId
+          );
+
+
+          imageSection.hidden =
+            true;
+
+        }
+      );
+
+
+      /* ===================================================
+         CURRENT YEAR
+         =================================================== */
 
       document.getElementById(
         "current-year"
       ).textContent =
         new Date().getFullYear();
+
+
+      /* ===================================================
+         START
+         =================================================== */
+
+      render();
 
     })();
   </script>
