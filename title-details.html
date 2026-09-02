@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View detailed title information for an MREO Property Passport."
+  >
+
+  <title>MREO | Title Details</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-title-link"
+      class="back-link"
+      href="title.html?id=MREO-0001"
+    >
+      ← Title
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="details-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1 class="page-title">
+        Title Details
+      </h1>
+
+      <p
+        id="details-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         CORE TITLE INFORMATION
+         ===================================== -->
+
+    <section class="detail-list">
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Seller Authority
+        </span>
+
+        <span
+          id="details-authority"
+          class="detail-value"
+        >
+          Confirmed
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Title Readiness
+        </span>
+
+        <span
+          id="details-readiness"
+          class="detail-value"
+        >
+          Ready
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Known Exceptions
+        </span>
+
+        <span
+          id="details-exception-count"
+          class="detail-value"
+        >
+          None
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Record Source
+        </span>
+
+        <span
+          id="details-source"
+          class="detail-value"
+        >
+          MREO demonstration title record
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         EXCEPTIONS
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 30px;"
+    >
+
+      <p class="eyebrow">
+        Exceptions
+      </p>
+
+      <div id="title-exception-list">
+
+        <p class="muted">
+          No known title exceptions are recorded for this property.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         NAVIGATION
+         ===================================== -->
+
+    <div class="button-row">
+
+      <a
+        id="back-to-title-button"
+        class="primary-button"
+        href="title.html?id=MREO-0001"
+      >
+        Back to Title
+      </a>
+
+
+      <a
+        id="passport-link"
+        class="secondary-button"
+        href="passport.html?id=MREO-0001"
+      >
+        Property Passport
+      </a>
+
+    </div>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div class="status-message">
+      This prototype organizes title information but does not make
+      a legal determination of ownership, lien priority, insurability,
+      or marketable title.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration title record
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         PROPERTY
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+      const requestedId =
+        params.get("id") || "MREO-0001";
+
+
+      const fallback = {
+        id: "MREO-0001",
+
+        addressLine1:
+          "4218 Maple Ridge Drive",
+
+        location:
+          "Dallas, Texas",
+
+        title: {
+          status:
+            "Ready",
+
+          readiness:
+            "Transaction ready",
+
+          authority:
+            "Confirmed",
+
+          exceptions:
+            [],
+
+          source:
+            "MREO demonstration title record"
+        }
+      };
+
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+        property =
+          window.MREO_DATA.getProperty(requestedId) ||
+          fallback;
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      /* -----------------------------------------
+         TITLE RECORD
+         ----------------------------------------- */
+
+      const titleRecord =
+        property.title ||
+        property.passport?.title ||
+        fallback.title;
+
+
+      const authority =
+        titleRecord.authority ||
+        titleRecord.sellerAuthority ||
+        "Not yet confirmed";
+
+
+      const readiness =
+        titleRecord.readiness ||
+        titleRecord.status ||
+        "Not yet reviewed";
+
+
+      const source =
+        titleRecord.source ||
+        titleRecord.provider ||
+        titleRecord.sourceName ||
+        "MREO demonstration title record";
+
+
+      let exceptions =
+        titleRecord.exceptions ??
+        titleRecord.issues ??
+        [];
+
+
+      if (
+        typeof exceptions === "string" &&
+        exceptions.trim()
+      ) {
+        exceptions =
+          [exceptions];
+      }
+
+
+      if (!Array.isArray(exceptions)) {
+        exceptions = [];
+      }
+
+
+      /* -----------------------------------------
+         HEADER
+         ----------------------------------------- */
+
+      document.getElementById(
+        "details-property-id"
+      ).textContent = id;
+
+
+      document.getElementById(
+        "details-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      /* -----------------------------------------
+         VALUES
+         ----------------------------------------- */
+
+      document.getElementById(
+        "details-authority"
+      ).textContent =
+        authority;
+
+
+      document.getElementById(
+        "details-readiness"
+      ).textContent =
+        readiness;
+
+
+      document.getElementById(
+        "details-exception-count"
+      ).textContent =
+        exceptions.length === 0
+          ? "None"
+          : exceptions.length === 1
+            ? "1 exception"
+            : `${exceptions.length} exceptions`;
+
+
+      document.getElementById(
+        "details-source"
+      ).textContent =
+        source;
+
+
+      /* -----------------------------------------
+         EXCEPTION LIST
+         ----------------------------------------- */
+
+      const list =
+        document.getElementById(
+          "title-exception-list"
+        );
+
+
+      if (exceptions.length === 0) {
+
+        list.innerHTML = `
+          <p class="muted">
+            No known title exceptions are recorded for this property.
+          </p>
+        `;
+
+      } else {
+
+        list.innerHTML =
+          exceptions
+            .map(
+              (exception, index) => `
+                <div
+                  class="detail-row"
+                  style="
+                    grid-template-columns: 80px minmax(0, 1fr);
+                  "
+                >
+                  <span class="detail-label">
+                    ${String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span class="detail-value">
+                    ${escapeHtml(
+                      typeof exception === "string"
+                        ? exception
+                        : (
+                            exception.description ||
+                            exception.label ||
+                            exception.name ||
+                            "Title exception"
+                          )
+                    )}
+                  </span>
+                </div>
+              `
+            )
+            .join("");
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      const encodedId =
+        encodeURIComponent(id);
+
+
+      document.getElementById(
+        "back-title-link"
+      ).href =
+        `title.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "back-to-title-button"
+      ).href =
+        `title.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "passport-link"
+      ).href =
+        `passport.html?id=${encodedId}`;
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.title =
+        `${id} | MREO Title Details`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+
+      /* -----------------------------------------
+         SAFE TEXT
+         ----------------------------------------- */
+
+      function escapeHtml(value) {
+
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
