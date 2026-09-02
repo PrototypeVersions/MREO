@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Enter purchaser acquisition capacity for an MREO purchaser profile."
+  >
+
+  <title>MREO | Purchase Capacity</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-profile-link"
+      class="back-link"
+      href="purchaser.html"
+    >
+      ← Purchaser Profile
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Purchaser Profile · 03
+      </p>
+
+      <h1 class="page-title">
+        Purchase Capacity
+      </h1>
+
+      <p class="page-description">
+        Define what the purchaser is prepared to acquire.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-id"
+          class="detail-value mono"
+        >
+          MREO-0001
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="capacity-form"
+      class="form"
+    >
+
+      <!-- MAXIMUM PURCHASE AMOUNT -->
+
+      <div class="field">
+
+        <label for="maximum-purchase">
+          Maximum Purchase Amount
+        </label>
+
+        <input
+          id="maximum-purchase"
+          name="maximumPurchase"
+          type="number"
+          min="0"
+          step="1000"
+          placeholder="Enter maximum amount"
+          required
+        >
+
+      </div>
+
+
+      <!-- GEOGRAPHY -->
+
+      <div class="field">
+
+        <label for="preferred-geography">
+          Preferred Geography
+        </label>
+
+        <input
+          id="preferred-geography"
+          name="preferredGeography"
+          type="text"
+          placeholder="Example: Dallas–Fort Worth, Texas"
+          required
+        >
+
+      </div>
+
+
+      <!-- PURCHASE FORM -->
+
+      <div class="field">
+
+        <label for="purchase-form">
+          Purchase Form
+        </label>
+
+        <select
+          id="purchase-form"
+          name="purchaseForm"
+          required
+        >
+
+          <option value="">
+            Choose purchase form
+          </option>
+
+          <option value="Individual Property">
+            Individual Property
+          </option>
+
+          <option value="Multiple Properties">
+            Multiple Properties
+          </option>
+
+          <option value="Portfolio Acquisition">
+            Portfolio Acquisition
+          </option>
+
+          <option value="Institutional Acquisition">
+            Institutional Acquisition
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- SAVE -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Save Capacity
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         SAVED RESULT
+         ===================================== -->
+
+    <section
+      id="saved-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Status
+          </span>
+
+          <span
+            class="detail-value"
+            style="
+              font-size: 20px;
+              font-weight: 900;
+            "
+          >
+            Purchase Capacity Complete
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <section
+        class="panel"
+        style="margin-top: 30px;"
+      >
+
+        <p class="eyebrow">
+          Purchaser Profile
+        </p>
+
+        <h3>
+          Qualification information is now complete.
+        </h3>
+
+        <p class="muted">
+          Return to the Purchaser Profile to see the completed
+          qualification status.
+        </p>
+
+      </section>
+
+
+      <div class="button-row">
+
+        <a
+          id="return-profile-link"
+          class="primary-button"
+          href="purchaser.html"
+        >
+          Purchaser Profile
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="return-property-link"
+          class="secondary-button"
+          href="properties.html"
+        >
+          Browse Properties
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 34px;"
+    >
+      Purchase capacity shown in this prototype is self-reported
+      demonstration information. It does not represent credit
+      approval, proof of funds, purchasing authority, or guaranteed
+      acquisition capacity.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration purchaser capacity
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      const propertyId =
+        params.get("property");
+
+
+      /* -----------------------------------------
+         PRESERVE PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      function withProperty(page) {
+
+        if (!propertyId) {
+          return page;
+        }
+
+
+        return (
+          `${page}?property=` +
+          encodeURIComponent(propertyId)
+        );
+
+      }
+
+
+      document.getElementById(
+        "back-profile-link"
+      ).href =
+        withProperty(
+          "purchaser.html"
+        );
+
+
+      document.getElementById(
+        "return-profile-link"
+      ).href =
+        withProperty(
+          "purchaser.html"
+        );
+
+
+      if (propertyId) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-id"
+        ).textContent =
+          propertyId;
+
+
+        document.getElementById(
+          "return-property-link"
+        ).href =
+          `property.html?id=${encodeURIComponent(propertyId)}`;
+
+
+        document.getElementById(
+          "return-property-link"
+        ).textContent =
+          "Return to Property";
+
+      }
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      const savedMaximum =
+        sessionStorage.getItem(
+          "mreo-purchaser-maximum-purchase"
+        );
+
+
+      const savedGeography =
+        sessionStorage.getItem(
+          "mreo-purchaser-geography"
+        );
+
+
+      const savedPurchaseForm =
+        sessionStorage.getItem(
+          "mreo-purchaser-purchase-form"
+        );
+
+
+      if (savedMaximum) {
+
+        document.getElementById(
+          "maximum-purchase"
+        ).value =
+          savedMaximum;
+
+      }
+
+
+      if (savedGeography) {
+
+        document.getElementById(
+          "preferred-geography"
+        ).value =
+          savedGeography;
+
+      }
+
+
+      if (savedPurchaseForm) {
+
+        document.getElementById(
+          "purchase-form"
+        ).value =
+          savedPurchaseForm;
+
+      }
+
+
+      /* -----------------------------------------
+         SAVE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "capacity-form"
+      ).addEventListener(
+        "submit",
+        (event) => {
+
+          event.preventDefault();
+
+
+          const maximumPurchase =
+            document.getElementById(
+              "maximum-purchase"
+            ).value;
+
+
+          const preferredGeography =
+            document.getElementById(
+              "preferred-geography"
+            ).value.trim();
+
+
+          const purchaseForm =
+            document.getElementById(
+              "purchase-form"
+            ).value;
+
+
+          sessionStorage.setItem(
+            "mreo-purchaser-maximum-purchase",
+            maximumPurchase
+          );
+
+
+          sessionStorage.setItem(
+            "mreo-purchaser-geography",
+            preferredGeography
+          );
+
+
+          sessionStorage.setItem(
+            "mreo-purchaser-purchase-form",
+            purchaseForm
+          );
+
+
+          sessionStorage.setItem(
+            "mreo-purchaser-capacity",
+            "complete"
+          );
+
+
+          document.getElementById(
+            "saved-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "saved-result"
+          ).scrollIntoView(
+            {
+              behavior:
+                "smooth",
+
+              block:
+                "start"
+            }
+          );
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
