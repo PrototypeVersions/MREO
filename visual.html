@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View the visual record for an MREO Property Passport."
+  >
+
+  <title>MREO | Visual Record</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-passport-link"
+      class="back-link"
+      href="passport.html?id=MREO-0001"
+    >
+      ← Passport
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="visual-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1 class="page-title">
+        Visual Record
+      </h1>
+
+      <p
+        id="visual-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         MAIN IMAGE
+         ===================================== -->
+
+    <section class="panel">
+
+      <div class="property-image">
+
+        <img
+          id="visual-main-image"
+          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85"
+          alt="Fictional MREO demonstration property"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         VISUAL STATUS
+         ===================================== -->
+
+    <section
+      class="detail-list"
+      style="margin-top: 30px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Visual Record Status
+        </span>
+
+        <span
+          id="visual-status"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          Current
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Last Verification
+        </span>
+
+        <span
+          id="visual-last-verification"
+          class="detail-value"
+          style="
+            font-size: 20px;
+            font-weight: 900;
+          "
+        >
+          Current demonstration record
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Record Type
+        </span>
+
+        <span
+          id="visual-record-type"
+          class="detail-value"
+        >
+          Property photography
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SIMPLE EXPLANATION
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 30px;"
+    >
+
+      <p class="eyebrow">
+        Visual Evidence
+      </p>
+
+      <h3>
+        See the property before going deeper.
+      </h3>
+
+      <p class="muted">
+        MREO can keep current photographs, video, walkthroughs,
+        and field-verification records connected to the property.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         NEXT ACTION
+         ===================================== -->
+
+    <div class="button-row">
+
+      <a
+        id="field-verification-link"
+        class="primary-button"
+        href="field-verification.html?id=MREO-0001"
+      >
+        Field Verification
+        <span aria-hidden="true">→</span>
+      </a>
+
+
+      <a
+        id="property-link"
+        class="secondary-button"
+        href="property.html?id=MREO-0001"
+      >
+        Property
+      </a>
+
+    </div>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div class="status-message">
+      Visual records can help remote participants understand current
+      property conditions, but they do not replace an inspection,
+      appraisal, engineering review, or other professional evaluation.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration visual record
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         PROPERTY
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+      const requestedId =
+        params.get("id") || "MREO-0001";
+
+
+      const fallback = {
+        id: "MREO-0001",
+
+        addressLine1:
+          "4218 Maple Ridge Drive",
+
+        location:
+          "Dallas, Texas",
+
+        image:
+          "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85",
+
+        visualHistory: []
+      };
+
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+        property =
+          window.MREO_DATA.getProperty(requestedId) ||
+          fallback;
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      const image =
+        property.image ||
+        property.heroImage ||
+        fallback.image;
+
+
+      /* -----------------------------------------
+         VISUAL RECORD
+         ----------------------------------------- */
+
+      const visualRecord =
+        property.passport?.visual ||
+        property.visual ||
+        {};
+
+
+      const history =
+        Array.isArray(property.visualHistory)
+          ? property.visualHistory
+          : [];
+
+
+      const latestHistory =
+        history.length > 0
+          ? history[0]
+          : null;
+
+
+      const status =
+        visualRecord.status ||
+        visualRecord.readiness ||
+        latestHistory?.status ||
+        "Current";
+
+
+      const lastVerification =
+        visualRecord.lastVerification ||
+        visualRecord.updated ||
+        latestHistory?.date ||
+        latestHistory?.updated ||
+        "Current demonstration record";
+
+
+      const recordType =
+        visualRecord.type ||
+        latestHistory?.type ||
+        latestHistory?.label ||
+        "Property photography";
+
+
+      /* -----------------------------------------
+         RENDER
+         ----------------------------------------- */
+
+      document.getElementById(
+        "visual-property-id"
+      ).textContent = id;
+
+
+      document.getElementById(
+        "visual-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      document.getElementById(
+        "visual-status"
+      ).textContent =
+        status;
+
+
+      document.getElementById(
+        "visual-last-verification"
+      ).textContent =
+        lastVerification;
+
+
+      document.getElementById(
+        "visual-record-type"
+      ).textContent =
+        recordType;
+
+
+      const imageElement =
+        document.getElementById(
+          "visual-main-image"
+        );
+
+
+      imageElement.src =
+        image;
+
+
+      imageElement.alt =
+        `Fictional visual record for ${address}`;
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      const encodedId =
+        encodeURIComponent(id);
+
+
+      document.getElementById(
+        "back-passport-link"
+      ).href =
+        `passport.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "field-verification-link"
+      ).href =
+        `field-verification.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "property-link"
+      ).href =
+        `property.html?id=${encodedId}`;
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.title =
+        `${id} | MREO Visual Record`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
