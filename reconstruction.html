@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="View reconstruction information for an MREO property."
+    content="View reconstruction information for a fictional MREO property."
   >
 
   <title>MREO | Reconstruction</title>
@@ -20,9 +20,9 @@
 
 <body>
 
-  <!-- =========================================
+  <!-- =====================================================
        HEADER
-       ========================================= -->
+       ===================================================== -->
 
   <header class="site-header">
 
@@ -53,9 +53,9 @@
 
 
     <a
-      id="back-property-link"
+      id="back-link"
       class="back-link"
-      href="property.html?id=MREO-0001"
+      href="property.html"
     >
       ← Property
     </a>
@@ -63,126 +63,165 @@
   </header>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        MAIN
-       ========================================= -->
+       ===================================================== -->
 
   <main class="page page-medium">
 
-    <!-- =====================================
-         INTRO
-         ===================================== -->
-
-    <section class="page-intro">
-
-      <p
-        id="reconstruction-property-id"
-        class="page-eyebrow mono"
-      >
-        MREO-0001
-      </p>
-
-      <h1 class="page-title">
-        Reconstruction
-      </h1>
-
-      <p
-        id="reconstruction-property-address"
-        class="page-description"
-      >
-        4218 Maple Ridge Drive · Dallas, Texas
-      </p>
-
-    </section>
-
-
-    <!-- =====================================
-         SIMPLE STATUS
-         ===================================== -->
+    <!-- ===================================================
+         ERROR
+         =================================================== -->
 
     <section
-      class="detail-list"
-      style="margin-bottom: 42px;"
+      id="property-error"
+      class="error-message"
+      hidden
     >
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Reconstruction Status
-        </span>
-
-        <span
-          id="reconstruction-status"
-          class="detail-value"
-          style="
-            font-size: 20px;
-            font-weight: 900;
-          "
-        >
-          No Active Reconstruction
-        </span>
-
-      </div>
-
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Project Budget
-        </span>
-
-        <span
-          id="reconstruction-budget"
-          class="detail-value"
-        >
-          Not established
-        </span>
-
-      </div>
-
+      Property record not found.
     </section>
 
 
-    <!-- =====================================
-         RECONSTRUCTION SECTIONS
-         ===================================== -->
+    <!-- ===================================================
+         CONTENT
+         =================================================== -->
 
-    <section>
+    <div
+      id="reconstruction-content"
+      hidden
+    >
 
-      <p class="page-eyebrow">
-        Project Records
-      </p>
+      <!-- =================================================
+           INTRO
+           ================================================= -->
+
+      <section class="page-intro">
+
+        <p class="page-eyebrow">
+          Property Record
+        </p>
+
+        <h1 class="page-title">
+          Reconstruction
+        </h1>
+
+        <p
+          id="property-address"
+          class="page-description"
+        >
+          Property
+        </p>
+
+      </section>
 
 
-      <div class="choice-grid">
+      <!-- =================================================
+           RECONSTRUCTION SNAPSHOT
+           ================================================= -->
 
-        <!-- SCOPE -->
+      <section
+        class="detail-list"
+        style="margin-top: 34px;"
+      >
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Property ID
+          </span>
+
+          <span
+            id="property-id"
+            class="detail-value mono"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Reconstruction Status
+          </span>
+
+          <span
+            id="reconstruction-status"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Budget
+          </span>
+
+          <span
+            id="reconstruction-budget"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Committed
+          </span>
+
+          <span
+            id="reconstruction-committed"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           RECONSTRUCTION CATEGORIES
+           ALL NUMBERS REMOVED
+           ================================================= -->
+
+      <section
+        class="choice-grid"
+        style="margin-top: 38px;"
+      >
+
+        <!-- =================================================
+             SCOPE
+             ================================================= -->
 
         <a
           id="scope-link"
           class="choice-card"
-          href="reconstruction-scope.html?id=MREO-0001"
+          href="reconstruction-scope.html"
         >
-
-          <span class="choice-card-number">
-            01
-          </span>
 
           <div class="choice-card-content">
 
-            <p class="card-label">
-              Work
-            </p>
-
-            <h3>
+            <h2>
               Scope
-            </h3>
+            </h2>
 
             <p>
-              View the repairs and improvements included in the project.
+              Review the planned work, property needs, and reconstruction requirements.
             </p>
 
           </div>
+
 
           <span
             class="choice-card-arrow"
@@ -194,34 +233,28 @@
         </a>
 
 
-        <!-- BUDGET -->
+        <!-- =================================================
+             BUDGET
+             ================================================= -->
 
         <a
           id="budget-link"
           class="choice-card blue"
-          href="reconstruction-budget.html?id=MREO-0001"
+          href="reconstruction-budget.html"
         >
-
-          <span class="choice-card-number">
-            02
-          </span>
 
           <div class="choice-card-content">
 
-            <p class="card-label">
-              Cost
-            </p>
-
-            <h3>
+            <h2>
               Budget
-            </h3>
+            </h2>
 
             <p>
-              View the reconstruction budget, committed funds,
-              and remaining amount.
+              Review estimated costs, committed funds, and reconstruction spending.
             </p>
 
           </div>
+
 
           <span
             class="choice-card-arrow"
@@ -233,33 +266,28 @@
         </a>
 
 
-        <!-- MILESTONES -->
+        <!-- =================================================
+             MILESTONES
+             ================================================= -->
 
         <a
           id="milestones-link"
           class="choice-card green"
-          href="reconstruction-milestones.html?id=MREO-0001"
+          href="reconstruction-milestones.html"
         >
-
-          <span class="choice-card-number">
-            03
-          </span>
 
           <div class="choice-card-content">
 
-            <p class="card-label">
-              Progress
-            </p>
-
-            <h3>
+            <h2>
               Milestones
-            </h3>
+            </h2>
 
             <p>
-              View what has been completed and what remains.
+              Review project stages, verification, progress, and release conditions.
             </p>
 
           </div>
+
 
           <span
             class="choice-card-arrow"
@@ -271,33 +299,28 @@
         </a>
 
 
-        <!-- TEAM -->
+        <!-- =================================================
+             TEAM
+             ================================================= -->
 
         <a
           id="team-link"
           class="choice-card red"
-          href="reconstruction-team.html?id=MREO-0001"
+          href="reconstruction-team.html"
         >
-
-          <span class="choice-card-number">
-            04
-          </span>
 
           <div class="choice-card-content">
 
-            <p class="card-label">
-              Coordination
-            </p>
-
-            <h3>
+            <h2>
               Team
-            </h3>
+            </h2>
 
             <p>
-              View the professionals associated with the project.
+              Review contractors, field participants, and other reconstruction roles.
             </p>
 
           </div>
+
 
           <span
             class="choice-card-arrow"
@@ -308,36 +331,63 @@
 
         </a>
 
+      </section>
+
+
+      <!-- =================================================
+           RECONSTRUCTION NOTE
+           ================================================= -->
+
+      <section
+        class="panel"
+        style="margin-top: 38px;"
+      >
+
+        <p class="page-eyebrow">
+          Reconstruction Record
+        </p>
+
+        <h3>
+          Project information remains connected to the property.
+        </h3>
+
+        <p class="muted">
+          Reconstruction scope, budgets, contractors, milestones,
+          verification records, and approved changes can remain
+          associated with the property's persistent MREO record
+          throughout the project.
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
+           DISCLAIMER
+           ================================================= -->
+
+      <div
+        class="status-message"
+        style="margin-top: 34px;"
+      >
+        Reconstruction information shown in this prototype is fictional
+        demonstration data. Estimates, budgets, scopes, contractors,
+        milestones, and completion information are not actual construction
+        proposals or guarantees.
       </div>
 
-    </section>
-
-
-    <!-- =====================================
-         NOTICE
-         ===================================== -->
-
-    <div
-      class="status-message"
-      style="margin-top: 34px;"
-    >
-      Reconstruction information shown in this prototype is
-      fictional demonstration data. Contractors, estimates,
-      budgets, scopes, and project records do not represent
-      actual services or verified professional engagements.
     </div>
 
   </main>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        FOOTER
-       ========================================= -->
+       ===================================================== -->
 
   <footer class="site-footer">
 
     <p>
-      Fictional demonstration reconstruction
+      MREO Reconstruction
     </p>
 
     <p>
@@ -347,25 +397,25 @@
   </footer>
 
 
-  <!-- =========================================
-       DATA
-       ========================================= -->
+  <!-- =====================================================
+       SHARED DATA
+       ===================================================== -->
 
   <script src="data.js"></script>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        PAGE LOGIC
-       ========================================= -->
+       ===================================================== -->
 
   <script>
     (() => {
       "use strict";
 
 
-      /* -----------------------------------------
+      /* ===================================================
          URL
-         ----------------------------------------- */
+         =================================================== */
 
       const params =
         new URLSearchParams(
@@ -373,273 +423,499 @@
         );
 
 
-      const requestedId =
-        params.get("id") ||
-        "MREO-0001";
+      const requestedPropertyId =
+        params.get("id");
 
 
-      /* -----------------------------------------
-         FALLBACK
-         ----------------------------------------- */
+      /* ===================================================
+         ELEMENTS
+         =================================================== */
 
-      const fallback = {
-
-        id:
-          "MREO-0001",
-
-        addressLine1:
-          "4218 Maple Ridge Drive",
-
-        location:
-          "Dallas, Texas",
-
-        reconstruction: {
-          status:
-            "No Active Reconstruction",
-
-          budget:
-            null
-        }
-
-      };
+      const content =
+        document.getElementById(
+          "reconstruction-content"
+        );
 
 
-      /* -----------------------------------------
-         SPECIAL DEMONSTRATION RECORDS
-         ----------------------------------------- */
-
-      const demoReconstructionRecords = {
-
-        "MREO-0002": {
-
-          status:
-            "Planned",
-
-          budget:
-            64000
-
-        },
+      const errorBox =
+        document.getElementById(
+          "property-error"
+        );
 
 
-        "MREO-0005": {
+      /* ===================================================
+         FORMATTER
+         =================================================== */
 
-          status:
-            "Active Reconstruction",
-
-          budget:
-            93000
-
-        },
-
-
-        "MREO-0019": {
-
-          status:
-            "Portfolio Reconstruction",
-
-          budget:
-            118000
-
-        },
-
-
-        "MREO-0020": {
-
-          status:
-            "Complete",
-
-          budget:
-            null
-
-        }
-
-      };
-
-
-      /* -----------------------------------------
-         LOAD PROPERTY
-         ----------------------------------------- */
-
-      let property =
-        fallback;
-
-
-      if (
-        window.MREO_DATA &&
-        typeof window.MREO_DATA.getProperty === "function"
-      ) {
-
-        property =
-          window.MREO_DATA.getProperty(
-            requestedId
-          ) ||
-          fallback;
-
-      }
-
-
-      const id =
-        property.id ||
-        requestedId;
-
-
-      const address =
-        property.addressLine1 ||
-        property.address ||
-        property.fullAddress ||
-        fallback.addressLine1;
-
-
-      const location =
-        property.location ||
-        [
-          property.city,
-          property.state
-        ]
-          .filter(Boolean)
-          .join(", ") ||
-        fallback.location;
-
-
-      /* -----------------------------------------
-         RECONSTRUCTION
-         ----------------------------------------- */
-
-      const demoRecord =
-        demoReconstructionRecords[id] ||
-        {};
-
-
-      const reconstruction =
-        property.reconstruction ||
-        property.passport?.reconstruction ||
-        {};
-
-
-      const status =
-        reconstruction.status ||
-        reconstruction.stage ||
-        demoRecord.status ||
-        fallback.reconstruction.status;
-
-
-      const budgetRaw =
-        reconstruction.budget ??
-        reconstruction.totalBudget ??
-        reconstruction.projectBudget ??
-        demoRecord.budget ??
-        fallback.reconstruction.budget;
-
-
-      const budget =
-        budgetRaw === null ||
-        budgetRaw === undefined ||
-        budgetRaw === ""
-          ? null
-          : Number(budgetRaw);
-
-
-      /* -----------------------------------------
-         FORMAT
-         ----------------------------------------- */
-
-      const currency =
+      const currencyFormatter =
         new Intl.NumberFormat(
           "en-US",
           {
-            style:
-              "currency",
-
-            currency:
-              "USD",
-
-            maximumFractionDigits:
-              0
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0
           }
         );
 
 
-      /* -----------------------------------------
+      /* ===================================================
+         HELPERS
+         =================================================== */
+
+      function firstDefined(
+        ...values
+      ) {
+
+        for (const value of values) {
+
+          if (
+            value !== undefined &&
+            value !== null &&
+            value !== ""
+          ) {
+
+            return value;
+
+          }
+
+        }
+
+
+        return null;
+
+      }
+
+
+      function display(
+        value,
+        fallback = "Not available"
+      ) {
+
+        if (
+          value === undefined ||
+          value === null ||
+          value === ""
+        ) {
+
+          return fallback;
+
+        }
+
+
+        return String(value);
+
+      }
+
+
+      function formatCurrency(
+        value
+      ) {
+
+        if (
+          value === undefined ||
+          value === null ||
+          value === ""
+        ) {
+
+          return "Not available";
+
+        }
+
+
+        const number =
+          Number(
+            String(value).replace(
+              /[$,\s]/g,
+              ""
+            )
+          );
+
+
+        if (
+          !Number.isFinite(number)
+        ) {
+
+          return String(value);
+
+        }
+
+
+        return currencyFormatter.format(
+          number
+        );
+
+      }
+
+
+      function propertyUrl(
+        pageName,
+        propertyId
+      ) {
+
+        return (
+          pageName +
+          "?id=" +
+          encodeURIComponent(
+            propertyId
+          )
+        );
+
+      }
+
+
+      /* ===================================================
+         GET PROPERTY
+         =================================================== */
+
+      function getPropertyRecord() {
+
+        if (
+          !requestedPropertyId ||
+          !window.MREO_DATA
+        ) {
+
+          return null;
+
+        }
+
+
+        if (
+          typeof window.MREO_DATA.getProperty ===
+          "function"
+        ) {
+
+          const property =
+            window.MREO_DATA.getProperty(
+              requestedPropertyId
+            );
+
+
+          if (property) {
+            return property;
+          }
+
+        }
+
+
+        if (
+          Array.isArray(
+            window.MREO_DATA.properties
+          )
+        ) {
+
+          return (
+            window.MREO_DATA.properties.find(
+              property => {
+
+                const id =
+                  firstDefined(
+                    property.id,
+                    property.propertyId
+                  );
+
+
+                return (
+                  String(id).toUpperCase() ===
+                  String(requestedPropertyId).toUpperCase()
+                );
+
+              }
+            ) ||
+            null
+          );
+
+        }
+
+
+        return null;
+
+      }
+
+
+      /* ===================================================
+         RECONSTRUCTION DATA
+         =================================================== */
+
+      function getReconstructionData(
+        property
+      ) {
+
+        if (
+          property.reconstruction &&
+          typeof property.reconstruction ===
+          "object"
+        ) {
+
+          return property.reconstruction;
+
+        }
+
+
+        if (
+          property.reconstructionRecord &&
+          typeof property.reconstructionRecord ===
+          "object"
+        ) {
+
+          return property.reconstructionRecord;
+
+        }
+
+
+        if (
+          property.project &&
+          typeof property.project ===
+          "object"
+        ) {
+
+          return property.project;
+
+        }
+
+
+        return {};
+
+      }
+
+
+      /* ===================================================
          RENDER
-         ----------------------------------------- */
+         =================================================== */
 
-      document.getElementById(
-        "reconstruction-property-id"
-      ).textContent =
-        id;
+      function render() {
 
-
-      document.getElementById(
-        "reconstruction-property-address"
-      ).textContent =
-        `${address} · ${location}`;
+        const property =
+          getPropertyRecord();
 
 
-      document.getElementById(
-        "reconstruction-status"
-      ).textContent =
-        status;
+        if (!property) {
+
+          errorBox.hidden =
+            false;
 
 
-      document.getElementById(
-        "reconstruction-budget"
-      ).textContent =
-        budget !== null &&
-        Number.isFinite(budget)
-          ? currency.format(budget)
-          : "Not established";
+          content.hidden =
+            true;
 
 
-      /* -----------------------------------------
-         LINKS
-         ----------------------------------------- */
+          return;
 
-      const encodedId =
-        encodeURIComponent(id);
+        }
 
 
-      document.getElementById(
-        "back-property-link"
-      ).href =
-        `property.html?id=${encodedId}`;
+        const propertyId =
+          firstDefined(
+            property.id,
+            property.propertyId,
+            requestedPropertyId
+          );
 
 
-      document.getElementById(
-        "scope-link"
-      ).href =
-        `reconstruction-scope.html?id=${encodedId}`;
+        const address =
+          firstDefined(
+            property.address,
+            property.streetAddress,
+            property.location
+          );
 
 
-      document.getElementById(
-        "budget-link"
-      ).href =
-        `reconstruction-budget.html?id=${encodedId}`;
+        const city =
+          firstDefined(
+            property.city
+          );
 
 
-      document.getElementById(
-        "milestones-link"
-      ).href =
-        `reconstruction-milestones.html?id=${encodedId}`;
+        const state =
+          firstDefined(
+            property.state
+          );
 
 
-      document.getElementById(
-        "team-link"
-      ).href =
-        `reconstruction-team.html?id=${encodedId}`;
+        const zip =
+          firstDefined(
+            property.zip,
+            property.zipCode,
+            property.postalCode
+          );
 
 
-      /* -----------------------------------------
-         PAGE
-         ----------------------------------------- */
+        const locationParts =
+          [
+            city,
+            state,
+            zip
+          ].filter(Boolean);
 
-      document.title =
-        `${id} | MREO Reconstruction`;
 
+        let addressText =
+          display(
+            address
+          );
+
+
+        if (
+          locationParts.length > 0
+        ) {
+
+          addressText +=
+            " · " +
+            locationParts.join(", ");
+
+        }
+
+
+        const reconstruction =
+          getReconstructionData(
+            property
+          );
+
+
+        /* -------------------------------------------------
+           IDENTITY
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "property-id"
+        ).textContent =
+          propertyId;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          addressText;
+
+
+        /* -------------------------------------------------
+           STATUS
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "reconstruction-status"
+        ).textContent =
+          display(
+            firstDefined(
+              reconstruction.status,
+              reconstruction.stage,
+              reconstruction.projectStatus,
+              property.reconstructionStatus
+            )
+          );
+
+
+        /* -------------------------------------------------
+           BUDGET
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "reconstruction-budget"
+        ).textContent =
+          formatCurrency(
+            firstDefined(
+              reconstruction.budget,
+              reconstruction.totalBudget,
+              reconstruction.estimatedBudget,
+              property.reconstructionBudget
+            )
+          );
+
+
+        /* -------------------------------------------------
+           COMMITTED
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "reconstruction-committed"
+        ).textContent =
+          formatCurrency(
+            firstDefined(
+              reconstruction.committed,
+              reconstruction.committedFunds,
+              reconstruction.amountCommitted,
+              property.reconstructionCommitted
+            )
+          );
+
+
+        /* -------------------------------------------------
+           NAVIGATION
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "back-link"
+        ).href =
+          propertyUrl(
+            "property.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "scope-link"
+        ).href =
+          propertyUrl(
+            "reconstruction-scope.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "budget-link"
+        ).href =
+          propertyUrl(
+            "reconstruction-budget.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "milestones-link"
+        ).href =
+          propertyUrl(
+            "reconstruction-milestones.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "team-link"
+        ).href =
+          propertyUrl(
+            "reconstruction-team.html",
+            propertyId
+          );
+
+
+        /* -------------------------------------------------
+           DOCUMENT TITLE
+           ------------------------------------------------- */
+
+        document.title =
+          propertyId +
+          " Reconstruction | MREO";
+
+
+        content.hidden =
+          false;
+
+      }
+
+
+      /* ===================================================
+         CURRENT YEAR
+         =================================================== */
 
       document.getElementById(
         "current-year"
       ).textContent =
         new Date().getFullYear();
+
+
+      /* ===================================================
+         START
+         =================================================== */
+
+      render();
 
     })();
   </script>
