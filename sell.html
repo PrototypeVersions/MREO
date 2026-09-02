@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Enter the MREO seller pathway: analyze a property or explore possible property pathways."
+  >
+
+  <title>MREO | Sell</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      class="back-link"
+      href="index.html"
+    >
+      ← Back
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Sell
+      </p>
+
+      <h1 class="page-title">
+        Start with the property.
+      </h1>
+
+      <p class="page-description">
+        Analyze a specific address or explore the different ways
+        MREO could help a property owner move forward.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         CHOICES
+         ===================================== -->
+
+    <section
+      class="choice-grid"
+      aria-label="Seller options"
+    >
+
+      <!-- ANALYZE PROPERTY -->
+
+      <a
+        class="choice-card"
+        href="property-analysis.html"
+      >
+
+        <span class="choice-card-number">
+          01
+        </span>
+
+
+        <div class="choice-card-content">
+
+          <p class="card-label">
+            Property
+          </p>
+
+          <h2>
+            Analyze My Property
+          </h2>
+
+          <p>
+            Enter an address and build a preliminary MREO property record.
+          </p>
+
+        </div>
+
+
+        <span
+          class="choice-card-arrow"
+          aria-hidden="true"
+        >
+          →
+        </span>
+
+      </a>
+
+
+      <!-- SELLER OPTIONS -->
+
+      <a
+        class="choice-card blue"
+        href="seller-options.html"
+      >
+
+        <span class="choice-card-number">
+          02
+        </span>
+
+
+        <div class="choice-card-content">
+
+          <p class="card-label">
+            Pathways
+          </p>
+
+          <h2>
+            Explore Seller Options
+          </h2>
+
+          <p>
+            Compare different ways a property owner might sell,
+            improve, or retain the property.
+          </p>
+
+        </div>
+
+
+        <span
+          class="choice-card-arrow"
+          aria-hidden="true"
+        >
+          →
+        </span>
+
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Demonstration prototype
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <script>
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
