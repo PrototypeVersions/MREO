@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View details for a qualified MREO property offer."
+  >
+
+  <title>MREO | Offer Detail</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-bidding-link"
+      class="back-link"
+      href="bidding.html?id=MREO-0001"
+    >
+      ← Bidding
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p
+        id="bid-property-id"
+        class="page-eyebrow mono"
+      >
+        MREO-0001
+      </p>
+
+      <h1
+        id="bid-title"
+        class="page-title"
+      >
+        Offer B
+      </h1>
+
+      <p
+        id="bid-property-address"
+        class="page-description"
+      >
+        4218 Maple Ridge Drive · Dallas, Texas
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         OFFER TERMS
+         ===================================== -->
+
+    <section class="detail-list">
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Offer Price
+        </span>
+
+        <span
+          id="bid-amount"
+          class="detail-value"
+          style="
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -.04em;
+          "
+        >
+          $397,000
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Funding
+        </span>
+
+        <span
+          id="bid-funding"
+          class="detail-value"
+        >
+          Confirmed cash
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Closing Time
+        </span>
+
+        <span
+          id="bid-closing"
+          class="detail-value"
+        >
+          14 days
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Execution Score
+        </span>
+
+        <span
+          id="bid-score"
+          class="detail-value"
+          style="
+            font-size: 28px;
+            font-weight: 900;
+          "
+        >
+          94
+        </span>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Status
+        </span>
+
+        <span
+          id="bid-status"
+          class="detail-value"
+        >
+          Selected
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         WHY THIS SCORE?
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 32px;"
+    >
+
+      <p class="eyebrow">
+        Execution Analysis
+      </p>
+
+      <h3 id="bid-analysis-heading">
+        Strong execution profile
+      </h3>
+
+      <p
+        id="bid-analysis-description"
+        class="muted"
+      >
+        Confirmed funding and a short closing period increase
+        the likelihood that this offer can be completed as proposed.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         SIMPLE COMPARISON NOTE
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-top: 18px;"
+    >
+
+      <p class="eyebrow">
+        Selection
+      </p>
+
+      <p
+        id="bid-selection-note"
+        class="muted"
+      >
+        This offer was selected even though another purchaser
+        offered a higher price.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         NAVIGATION
+         ===================================== -->
+
+    <div class="button-row">
+
+      <a
+        id="back-to-bidding-button"
+        class="primary-button"
+        href="bidding.html?id=MREO-0001"
+      >
+        Compare Offers
+      </a>
+
+
+      <a
+        id="backup-buyer-link"
+        class="secondary-button"
+        href="backup-buyer.html?id=MREO-0001"
+      >
+        Backup Buyer
+      </a>
+
+    </div>
+
+
+    <!-- =====================================
+         NOTICE
+         ===================================== -->
+
+    <div class="status-message">
+      Offer terms and execution scores shown in this prototype
+      are fictional demonstration data. An execution score is
+      comparative information, not a guarantee that a purchaser
+      will perform or that a transaction will close.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      Fictional demonstration offer
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+
+      const requestedId =
+        params.get("id") || "MREO-0001";
+
+
+      const requestedBid =
+        params.get("bid") || "B";
+
+
+      /* -----------------------------------------
+         FALLBACK PROPERTY
+         ----------------------------------------- */
+
+      const fallback = {
+
+        id:
+          "MREO-0001",
+
+        addressLine1:
+          "4218 Maple Ridge Drive",
+
+        location:
+          "Dallas, Texas",
+
+        bids: [
+
+          {
+            id: "A",
+            amount: 405000,
+            funding: "Financing pending",
+            closingDays: 45,
+            executionScore: 68,
+            selected: false
+          },
+
+          {
+            id: "B",
+            amount: 397000,
+            funding: "Confirmed cash",
+            closingDays: 14,
+            executionScore: 94,
+            selected: true
+          },
+
+          {
+            id: "C",
+            amount: 402000,
+            funding: "Partial confirmation",
+            closingDays: 30,
+            executionScore: 79,
+            selected: false
+          }
+
+        ]
+
+      };
+
+
+      /* -----------------------------------------
+         LOAD PROPERTY
+         ----------------------------------------- */
+
+      let property =
+        fallback;
+
+
+      if (
+        window.MREO_DATA &&
+        typeof window.MREO_DATA.getProperty === "function"
+      ) {
+
+        property =
+          window.MREO_DATA.getProperty(requestedId) ||
+          fallback;
+
+      }
+
+
+      const id =
+        property.id ||
+        requestedId;
+
+
+      const address =
+        property.addressLine1 ||
+        property.address ||
+        property.fullAddress ||
+        fallback.addressLine1;
+
+
+      const location =
+        property.location ||
+        [
+          property.city,
+          property.state
+        ]
+          .filter(Boolean)
+          .join(", ") ||
+        fallback.location;
+
+
+      /* -----------------------------------------
+         BIDS
+         ----------------------------------------- */
+
+      const bids =
+        Array.isArray(property.bids) &&
+        property.bids.length > 0
+          ? property.bids
+          : fallback.bids;
+
+
+      let bid =
+        bids.find((item, index) => {
+
+          const bidId =
+            item.id ||
+            item.bidId ||
+            item.label ||
+            String.fromCharCode(65 + index);
+
+          return (
+            String(bidId).toLowerCase() ===
+            String(requestedBid).toLowerCase()
+          );
+
+        });
+
+
+      if (!bid) {
+        bid =
+          bids[0] ||
+          fallback.bids[0];
+      }
+
+
+      const bidIndex =
+        bids.indexOf(bid);
+
+
+      const bidId =
+        bid.id ||
+        bid.bidId ||
+        bid.label ||
+        String.fromCharCode(65 + bidIndex);
+
+
+      const amount =
+        Number(
+          bid.amount ??
+          bid.price ??
+          bid.offer ??
+          0
+        );
+
+
+      const funding =
+        bid.funding ||
+        bid.fundingStatus ||
+        bid.financing ||
+        "Not specified";
+
+
+      const closingDays =
+        Number(
+          bid.closingDays ??
+          bid.closeDays ??
+          bid.daysToClose ??
+          0
+        );
+
+
+      const executionScore =
+        Number(
+          bid.executionScore ??
+          bid.score ??
+          bid.executability ??
+          0
+        );
+
+
+      const selected =
+        bid.selected === true ||
+        String(
+          bid.status || ""
+        )
+          .toLowerCase()
+          .includes("selected");
+
+
+      /* -----------------------------------------
+         FORMAT
+         ----------------------------------------- */
+
+      const currency =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0
+          }
+        );
+
+
+      /* -----------------------------------------
+         RENDER PROPERTY
+         ----------------------------------------- */
+
+      document.getElementById(
+        "bid-property-id"
+      ).textContent =
+        id;
+
+
+      document.getElementById(
+        "bid-title"
+      ).textContent =
+        `Offer ${bidId}`;
+
+
+      document.getElementById(
+        "bid-property-address"
+      ).textContent =
+        `${address} · ${location}`;
+
+
+      /* -----------------------------------------
+         RENDER TERMS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "bid-amount"
+      ).textContent =
+        currency.format(amount);
+
+
+      document.getElementById(
+        "bid-funding"
+      ).textContent =
+        funding;
+
+
+      document.getElementById(
+        "bid-closing"
+      ).textContent =
+        closingDays > 0
+          ? `${closingDays} days`
+          : "Not specified";
+
+
+      document.getElementById(
+        "bid-score"
+      ).textContent =
+        executionScore || "—";
+
+
+      document.getElementById(
+        "bid-status"
+      ).textContent =
+        selected
+          ? "Selected"
+          : "Qualified offer";
+
+
+      /* -----------------------------------------
+         EXECUTION ANALYSIS
+         ----------------------------------------- */
+
+      const heading =
+        document.getElementById(
+          "bid-analysis-heading"
+        );
+
+
+      const description =
+        document.getElementById(
+          "bid-analysis-description"
+        );
+
+
+      const fundingText =
+        String(funding)
+          .toLowerCase();
+
+
+      if (
+        executionScore >= 90
+      ) {
+
+        heading.textContent =
+          "Strong execution profile";
+
+
+        description.textContent =
+          "High funding certainty and favorable execution terms make this one of the more readily executable offers.";
+
+      } else if (
+        executionScore >= 75
+      ) {
+
+        heading.textContent =
+          "Moderate execution profile";
+
+
+        description.textContent =
+          "The offer is competitive, but some execution factors may require additional confirmation before closing.";
+
+      } else {
+
+        heading.textContent =
+          "Higher execution risk";
+
+
+        description.textContent =
+          fundingText.includes("pending")
+            ? "The offer price may be attractive, but pending financing and a longer closing period reduce execution certainty."
+            : "One or more transaction terms reduce the certainty that this offer can be completed as proposed.";
+
+      }
+
+
+      /* -----------------------------------------
+         SELECTION NOTE
+         ----------------------------------------- */
+
+      const selectionNote =
+        document.getElementById(
+          "bid-selection-note"
+        );
+
+
+      const highestAmount =
+        Math.max(
+          ...bids.map((item) =>
+            Number(
+              item.amount ??
+              item.price ??
+              item.offer ??
+              0
+            )
+          )
+        );
+
+
+      if (selected) {
+
+        if (amount < highestAmount) {
+
+          selectionNote.textContent =
+            "This offer was selected even though another purchaser offered a higher price. Its stronger execution profile made it more attractive overall.";
+
+        } else {
+
+          selectionNote.textContent =
+            "This offer is currently selected based on the seller's demonstration transaction criteria.";
+
+        }
+
+      } else {
+
+        selectionNote.textContent =
+          amount === highestAmount
+            ? "This is the highest-price offer, but it was not selected because price is only one part of execution analysis."
+            : "This qualified offer remains part of the comparison but is not currently selected.";
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      const encodedId =
+        encodeURIComponent(id);
+
+
+      document.getElementById(
+        "back-bidding-link"
+      ).href =
+        `bidding.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "back-to-bidding-button"
+      ).href =
+        `bidding.html?id=${encodedId}`;
+
+
+      document.getElementById(
+        "backup-buyer-link"
+      ).href =
+        `backup-buyer.html?id=${encodedId}`;
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.title =
+        `${id} | Offer ${bidId}`;
+
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
