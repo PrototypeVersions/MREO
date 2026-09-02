@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Review reconstruction funding and controlled fund release in the MREO Seller Value Recovery demonstration pathway."
+  >
+
+  <title>MREO | Reconstruction Funding</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-value-link"
+      class="back-link"
+      href="seller-value-recovery-value.html"
+    >
+      ← Value Comparison
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Seller Value Recovery · Funding
+      </p>
+
+      <h1 class="page-title">
+        Reconstruction Funding
+      </h1>
+
+      <p class="page-description">
+        Define where reconstruction capital could come from and how its use would be controlled.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="funding-form"
+      class="form"
+    >
+
+      <!-- ===================================
+           CAPITAL SOURCE
+           =================================== -->
+
+      <div class="field">
+
+        <label for="capital-source">
+          Capital Source
+        </label>
+
+        <select
+          id="capital-source"
+          name="capitalSource"
+          required
+        >
+
+          <option value="">
+            Choose a potential source
+          </option>
+
+          <option value="Owner-funded">
+            Owner-funded
+          </option>
+
+          <option value="Reconstruction capital partner">
+            Reconstruction capital partner
+          </option>
+
+          <option value="Private investment capital">
+            Private investment capital
+          </option>
+
+          <option value="Construction or rehabilitation financing">
+            Construction or rehabilitation financing
+          </option>
+
+          <option value="Combination of owner and outside capital">
+            Combination of owner and outside capital
+          </option>
+
+          <option value="Funding source not yet identified">
+            Funding source not yet identified
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           FUND CONTROL
+           =================================== -->
+
+      <div class="field">
+
+        <label for="fund-control">
+          Fund Control
+        </label>
+
+        <select
+          id="fund-control"
+          name="fundControl"
+          required
+        >
+
+          <option value="">
+            How should reconstruction funds be controlled?
+          </option>
+
+          <option value="Owner-controlled payments">
+            Owner-controlled payments
+          </option>
+
+          <option value="Controlled reconstruction account">
+            Controlled reconstruction account
+          </option>
+
+          <option value="Third-party escrow or settlement control">
+            Third-party escrow or settlement control
+          </option>
+
+          <option value="Milestone-based disbursement control">
+            Milestone-based disbursement control
+          </option>
+
+          <option value="Control structure not yet determined">
+            Control structure not yet determined
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           RELEASE CONDITION
+           =================================== -->
+
+      <div class="field">
+
+        <label for="release-condition">
+          Release Condition
+        </label>
+
+        <select
+          id="release-condition"
+          name="releaseCondition"
+          required
+        >
+
+          <option value="">
+            When should funds be released?
+          </option>
+
+          <option value="Before work begins">
+            Before work begins
+          </option>
+
+          <option value="After contractor invoice approval">
+            After contractor invoice approval
+          </option>
+
+          <option value="After milestone completion">
+            After milestone completion
+          </option>
+
+          <option value="After milestone verification and approval">
+            After milestone verification and approval
+          </option>
+
+          <option value="Release structure not yet determined">
+            Release structure not yet determined
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           SAVE
+           =================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Save Funding Structure
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="funding-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <p class="page-eyebrow">
+        Funding Structure
+      </p>
+
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Capital Source
+          </span>
+
+          <span
+            id="result-source"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Fund Control
+          </span>
+
+          <span
+            id="result-control"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Release Condition
+          </span>
+
+          <span
+            id="result-release"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================
+           NEXT
+           =================================== -->
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Next
+        </p>
+
+        <h3 id="funding-heading">
+          Connect funding to reconstruction milestones.
+        </h3>
+
+        <p
+          id="funding-description"
+          class="muted"
+        >
+          The next page can show how work, verification, and
+          payment remain connected instead of treating the
+          reconstruction budget as one uncontrolled release.
+        </p>
+
+      </section>
+
+
+      <div class="button-row">
+
+        <a
+          id="milestones-link"
+          class="primary-button"
+          href="seller-value-recovery-milestones.html"
+        >
+          Reconstruction Milestones
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="seller-options-link"
+          class="secondary-button"
+          href="seller-options.html"
+        >
+          Compare Seller Paths
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         CONTROL PRINCIPLE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      A reconstruction-capital structure can separate committed
+      funds from released funds. Money can remain controlled until
+      agreed work, documentation, and approval conditions have been met.
+    </div>
+
+
+    <!-- =====================================
+         IMPORTANT LIMIT
+         ===================================== -->
+
+    <div class="status-message">
+      MREO's proposed role is coordination rather than blind
+      automatic release of money. In a real implementation,
+      regulated financial, escrow, settlement, lending, or other
+      authorized institutions would hold or transfer funds where required.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      This prototype does not offer financing, solicit an
+      investment, hold money, create an escrow account, approve
+      contractors, authorize payments, or guarantee that
+      reconstruction capital will be available.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO Seller Value Recovery funding
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-value-link"
+      ).href =
+        withAddress(
+          "seller-value-recovery-value.html"
+        );
+
+
+      document.getElementById(
+        "milestones-link"
+      ).href =
+        withAddress(
+          "seller-value-recovery-milestones.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      let savedSource =
+        null;
+
+
+      let savedControl =
+        null;
+
+
+      let savedRelease =
+        null;
+
+
+      try {
+
+        savedSource =
+          sessionStorage.getItem(
+            "mreo-seller-value-recovery-capital-source"
+          );
+
+
+        savedControl =
+          sessionStorage.getItem(
+            "mreo-seller-value-recovery-fund-control"
+          );
+
+
+        savedRelease =
+          sessionStorage.getItem(
+            "mreo-seller-value-recovery-release-condition"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore funding structure:",
+          error
+        );
+
+      }
+
+
+      if (savedSource) {
+
+        document.getElementById(
+          "capital-source"
+        ).value =
+          savedSource;
+
+      }
+
+
+      if (savedControl) {
+
+        document.getElementById(
+          "fund-control"
+        ).value =
+          savedControl;
+
+      }
+
+
+      if (savedRelease) {
+
+        document.getElementById(
+          "release-condition"
+        ).value =
+          savedRelease;
+
+      }
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "funding-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const capitalSource =
+            document.getElementById(
+              "capital-source"
+            ).value;
+
+
+          const fundControl =
+            document.getElementById(
+              "fund-control"
+            ).value;
+
+
+          const releaseCondition =
+            document.getElementById(
+              "release-condition"
+            ).value;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-capital-source",
+              capitalSource
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-fund-control",
+              fundControl
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-release-condition",
+              releaseCondition
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-funding",
+              "complete"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save funding structure:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RESULT
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-source"
+          ).textContent =
+            capitalSource;
+
+
+          document.getElementById(
+            "result-control"
+          ).textContent =
+            fundControl;
+
+
+          document.getElementById(
+            "result-release"
+          ).textContent =
+            releaseCondition;
+
+
+          /* -----------------------------------
+             CONTEXTUAL MESSAGE
+             ----------------------------------- */
+
+          const heading =
+            document.getElementById(
+              "funding-heading"
+            );
+
+
+          const description =
+            document.getElementById(
+              "funding-description"
+            );
+
+
+          if (
+            releaseCondition ===
+            "After milestone verification and approval"
+          ) {
+
+            heading.textContent =
+              "Funding is tied to verified progress.";
+
+
+            description.textContent =
+              "The next step can demonstrate how each reconstruction milestone remains connected to completion evidence and an approval decision before funds are released.";
+
+          } else if (
+            fundControl ===
+            "Third-party escrow or settlement control"
+          ) {
+
+            heading.textContent =
+              "A third party would control the reconstruction funds.";
+
+
+            description.textContent =
+              "The reconstruction record can identify what conditions must be satisfied before an authorized holder releases funds.";
+
+          } else if (
+            capitalSource ===
+            "Funding source not yet identified"
+          ) {
+
+            heading.textContent =
+              "Capital still needs to be identified.";
+
+
+            description.textContent =
+              "The reconstruction pathway can continue as a planning model, but actual work should not be treated as funded until an appropriate capital source and governing terms exist.";
+
+          } else if (
+            releaseCondition ===
+            "Before work begins"
+          ) {
+
+            heading.textContent =
+              "The proposed structure releases funds before completion.";
+
+
+            description.textContent =
+              "A real transaction would need to consider whether stronger controls, staged disbursement, documentation, or milestone verification are appropriate before capital is released.";
+
+          } else {
+
+            heading.textContent =
+              "Connect funding to reconstruction milestones.";
+
+
+            description.textContent =
+              "The next page can show how work, verification, and payment remain connected instead of treating the reconstruction budget as one uncontrolled release.";
+
+          }
+
+
+          document.getElementById(
+            "funding-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "funding-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
