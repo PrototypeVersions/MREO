@@ -4,7 +4,6 @@
 
 body.landing {
   --landing-edge: 20px;
-  --landing-composition-width: min(80vw, 1380px);
 
   width: 100%;
   max-width: none;
@@ -29,16 +28,12 @@ body.landing {
 
 
 /* =========================================================
-   MAIN COMPOSITION
-
-   This is the key fix:
-   the active landing-page composition no longer stretches
-   to the full browser width.
+   MAIN
    ========================================================= */
 
 .landing main {
-  width: var(--landing-composition-width);
-  max-width: var(--landing-composition-width);
+  width: 100%;
+  max-width: 100%;
 
   margin: 0;
   padding: 0;
@@ -59,7 +54,7 @@ body.landing {
 
 .landing .landing-intro {
   width: 100%;
-  max-width: none;
+  max-width: 100%;
 
   min-height: 0;
 
@@ -82,7 +77,7 @@ body.landing {
 
 .landing .landing-intro-grid {
   width: 100%;
-  max-width: none;
+  max-width: 100%;
   height: 100%;
 
   margin: 0;
@@ -90,12 +85,11 @@ body.landing {
 
   display: grid;
   grid-template-columns:
-    minmax(0, 1.26fr)
-    minmax(250px, 0.74fr);
+    minmax(0, 1fr)
+    clamp(260px, 27vw, 380px);
 
   align-items: center;
-
-  gap: 0;
+  gap: clamp(12px, 2vw, 28px);
 
   border: 0;
 }
@@ -165,18 +159,14 @@ body.landing {
 
 /* =========================================================
    SHAPES
-
-   Arrangement adjusted to resemble the reference:
-   blue line left,
-   yellow circle above/right,
-   red square below/right.
    ========================================================= */
 
 .landing .landing-shapes {
   position: relative;
 
   width: 100%;
-  max-width: none;
+  max-width: clamp(260px, 27vw, 380px);
+  justify-self: end;
 
   height: 100%;
   min-height: 230px;
@@ -189,14 +179,21 @@ body.landing {
 }
 
 
+/*
+  Shape arrangement based closely on the reference:
+  blue line on the left,
+  yellow circle upper-right,
+  red square below the circle.
+*/
+
 .landing .shape-line {
   position: absolute;
 
-  width: clamp(122px, 8.7vw, 170px);
+  width: clamp(128px, 10vw, 180px);
   height: 6px;
 
-  left: 20%;
-  top: 68%;
+  left: 4%;
+  top: 67%;
 
   background: var(--blue);
 
@@ -211,11 +208,11 @@ body.landing {
 .landing .shape-circle {
   position: absolute;
 
-  width: clamp(100px, 8.4vw, 146px);
-  height: clamp(100px, 8.4vw, 146px);
+  width: clamp(102px, 9vw, 150px);
+  height: clamp(102px, 9vw, 150px);
 
-  left: 53%;
-  top: 10%;
+  left: 48%;
+  top: 6%;
 
   border-radius: 50%;
   background: var(--yellow);
@@ -225,11 +222,11 @@ body.landing {
 .landing .shape-square {
   position: absolute;
 
-  width: clamp(56px, 4.6vw, 80px);
-  height: clamp(56px, 4.6vw, 80px);
+  width: clamp(58px, 5vw, 82px);
+  height: clamp(58px, 5vw, 82px);
 
-  left: 63%;
-  top: 71%;
+  left: 52%;
+  top: 70%;
 
   background: var(--red);
 }
@@ -237,14 +234,11 @@ body.landing {
 
 /* =========================================================
    BUY / SELL GRID
-
-   Equal-width boxes within the constrained composition.
-   This makes the Sell box end much earlier on the page.
    ========================================================= */
 
 .landing .landing-choice-grid {
   width: 100%;
-  max-width: none;
+  max-width: 100%;
 
   min-height: 0;
 
@@ -268,7 +262,7 @@ body.landing {
   position: relative;
 
   width: 100%;
-  max-width: none;
+  max-width: 100%;
 
   box-sizing: border-box;
 
@@ -383,14 +377,6 @@ body.landing {
 }
 
 
-/* =========================================================
-   ARROWS
-
-   Both arrows remain directly beneath the text block.
-   Because the whole composition is narrower, the Sell arrow
-   is now naturally much farther left.
-   ========================================================= */
-
 .landing .landing-choice-arrow {
   display: block;
 
@@ -411,13 +397,11 @@ body.landing {
 
 /* =========================================================
    FOOTER
-
-   Match the same constrained composition width.
    ========================================================= */
 
 .landing .landing-footer {
-  width: var(--landing-composition-width);
-  max-width: var(--landing-composition-width);
+  width: 100%;
+  max-width: 100%;
 
   flex: 0 0 50px;
   min-height: 50px;
@@ -474,10 +458,6 @@ body.landing {
   (min-width: 761px)
   and (max-height: 760px) {
 
-  body.landing {
-    --landing-composition-width: min(82vw, 1320px);
-  }
-
   .landing main {
     grid-template-rows:
       minmax(0, 48%)
@@ -500,20 +480,21 @@ body.landing {
 
   .landing .landing-shapes {
     min-height: 190px;
+    max-width: 320px;
   }
 
   .landing .shape-line {
-    left: 18%;
-    top: 69%;
+    left: 4%;
+    top: 68%;
   }
 
   .landing .shape-circle {
-    left: 51%;
-    top: 8%;
+    left: 46%;
+    top: 6%;
   }
 
   .landing .shape-square {
-    left: 61%;
+    left: 51%;
     top: 72%;
   }
 
@@ -553,15 +534,12 @@ body.landing {
 
 /* =========================================================
    MOBILE / SMALL TABLET
-
-   On mobile, use full width and allow scrolling.
    ========================================================= */
 
 @media (max-width: 760px) {
 
   body.landing {
     --landing-edge: 18px;
-    --landing-composition-width: 100%;
 
     height: auto;
 
@@ -575,7 +553,6 @@ body.landing {
   .landing main {
     width: 100%;
     max-width: 100%;
-
     display: block;
   }
 
@@ -615,32 +592,34 @@ body.landing {
 
   .landing .landing-shapes {
     width: 100%;
+    max-width: 260px;
     height: 170px;
     min-height: 170px;
+    justify-self: start;
   }
 
   .landing .shape-line {
     width: 128px;
     height: 5px;
 
-    left: 10%;
-    top: 67%;
+    left: 2%;
+    top: 68%;
   }
 
   .landing .shape-circle {
     width: 94px;
     height: 94px;
 
-    left: 42%;
-    top: 4%;
+    left: 46%;
+    top: 3%;
   }
 
   .landing .shape-square {
     width: 56px;
     height: 56px;
 
-    left: 54%;
-    top: 69%;
+    left: 51%;
+    top: 70%;
   }
 
   .landing .landing-choice-grid {
