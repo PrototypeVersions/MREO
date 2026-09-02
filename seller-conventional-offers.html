@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Review offer-selection priorities for an MREO demonstration conventional sale."
+  >
+
+  <title>MREO | Offer Review</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-distribution-link"
+      class="back-link"
+      href="seller-conventional-distribution.html"
+    >
+      ← Market Distribution
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Conventional Sale · Offers
+      </p>
+
+      <h1 class="page-title">
+        Compare the Offer
+      </h1>
+
+      <p class="page-description">
+        Price matters. So does the likelihood that the transaction actually closes.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         THREE OFFER FACTORS
+         ===================================== -->
+
+    <section>
+
+      <p class="page-eyebrow">
+        Offer Factors
+      </p>
+
+
+      <div class="step-list">
+
+        <!-- PRICE -->
+
+        <div class="step-link">
+
+          <span class="step-number">
+            01
+          </span>
+
+          <div class="step-content">
+
+            <strong>
+              Price
+            </strong>
+
+            <small>
+              How much the purchaser is offering for the property.
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <!-- FUNDING -->
+
+        <div class="step-link">
+
+          <span class="step-number">
+            02
+          </span>
+
+          <div class="step-content">
+
+            <strong>
+              Funding Certainty
+            </strong>
+
+            <small>
+              How well the purchaser's cash or financing capacity
+              has been established.
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <!-- CLOSING -->
+
+        <div class="step-link">
+
+          <span class="step-number">
+            03
+          </span>
+
+          <div class="step-content">
+
+            <strong>
+              Closing Terms
+            </strong>
+
+            <small>
+              Timing, inspections, concessions, deposits, and
+              other conditions that affect execution.
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SELLER PRIORITY
+         ===================================== -->
+
+    <form
+      id="offer-priority-form"
+      class="form"
+      style="margin-top: 42px;"
+    >
+
+      <div class="field">
+
+        <label for="offer-priority">
+          What matters most?
+        </label>
+
+        <select
+          id="offer-priority"
+          name="offerPriority"
+          required
+        >
+
+          <option value="">
+            Choose your primary priority
+          </option>
+
+          <option value="Highest price">
+            Highest price
+          </option>
+
+          <option value="Strongest funding certainty">
+            Strongest funding certainty
+          </option>
+
+          <option value="Fastest closing">
+            Fastest closing
+          </option>
+
+          <option value="Fewest contingencies">
+            Fewest contingencies
+          </option>
+
+          <option value="Best overall executable offer">
+            Best overall executable offer
+          </option>
+
+          <option value="Not sure">
+            Not sure
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Save Offer Priority
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="offer-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Seller Priority
+          </span>
+
+          <span
+            id="result-priority"
+            class="detail-value"
+            style="
+              font-size: 20px;
+              font-weight: 900;
+            "
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Executable Offer
+        </p>
+
+        <h3 id="offer-heading">
+          The strongest offer may not be the highest offer.
+        </h3>
+
+        <p
+          id="offer-description"
+          class="muted"
+        >
+          MREO can help compare price with funding certainty and
+          closing terms so the seller can consider which offer is
+          most likely to perform as agreed.
+        </p>
+
+      </section>
+
+
+      <!-- ===================================
+           CONVENTIONAL PATH COMPLETE
+           =================================== -->
+
+      <div class="button-row">
+
+        <a
+          id="seller-options-link"
+          class="primary-button"
+          href="seller-options.html"
+        >
+          Compare Seller Paths
+        </a>
+
+
+        <a
+          id="distribution-link"
+          class="secondary-button"
+          href="seller-conventional-distribution.html"
+        >
+          Distribution Plan
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SIMPLE EXPLANATION
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      An MREO offer comparison can consider more than nominal
+      purchase price. Funding confirmation, closing time,
+      inspections, concessions, deposits, assignment rights,
+      and other performance terms can affect whether an offer
+      is actually executable.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      No actual offers are being received or evaluated on this
+      demonstration page. Any real seller should review transaction
+      terms and professional advice appropriate to the property
+      and jurisdiction before accepting an offer.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO conventional-sale offer review
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-distribution-link"
+      ).href =
+        withAddress(
+          "seller-conventional-distribution.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      document.getElementById(
+        "distribution-link"
+      ).href =
+        withAddress(
+          "seller-conventional-distribution.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUE
+         ----------------------------------------- */
+
+      let savedPriority =
+        null;
+
+
+      try {
+
+        savedPriority =
+          sessionStorage.getItem(
+            "mreo-seller-conventional-offer-priority"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore offer priority:",
+          error
+        );
+
+      }
+
+
+      if (savedPriority) {
+
+        document.getElementById(
+          "offer-priority"
+        ).value =
+          savedPriority;
+
+      }
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "offer-priority-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const priority =
+            document.getElementById(
+              "offer-priority"
+            ).value;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-conventional-offer-priority",
+              priority
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-conventional-offers",
+              "complete"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save offer priority:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RESULT
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-priority"
+          ).textContent =
+            priority;
+
+
+          const heading =
+            document.getElementById(
+              "offer-heading"
+            );
+
+
+          const description =
+            document.getElementById(
+              "offer-description"
+            );
+
+
+          if (
+            priority ===
+            "Highest price"
+          ) {
+
+            heading.textContent =
+              "Price is the seller's primary priority.";
+
+
+            description.textContent =
+              "The highest price can receive the greatest weight, while funding and closing terms remain visible so execution risk is not hidden.";
+
+          } else if (
+            priority ===
+            "Strongest funding certainty"
+          ) {
+
+            heading.textContent =
+              "Funding certainty is the seller's primary priority.";
+
+
+            description.textContent =
+              "A slightly lower offer with clearly established funds may sometimes present less execution risk than a higher offer with uncertain financing.";
+
+          } else if (
+            priority ===
+            "Fastest closing"
+          ) {
+
+            heading.textContent =
+              "Closing speed is the seller's primary priority.";
+
+
+            description.textContent =
+              "Offer comparison can give additional weight to purchasers capable of completing the transaction within the seller's preferred timeframe.";
+
+          } else if (
+            priority ===
+            "Fewest contingencies"
+          ) {
+
+            heading.textContent =
+              "Transaction simplicity is the seller's primary priority.";
+
+
+            description.textContent =
+              "Inspection conditions, financing contingencies, concessions, assignment rights, and other terms can be considered alongside price.";
+
+          } else if (
+            priority ===
+            "Best overall executable offer"
+          ) {
+
+            heading.textContent =
+              "The seller wants the strongest overall executable offer.";
+
+
+            description.textContent =
+              "Price, funding certainty, closing time, contingencies, deposits, and other performance terms can be considered together rather than ranking offers by price alone.";
+
+          } else {
+
+            heading.textContent =
+              "The strongest offer may not be the highest offer.";
+
+
+            description.textContent =
+              "MREO can keep the relevant terms visible so the seller can compare the complete execution profile before making a selection.";
+
+          }
+
+
+          document.getElementById(
+            "offer-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "offer-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
