@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Review a demonstration short-sale approval through the MREO seller pathway."
+  >
+
+  <title>MREO | Short Sale Approval</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-requirements-link"
+      class="back-link"
+      href="seller-short-sale-requirements.html"
+    >
+      ← Short Sale Requirements
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Short Sale · Approval
+      </p>
+
+      <h1 class="page-title">
+        Approval Review
+      </h1>
+
+      <p class="page-description">
+        Record the lender or servicer decision and the terms that control the proposed sale.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="approval-form"
+      class="form"
+    >
+
+      <!-- APPROVAL DECISION -->
+
+      <div class="field">
+
+        <label for="approval-decision">
+          Approval Decision
+        </label>
+
+        <select
+          id="approval-decision"
+          name="approvalDecision"
+          required
+        >
+
+          <option value="">
+            Choose decision
+          </option>
+
+          <option value="Pending">
+            Pending
+          </option>
+
+          <option value="Conditional Approval">
+            Conditional Approval
+          </option>
+
+          <option value="Approved">
+            Approved
+          </option>
+
+          <option value="Declined">
+            Declined
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- APPROVED SALE AMOUNT -->
+
+      <div class="field">
+
+        <label for="approved-amount">
+          Approved Sale Amount
+        </label>
+
+        <input
+          id="approved-amount"
+          name="approvedAmount"
+          type="number"
+          min="0"
+          step="1000"
+          placeholder="Enter amount if applicable"
+        >
+
+      </div>
+
+
+      <!-- APPROVAL TERMS -->
+
+      <div class="field">
+
+        <label for="approval-terms">
+          Approval Terms
+        </label>
+
+        <select
+          id="approval-terms"
+          name="approvalTerms"
+          required
+        >
+
+          <option value="">
+            Choose current terms
+          </option>
+
+          <option value="No terms recorded yet">
+            No terms recorded yet
+          </option>
+
+          <option value="Sale price and closing deadline">
+            Sale price and closing deadline
+          </option>
+
+          <option value="Specific purchaser and sale terms">
+            Specific purchaser and sale terms
+          </option>
+
+          <option value="Additional documents required">
+            Additional documents required
+          </option>
+
+          <option value="Additional lender conditions apply">
+            Additional lender conditions apply
+          </option>
+
+          <option value="Proposal declined">
+            Proposal declined
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- DEADLINE -->
+
+      <div class="field">
+
+        <label for="approval-deadline">
+          Approval / Closing Deadline
+        </label>
+
+        <input
+          id="approval-deadline"
+          name="approvalDeadline"
+          type="date"
+        >
+
+      </div>
+
+
+      <!-- SAVE -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Save Approval Review
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="approval-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <p class="page-eyebrow">
+        Approval Record
+      </p>
+
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Decision
+          </span>
+
+          <span
+            id="result-decision"
+            class="detail-value"
+            style="
+              font-size: 20px;
+              font-weight: 900;
+            "
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Approved Amount
+          </span>
+
+          <span
+            id="result-amount"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Terms
+          </span>
+
+          <span
+            id="result-terms"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Deadline
+          </span>
+
+          <span
+            id="result-deadline"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================
+           CURRENT POSITION
+           =================================== -->
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Current Position
+        </p>
+
+        <h3 id="approval-heading">
+          Approval status has been recorded.
+        </h3>
+
+        <p
+          id="approval-description"
+          class="muted"
+        >
+          The lender or servicer decision remains part of the
+          transaction record together with the terms and applicable deadline.
+        </p>
+
+      </section>
+
+
+      <!-- ===================================
+           FINISH SHORT SALE
+           =================================== -->
+
+      <div class="button-row">
+
+        <a
+          id="seller-options-link"
+          class="primary-button"
+          href="seller-options.html"
+        >
+          Compare Seller Paths
+        </a>
+
+
+        <a
+          id="requirements-link"
+          class="secondary-button"
+          href="seller-short-sale-requirements.html"
+        >
+          Requirements
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         IMPORTANT PRINCIPLE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      A short-sale approval may be limited by price, purchaser,
+      closing date, documentation, fees, or other conditions.
+      Those requirements should remain visible through settlement
+      rather than treating approval as an unrestricted permission to sell.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      This page records fictional demonstration information only.
+      It does not represent lender approval, waive debt, determine
+      deficiency liability, extend an approval deadline, modify a
+      mortgage, or authorize any actual real-estate transaction.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO short-sale approval review
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-requirements-link"
+      ).href =
+        withAddress(
+          "seller-short-sale-requirements.html"
+        );
+
+
+      document.getElementById(
+        "requirements-link"
+      ).href =
+        withAddress(
+          "seller-short-sale-requirements.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE PRIOR APPROVAL STATUS
+         ----------------------------------------- */
+
+      let previousApprovalStatus =
+        null;
+
+
+      try {
+
+        previousApprovalStatus =
+          sessionStorage.getItem(
+            "mreo-seller-short-sale-approval-status"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore prior approval status:",
+          error
+        );
+
+      }
+
+
+      if (previousApprovalStatus) {
+
+        const decisionMap = {
+
+          "Under lender review":
+            "Pending",
+
+          "Additional information requested":
+            "Pending",
+
+          "Conditional approval":
+            "Conditional Approval",
+
+          "Approved":
+            "Approved",
+
+          "Declined":
+            "Declined"
+
+        };
+
+
+        const mappedDecision =
+          decisionMap[
+            previousApprovalStatus
+          ];
+
+
+        if (mappedDecision) {
+
+          document.getElementById(
+            "approval-decision"
+          ).value =
+            mappedDecision;
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      let savedDecision =
+        null;
+
+
+      let savedAmount =
+        null;
+
+
+      let savedTerms =
+        null;
+
+
+      let savedDeadline =
+        null;
+
+
+      try {
+
+        savedDecision =
+          sessionStorage.getItem(
+            "mreo-seller-short-sale-final-decision"
+          );
+
+
+        savedAmount =
+          sessionStorage.getItem(
+            "mreo-seller-short-sale-approved-amount"
+          );
+
+
+        savedTerms =
+          sessionStorage.getItem(
+            "mreo-seller-short-sale-approval-terms"
+          );
+
+
+        savedDeadline =
+          sessionStorage.getItem(
+            "mreo-seller-short-sale-deadline"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore final approval review:",
+          error
+        );
+
+      }
+
+
+      if (savedDecision) {
+
+        document.getElementById(
+          "approval-decision"
+        ).value =
+          savedDecision;
+
+      }
+
+
+      if (savedAmount) {
+
+        document.getElementById(
+          "approved-amount"
+        ).value =
+          savedAmount;
+
+      }
+
+
+      if (savedTerms) {
+
+        document.getElementById(
+          "approval-terms"
+        ).value =
+          savedTerms;
+
+      }
+
+
+      if (savedDeadline) {
+
+        document.getElementById(
+          "approval-deadline"
+        ).value =
+          savedDeadline;
+
+      }
+
+
+      /* -----------------------------------------
+         CURRENCY
+         ----------------------------------------- */
+
+      const currency =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0
+          }
+        );
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "approval-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const decision =
+            document.getElementById(
+              "approval-decision"
+            ).value;
+
+
+          const amountRaw =
+            document.getElementById(
+              "approved-amount"
+            ).value;
+
+
+          const terms =
+            document.getElementById(
+              "approval-terms"
+            ).value;
+
+
+          const deadline =
+            document.getElementById(
+              "approval-deadline"
+            ).value;
+
+
+          const amount =
+            amountRaw === ""
+              ? null
+              : Number(amountRaw);
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-short-sale-final-decision",
+              decision
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-short-sale-approved-amount",
+              amountRaw
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-short-sale-approval-terms",
+              terms
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-short-sale-deadline",
+              deadline
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-short-sale-approval",
+              "complete"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save final approval review:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RENDER VALUES
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-decision"
+          ).textContent =
+            decision;
+
+
+          document.getElementById(
+            "result-amount"
+          ).textContent =
+            amount !== null &&
+            Number.isFinite(amount)
+              ? currency.format(amount)
+              : "Not recorded";
+
+
+          document.getElementById(
+            "result-terms"
+          ).textContent =
+            terms;
+
+
+          document.getElementById(
+            "result-deadline"
+          ).textContent =
+            deadline
+              ? formatDate(deadline)
+              : "Not recorded";
+
+
+          /* -----------------------------------
+             CONTEXTUAL RESULT
+             ----------------------------------- */
+
+          const heading =
+            document.getElementById(
+              "approval-heading"
+            );
+
+
+          const description =
+            document.getElementById(
+              "approval-description"
+            );
+
+
+          if (
+            decision === "Approved"
+          ) {
+
+            heading.textContent =
+              "The demonstration short sale is approved.";
+
+
+            description.textContent =
+              deadline
+                ? "The transaction may proceed only within the recorded approval terms and applicable deadline."
+                : "The transaction remains subject to the exact terms contained in the lender or servicer approval.";
+
+          } else if (
+            decision ===
+            "Conditional Approval"
+          ) {
+
+            heading.textContent =
+              "The transaction is conditionally approved.";
+
+
+            description.textContent =
+              "The remaining conditions must be satisfied before the proposed short sale should be treated as ready to close.";
+
+          } else if (
+            decision === "Declined"
+          ) {
+
+            heading.textContent =
+              "The current proposal is not approved.";
+
+
+            description.textContent =
+              "The owner can review the lender response and return to the broader seller pathways rather than treating the proposed transaction as executable.";
+
+          } else {
+
+            heading.textContent =
+              "Approval remains pending.";
+
+
+            description.textContent =
+              "The transaction should remain in review until an actual lender or servicer decision and its governing terms are available.";
+
+          }
+
+
+          document.getElementById(
+            "approval-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "approval-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         DATE FORMAT
+         ----------------------------------------- */
+
+      function formatDate(value) {
+
+        if (!value) {
+          return "Not recorded";
+        }
+
+
+        const parts =
+          value.split("-");
+
+
+        if (parts.length !== 3) {
+          return value;
+        }
+
+
+        const year =
+          Number(parts[0]);
+
+
+        const month =
+          Number(parts[1]);
+
+
+        const day =
+          Number(parts[2]);
+
+
+        const date =
+          new Date(
+            year,
+            month - 1,
+            day
+          );
+
+
+        if (
+          Number.isNaN(
+            date.getTime()
+          )
+        ) {
+
+          return value;
+
+        }
+
+
+        return date.toLocaleDateString(
+          "en-US",
+          {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+          }
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
