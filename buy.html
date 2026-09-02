@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Enter the MREO buyer pathway: browse properties, create a purchaser profile, or access institutional acquisition tools."
+    content="Explore MREO property purchasing options."
   >
 
   <title>MREO | Buy</title>
@@ -20,9 +20,9 @@
 
 <body>
 
-  <!-- =========================================
+  <!-- =====================================================
        HEADER
-       ========================================= -->
+       ===================================================== -->
 
   <header class="site-header">
 
@@ -56,21 +56,21 @@
       class="back-link"
       href="index.html"
     >
-      ← Back
+      ← Home
     </a>
 
   </header>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        MAIN
-       ========================================= -->
+       ===================================================== -->
 
-  <main class="page">
+  <main class="page page-medium">
 
-    <!-- =====================================
+    <!-- ===================================================
          INTRO
-         ===================================== -->
+         =================================================== -->
 
     <section class="page-intro">
 
@@ -79,50 +79,43 @@
       </p>
 
       <h1 class="page-title">
-        What do you want to do?
+        What would you like to do?
       </h1>
 
       <p class="page-description">
-        Enter the property market, prepare your purchaser profile,
-        or work with a larger portfolio.
+        Browse available properties, prepare your purchaser profile,
+        or explore institutional purchasing tools.
       </p>
 
     </section>
 
 
-    <!-- =====================================
+    <!-- ===================================================
          CHOICES
-         ===================================== -->
+         =================================================== -->
 
     <section
-      class="choice-grid-3"
-      aria-label="Buyer options"
+      class="choice-grid choice-grid-3"
+      style="margin-top: 40px;"
     >
 
-      <!-- BROWSE -->
+      <!-- =================================================
+           BROWSE PROPERTIES
+           ================================================= -->
 
       <a
         class="choice-card"
         href="properties.html"
       >
 
-        <span class="choice-card-number">
-          01
-        </span>
-
-
         <div class="choice-card-content">
-
-          <p class="card-label">
-            Property
-          </p>
 
           <h2>
             Browse Properties
           </h2>
 
           <p>
-            Explore available MREO property opportunities.
+            Explore fictional properties and review their MREO property records.
           </p>
 
         </div>
@@ -138,30 +131,23 @@
       </a>
 
 
-      <!-- PURCHASER PROFILE -->
+      <!-- =================================================
+           PURCHASER PROFILE
+           ================================================= -->
 
       <a
         class="choice-card blue"
         href="purchaser.html"
       >
 
-        <span class="choice-card-number">
-          02
-        </span>
-
-
         <div class="choice-card-content">
-
-          <p class="card-label">
-            Qualification
-          </p>
 
           <h2>
             Purchaser Profile
           </h2>
 
           <p>
-            Prepare the information used to qualify for property acquisitions.
+            Enter purchaser identity, funding, and purchasing-capacity information.
           </p>
 
         </div>
@@ -177,30 +163,23 @@
       </a>
 
 
-      <!-- INSTITUTIONAL -->
+      <!-- =================================================
+           INSTITUTIONAL
+           ================================================= -->
 
       <a
         class="choice-card green"
         href="institutional.html"
       >
 
-        <span class="choice-card-number">
-          03
-        </span>
-
-
         <div class="choice-card-content">
-
-          <p class="card-label">
-            Portfolio
-          </p>
 
           <h2>
             Institutional
           </h2>
 
           <p>
-            Explore larger-scale acquisition and portfolio workflows.
+            Explore portfolio intake, pipelines, alerts, and qualified distribution.
           </p>
 
         </div>
@@ -220,14 +199,14 @@
   </main>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        FOOTER
-       ========================================= -->
+       ===================================================== -->
 
   <footer class="site-footer">
 
     <p>
-      Demonstration prototype
+      MREO Buy
     </p>
 
     <p>
@@ -237,8 +216,14 @@
   </footer>
 
 
+  <!-- =====================================================
+       CURRENT YEAR
+       ===================================================== -->
+
   <script>
-    document.getElementById("current-year").textContent =
+    document.getElementById(
+      "current-year"
+    ).textContent =
       new Date().getFullYear();
   </script>
 
