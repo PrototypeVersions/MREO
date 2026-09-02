@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Record property payment pressure within the MREO demonstration owner-retention pathway."
+  >
+
+  <title>MREO | Payment Pressure</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-retention-options-link"
+      class="back-link"
+      href="seller-retention-options.html"
+    >
+      ← Retention Options
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Owner Retention · Payment
+      </p>
+
+      <h1 class="page-title">
+        Payment Pressure
+      </h1>
+
+      <p class="page-description">
+        Identify the payment issue affecting continued ownership.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="payment-form"
+      class="form"
+    >
+
+      <!-- CURRENT PAYMENT STATUS -->
+
+      <div class="field">
+
+        <label for="payment-status">
+          Current Payment Status
+        </label>
+
+        <select
+          id="payment-status"
+          name="paymentStatus"
+          required
+        >
+
+          <option value="">
+            Choose payment status
+          </option>
+
+          <option value="Current">
+            Current
+          </option>
+
+          <option value="Current but difficult to maintain">
+            Current but difficult to maintain
+          </option>
+
+          <option value="One payment behind">
+            One payment behind
+          </option>
+
+          <option value="Multiple payments behind">
+            Multiple payments behind
+          </option>
+
+          <option value="Payment status uncertain">
+            Payment status uncertain
+          </option>
+
+          <option value="No mortgage payment">
+            No mortgage payment
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- PRIMARY PAYMENT PROBLEM -->
+
+      <div class="field">
+
+        <label for="payment-problem">
+          Primary Payment Problem
+        </label>
+
+        <select
+          id="payment-problem"
+          name="paymentProblem"
+          required
+        >
+
+          <option value="">
+            Choose the main issue
+          </option>
+
+          <option value="Monthly mortgage payment">
+            Monthly mortgage payment
+          </option>
+
+          <option value="Property taxes">
+            Property taxes
+          </option>
+
+          <option value="Insurance cost">
+            Insurance cost
+          </option>
+
+          <option value="HOA or association cost">
+            HOA or association cost
+          </option>
+
+          <option value="Repair costs">
+            Repair costs
+          </option>
+
+          <option value="Loss of rental income">
+            Loss of rental income
+          </option>
+
+          <option value="Multiple property costs">
+            Multiple property costs
+          </option>
+
+          <option value="Other">
+            Other
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- URGENCY -->
+
+      <div class="field">
+
+        <label for="payment-urgency">
+          Urgency
+        </label>
+
+        <select
+          id="payment-urgency"
+          name="paymentUrgency"
+          required
+        >
+
+          <option value="">
+            Choose urgency
+          </option>
+
+          <option value="No immediate deadline">
+            No immediate deadline
+          </option>
+
+          <option value="Needs attention this month">
+            Needs attention this month
+          </option>
+
+          <option value="Needs attention this week">
+            Needs attention this week
+          </option>
+
+          <option value="Immediate">
+            Immediate
+          </option>
+
+          <option value="Uncertain">
+            Uncertain
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- SAVE -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Save Payment Review
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="payment-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <p class="page-eyebrow">
+        Payment Review
+      </p>
+
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Payment Status
+          </span>
+
+          <span
+            id="result-status"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Primary Problem
+          </span>
+
+          <span
+            id="result-problem"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Urgency
+          </span>
+
+          <span
+            id="result-urgency"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Retention Record
+        </p>
+
+        <h3>
+          Payment pressure has been identified.
+        </h3>
+
+        <p class="muted">
+          MREO can keep this issue connected to the owner's broader
+          property decision so it can be considered alongside repairs,
+          rental use, management needs, and possible sale pathways.
+        </p>
+
+      </section>
+
+
+      <div class="button-row">
+
+        <a
+          id="return-retention-options-link"
+          class="primary-button"
+          href="seller-retention-options.html"
+        >
+          Retention Options
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="seller-options-link"
+          class="secondary-button"
+          href="seller-options.html"
+        >
+          All Seller Options
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         IMPORTANT LIMIT
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      This prototype only records and organizes the owner's payment
+      situation. It does not modify a mortgage, negotiate with a
+      lender or servicer, stop foreclosure activity, approve
+      assistance, or guarantee that a retention solution exists.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      Information entered here is part of a demonstration workflow
+      and is not legal, lending, foreclosure, tax, or financial
+      advice.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO owner-retention payment review
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-retention-options-link"
+      ).href =
+        withAddress(
+          "seller-retention-options.html"
+        );
+
+
+      document.getElementById(
+        "return-retention-options-link"
+      ).href =
+        withAddress(
+          "seller-retention-options.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      let savedStatus =
+        null;
+
+
+      let savedProblem =
+        null;
+
+
+      let savedUrgency =
+        null;
+
+
+      try {
+
+        savedStatus =
+          sessionStorage.getItem(
+            "mreo-seller-payment-status"
+          );
+
+
+        savedProblem =
+          sessionStorage.getItem(
+            "mreo-seller-payment-problem"
+          );
+
+
+        savedUrgency =
+          sessionStorage.getItem(
+            "mreo-seller-payment-urgency"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore payment review:",
+          error
+        );
+
+      }
+
+
+      if (savedStatus) {
+
+        document.getElementById(
+          "payment-status"
+        ).value =
+          savedStatus;
+
+      }
+
+
+      if (savedProblem) {
+
+        document.getElementById(
+          "payment-problem"
+        ).value =
+          savedProblem;
+
+      }
+
+
+      if (savedUrgency) {
+
+        document.getElementById(
+          "payment-urgency"
+        ).value =
+          savedUrgency;
+
+      }
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "payment-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const paymentStatus =
+            document.getElementById(
+              "payment-status"
+            ).value;
+
+
+          const paymentProblem =
+            document.getElementById(
+              "payment-problem"
+            ).value;
+
+
+          const paymentUrgency =
+            document.getElementById(
+              "payment-urgency"
+            ).value;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-payment-status",
+              paymentStatus
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-payment-problem",
+              paymentProblem
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-payment-urgency",
+              paymentUrgency
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-retention-payment",
+              "complete"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save payment review:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RESULT
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-status"
+          ).textContent =
+            paymentStatus;
+
+
+          document.getElementById(
+            "result-problem"
+          ).textContent =
+            paymentProblem;
+
+
+          document.getElementById(
+            "result-urgency"
+          ).textContent =
+            paymentUrgency;
+
+
+          document.getElementById(
+            "payment-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "payment-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
