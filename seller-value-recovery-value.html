@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Compare current property value, reconstruction cost, and projected repaired value in the MREO Seller Value Recovery demonstration."
+  >
+
+  <title>MREO | Value Comparison</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-scope-link"
+      class="back-link"
+      href="seller-value-recovery-scope.html"
+    >
+      ← Reconstruction Scope
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Seller Value Recovery · Value
+      </p>
+
+      <h1 class="page-title">
+        Value Comparison
+      </h1>
+
+      <p class="page-description">
+        Compare the property's current estimated value with the cost and potential value of reconstruction.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="value-form"
+      class="form"
+    >
+
+      <!-- ===================================
+           CURRENT VALUE
+           =================================== -->
+
+      <div class="field">
+
+        <label for="current-value">
+          Current Estimated Value
+        </label>
+
+        <input
+          id="current-value"
+          name="currentValue"
+          type="number"
+          min="0"
+          step="1000"
+          placeholder="Enter current estimated value"
+          required
+        >
+
+      </div>
+
+
+      <!-- ===================================
+           RECONSTRUCTION COST
+           =================================== -->
+
+      <div class="field">
+
+        <label for="reconstruction-cost">
+          Estimated Reconstruction Cost
+        </label>
+
+        <input
+          id="reconstruction-cost"
+          name="reconstructionCost"
+          type="number"
+          min="0"
+          step="1000"
+          placeholder="Enter estimated reconstruction cost"
+          required
+        >
+
+      </div>
+
+
+      <!-- ===================================
+           PROJECTED REPAIRED VALUE
+           =================================== -->
+
+      <div class="field">
+
+        <label for="repaired-value">
+          Projected Repaired Value
+        </label>
+
+        <input
+          id="repaired-value"
+          name="repairedValue"
+          type="number"
+          min="0"
+          step="1000"
+          placeholder="Enter projected value after work"
+          required
+        >
+
+      </div>
+
+
+      <!-- ===================================
+           CALCULATE
+           =================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Compare Values
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="value-result"
+      hidden
+      style="margin-top: 42px;"
+    >
+
+      <p class="page-eyebrow">
+        Modeled Comparison
+      </p>
+
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Current Estimated Value
+          </span>
+
+          <span
+            id="result-current"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Reconstruction Cost
+          </span>
+
+          <span
+            id="result-cost"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Projected Repaired Value
+          </span>
+
+          <span
+            id="result-repaired"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Projected Value Increase
+          </span>
+
+          <span
+            id="result-increase"
+            class="detail-value"
+            style="
+              font-size: 20px;
+              font-weight: 900;
+            "
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Increase After Reconstruction Cost
+          </span>
+
+          <span
+            id="result-net-increase"
+            class="detail-value"
+            style="
+              font-size: 20px;
+              font-weight: 900;
+            "
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================
+           INTERPRETATION
+           =================================== -->
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Preliminary Comparison
+        </p>
+
+        <h3 id="value-heading">
+          Compare the potential value created with the cost of the work.
+        </h3>
+
+        <p
+          id="value-description"
+          class="muted"
+        >
+          This simplified comparison does not yet include carrying
+          costs, financing costs, transaction expenses, taxes,
+          contingencies, or changes in market value.
+        </p>
+
+      </section>
+
+
+      <!-- ===================================
+           NEXT
+           =================================== -->
+
+      <div class="button-row">
+
+        <a
+          id="funding-link"
+          class="primary-button"
+          href="seller-value-recovery-funding.html"
+        >
+          Reconstruction Funding
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="seller-options-link"
+          class="secondary-button"
+          href="seller-options.html"
+        >
+          Compare Seller Paths
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         VALUE PRINCIPLE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      Seller Value Recovery is not based simply on whether
+      reconstruction increases the property's gross value. The
+      relevant question is whether the additional value can justify
+      the cost, time, risk, and other obligations required to create it.
+    </div>
+
+
+    <!-- =====================================
+         OWNER VALUE
+         ===================================== -->
+
+    <div class="status-message">
+      If reconstruction creates sufficient additional value, the
+      pathway is intended to explore whether more of that value can
+      remain with the existing owner when the property is ultimately sold.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      All figures entered here are modeling inputs. This page does
+      not provide an appraisal, contractor estimate, investment
+      projection, guaranteed after-repair value, guaranteed profit,
+      or recommendation to undertake reconstruction.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO Seller Value Recovery comparison
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-scope-link"
+      ).href =
+        withAddress(
+          "seller-value-recovery-scope.html"
+        );
+
+
+      document.getElementById(
+        "funding-link"
+      ).href =
+        withAddress(
+          "seller-value-recovery-funding.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      /* -----------------------------------------
+         CURRENCY
+         ----------------------------------------- */
+
+      const currency =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0
+          }
+        );
+
+
+      /* -----------------------------------------
+         RESTORE LIVE PROPERTY ANALYSIS
+         ----------------------------------------- */
+
+      try {
+
+        const savedAnalysis =
+          sessionStorage.getItem(
+            "mreo-seller-property-analysis"
+          );
+
+
+        if (savedAnalysis) {
+
+          const analysis =
+            JSON.parse(
+              savedAnalysis
+            );
+
+
+          const estimatedValue =
+            Number(
+              analysis.estimatedValue
+            );
+
+
+          if (
+            Number.isFinite(
+              estimatedValue
+            ) &&
+            estimatedValue > 0
+          ) {
+
+            document.getElementById(
+              "current-value"
+            ).value =
+              Math.round(
+                estimatedValue
+              );
+
+          }
+
+        }
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore property-analysis value:",
+          error
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      let savedCurrent =
+        null;
+
+
+      let savedCost =
+        null;
+
+
+      let savedRepaired =
+        null;
+
+
+      try {
+
+        savedCurrent =
+          sessionStorage.getItem(
+            "mreo-seller-value-recovery-current-value"
+          );
+
+
+        savedCost =
+          sessionStorage.getItem(
+            "mreo-seller-value-recovery-cost"
+          );
+
+
+        savedRepaired =
+          sessionStorage.getItem(
+            "mreo-seller-value-recovery-repaired-value"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore value comparison:",
+          error
+        );
+
+      }
+
+
+      /*
+        Previously saved values take priority
+        over live property-analysis estimates.
+      */
+
+      if (savedCurrent) {
+
+        document.getElementById(
+          "current-value"
+        ).value =
+          savedCurrent;
+
+      }
+
+
+      if (savedCost) {
+
+        document.getElementById(
+          "reconstruction-cost"
+        ).value =
+          savedCost;
+
+      }
+
+
+      if (savedRepaired) {
+
+        document.getElementById(
+          "repaired-value"
+        ).value =
+          savedRepaired;
+
+      }
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "value-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const currentValue =
+            Number(
+              document.getElementById(
+                "current-value"
+              ).value
+            );
+
+
+          const reconstructionCost =
+            Number(
+              document.getElementById(
+                "reconstruction-cost"
+              ).value
+            );
+
+
+          const repairedValue =
+            Number(
+              document.getElementById(
+                "repaired-value"
+              ).value
+            );
+
+
+          if (
+            !Number.isFinite(currentValue) ||
+            !Number.isFinite(reconstructionCost) ||
+            !Number.isFinite(repairedValue)
+          ) {
+
+            return;
+
+          }
+
+
+          /* -----------------------------------
+             CALCULATIONS
+             ----------------------------------- */
+
+          const valueIncrease =
+            repairedValue -
+            currentValue;
+
+
+          const netIncrease =
+            valueIncrease -
+            reconstructionCost;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-current-value",
+              String(currentValue)
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-cost",
+              String(reconstructionCost)
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-repaired-value",
+              String(repairedValue)
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-value-increase",
+              String(valueIncrease)
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-net-increase",
+              String(netIncrease)
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-value",
+              "complete"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save value comparison:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RENDER NUMBERS
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-current"
+          ).textContent =
+            currency.format(
+              currentValue
+            );
+
+
+          document.getElementById(
+            "result-cost"
+          ).textContent =
+            currency.format(
+              reconstructionCost
+            );
+
+
+          document.getElementById(
+            "result-repaired"
+          ).textContent =
+            currency.format(
+              repairedValue
+            );
+
+
+          document.getElementById(
+            "result-increase"
+          ).textContent =
+            formatDifference(
+              valueIncrease
+            );
+
+
+          document.getElementById(
+            "result-net-increase"
+          ).textContent =
+            formatDifference(
+              netIncrease
+            );
+
+
+          /* -----------------------------------
+             INTERPRETATION
+             ----------------------------------- */
+
+          const heading =
+            document.getElementById(
+              "value-heading"
+            );
+
+
+          const description =
+            document.getElementById(
+              "value-description"
+            );
+
+
+          if (valueIncrease <= 0) {
+
+            heading.textContent =
+              "The modeled reconstruction does not create additional property value.";
+
+
+            description.textContent =
+              "Under the figures entered, projected repaired value is no greater than current estimated value. This simplified scenario does not support a value-recovery case for the proposed work.";
+
+          } else if (netIncrease < 0) {
+
+            heading.textContent =
+              "The modeled value increase is smaller than the reconstruction cost.";
+
+
+            description.textContent =
+              "The work increases projected property value, but not by enough to recover the entered reconstruction cost before considering financing, carrying, or transaction expenses.";
+
+          } else if (netIncrease === 0) {
+
+            heading.textContent =
+              "The modeled value increase equals the reconstruction cost.";
+
+
+            description.textContent =
+              "Under this simplified comparison, the additional value is fully absorbed by the entered reconstruction cost before any financing, carrying, transaction, or contingency costs are considered.";
+
+          } else {
+
+            heading.textContent =
+              "The model shows value remaining after reconstruction cost.";
+
+
+            description.textContent =
+              `${currency.format(netIncrease)} of modeled value increase remains after subtracting the entered reconstruction cost. This is not the same as profit or guaranteed seller proceeds because other costs and risks are not included.`;
+
+          }
+
+
+          document.getElementById(
+            "value-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "value-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         FORMAT DIFFERENCE
+         ----------------------------------------- */
+
+      function formatDifference(value) {
+
+        if (value > 0) {
+
+          return (
+            "+" +
+            currency.format(value)
+          );
+
+        }
+
+
+        if (value < 0) {
+
+          return (
+            "−" +
+            currency.format(
+              Math.abs(value)
+            )
+          );
+
+        }
+
+
+        return currency.format(0);
+
+      }
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
