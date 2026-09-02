@@ -98,14 +98,12 @@
       <section class="page-intro">
 
         <p class="page-eyebrow">
-          Property Passport · Visual Record
+          Property Passport
         </p>
-
 
         <h1 class="page-title">
           Visual Record
         </h1>
-
 
         <p
           id="property-address"
@@ -147,7 +145,7 @@
 
 
       <!-- =================================================
-           IMAGE RECORD
+           VISUAL RECORD DETAILS
            ================================================= -->
 
       <section
@@ -174,11 +172,11 @@
         <div class="detail-row">
 
           <span class="detail-label">
-            Record
+            Primary Image
           </span>
 
           <span class="detail-value">
-            Primary Property Photograph
+            Current Property Photograph
           </span>
 
         </div>
@@ -187,11 +185,11 @@
         <div class="detail-row">
 
           <span class="detail-label">
-            Visual Status
+            Record Status
           </span>
 
           <span
-            id="visual-status"
+            id="record-status"
             class="detail-value"
           >
             Current Demonstration Record
@@ -199,70 +197,17 @@
 
         </div>
 
-
-        <div class="detail-row">
-
-          <span class="detail-label">
-            Image Source
-          </span>
-
-          <span class="detail-value">
-            MREO Property Record
-          </span>
-
-        </div>
-
       </section>
 
 
       <!-- =================================================
-           CONSISTENCY NOTE
+           FIELD VERIFICATION
+           NUMBER REMOVED
            ================================================= -->
-
-      <div
-        class="status-message"
-        style="margin-top: 30px;"
-      >
-        This primary photograph is linked to the property's
-        persistent MREO record. The same image is used on
-        Browse Properties, the main property page, and this
-        Visual Record.
-      </div>
-
-
-      <!-- =================================================
-           NEXT STEP
-           ================================================= -->
-
-      <section
-        class="page-intro"
-        style="margin-top: 54px;"
-      >
-
-        <p class="page-eyebrow">
-          Next
-        </p>
-
-        <h2
-          class="page-title"
-          style="
-            font-size: clamp(38px, 5vw, 68px);
-          "
-        >
-          Field Verification
-        </h2>
-
-        <p class="page-description">
-          Review how current property conditions can be documented
-          by authorized local participants.
-        </p>
-
-      </section>
-
 
       <section
         class="choice-grid"
-        style="margin-top: 28px;"
+        style="margin-top: 36px;"
       >
 
         <a
@@ -271,19 +216,15 @@
           href="field-verification.html"
         >
 
-          <span class="choice-card-number">
-            01
-          </span>
-
-
           <div class="choice-card-content">
 
-            <h3>
+            <h2>
               Field Verification
-            </h3>
+            </h2>
 
             <p>
-              View photographs, walkthrough status, and field-record information.
+              Review current field records, visual evidence,
+              and available remote-verification information.
             </p>
 
           </div>
@@ -302,16 +243,43 @@
 
 
       <!-- =================================================
+           VISUAL RECORD NOTE
+           ================================================= -->
+
+      <section
+        class="panel"
+        style="margin-top: 36px;"
+      >
+
+        <p class="page-eyebrow">
+          Visual Evidence
+        </p>
+
+        <h3>
+          Current visual information remains connected to the property record.
+        </h3>
+
+        <p class="muted">
+          Photographs, geotagged video, authorized walkthroughs,
+          and other field evidence can help remote participants
+          understand a property's current condition while preserving
+          the source and status of each record.
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
            DISCLAIMER
            ================================================= -->
 
       <div
         class="status-message"
-        style="margin-top: 40px;"
+        style="margin-top: 34px;"
       >
-        This is a fictional demonstration property. Visual records
-        shown in the prototype do not constitute an inspection,
-        appraisal, or independent verification of property condition.
+        Visual records can assist with remote evaluation but do not
+        replace a professional inspection, appraisal, engineering
+        evaluation, or other property-specific diligence.
       </div>
 
     </div>
@@ -341,7 +309,6 @@
        ===================================================== -->
 
   <script src="data.js"></script>
-
   <script src="property-images.js"></script>
 
 
@@ -384,15 +351,15 @@
         );
 
 
-      const imageSection =
-        document.getElementById(
-          "image-section"
-        );
-
-
       const imageElement =
         document.getElementById(
           "property-image"
+        );
+
+
+      const imageSection =
+        document.getElementById(
+          "image-section"
         );
 
 
@@ -425,7 +392,8 @@
 
 
       function display(
-        value
+        value,
+        fallback = "Not available"
       ) {
 
         if (
@@ -434,7 +402,7 @@
           value === ""
         ) {
 
-          return "Not available";
+          return fallback;
 
         }
 
@@ -461,7 +429,7 @@
 
 
       /* ===================================================
-         GET PROPERTY RECORD
+         GET PROPERTY
          =================================================== */
 
       function getPropertyRecord() {
@@ -475,10 +443,6 @@
 
         }
 
-
-        /*
-          Preferred data.js method.
-        */
 
         if (
           typeof window.MREO_DATA.getProperty ===
@@ -497,10 +461,6 @@
 
         }
 
-
-        /*
-          Compatibility fallback.
-        */
 
         if (
           Array.isArray(
@@ -538,36 +498,13 @@
 
 
       /* ===================================================
-         VISUAL METADATA
+         HIDE MISSING IMAGE
          =================================================== */
 
-      function getVisualRecord(
-        property
-      ) {
+      function hideImage() {
 
-        if (
-          property.visual &&
-          typeof property.visual ===
-          "object"
-        ) {
-
-          return property.visual;
-
-        }
-
-
-        if (
-          property.visualRecord &&
-          typeof property.visualRecord ===
-          "object"
-        ) {
-
-          return property.visualRecord;
-
-        }
-
-
-        return {};
+        imageSection.hidden =
+          true;
 
       }
 
@@ -659,14 +596,8 @@
 
 
         /* -------------------------------------------------
-           BASIC TEXT
+           IDENTITY
            ------------------------------------------------- */
-
-        document.getElementById(
-          "property-address"
-        ).textContent =
-          addressText;
-
 
         document.getElementById(
           "property-id"
@@ -674,38 +605,31 @@
           propertyId;
 
 
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          addressText;
+
+
         /* -------------------------------------------------
            VISUAL STATUS
-
-           Use existing data when data.js contains it.
-           Otherwise keep the demonstration status generic.
            ------------------------------------------------- */
 
-        const visual =
-          getVisualRecord(
-            property
-          );
-
-
-        const visualStatus =
-          firstDefined(
-            visual.status,
-            visual.verificationStatus,
-            property.visualStatus,
-            "Current Demonstration Record"
-          );
-
-
         document.getElementById(
-          "visual-status"
+          "record-status"
         ).textContent =
-          visualStatus;
+          display(
+            firstDefined(
+              property.visualStatus,
+              property.visualRecordStatus,
+              property.fieldVerificationStatus,
+              "Current Demonstration Record"
+            )
+          );
 
 
         /* -------------------------------------------------
            NAVIGATION
-
-           Preserve property ID everywhere.
            ------------------------------------------------- */
 
         document.getElementById(
@@ -727,12 +651,13 @@
 
 
         /* -------------------------------------------------
-           CANONICAL IMAGE
+           CANONICAL PROPERTY IMAGE
 
-           The Browse Properties photograph is authoritative.
-
-           These other image fields are fallbacks ONLY.
-           They will not replace a Browse-page image.
+           Same primary image used by:
+           - Browse Properties
+           - property.html
+           - Visual Record
+           - Field Evidence
            ------------------------------------------------- */
 
         const fallbackImage =
@@ -740,13 +665,7 @@
             property.image,
             property.photo,
             property.imageUrl,
-            property.photoUrl,
-
-            visual.primaryImage,
-            visual.image,
-            visual.imageUrl,
-            visual.photo,
-            visual.photoUrl
+            property.photoUrl
           );
 
 
@@ -771,11 +690,6 @@
           fallbackImage
         ) {
 
-          /*
-            Emergency fallback only if property-images.js
-            does not load.
-          */
-
           imageElement.src =
             fallbackImage;
 
@@ -788,21 +702,20 @@
 
         if (!canonicalImage) {
 
-          imageSection.hidden =
-            true;
+          hideImage();
 
         }
 
 
         imageElement.alt =
-          "Primary property photograph for " +
+          "Property photograph for " +
           display(
             address
           );
 
 
         /* -------------------------------------------------
-           TITLE
+           DOCUMENT TITLE
            ------------------------------------------------- */
 
         document.title =
@@ -817,7 +730,7 @@
 
 
       /* ===================================================
-         BROKEN IMAGE HANDLING
+         IMAGE ERROR
          =================================================== */
 
       imageElement.addEventListener(
@@ -825,13 +738,12 @@
         () => {
 
           console.warn(
-            "The canonical visual-record image could not be loaded for:",
+            "Canonical property image could not be loaded for:",
             requestedPropertyId
           );
 
 
-          imageSection.hidden =
-            true;
+          hideImage();
 
         }
       );
