@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Review a demonstration MREO property offer before continuing."
+    content="Review a demonstration MREO property offer."
   >
 
   <title>MREO | Review Offer</title>
@@ -20,9 +20,9 @@
 
 <body>
 
-  <!-- =========================================
+  <!-- =====================================================
        HEADER
-       ========================================= -->
+       ===================================================== -->
 
   <header class="site-header">
 
@@ -52,203 +52,220 @@
     </nav>
 
 
-    <button
-      id="back-offer-button"
+    <a
+      id="edit-offer-top"
       class="back-link"
-      type="button"
-      style="
-        border: 0;
-        background: transparent;
-        cursor: pointer;
-        padding: 0;
-      "
+      href="offer.html"
     >
       ← Edit Offer
-    </button>
+    </a>
 
   </header>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        MAIN
-       ========================================= -->
+       ===================================================== -->
 
-  <main class="page page-narrow">
+  <main class="page page-medium">
 
-    <!-- =====================================
-         INTRO
-         ===================================== -->
+    <!-- ===================================================
+         ERROR
+         =================================================== -->
 
-    <section class="page-intro">
-
-      <p
-        id="review-property-id"
-        class="page-eyebrow mono"
-      >
-        MREO-0001
-      </p>
-
-      <h1 class="page-title">
-        Review Offer
-      </h1>
-
-      <p
-        id="review-property-address"
-        class="page-description"
-      >
-        4218 Maple Ridge Drive · Dallas, Texas
-      </p>
-
+    <section
+      id="offer-error"
+      class="error-message"
+      hidden
+    >
+      No saved offer was found for this property.
+      Return to the Make an Offer page and enter your offer again.
     </section>
 
 
-    <!-- =====================================
-         OFFER SUMMARY
-         ===================================== -->
-
-    <section class="detail-list">
-
-      <!-- PRICE -->
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Offer Price
-        </span>
-
-        <span
-          id="review-price"
-          class="detail-value"
-          style="
-            font-size: 28px;
-            font-weight: 900;
-            letter-spacing: -.04em;
-          "
-        >
-          $397,000
-        </span>
-
-      </div>
-
-
-      <!-- FUNDING -->
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Funding
-        </span>
-
-        <span
-          id="review-funding"
-          class="detail-value"
-          style="
-            font-size: 20px;
-            font-weight: 900;
-          "
-        >
-          Confirmed Cash
-        </span>
-
-      </div>
-
-
-      <!-- CLOSING -->
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Closing Time
-        </span>
-
-        <span
-          id="review-closing"
-          class="detail-value"
-          style="
-            font-size: 20px;
-            font-weight: 900;
-          "
-        >
-          14 days
-        </span>
-
-      </div>
-
-
-      <!-- INSPECTION -->
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Inspection
-        </span>
-
-        <span
-          id="review-inspection"
-          class="detail-value"
-          style="
-            font-size: 20px;
-            font-weight: 900;
-          "
-        >
-          No Inspection Contingency
-        </span>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================
-         ACTIONS
-         ===================================== -->
+    <!-- ===================================================
+         CONTENT
+         =================================================== -->
 
     <div
-      class="button-row"
-      style="margin-top: 38px;"
+      id="review-content"
+      hidden
     >
 
-      <button
-        id="edit-offer-button"
-        class="secondary-button"
-        type="button"
+      <!-- =================================================
+           INTRO
+           ================================================= -->
+
+      <section class="page-intro">
+
+        <p
+          id="property-id"
+          class="page-eyebrow"
+        >
+          MREO Property
+        </p>
+
+
+        <h1 class="page-title">
+          Review Offer
+        </h1>
+
+
+        <p
+          id="property-address"
+          class="page-description"
+        >
+          Property
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
+           OFFER DETAILS
+           ================================================= -->
+
+      <section
+        class="detail-list"
+        style="margin-top: 40px;"
       >
-        Edit Offer
-      </button>
+
+        <!-- OFFER PRICE -->
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Offer Price
+          </span>
+
+          <span
+            id="review-offer-price"
+            class="detail-value"
+            style="
+              font-size: clamp(28px, 3vw, 38px);
+              font-weight: 900;
+            "
+          >
+            —
+          </span>
+
+        </div>
 
 
-      <a
-        id="continue-link"
-        class="primary-button"
-        href="offer-confirm.html?id=MREO-0001"
+        <!-- FUNDING -->
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Funding
+          </span>
+
+          <span
+            id="review-funding"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <!-- CLOSING -->
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Closing Time
+          </span>
+
+          <span
+            id="review-closing"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <!-- INSPECTION -->
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Inspection
+          </span>
+
+          <span
+            id="review-inspection"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           BUTTONS
+           ================================================= -->
+
+      <div
+        class="button-row"
+        style="margin-top: 36px;"
       >
-        Continue
-        <span aria-hidden="true">→</span>
-      </a>
 
-    </div>
+        <a
+          id="edit-offer-button"
+          class="secondary-button"
+          href="offer.html"
+        >
+          Edit Offer
+        </a>
 
 
-    <!-- =====================================
-         NOTICE
-         ===================================== -->
+        <a
+          id="continue-button"
+          class="primary-button"
+          href="offer-confirm.html"
+        >
+          Continue
+          <span aria-hidden="true">
+            →
+          </span>
+        </a>
 
-    <div class="status-message">
-      Nothing has been submitted. This is a fictional demonstration
-      of how offer terms could move through an MREO acquisition workflow.
+      </div>
+
+
+      <!-- =================================================
+           NOTICE
+           ================================================= -->
+
+      <div
+        class="status-message"
+        style="margin-top: 34px;"
+      >
+        Review the information above before continuing.
+        This prototype does not create or submit a legally binding
+        real-estate offer.
+      </div>
+
     </div>
 
   </main>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        FOOTER
-       ========================================= -->
+       ===================================================== -->
 
   <footer class="site-footer">
 
     <p>
-      Fictional demonstration offer
+      MREO Offer Review
     </p>
 
     <p>
@@ -258,25 +275,25 @@
   </footer>
 
 
-  <!-- =========================================
-       DATA
-       ========================================= -->
+  <!-- =====================================================
+       PROPERTY DATA
+       ===================================================== -->
 
   <script src="data.js"></script>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        PAGE LOGIC
-       ========================================= -->
+       ===================================================== -->
 
   <script>
     (() => {
       "use strict";
 
 
-      /* -----------------------------------------
-         URL PARAMETERS
-         ----------------------------------------- */
+      /* ===================================================
+         URL
+         =================================================== */
 
       const params =
         new URLSearchParams(
@@ -284,256 +301,629 @@
         );
 
 
-      const requestedId =
-        params.get("id") ||
-        "MREO-0001";
+      const requestedPropertyId =
+        params.get("id");
 
 
-      const offerPrice =
-        Number(
-          params.get("price") ||
-          397000
+      /* ===================================================
+         ELEMENTS
+         =================================================== */
+
+      const content =
+        document.getElementById(
+          "review-content"
         );
 
 
-      const funding =
-        params.get("funding") ||
-        "Confirmed Cash";
+      const errorBox =
+        document.getElementById(
+          "offer-error"
+        );
 
 
-      const closing =
-        params.get("closing") ||
-        "14";
-
-
-      const inspection =
-        params.get("inspection") ||
-        "No Inspection Contingency";
-
-
-      /* -----------------------------------------
-         FALLBACK PROPERTY
-         ----------------------------------------- */
-
-      const fallback = {
-
-        id:
-          "MREO-0001",
-
-        addressLine1:
-          "4218 Maple Ridge Drive",
-
-        location:
-          "Dallas, Texas"
-
-      };
-
-
-      /* -----------------------------------------
-         LOAD PROPERTY
-         ----------------------------------------- */
-
-      let property =
-        fallback;
-
-
-      if (
-        window.MREO_DATA &&
-        typeof window.MREO_DATA.getProperty === "function"
-      ) {
-
-        property =
-          window.MREO_DATA.getProperty(
-            requestedId
-          ) ||
-          fallback;
-
-      }
-
-
-      const id =
-        property.id ||
-        requestedId;
-
-
-      const address =
-        property.addressLine1 ||
-        property.address ||
-        property.fullAddress ||
-        fallback.addressLine1;
-
-
-      const location =
-        property.location ||
-        [
-          property.city,
-          property.state
-        ]
-          .filter(Boolean)
-          .join(", ") ||
-        fallback.location;
-
-
-      /* -----------------------------------------
+      /* ===================================================
          FORMATTER
-         ----------------------------------------- */
+         =================================================== */
 
-      const currency =
+      const currencyFormatter =
         new Intl.NumberFormat(
           "en-US",
           {
-            style:
-              "currency",
-
-            currency:
-              "USD",
-
-            maximumFractionDigits:
-              0
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0
           }
         );
 
 
-      /* -----------------------------------------
-         PROPERTY
-         ----------------------------------------- */
+      /* ===================================================
+         HELPERS
+         =================================================== */
 
-      document.getElementById(
-        "review-property-id"
-      ).textContent =
-        id;
+      function firstDefined(
+        ...values
+      ) {
 
+        for (const value of values) {
 
-      document.getElementById(
-        "review-property-address"
-      ).textContent =
-        `${address} · ${location}`;
+          if (
+            value !== undefined &&
+            value !== null &&
+            value !== ""
+          ) {
 
+            return value;
 
-      /* -----------------------------------------
-         OFFER VALUES
-         ----------------------------------------- */
-
-      document.getElementById(
-        "review-price"
-      ).textContent =
-        currency.format(
-          offerPrice
-        );
-
-
-      document.getElementById(
-        "review-funding"
-      ).textContent =
-        funding;
-
-
-      document.getElementById(
-        "review-closing"
-      ).textContent =
-        `${closing} days`;
-
-
-      document.getElementById(
-        "review-inspection"
-      ).textContent =
-        inspection;
-
-
-      /* -----------------------------------------
-         CONTINUE LINK
-         ----------------------------------------- */
-
-      const continueParams =
-        new URLSearchParams();
-
-
-      continueParams.set(
-        "id",
-        id
-      );
-
-
-      continueParams.set(
-        "price",
-        offerPrice
-      );
-
-
-      continueParams.set(
-        "funding",
-        funding
-      );
-
-
-      continueParams.set(
-        "closing",
-        closing
-      );
-
-
-      continueParams.set(
-        "inspection",
-        inspection
-      );
-
-
-      document.getElementById(
-        "continue-link"
-      ).href =
-        `offer-confirm.html?${continueParams.toString()}`;
-
-
-      /* -----------------------------------------
-         EDIT OFFER
-         ----------------------------------------- */
-
-      function editOffer() {
-
-        if (
-          window.history.length > 1
-        ) {
-
-          window.history.back();
-
-        } else {
-
-          window.location.href =
-            `offer.html?id=${encodeURIComponent(id)}`;
+          }
 
         }
+
+
+        return null;
 
       }
 
 
-      document.getElementById(
-        "edit-offer-button"
-      ).addEventListener(
-        "click",
-        editOffer
-      );
+      function propertyUrl(
+        pageName,
+        propertyId
+      ) {
+
+        return (
+          pageName +
+          "?id=" +
+          encodeURIComponent(
+            propertyId
+          )
+        );
+
+      }
 
 
-      document.getElementById(
-        "back-offer-button"
-      ).addEventListener(
-        "click",
-        editOffer
-      );
+      function formatCurrency(
+        value
+      ) {
+
+        const number =
+          Number(
+            value
+          );
 
 
-      /* -----------------------------------------
-         PAGE
-         ----------------------------------------- */
+        if (
+          !Number.isFinite(number)
+        ) {
 
-      document.title =
-        `${id} | Review MREO Offer`;
+          return "Not available";
 
+        }
+
+
+        return currencyFormatter.format(
+          number
+        );
+
+      }
+
+
+      /* ===================================================
+         GET PROPERTY
+         =================================================== */
+
+      function getPropertyRecord() {
+
+        if (
+          !requestedPropertyId ||
+          !window.MREO_DATA
+        ) {
+
+          return null;
+
+        }
+
+
+        if (
+          typeof window.MREO_DATA.getProperty ===
+          "function"
+        ) {
+
+          const property =
+            window.MREO_DATA.getProperty(
+              requestedPropertyId
+            );
+
+
+          if (property) {
+            return property;
+          }
+
+        }
+
+
+        if (
+          Array.isArray(
+            window.MREO_DATA.properties
+          )
+        ) {
+
+          return (
+            window.MREO_DATA.properties.find(
+              property => {
+
+                const id =
+                  firstDefined(
+                    property.id,
+                    property.propertyId
+                  );
+
+
+                return (
+                  String(id).toUpperCase() ===
+                  String(requestedPropertyId).toUpperCase()
+                );
+
+              }
+            ) ||
+            null
+          );
+
+        }
+
+
+        return null;
+
+      }
+
+
+      /* ===================================================
+         GET SAVED OFFER
+
+         IMPORTANT:
+
+         The Make an Offer page saves the user's entered
+         information under these keys.
+
+         This page reads THAT information.
+
+         It does NOT use any fictional sample bids from
+         data.js.
+         =================================================== */
+
+      function getSavedOffer(
+        propertyId
+      ) {
+
+        const keys =
+          [
+            "mreo-offer-" + propertyId,
+            "mreo-offer-draft",
+            "mreo-offer"
+          ];
+
+
+        for (
+          const key
+          of keys
+        ) {
+
+          try {
+
+            const stored =
+              sessionStorage.getItem(
+                key
+              );
+
+
+            if (!stored) {
+              continue;
+            }
+
+
+            const offer =
+              JSON.parse(
+                stored
+              );
+
+
+            if (
+              !offer ||
+              typeof offer !== "object"
+            ) {
+
+              continue;
+
+            }
+
+
+            /*
+              Make sure an offer belonging to a different
+              property cannot accidentally appear here.
+            */
+
+            if (
+              offer.propertyId &&
+              String(
+                offer.propertyId
+              ).toUpperCase() !==
+              String(
+                propertyId
+              ).toUpperCase()
+            ) {
+
+              continue;
+
+            }
+
+
+            return offer;
+
+          } catch (error) {
+
+            console.warn(
+              "Could not read saved offer:",
+              error
+            );
+
+          }
+
+        }
+
+
+        /* -------------------------------------------------
+           COMPATIBILITY FALLBACK
+
+           If only the individual values exist, rebuild the
+           offer from those values.
+           ------------------------------------------------- */
+
+        try {
+
+          const price =
+            sessionStorage.getItem(
+              "mreo-offer-price"
+            );
+
+
+          const funding =
+            sessionStorage.getItem(
+              "mreo-offer-funding-type"
+            );
+
+
+          const closing =
+            sessionStorage.getItem(
+              "mreo-offer-closing-time"
+            );
+
+
+          const inspection =
+            sessionStorage.getItem(
+              "mreo-offer-inspection"
+            );
+
+
+          if (
+            price !== null
+          ) {
+
+            return {
+              propertyId:
+                propertyId,
+
+              offerPrice:
+                Number(
+                  price
+                ),
+
+              fundingType:
+                funding,
+
+              closingTime:
+                closing,
+
+              inspection:
+                inspection
+            };
+
+          }
+
+        } catch (error) {
+
+          console.warn(
+            "Could not rebuild offer from stored values:",
+            error
+          );
+
+        }
+
+
+        return null;
+
+      }
+
+
+      /* ===================================================
+         RENDER
+         =================================================== */
+
+      function render() {
+
+        if (!requestedPropertyId) {
+
+          errorBox.hidden =
+            false;
+
+
+          return;
+
+        }
+
+
+        const property =
+          getPropertyRecord();
+
+
+        const offer =
+          getSavedOffer(
+            requestedPropertyId
+          );
+
+
+        /* -------------------------------------------------
+           NO SAVED OFFER
+           ------------------------------------------------- */
+
+        if (!offer) {
+
+          errorBox.hidden =
+            false;
+
+
+          content.hidden =
+            true;
+
+
+          document.getElementById(
+            "edit-offer-top"
+          ).href =
+            propertyUrl(
+              "offer.html",
+              requestedPropertyId
+            );
+
+
+          return;
+
+        }
+
+
+        /* -------------------------------------------------
+           PROPERTY ID
+           ------------------------------------------------- */
+
+        const propertyId =
+          firstDefined(
+            offer.propertyId,
+
+            property &&
+            property.id,
+
+            requestedPropertyId
+          );
+
+
+        document.getElementById(
+          "property-id"
+        ).textContent =
+          propertyId;
+
+
+        /* -------------------------------------------------
+           PROPERTY ADDRESS
+
+           Prefer the address saved with the offer because
+           that ensures Review is consistent with Make Offer.
+           ------------------------------------------------- */
+
+        let addressText =
+          firstDefined(
+            offer.propertyAddress
+          );
+
+
+        if (
+          !addressText &&
+          property
+        ) {
+
+          const address =
+            firstDefined(
+              property.address,
+              property.streetAddress,
+              property.location
+            );
+
+
+          const city =
+            firstDefined(
+              property.city
+            );
+
+
+          const state =
+            firstDefined(
+              property.state
+            );
+
+
+          const zip =
+            firstDefined(
+              property.zip,
+              property.zipCode,
+              property.postalCode
+            );
+
+
+          const locationParts =
+            [
+              city,
+              state,
+              zip
+            ].filter(Boolean);
+
+
+          addressText =
+            address || "";
+
+
+          if (
+            locationParts.length > 0
+          ) {
+
+            addressText +=
+              " · " +
+              locationParts.join(", ");
+
+          }
+
+        }
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          addressText ||
+          "Property";
+
+
+        /* -------------------------------------------------
+           OFFER PRICE
+
+           USER'S ENTERED VALUE
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "review-offer-price"
+        ).textContent =
+          formatCurrency(
+            firstDefined(
+              offer.offerPrice,
+              offer.price
+            )
+          );
+
+
+        /* -------------------------------------------------
+           FUNDING
+
+           USER'S ENTERED VALUE
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "review-funding"
+        ).textContent =
+          firstDefined(
+            offer.fundingType,
+            offer.funding,
+            "Not available"
+          );
+
+
+        /* -------------------------------------------------
+           CLOSING
+
+           USER'S ENTERED VALUE
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "review-closing"
+        ).textContent =
+          firstDefined(
+            offer.closingTime,
+            offer.closing,
+            "Not available"
+          );
+
+
+        /* -------------------------------------------------
+           INSPECTION
+
+           USER'S ENTERED VALUE
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "review-inspection"
+        ).textContent =
+          firstDefined(
+            offer.inspection,
+            offer.inspectionPeriod,
+            "Not available"
+          );
+
+
+        /* -------------------------------------------------
+           NAVIGATION
+
+           Keep same property ID through the process.
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "edit-offer-top"
+        ).href =
+          propertyUrl(
+            "offer.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "edit-offer-button"
+        ).href =
+          propertyUrl(
+            "offer.html",
+            propertyId
+          );
+
+
+        document.getElementById(
+          "continue-button"
+        ).href =
+          propertyUrl(
+            "offer-confirm.html",
+            propertyId
+          );
+
+
+        /* -------------------------------------------------
+           DOCUMENT TITLE
+           ------------------------------------------------- */
+
+        document.title =
+          propertyId +
+          " Review Offer | MREO";
+
+
+        content.hidden =
+          false;
+
+      }
+
+
+      /* ===================================================
+         CURRENT YEAR
+         =================================================== */
 
       document.getElementById(
         "current-year"
       ).textContent =
         new Date().getFullYear();
+
+
+      /* ===================================================
+         START
+         =================================================== */
+
+      render();
 
     })();
   </script>
