@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="View and complete an MREO purchaser profile."
+    content="Create and review a demonstration MREO purchaser profile."
   >
 
   <title>MREO | Purchaser Profile</title>
@@ -20,9 +20,9 @@
 
 <body>
 
-  <!-- =========================================
+  <!-- =====================================================
        HEADER
-       ========================================= -->
+       ===================================================== -->
 
   <header class="site-header">
 
@@ -53,7 +53,6 @@
 
 
     <a
-      id="back-link"
       class="back-link"
       href="buy.html"
     >
@@ -63,299 +62,168 @@
   </header>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        MAIN
-       ========================================= -->
+       ===================================================== -->
 
   <main class="page page-medium">
 
-    <!-- =====================================
+    <!-- ===================================================
          INTRO
-         ===================================== -->
+         =================================================== -->
 
     <section class="page-intro">
 
       <p class="page-eyebrow">
-        Purchaser
+        Purchaser Profile
       </p>
+
 
       <h1 class="page-title">
-        Purchaser Profile
+        Purchaser Qualification
       </h1>
 
+
       <p class="page-description">
-        Keep purchaser qualification separate from individual
-        property offers.
+        Build a purchaser profile by completing identity,
+        funding, and purchasing-capacity information.
       </p>
 
     </section>
 
 
-    <!-- =====================================
-         PROPERTY CONTEXT
-         ===================================== -->
+    <!-- ===================================================
+         CHOICES
+         =================================================== -->
 
     <section
-      id="property-context"
-      class="detail-list"
-      hidden
-      style="margin-bottom: 42px;"
+      class="choice-grid choice-grid-3"
+      style="margin-top: 40px;"
     >
 
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Current Property
-        </span>
-
-        <span
-          id="current-property-id"
-          class="detail-value mono"
-        >
-          MREO-0001
-        </span>
-
-      </div>
-
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Property
-        </span>
-
-        <span
-          id="current-property-address"
-          class="detail-value"
-        >
-          4218 Maple Ridge Drive · Dallas, Texas
-        </span>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================
-         PROFILE STATUS
-         ===================================== -->
-
-    <section
-      class="detail-list"
-      style="margin-bottom: 42px;"
-    >
-
-      <div class="detail-row">
-
-        <span class="detail-label">
-          Profile Status
-        </span>
-
-        <span
-          id="profile-status"
-          class="detail-value"
-          style="
-            font-size: 20px;
-            font-weight: 900;
-          "
-        >
-          Incomplete
-        </span>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================
-         PROFILE SECTIONS
-         ===================================== -->
-
-    <section>
-
-      <p class="page-eyebrow">
-        Complete Your Profile
-      </p>
-
-      <div class="choice-grid">
-
-        <!-- IDENTITY -->
-
-        <a
-          id="identity-link"
-          class="choice-card"
-          href="purchaser-identity.html"
-        >
-
-          <span class="choice-card-number">
-            01
-          </span>
-
-          <div class="choice-card-content">
-
-            <p class="card-label">
-              Purchaser
-            </p>
-
-            <h3>
-              Identity &amp; Authority
-            </h3>
-
-            <p>
-              Identify the purchaser and confirm who has authority
-              to act.
-            </p>
-
-          </div>
-
-          <span
-            class="choice-card-arrow"
-            aria-hidden="true"
-          >
-            →
-          </span>
-
-        </a>
-
-
-        <!-- FUNDING -->
-
-        <a
-          id="funding-link"
-          class="choice-card blue"
-          href="purchaser-funding.html"
-        >
-
-          <span class="choice-card-number">
-            02
-          </span>
-
-          <div class="choice-card-content">
-
-            <p class="card-label">
-              Qualification
-            </p>
-
-            <h3>
-              Funding
-            </h3>
-
-            <p>
-              Record cash verification, financing, or other
-              funding information.
-            </p>
-
-          </div>
-
-          <span
-            class="choice-card-arrow"
-            aria-hidden="true"
-          >
-            →
-          </span>
-
-        </a>
-
-
-        <!-- CAPACITY -->
-
-        <a
-          id="capacity-link"
-          class="choice-card green"
-          href="purchaser-capacity.html"
-        >
-
-          <span class="choice-card-number">
-            03
-          </span>
-
-          <div class="choice-card-content">
-
-            <p class="card-label">
-              Acquisition
-            </p>
-
-            <h3>
-              Purchase Capacity
-            </h3>
-
-            <p>
-              Define the purchaser's acquisition range and
-              purchasing form.
-            </p>
-
-          </div>
-
-          <span
-            class="choice-card-arrow"
-            aria-hidden="true"
-          >
-            →
-          </span>
-
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================
-         RETURN TO PROPERTY
-         ===================================== -->
-
-    <div
-      id="property-actions"
-      class="button-row"
-      hidden
-      style="margin-top: 34px;"
-    >
+      <!-- =================================================
+           IDENTITY
+           ================================================= -->
 
       <a
-        id="return-to-offer-link"
-        class="primary-button"
-        href="offer.html?id=MREO-0001"
+        class="choice-card"
+        href="purchaser-identity.html"
       >
-        Return to Property Offer
-        <span aria-hidden="true">→</span>
+
+        <div class="choice-card-content">
+
+          <h2>
+            Identity
+          </h2>
+
+          <p>
+            Enter purchaser identity and purchasing-authority information.
+          </p>
+
+        </div>
+
+
+        <span
+          class="choice-card-arrow"
+          aria-hidden="true"
+        >
+          →
+        </span>
+
       </a>
 
 
+      <!-- =================================================
+           FUNDING
+           ================================================= -->
+
       <a
-        id="return-to-property-link"
-        class="secondary-button"
-        href="property.html?id=MREO-0001"
+        class="choice-card blue"
+        href="purchaser-funding.html"
       >
-        View Property
+
+        <div class="choice-card-content">
+
+          <h2>
+            Funding
+          </h2>
+
+          <p>
+            Describe the purchaser's intended source of funds or financing.
+          </p>
+
+        </div>
+
+
+        <span
+          class="choice-card-arrow"
+          aria-hidden="true"
+        >
+          →
+        </span>
+
       </a>
 
-    </div>
+
+      <!-- =================================================
+           CAPACITY
+           ================================================= -->
+
+      <a
+        class="choice-card green"
+        href="purchaser-capacity.html"
+      >
+
+        <div class="choice-card-content">
+
+          <h2>
+            Purchase Capacity
+          </h2>
+
+          <p>
+            Enter the purchaser's maximum contemplated purchase amount.
+          </p>
+
+        </div>
 
 
-    <!-- =====================================
-         NOTICE
-         ===================================== -->
+        <span
+          class="choice-card-arrow"
+          aria-hidden="true"
+        >
+          →
+        </span>
+
+      </a>
+
+    </section>
+
+
+    <!-- ===================================================
+         QUALIFICATION NOTE
+         =================================================== -->
 
     <div
       class="status-message"
-      style="margin-top: 34px;"
+      style="margin-top: 40px;"
     >
-      Purchaser qualification can help organize identity, authority,
-      funding, and acquisition information. Qualification does not
-      guarantee that a purchaser will perform or that an offer will close.
+      Purchaser qualification is intended to establish whether a
+      participant satisfies preliminary requirements for a category
+      of transaction. It does not guarantee financing, funds,
+      underwriting approval, or transaction performance.
     </div>
 
   </main>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        FOOTER
-       ========================================= -->
+       ===================================================== -->
 
   <footer class="site-footer">
 
     <p>
-      Fictional demonstration purchaser profile
+      MREO Purchaser Profile
     </p>
 
     <p>
@@ -365,295 +233,15 @@
   </footer>
 
 
-  <!-- =========================================
-       DATA
-       ========================================= -->
-
-  <script src="data.js"></script>
-
-
-  <!-- =========================================
-       PAGE LOGIC
-       ========================================= -->
+  <!-- =====================================================
+       CURRENT YEAR
+       ===================================================== -->
 
   <script>
-    (() => {
-      "use strict";
-
-
-      /* -----------------------------------------
-         URL
-         ----------------------------------------- */
-
-      const params =
-        new URLSearchParams(
-          window.location.search
-        );
-
-
-      const propertyId =
-        params.get("property");
-
-
-      /* -----------------------------------------
-         FALLBACK PROPERTY
-         ----------------------------------------- */
-
-      const fallbackProperties = {
-
-        "MREO-0001": {
-          id:
-            "MREO-0001",
-
-          addressLine1:
-            "4218 Maple Ridge Drive",
-
-          location:
-            "Dallas, Texas"
-        }
-
-      };
-
-
-      /* -----------------------------------------
-         PROPERTY CONTEXT
-         ----------------------------------------- */
-
-      let property =
-        null;
-
-
-      if (propertyId) {
-
-        if (
-          window.MREO_DATA &&
-          typeof window.MREO_DATA.getProperty === "function"
-        ) {
-
-          property =
-            window.MREO_DATA.getProperty(
-              propertyId
-            );
-
-        }
-
-
-        if (!property) {
-
-          property =
-            fallbackProperties[propertyId] ||
-            {
-              id:
-                propertyId,
-
-              addressLine1:
-                "Selected MREO Property",
-
-              location:
-                ""
-            };
-
-        }
-
-      }
-
-
-      /* -----------------------------------------
-         SHOW PROPERTY IF PRESENT
-         ----------------------------------------- */
-
-      if (property) {
-
-        const id =
-          property.id ||
-          propertyId;
-
-
-        const address =
-          property.addressLine1 ||
-          property.address ||
-          property.fullAddress ||
-          "Selected MREO Property";
-
-
-        const location =
-          property.location ||
-          [
-            property.city,
-            property.state
-          ]
-            .filter(Boolean)
-            .join(", ");
-
-
-        document.getElementById(
-          "property-context"
-        ).hidden =
-          false;
-
-
-        document.getElementById(
-          "property-actions"
-        ).hidden =
-          false;
-
-
-        document.getElementById(
-          "current-property-id"
-        ).textContent =
-          id;
-
-
-        document.getElementById(
-          "current-property-address"
-        ).textContent =
-          location
-            ? `${address} · ${location}`
-            : address;
-
-
-        const encodedId =
-          encodeURIComponent(id);
-
-
-        document.getElementById(
-          "return-to-offer-link"
-        ).href =
-          `offer.html?id=${encodedId}`;
-
-
-        document.getElementById(
-          "return-to-property-link"
-        ).href =
-          `property.html?id=${encodedId}`;
-
-
-        document.getElementById(
-          "back-link"
-        ).href =
-          `property.html?id=${encodedId}`;
-
-
-        document.getElementById(
-          "back-link"
-        ).textContent =
-          "← Property";
-
-      }
-
-
-      /* -----------------------------------------
-         PRESERVE PROPERTY THROUGH PROFILE FLOW
-         ----------------------------------------- */
-
-      function buildProfileLink(page) {
-
-        if (!propertyId) {
-          return page;
-        }
-
-
-        return (
-          `${page}?property=` +
-          encodeURIComponent(propertyId)
-        );
-
-      }
-
-
-      document.getElementById(
-        "identity-link"
-      ).href =
-        buildProfileLink(
-          "purchaser-identity.html"
-        );
-
-
-      document.getElementById(
-        "funding-link"
-      ).href =
-        buildProfileLink(
-          "purchaser-funding.html"
-        );
-
-
-      document.getElementById(
-        "capacity-link"
-      ).href =
-        buildProfileLink(
-          "purchaser-capacity.html"
-        );
-
-
-      /* -----------------------------------------
-         DEMONSTRATION PROFILE STATUS
-         ----------------------------------------- */
-
-      const identityComplete =
-        sessionStorage.getItem(
-          "mreo-purchaser-identity"
-        ) === "complete";
-
-
-      const fundingComplete =
-        sessionStorage.getItem(
-          "mreo-purchaser-funding"
-        ) === "complete";
-
-
-      const capacityComplete =
-        sessionStorage.getItem(
-          "mreo-purchaser-capacity"
-        ) === "complete";
-
-
-      const completedCount =
-        [
-          identityComplete,
-          fundingComplete,
-          capacityComplete
-        ]
-          .filter(Boolean)
-          .length;
-
-
-      let profileStatus =
-        "Incomplete";
-
-
-      if (completedCount === 3) {
-
-        profileStatus =
-          "Qualification Complete";
-
-      } else if (completedCount > 0) {
-
-        profileStatus =
-          `${completedCount} of 3 Complete`;
-
-      }
-
-
-      document.getElementById(
-        "profile-status"
-      ).textContent =
-        profileStatus;
-
-
-      /* -----------------------------------------
-         PAGE
-         ----------------------------------------- */
-
-      document.title =
-        "MREO | Purchaser Profile";
-
-
-      document.getElementById(
-        "current-year"
-      ).textContent =
-        new Date().getFullYear();
-
-    })();
+    document.getElementById(
+      "current-year"
+    ).textContent =
+      new Date().getFullYear();
   </script>
 
 </body>
