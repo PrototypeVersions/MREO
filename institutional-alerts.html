@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Review institutional portfolio exceptions and action alerts in the MREO demonstration protocol."
+  >
+
+  <title>MREO | Institutional Alerts</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      class="back-link"
+      href="institutional.html"
+    >
+      ← Institutional
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-medium">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Institutional · Alerts
+      </p>
+
+      <h1 class="page-title">
+        Portfolio Alerts
+      </h1>
+
+      <p class="page-description">
+        Surface the properties that need action now.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PORTFOLIO
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-bottom: 38px;"
+    >
+
+      <p class="eyebrow">
+        Demonstration Portfolio
+      </p>
+
+      <h2
+        id="portfolio-name"
+        style="
+          margin: 0 0 10px;
+          font-size: 30px;
+          letter-spacing: -.04em;
+        "
+      >
+        Southwest Residential Portfolio
+      </h2>
+
+      <p
+        id="portfolio-id"
+        class="muted mono"
+        style="margin: 0;"
+      >
+        PORT-SW-001
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         ALERT 1
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-bottom: 22px;"
+    >
+
+      <p class="page-eyebrow">
+        Title
+      </p>
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Title Intervention
+          </span>
+
+          <span
+            id="alert-title"
+            class="detail-value"
+            style="
+              font-size: 28px;
+              font-weight: 900;
+            "
+          >
+            66
+          </span>
+
+        </div>
+
+      </div>
+
+      <p
+        class="muted"
+        style="margin-top: 20px;"
+      >
+        A title, lien, ownership, authority, or related issue
+        requires attention before the affected property can
+        proceed normally.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         ALERT 2
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-bottom: 22px;"
+    >
+
+      <p class="page-eyebrow">
+        Property Verification
+      </p>
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Stale Field Verification
+          </span>
+
+          <span
+            id="alert-verification"
+            class="detail-value"
+            style="
+              font-size: 28px;
+              font-weight: 900;
+            "
+          >
+            41
+          </span>
+
+        </div>
+
+      </div>
+
+      <p
+        class="muted"
+        style="margin-top: 20px;"
+      >
+        Current photographs, video, walkthrough information,
+        or other field evidence needs to be refreshed before
+        relying on the existing property record.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         ALERT 3
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-bottom: 22px;"
+    >
+
+      <p class="page-eyebrow">
+        Purchaser Execution
+      </p>
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Missed Buyer-Activation Deadline
+          </span>
+
+          <span
+            id="alert-deadlines"
+            class="detail-value"
+            style="
+              font-size: 28px;
+              font-weight: 900;
+            "
+          >
+            17
+          </span>
+
+        </div>
+
+      </div>
+
+      <p
+        class="muted"
+        style="margin-top: 20px;"
+      >
+        A selected purchaser failed to satisfy a required
+        activation, deposit, documentation, or other transaction
+        deadline.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         ALERT 4
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-bottom: 38px;"
+    >
+
+      <p class="page-eyebrow">
+        Backup Demand
+      </p>
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Immediate Backup Buyer
+          </span>
+
+          <span
+            id="alert-backup"
+            class="detail-value"
+            style="
+              font-size: 28px;
+              font-weight: 900;
+            "
+          >
+            15
+          </span>
+
+        </div>
+
+      </div>
+
+      <p
+        class="muted"
+        style="margin-top: 20px;"
+      >
+        A qualified backup purchaser is already available
+        if the selected buyer fails to perform.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         ACTION LOGIC
+         ===================================== -->
+
+    <section class="panel">
+
+      <p class="eyebrow">
+        Exception Management
+      </p>
+
+      <h3>
+        An alert should point to an action.
+      </h3>
+
+      <p class="muted">
+        The purpose of the alert layer is not merely to count
+        problems. Each exception can remain connected to the
+        affected property, responsible party, required action,
+        supporting record, and deadline.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         BACKUP BIDDER PRINCIPLE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      MREO's proposed Backup-Bidder Waterfall allows a transaction
+      to preserve qualified secondary demand. If a selected purchaser
+      misses a required performance deadline, an eligible backup
+      purchaser may be activated according to the seller's governing
+      transaction rules rather than restarting the entire marketing process.
+    </div>
+
+
+    <!-- =====================================
+         NEXT
+         ===================================== -->
+
+    <div class="button-row">
+
+      <a
+        class="primary-button"
+        href="institutional-distribution.html"
+      >
+        View Distribution
+        <span aria-hidden="true">→</span>
+      </a>
+
+
+      <a
+        class="secondary-button"
+        href="institutional.html"
+      >
+        Institutional Home
+      </a>
+
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      All alert counts, buyer activity, title conditions, deadlines,
+      and backup-purchaser information shown here are fictional
+      demonstration data. No actual property or transaction is
+      being monitored by this page.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO institutional alerts
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       CENTRAL DATA
+       ========================================= -->
+
+  <script src="data.js"></script>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         PORTFOLIO
+         ----------------------------------------- */
+
+      const portfolio =
+        window.MREO_DATA &&
+        window.MREO_DATA.institutionalPortfolio
+          ? window.MREO_DATA.institutionalPortfolio
+          : null;
+
+
+      /* -----------------------------------------
+         SAFE LOOKUP
+         ----------------------------------------- */
+
+      function firstDefined(
+        object,
+        keys,
+        fallback
+      ) {
+
+        if (!object) {
+          return fallback;
+        }
+
+
+        for (const key of keys) {
+
+          if (
+            object[key] !== undefined &&
+            object[key] !== null &&
+            object[key] !== ""
+          ) {
+
+            return object[key];
+
+          }
+
+        }
+
+
+        return fallback;
+
+      }
+
+
+      /* -----------------------------------------
+         FIND ALERT COUNT
+         ----------------------------------------- */
+
+      function findAlertCount(
+        source,
+        possibleNames,
+        fallback
+      ) {
+
+        if (!source) {
+          return fallback;
+        }
+
+
+        /*
+          ARRAY FORMAT
+        */
+
+        if (Array.isArray(source)) {
+
+          for (const item of source) {
+
+            const label =
+              String(
+                firstDefined(
+                  item,
+                  [
+                    "name",
+                    "label",
+                    "type",
+                    "title"
+                  ],
+                  ""
+                )
+              ).toLowerCase();
+
+
+            const match =
+              possibleNames.some(
+                name =>
+                  label.includes(
+                    name.toLowerCase()
+                  )
+              );
+
+
+            if (match) {
+
+              return Number(
+                firstDefined(
+                  item,
+                  [
+                    "count",
+                    "properties",
+                    "value"
+                  ],
+                  fallback
+                )
+              );
+
+            }
+
+          }
+
+        }
+
+
+        /*
+          OBJECT FORMAT
+        */
+
+        if (
+          typeof source === "object"
+        ) {
+
+          for (
+            const [key, value]
+            of Object.entries(source)
+          ) {
+
+            const normalizedKey =
+              key
+                .replace(/[_-]/g, " ")
+                .toLowerCase();
+
+
+            const match =
+              possibleNames.some(
+                name =>
+                  normalizedKey.includes(
+                    name.toLowerCase()
+                  )
+              );
+
+
+            if (!match) {
+              continue;
+            }
+
+
+            if (
+              typeof value === "number"
+            ) {
+
+              return Number(value);
+
+            }
+
+
+            if (
+              value &&
+              typeof value === "object"
+            ) {
+
+              return Number(
+                firstDefined(
+                  value,
+                  [
+                    "count",
+                    "properties",
+                    "value"
+                  ],
+                  fallback
+                )
+              );
+
+            }
+
+          }
+
+        }
+
+
+        return fallback;
+
+      }
+
+
+      /* -----------------------------------------
+         DEFAULT VALUES
+         ----------------------------------------- */
+
+      let titleCount =
+        66;
+
+
+      let verificationCount =
+        41;
+
+
+      let deadlineCount =
+        17;
+
+
+      let backupCount =
+        15;
+
+
+      /* -----------------------------------------
+         CENTRAL DATA
+         ----------------------------------------- */
+
+      if (portfolio) {
+
+        const name =
+          firstDefined(
+            portfolio,
+            [
+              "name",
+              "portfolioName",
+              "title"
+            ],
+            "Southwest Residential Portfolio"
+          );
+
+
+        const id =
+          firstDefined(
+            portfolio,
+            [
+              "id",
+              "portfolioId"
+            ],
+            "PORT-SW-001"
+          );
+
+
+        const alerts =
+          firstDefined(
+            portfolio,
+            [
+              "alerts",
+              "portfolioAlerts"
+            ],
+            null
+          );
+
+
+        titleCount =
+          findAlertCount(
+            alerts,
+            [
+              "title intervention",
+              "title"
+            ],
+            66
+          );
+
+
+        verificationCount =
+          findAlertCount(
+            alerts,
+            [
+              "stale field verification",
+              "stale verification",
+              "field verification"
+            ],
+            41
+          );
+
+
+        deadlineCount =
+          findAlertCount(
+            alerts,
+            [
+              "missed buyer activation",
+              "buyer activation",
+              "missed deadline"
+            ],
+            17
+          );
+
+
+        backupCount =
+          findAlertCount(
+            alerts,
+            [
+              "immediate backup buyer",
+              "backup buyer",
+              "backup"
+            ],
+            15
+          );
+
+
+        document.getElementById(
+          "portfolio-name"
+        ).textContent =
+          name;
+
+
+        document.getElementById(
+          "portfolio-id"
+        ).textContent =
+          id;
+
+      }
+
+
+      /* -----------------------------------------
+         RENDER COUNTS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "alert-title"
+      ).textContent =
+        titleCount.toLocaleString(
+          "en-US"
+        );
+
+
+      document.getElementById(
+        "alert-verification"
+      ).textContent =
+        verificationCount.toLocaleString(
+          "en-US"
+        );
+
+
+      document.getElementById(
+        "alert-deadlines"
+      ).textContent =
+        deadlineCount.toLocaleString(
+          "en-US"
+        );
+
+
+      document.getElementById(
+        "alert-backup"
+      ).textContent =
+        backupCount.toLocaleString(
+          "en-US"
+        );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
