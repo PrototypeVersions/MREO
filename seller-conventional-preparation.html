@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Review property preparation for a conventional MREO demonstration sale pathway."
+  >
+
+  <title>MREO | Sale Preparation</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-conventional-link"
+      class="back-link"
+      href="seller-conventional.html"
+    >
+      ← Conventional Sale
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Conventional Sale · Preparation
+      </p>
+
+      <h1 class="page-title">
+        Prepare for Market
+      </h1>
+
+      <p class="page-description">
+        Identify what needs to be ready before broader market distribution.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="preparation-form"
+      class="form"
+    >
+
+      <!-- ===================================
+           PROPERTY PRESENTATION
+           =================================== -->
+
+      <div class="field">
+
+        <label for="presentation-status">
+          Property Presentation
+        </label>
+
+        <select
+          id="presentation-status"
+          name="presentationStatus"
+          required
+        >
+
+          <option value="">
+            How ready is the property to be presented?
+          </option>
+
+          <option value="Ready now">
+            Ready now
+          </option>
+
+          <option value="Cleaning or minor preparation needed">
+            Cleaning or minor preparation needed
+          </option>
+
+          <option value="Photography or visual preparation needed">
+            Photography or visual preparation needed
+          </option>
+
+          <option value="Repairs needed before presentation">
+            Repairs needed before presentation
+          </option>
+
+          <option value="Major preparation needed">
+            Major preparation needed
+          </option>
+
+          <option value="Not sure">
+            Not sure
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           DOCUMENTATION
+           =================================== -->
+
+      <div class="field">
+
+        <label for="documentation-status">
+          Documentation
+        </label>
+
+        <select
+          id="documentation-status"
+          name="documentationStatus"
+          required
+        >
+
+          <option value="">
+            How complete are the property records?
+          </option>
+
+          <option value="Documents appear ready">
+            Documents appear ready
+          </option>
+
+          <option value="Some documents still need to be gathered">
+            Some documents still need to be gathered
+          </option>
+
+          <option value="Title or ownership records need review">
+            Title or ownership records need review
+          </option>
+
+          <option value="Condition or repair records need review">
+            Condition or repair records need review
+          </option>
+
+          <option value="Documentation is incomplete">
+            Documentation is incomplete
+          </option>
+
+          <option value="Not sure">
+            Not sure
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           ACCESS / SHOWING READINESS
+           =================================== -->
+
+      <div class="field">
+
+        <label for="access-status">
+          Showing &amp; Access Readiness
+        </label>
+
+        <select
+          id="access-status"
+          name="accessStatus"
+          required
+        >
+
+          <option value="">
+            Can the property be accessed for market activity?
+          </option>
+
+          <option value="Ready for showings">
+            Ready for showings
+          </option>
+
+          <option value="Showings require scheduling">
+            Showings require scheduling
+          </option>
+
+          <option value="Tenant coordination required">
+            Tenant coordination required
+          </option>
+
+          <option value="Remote-owner coordination required">
+            Remote-owner coordination required
+          </option>
+
+          <option value="Limited access">
+            Limited access
+          </option>
+
+          <option value="Not ready for showings">
+            Not ready for showings
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           SAVE
+           =================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Save Preparation Review
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="preparation-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <p class="page-eyebrow">
+        Preparation Review
+      </p>
+
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Presentation
+          </span>
+
+          <span
+            id="result-presentation"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Documentation
+          </span>
+
+          <span
+            id="result-documentation"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Access
+          </span>
+
+          <span
+            id="result-access"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================
+           NEXT STEP
+           =================================== -->
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Next
+        </p>
+
+        <h3 id="preparation-heading">
+          Preparation requirements have been identified.
+        </h3>
+
+        <p
+          id="preparation-description"
+          class="muted"
+        >
+          The property can now move toward a market-distribution
+          review without putting every preparation task on one page.
+        </p>
+
+      </section>
+
+
+      <div class="button-row">
+
+        <a
+          id="distribution-link"
+          class="primary-button"
+          href="seller-conventional-distribution.html"
+        >
+          Market Distribution
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="seller-options-link"
+          class="secondary-button"
+          href="seller-options.html"
+        >
+          Compare Seller Paths
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         MREO ROLE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      In a full MREO workflow, preparation records could connect
+      photography, videography, property walkthroughs, document
+      collection, condition information, title readiness, and
+      participating real-estate professionals to one property record.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      This prototype does not list the property, schedule actual
+      showings, verify title, perform inspections, create marketing
+      materials, or engage a broker or other professional.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO conventional-sale preparation
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-conventional-link"
+      ).href =
+        withAddress(
+          "seller-conventional.html"
+        );
+
+
+      document.getElementById(
+        "distribution-link"
+      ).href =
+        withAddress(
+          "seller-conventional-distribution.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      let savedPresentation =
+        null;
+
+
+      let savedDocumentation =
+        null;
+
+
+      let savedAccess =
+        null;
+
+
+      try {
+
+        savedPresentation =
+          sessionStorage.getItem(
+            "mreo-seller-conventional-presentation"
+          );
+
+
+        savedDocumentation =
+          sessionStorage.getItem(
+            "mreo-seller-conventional-documentation"
+          );
+
+
+        savedAccess =
+          sessionStorage.getItem(
+            "mreo-seller-conventional-access"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore preparation review:",
+          error
+        );
+
+      }
+
+
+      if (savedPresentation) {
+
+        document.getElementById(
+          "presentation-status"
+        ).value =
+          savedPresentation;
+
+      }
+
+
+      if (savedDocumentation) {
+
+        document.getElementById(
+          "documentation-status"
+        ).value =
+          savedDocumentation;
+
+      }
+
+
+      if (savedAccess) {
+
+        document.getElementById(
+          "access-status"
+        ).value =
+          savedAccess;
+
+      }
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "preparation-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const presentation =
+            document.getElementById(
+              "presentation-status"
+            ).value;
+
+
+          const documentation =
+            document.getElementById(
+              "documentation-status"
+            ).value;
+
+
+          const access =
+            document.getElementById(
+              "access-status"
+            ).value;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-conventional-presentation",
+              presentation
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-conventional-documentation",
+              documentation
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-conventional-access",
+              access
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-conventional-preparation",
+              "complete"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save preparation review:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RESULT
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-presentation"
+          ).textContent =
+            presentation;
+
+
+          document.getElementById(
+            "result-documentation"
+          ).textContent =
+            documentation;
+
+
+          document.getElementById(
+            "result-access"
+          ).textContent =
+            access;
+
+
+          /* -----------------------------------
+             CONTEXTUAL MESSAGE
+             ----------------------------------- */
+
+          const heading =
+            document.getElementById(
+              "preparation-heading"
+            );
+
+
+          const description =
+            document.getElementById(
+              "preparation-description"
+            );
+
+
+          const substantialPreparation =
+            presentation ===
+              "Major preparation needed" ||
+            documentation ===
+              "Documentation is incomplete" ||
+            access ===
+              "Not ready for showings";
+
+
+          const coordinationNeeded =
+            access ===
+              "Tenant coordination required" ||
+            access ===
+              "Remote-owner coordination required";
+
+
+          if (substantialPreparation) {
+
+            heading.textContent =
+              "Additional preparation is needed before broad distribution.";
+
+
+            description.textContent =
+              "The owner can continue preparing for a conventional sale or return to compare faster or reconstruction-supported pathways.";
+
+          } else if (coordinationNeeded) {
+
+            heading.textContent =
+              "Market access requires coordination.";
+
+
+            description.textContent =
+              "The property may be marketable, but access, scheduling, or local field support should be organized before distribution.";
+
+          } else if (
+            presentation === "Ready now" &&
+            documentation === "Documents appear ready" &&
+            access === "Ready for showings"
+          ) {
+
+            heading.textContent =
+              "The property appears ready for market distribution.";
+
+
+            description.textContent =
+              "The next step can focus on how the property is presented to potential purchasers.";
+
+          } else {
+
+            heading.textContent =
+              "Preparation requirements have been identified.";
+
+
+            description.textContent =
+              "The property can now move toward a market-distribution review while any remaining preparation items stay visible.";
+
+          }
+
+
+          document.getElementById(
+            "preparation-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "preparation-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
