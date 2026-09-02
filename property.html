@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="View a simple MREO property record and choose what to do next."
+    content="View a fictional MREO property record."
   >
 
   <title>MREO | Property</title>
@@ -20,9 +20,9 @@
 
 <body>
 
-  <!-- =========================================
+  <!-- =====================================================
        HEADER
-       ========================================= -->
+       ===================================================== -->
 
   <header class="site-header">
 
@@ -62,83 +62,132 @@
   </header>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        MAIN
-       ========================================= -->
+       ===================================================== -->
 
   <main class="page page-medium">
 
-    <!-- =====================================
-         INTRO
-         ===================================== -->
+    <!-- ===================================================
+         ERROR
+         =================================================== -->
 
-    <section class="page-intro">
-
-      <p
-        id="property-id"
-        class="page-eyebrow mono"
-      >
-        MREO-0001
-      </p>
-
-      <h1
-        id="property-address"
-        class="page-title"
-      >
-        4218 Maple Ridge Drive
-      </h1>
-
-      <p
-        id="property-location"
-        class="page-description"
-      >
-        Dallas, Texas
-      </p>
-
+    <section
+      id="property-error"
+      class="error-message"
+      hidden
+    >
+      Property record not found.
     </section>
 
 
-    <!-- =====================================
-         PROPERTY IMAGE
-         ===================================== -->
+    <!-- ===================================================
+         PROPERTY CONTENT
+         =================================================== -->
 
-    <section class="panel">
+    <div
+      id="property-content"
+      hidden
+    >
 
-      <div class="property-image">
+      <!-- =================================================
+           INTRO
+           ================================================= -->
+
+      <section class="page-intro">
+
+        <p
+          id="property-id"
+          class="page-eyebrow"
+        >
+          MREO Property
+        </p>
+
+
+        <h1
+          id="property-address"
+          class="page-title"
+        >
+          Property
+        </h1>
+
+
+        <p
+          id="property-location"
+          class="page-description"
+        ></p>
+
+      </section>
+
+
+      <!-- =================================================
+           CANONICAL PROPERTY IMAGE
+           ================================================= -->
+
+      <section
+        style="
+          margin-top: 34px;
+          border: 1px solid var(--ink);
+          background: var(--paper-light);
+          overflow: hidden;
+        "
+      >
 
         <img
           id="property-image"
-          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85"
-          alt="Fictional MREO demonstration property"
+          alt=""
+          style="
+            display: block;
+            width: 100%;
+            height: clamp(290px, 48vw, 560px);
+            object-fit: cover;
+            background: var(--paper-dark);
+          "
         >
 
-      </div>
-
-    </section>
+      </section>
 
 
-    <!-- =====================================
-         BASIC PROPERTY FACTS
-         ===================================== -->
+      <!-- =================================================
+           PROPERTY BASICS
+           ================================================= -->
 
-    <section
-      class="panel"
-      style="margin-top: 18px;"
-    >
-
-      <p class="eyebrow">
-        Property
-      </p>
-
-      <h2
-        id="property-price"
-        style="margin-bottom: 28px;"
+      <section
+        class="detail-list"
+        style="margin-top: 28px;"
       >
-        $385,000
-      </h2>
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Price
+          </span>
+
+          <span
+            id="property-price"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
 
 
-      <div class="detail-list">
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Property Type
+          </span>
+
+          <span
+            id="property-type"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
 
         <div class="detail-row">
 
@@ -150,7 +199,7 @@
             id="property-beds"
             class="detail-value"
           >
-            3
+            —
           </span>
 
         </div>
@@ -166,7 +215,7 @@
             id="property-baths"
             class="detail-value"
           >
-            2
+            —
           </span>
 
         </div>
@@ -175,14 +224,14 @@
         <div class="detail-row">
 
           <span class="detail-label">
-            Interior
+            Living Area
           </span>
 
           <span
             id="property-sqft"
             class="detail-value"
           >
-            1,940 sq ft
+            —
           </span>
 
         </div>
@@ -191,230 +240,238 @@
         <div class="detail-row">
 
           <span class="detail-label">
-            Property type
+            Status
           </span>
 
           <span
-            id="property-type"
+            id="property-status"
             class="detail-value"
           >
-            Single Family
+            —
           </span>
 
         </div>
 
-
-        <div class="detail-row">
-
-          <span class="detail-label">
-            Condition
-          </span>
-
-          <span
-            id="property-condition"
-            class="detail-value"
-          >
-            Move-in ready
-          </span>
-
-        </div>
-
-      </div>
-
-    </section>
+      </section>
 
 
-    <!-- =====================================
-         WHAT NEXT?
-         ===================================== -->
+      <!-- =================================================
+           WHAT DO YOU WANT TO VIEW?
+           ================================================= -->
 
-    <section
-      style="margin-top: 48px;"
-    >
-
-      <div class="page-intro">
+      <section
+        class="page-intro"
+        style="margin-top: 54px;"
+      >
 
         <p class="page-eyebrow">
-          Next
+          Property Record
         </p>
 
-        <h2>
-          What do you want to view?
+        <h2
+          class="page-title"
+          style="
+            font-size: clamp(38px, 5vw, 68px);
+          "
+        >
+          Explore This Property
         </h2>
 
-      </div>
+        <p class="page-description">
+          Choose one part of the property record.
+        </p>
+
+      </section>
 
 
-      <div class="choice-grid">
+      <!-- =================================================
+           FOUR MAIN PATHS
+           ================================================= -->
 
-        <!-- PASSPORT -->
+      <section
+        class="choice-grid"
+        style="margin-top: 30px;"
+      >
+
+        <!-- ===============================================
+             PROPERTY PASSPORT
+             =============================================== -->
 
         <a
           id="passport-link"
           class="choice-card"
-          href="passport.html?id=MREO-0001"
+          href="passport.html"
         >
 
           <span class="choice-card-number">
             01
           </span>
 
-          <div class="choice-card-content">
 
-            <p class="card-label">
-              Records
-            </p>
+          <div class="choice-card-content">
 
             <h3>
               Property Passport
             </h3>
 
             <p>
-              View valuation, title, visual, and other property records.
+              View valuation, title, visual, and transaction records.
             </p>
 
           </div>
 
-          <span class="choice-card-arrow">
+
+          <span
+            class="choice-card-arrow"
+            aria-hidden="true"
+          >
             →
           </span>
 
         </a>
 
 
-        <!-- BUY -->
+        <!-- ===============================================
+             OFFER
+             =============================================== -->
 
         <a
-          id="buy-property-link"
+          id="offer-link"
           class="choice-card blue"
-          href="offer.html?id=MREO-0001"
+          href="offer.html"
         >
 
           <span class="choice-card-number">
             02
           </span>
 
+
           <div class="choice-card-content">
 
-            <p class="card-label">
-              Acquisition
-            </p>
-
             <h3>
-              Buy This Property
+              Offer
             </h3>
 
             <p>
-              Review the acquisition path and prepare an offer.
+              Review or prepare an offer for this property.
             </p>
 
           </div>
 
-          <span class="choice-card-arrow">
+
+          <span
+            class="choice-card-arrow"
+            aria-hidden="true"
+          >
             →
           </span>
 
         </a>
 
 
-        <!-- RECONSTRUCTION -->
+        <!-- ===============================================
+             RECONSTRUCTION
+             =============================================== -->
 
         <a
           id="reconstruction-link"
           class="choice-card green"
-          href="reconstruction.html?id=MREO-0001"
+          href="reconstruction.html"
         >
 
           <span class="choice-card-number">
             03
           </span>
 
-          <div class="choice-card-content">
 
-            <p class="card-label">
-              Improvement
-            </p>
+          <div class="choice-card-content">
 
             <h3>
               Reconstruction
             </h3>
 
             <p>
-              View repair or improvement information for the property.
+              View scope, budget, milestones, and project participants.
             </p>
 
           </div>
 
-          <span class="choice-card-arrow">
+
+          <span
+            class="choice-card-arrow"
+            aria-hidden="true"
+          >
             →
           </span>
 
         </a>
 
 
-        <!-- OPERATIONS -->
+        <!-- ===============================================
+             OPERATIONS
+             =============================================== -->
 
         <a
           id="operations-link"
-          class="choice-card"
-          href="operations.html?id=MREO-0001"
+          class="choice-card red"
+          href="operations.html"
         >
 
           <span class="choice-card-number">
             04
           </span>
 
-          <div class="choice-card-content">
 
-            <p class="card-label">
-              Ownership
-            </p>
+          <div class="choice-card-content">
 
             <h3>
               Operations
             </h3>
 
             <p>
-              View rental, maintenance, and ongoing property information.
+              View rent, maintenance, insurance, equity, and resale readiness.
             </p>
 
           </div>
 
-          <span class="choice-card-arrow">
+
+          <span
+            class="choice-card-arrow"
+            aria-hidden="true"
+          >
             →
           </span>
 
         </a>
 
+      </section>
+
+
+      <!-- =================================================
+           FICTIONAL DATA NOTICE
+           ================================================= -->
+
+      <div
+        class="status-message"
+        style="margin-top: 40px;"
+      >
+        This property and its associated records are fictional and are
+        included only to demonstrate the proposed MREO workflow.
       </div>
 
-    </section>
-
-
-    <!-- =====================================
-         SIMPLE NOTICE
-         ===================================== -->
-
-    <div
-      class="status-message"
-      style="margin-top: 34px;"
-    >
-      This is a fictional demonstration property. More detailed
-      information is available only after choosing one of the
-      specific property functions above.
     </div>
 
   </main>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        FOOTER
-       ========================================= -->
+       ===================================================== -->
 
   <footer class="site-footer">
 
     <p>
-      Fictional demonstration property
+      MREO Property Record
     </p>
 
     <p>
@@ -424,117 +481,75 @@
   </footer>
 
 
-  <!-- =========================================
-       DATA
-       ========================================= -->
+  <!-- =====================================================
+       SHARED DATA
+       ===================================================== -->
 
   <script src="data.js"></script>
 
 
-  <!-- =========================================
-       SIMPLE PROPERTY PAGE LOGIC
-       ========================================= -->
+  <!--
+    IMPORTANT:
+
+    This file controls the canonical image for each property.
+
+    Browse Properties is treated as the authoritative source
+    for the property's main photograph.
+  -->
+
+  <script src="property-images.js"></script>
+
+
+  <!-- =====================================================
+       PAGE LOGIC
+       ===================================================== -->
 
   <script>
     (() => {
       "use strict";
 
+
+      /* ===================================================
+         URL
+         =================================================== */
+
       const params =
-        new URLSearchParams(window.location.search);
-
-      const requestedId =
-        params.get("id") || "MREO-0001";
-
-
-      const fallbackProperty = {
-        id: "MREO-0001",
-        addressLine1: "4218 Maple Ridge Drive",
-        location: "Dallas, Texas",
-        price: 385000,
-        beds: 3,
-        baths: 2,
-        sqft: 1940,
-        propertyType: "Single Family",
-        condition: "Move-in ready",
-        image:
-          "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85"
-      };
+        new URLSearchParams(
+          window.location.search
+        );
 
 
-      let property =
-        fallbackProperty;
+      const propertyId =
+        params.get("id");
 
 
-      if (
-        window.MREO_DATA &&
-        typeof window.MREO_DATA.getProperty === "function"
-      ) {
-        property =
-          window.MREO_DATA.getProperty(requestedId) ||
-          fallbackProperty;
-      }
+      /* ===================================================
+         ELEMENTS
+         =================================================== */
+
+      const content =
+        document.getElementById(
+          "property-content"
+        );
 
 
-      const id =
-        property.id ||
-        requestedId;
+      const errorBox =
+        document.getElementById(
+          "property-error"
+        );
 
 
-      const address =
-        property.addressLine1 ||
-        property.address ||
-        property.fullAddress ||
-        fallbackProperty.addressLine1;
+      const imageElement =
+        document.getElementById(
+          "property-image"
+        );
 
 
-      const location =
-        property.location ||
-        [
-          property.city,
-          property.state
-        ]
-          .filter(Boolean)
-          .join(", ") ||
-        fallbackProperty.location;
+      /* ===================================================
+         HELPERS
+         =================================================== */
 
-
-      const price =
-        Number(property.price) ||
-        fallbackProperty.price;
-
-
-      const beds =
-        property.beds ??
-        fallbackProperty.beds;
-
-
-      const baths =
-        property.baths ??
-        fallbackProperty.baths;
-
-
-      const sqft =
-        Number(property.sqft) ||
-        fallbackProperty.sqft;
-
-
-      const type =
-        property.propertyType ||
-        property.type ||
-        fallbackProperty.propertyType;
-
-
-      const condition =
-        property.condition ||
-        fallbackProperty.condition;
-
-
-      const image =
-        property.image ||
-        fallbackProperty.image;
-
-
-      const currency =
+      const currencyFormatter =
         new Intl.NumberFormat(
           "en-US",
           {
@@ -545,97 +560,638 @@
         );
 
 
-      const number =
-        new Intl.NumberFormat("en-US");
+      const numberFormatter =
+        new Intl.NumberFormat(
+          "en-US",
+          {
+            maximumFractionDigits: 0
+          }
+        );
 
 
-      document.getElementById(
-        "property-id"
-      ).textContent = id;
+      function firstDefined(
+        ...values
+      ) {
+
+        for (const value of values) {
+
+          if (
+            value !== undefined &&
+            value !== null &&
+            value !== ""
+          ) {
+
+            return value;
+
+          }
+
+        }
 
 
-      document.getElementById(
-        "property-address"
-      ).textContent = address;
+        return null;
+
+      }
 
 
-      document.getElementById(
-        "property-location"
-      ).textContent = location;
+      function formatCurrency(
+        value
+      ) {
+
+        if (
+          value === null ||
+          value === undefined ||
+          value === ""
+        ) {
+
+          return "Not available";
+
+        }
 
 
-      document.getElementById(
-        "property-price"
-      ).textContent = currency.format(price);
+        const number =
+          Number(
+            String(value)
+              .replace(
+                /[$,\s]/g,
+                ""
+              )
+          );
 
 
-      document.getElementById(
-        "property-beds"
-      ).textContent = beds;
+        if (
+          !Number.isFinite(number)
+        ) {
+
+          return String(value);
+
+        }
 
 
-      document.getElementById(
-        "property-baths"
-      ).textContent = baths;
+        return currencyFormatter.format(
+          number
+        );
+
+      }
 
 
-      document.getElementById(
-        "property-sqft"
-      ).textContent =
-        `${number.format(sqft)} sq ft`;
+      function formatNumber(
+        value
+      ) {
+
+        if (
+          value === null ||
+          value === undefined ||
+          value === ""
+        ) {
+
+          return "Not available";
+
+        }
 
 
-      document.getElementById(
-        "property-type"
-      ).textContent = type;
+        const number =
+          Number(
+            String(value)
+              .replace(
+                /[,\s]/g,
+                ""
+              )
+          );
 
 
-      document.getElementById(
-        "property-condition"
-      ).textContent = condition;
+        if (
+          !Number.isFinite(number)
+        ) {
+
+          return String(value);
+
+        }
 
 
-      const imageElement =
-        document.getElementById("property-image");
+        return numberFormatter.format(
+          number
+        );
 
-      imageElement.src = image;
-
-      imageElement.alt =
-        `Fictional demonstration property at ${address}`;
+      }
 
 
-      document.getElementById(
-        "passport-link"
-      ).href =
-        `passport.html?id=${encodeURIComponent(id)}`;
+      function display(
+        value
+      ) {
+
+        if (
+          value === null ||
+          value === undefined ||
+          value === ""
+        ) {
+
+          return "Not available";
+
+        }
 
 
-      document.getElementById(
-        "buy-property-link"
-      ).href =
-        `offer.html?id=${encodeURIComponent(id)}`;
+        return String(value);
+
+      }
 
 
-      document.getElementById(
-        "reconstruction-link"
-      ).href =
-        `reconstruction.html?id=${encodeURIComponent(id)}`;
+      function makePropertyUrl(
+        pageName
+      ) {
+
+        return (
+          pageName +
+          "?id=" +
+          encodeURIComponent(
+            propertyId
+          )
+        );
+
+      }
 
 
-      document.getElementById(
-        "operations-link"
-      ).href =
-        `operations.html?id=${encodeURIComponent(id)}`;
+      /* ===================================================
+         GET PROPERTY
+         =================================================== */
+
+      function getPropertyRecord() {
+
+        if (
+          !propertyId ||
+          !window.MREO_DATA
+        ) {
+
+          return null;
+
+        }
 
 
-      document.title =
-        `${id} | MREO Property`;
+        /*
+          Preferred method from data.js.
+        */
 
+        if (
+          typeof window.MREO_DATA.getProperty ===
+          "function"
+        ) {
+
+          const found =
+            window.MREO_DATA.getProperty(
+              propertyId
+            );
+
+
+          if (found) {
+            return found;
+          }
+
+        }
+
+
+        /*
+          Compatibility fallback in case properties is
+          exposed directly.
+        */
+
+        const properties =
+          window.MREO_DATA.properties;
+
+
+        if (
+          Array.isArray(properties)
+        ) {
+
+          return (
+            properties.find(
+              property =>
+                String(
+                  property.id
+                ).toUpperCase() ===
+                String(
+                  propertyId
+                ).toUpperCase()
+            ) ||
+            null
+          );
+
+        }
+
+
+        return null;
+
+      }
+
+
+      /* ===================================================
+         RENDER PROPERTY
+         =================================================== */
+
+      async function renderProperty() {
+
+        const property =
+          getPropertyRecord();
+
+
+        if (!property) {
+
+          errorBox.hidden =
+            false;
+
+
+          content.hidden =
+            true;
+
+
+          return;
+
+        }
+
+
+        /* -------------------------------------------------
+           PROPERTY ID
+           ------------------------------------------------- */
+
+        const resolvedId =
+          firstDefined(
+            property.id,
+            property.propertyId,
+            propertyId
+          );
+
+
+        document.getElementById(
+          "property-id"
+        ).textContent =
+          resolvedId;
+
+
+        /* -------------------------------------------------
+           ADDRESS
+           ------------------------------------------------- */
+
+        const address =
+          firstDefined(
+            property.address,
+            property.streetAddress,
+            property.location
+          );
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          display(
+            address
+          );
+
+
+        /* -------------------------------------------------
+           LOCATION
+           ------------------------------------------------- */
+
+        const locationParts =
+          [
+            firstDefined(
+              property.city
+            ),
+
+            firstDefined(
+              property.state
+            ),
+
+            firstDefined(
+              property.zip,
+              property.zipCode,
+              property.postalCode
+            )
+          ]
+          .filter(Boolean);
+
+
+        const location =
+          locationParts.join(
+            ", "
+          );
+
+
+        document.getElementById(
+          "property-location"
+        ).textContent =
+          location;
+
+
+        /* -------------------------------------------------
+           PRICE
+           ------------------------------------------------- */
+
+        const price =
+          firstDefined(
+            property.price,
+            property.listPrice,
+            property.askingPrice,
+            property.directoryPrice
+          );
+
+
+        document.getElementById(
+          "property-price"
+        ).textContent =
+          formatCurrency(
+            price
+          );
+
+
+        /* -------------------------------------------------
+           TYPE
+           ------------------------------------------------- */
+
+        const propertyType =
+          firstDefined(
+            property.type,
+            property.propertyType
+          );
+
+
+        document.getElementById(
+          "property-type"
+        ).textContent =
+          display(
+            propertyType
+          );
+
+
+        /* -------------------------------------------------
+           BEDROOMS
+           ------------------------------------------------- */
+
+        const bedrooms =
+          firstDefined(
+            property.beds,
+            property.bedrooms
+          );
+
+
+        document.getElementById(
+          "property-beds"
+        ).textContent =
+          display(
+            bedrooms
+          );
+
+
+        /* -------------------------------------------------
+           BATHROOMS
+           ------------------------------------------------- */
+
+        const bathrooms =
+          firstDefined(
+            property.baths,
+            property.bathrooms
+          );
+
+
+        document.getElementById(
+          "property-baths"
+        ).textContent =
+          display(
+            bathrooms
+          );
+
+
+        /* -------------------------------------------------
+           LIVING AREA
+           ------------------------------------------------- */
+
+        const squareFootage =
+          firstDefined(
+            property.sqft,
+            property.squareFootage,
+            property.livingArea
+          );
+
+
+        document.getElementById(
+          "property-sqft"
+        ).textContent =
+          squareFootage !== null
+            ? formatNumber(
+                squareFootage
+              ) + " sq ft"
+            : "Not available";
+
+
+        /* -------------------------------------------------
+           STATUS
+           ------------------------------------------------- */
+
+        const status =
+          firstDefined(
+            property.status,
+            property.pathway,
+            property.stage,
+            property.lifecycleStage,
+            property.condition
+          );
+
+
+        document.getElementById(
+          "property-status"
+        ).textContent =
+          display(
+            status
+          );
+
+
+        /* -------------------------------------------------
+           LINKS
+
+           Preserve the same property ID throughout the
+           entire MREO record.
+           ------------------------------------------------- */
+
+        document.getElementById(
+          "passport-link"
+        ).href =
+          makePropertyUrl(
+            "passport.html"
+          );
+
+
+        document.getElementById(
+          "offer-link"
+        ).href =
+          makePropertyUrl(
+            "offer.html"
+          );
+
+
+        document.getElementById(
+          "reconstruction-link"
+        ).href =
+          makePropertyUrl(
+            "reconstruction.html"
+          );
+
+
+        document.getElementById(
+          "operations-link"
+        ).href =
+          makePropertyUrl(
+            "operations.html"
+          );
+
+
+        /* -------------------------------------------------
+           CANONICAL IMAGE
+
+           This is the important part.
+
+           It first asks MREO_IMAGES for the photograph used
+           on Browse Properties.
+
+           property.image / property.photo are used ONLY as
+           emergency fallbacks if the Browse-page image
+           cannot be discovered.
+           ------------------------------------------------- */
+
+        const oldDetailPageImage =
+          firstDefined(
+            property.image,
+            property.photo,
+            property.imageUrl,
+            property.photoUrl
+          );
+
+
+        if (
+          window.MREO_IMAGES &&
+          typeof window.MREO_IMAGES.apply ===
+          "function"
+        ) {
+
+          const canonicalImage =
+            await window.MREO_IMAGES.apply(
+              imageElement,
+              resolvedId,
+              oldDetailPageImage
+            );
+
+
+          if (!canonicalImage) {
+
+            hideMissingImage();
+
+          }
+
+        } else if (
+          oldDetailPageImage
+        ) {
+
+          /*
+            Emergency fallback if property-images.js failed
+            to load entirely.
+          */
+
+          imageElement.src =
+            oldDetailPageImage;
+
+        } else {
+
+          hideMissingImage();
+
+        }
+
+
+        /* -------------------------------------------------
+           IMAGE ALT TEXT
+           ------------------------------------------------- */
+
+        imageElement.alt =
+          "Property photograph for " +
+          display(
+            address
+          );
+
+
+        /* -------------------------------------------------
+           TITLE
+           ------------------------------------------------- */
+
+        document.title =
+          resolvedId +
+          " | MREO";
+
+
+        /* -------------------------------------------------
+           SHOW PAGE
+           ------------------------------------------------- */
+
+        content.hidden =
+          false;
+
+      }
+
+
+      /* ===================================================
+         MISSING IMAGE
+         =================================================== */
+
+      function hideMissingImage() {
+
+        const imageSection =
+          imageElement.closest(
+            "section"
+          );
+
+
+        if (imageSection) {
+
+          imageSection.hidden =
+            true;
+
+        }
+
+      }
+
+
+      /* ===================================================
+         IMAGE ERROR
+
+         If the authoritative image URL itself becomes
+         unavailable, don't show a broken-image icon.
+         =================================================== */
+
+      imageElement.addEventListener(
+        "error",
+        () => {
+
+          console.warn(
+            "The canonical property image could not be loaded for:",
+            propertyId
+          );
+
+
+          hideMissingImage();
+
+        }
+      );
+
+
+      /* ===================================================
+         CURRENT YEAR
+         =================================================== */
 
       document.getElementById(
         "current-year"
       ).textContent =
         new Date().getFullYear();
+
+
+      /* ===================================================
+         START
+         =================================================== */
+
+      renderProperty();
 
     })();
   </script>
