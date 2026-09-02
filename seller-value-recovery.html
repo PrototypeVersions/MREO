@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Explore Seller Value Recovery through the MREO demonstration seller pathway."
+  >
+
+  <title>MREO | Seller Value Recovery</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <header class="site-header">
+
+    <a
+      class="site-brand"
+      href="index.html"
+    >
+      MREO
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="buy.html">
+        Buy
+      </a>
+
+      <a href="sell.html">
+        Sell
+      </a>
+    </nav>
+
+
+    <a
+      id="back-options-link"
+      class="back-link"
+      href="seller-options.html"
+    >
+      ← Seller Options
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+       ========================================= -->
+
+  <main class="page page-narrow">
+
+    <!-- =====================================
+         INTRO
+         ===================================== -->
+
+    <section class="page-intro">
+
+      <p class="page-eyebrow">
+        Seller Path · 05
+      </p>
+
+      <h1 class="page-title">
+        Seller Value Recovery
+      </h1>
+
+      <p class="page-description">
+        Improve the property's sale position while the owner remains the seller.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PROPERTY CONTEXT
+         ===================================== -->
+
+    <section
+      id="property-context"
+      class="detail-list"
+      hidden
+      style="margin-bottom: 38px;"
+    >
+
+      <div class="detail-row">
+
+        <span class="detail-label">
+          Property
+        </span>
+
+        <span
+          id="property-address"
+          class="detail-value"
+        >
+          Property address
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         CORE IDEA
+         ===================================== -->
+
+    <section
+      class="panel"
+      style="margin-bottom: 38px;"
+    >
+
+      <p class="eyebrow">
+        Core Structure
+      </p>
+
+      <h3>
+        The owner remains the seller.
+      </h3>
+
+      <p class="muted">
+        Instead of selling the property first and allowing a new
+        purchaser to capture the value created by rehabilitation,
+        this pathway explores whether reconstruction can occur
+        before the owner's sale.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         FORM
+         ===================================== -->
+
+    <form
+      id="value-recovery-form"
+      class="form"
+    >
+
+      <!-- ===================================
+           OWNER CONTROL
+           =================================== -->
+
+      <div class="field">
+
+        <label for="owner-control">
+          Owner Control
+        </label>
+
+        <select
+          id="owner-control"
+          name="ownerControl"
+          required
+        >
+
+          <option value="">
+            What do you want during reconstruction?
+          </option>
+
+          <option value="Remain the owner and seller">
+            Remain the owner and seller
+          </option>
+
+          <option value="Remain the seller but coordinate outside capital">
+            Remain the seller but coordinate outside capital
+          </option>
+
+          <option value="Compare this with an immediate sale">
+            Compare this with an immediate sale
+          </option>
+
+          <option value="Not sure">
+            Not sure
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           RECONSTRUCTION INTEREST
+           =================================== -->
+
+      <div class="field">
+
+        <label for="reconstruction-interest">
+          Reconstruction Interest
+        </label>
+
+        <select
+          id="reconstruction-interest"
+          name="reconstructionInterest"
+          required
+        >
+
+          <option value="">
+            How much improvement are you considering?
+          </option>
+
+          <option value="Targeted repairs">
+            Targeted repairs
+          </option>
+
+          <option value="Moderate rehabilitation">
+            Moderate rehabilitation
+          </option>
+
+          <option value="Major reconstruction">
+            Major reconstruction
+          </option>
+
+          <option value="Determine scope first">
+            Determine scope first
+          </option>
+
+          <option value="Not sure">
+            Not sure
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           SALE OBJECTIVE
+           =================================== -->
+
+      <div class="field">
+
+        <label for="sale-objective">
+          Sale Objective
+        </label>
+
+        <select
+          id="sale-objective"
+          name="saleObjective"
+          required
+        >
+
+          <option value="">
+            What is the primary objective?
+          </option>
+
+          <option value="Improve sale price">
+            Improve sale price
+          </option>
+
+          <option value="Improve net seller proceeds">
+            Improve net seller proceeds
+          </option>
+
+          <option value="Make the property market-ready">
+            Make the property market-ready
+          </option>
+
+          <option value="Expand the qualified buyer pool">
+            Expand the qualified buyer pool
+          </option>
+
+          <option value="Compare reconstructed and as-is outcomes">
+            Compare reconstructed and as-is outcomes
+          </option>
+
+          <option value="Not sure">
+            Not sure
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- ===================================
+           SAVE
+           =================================== -->
+
+      <div class="button-row">
+
+        <button
+          class="primary-button"
+          type="submit"
+        >
+          Continue
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================
+         RESULT
+         ===================================== -->
+
+    <section
+      id="value-recovery-result"
+      hidden
+      style="margin-top: 38px;"
+    >
+
+      <p class="page-eyebrow">
+        Value Recovery Review
+      </p>
+
+
+      <div class="detail-list">
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Owner Position
+          </span>
+
+          <span
+            id="result-control"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Reconstruction
+          </span>
+
+          <span
+            id="result-reconstruction"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            Sale Objective
+          </span>
+
+          <span
+            id="result-objective"
+            class="detail-value"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================
+           NEXT
+           =================================== -->
+
+      <section
+        class="panel"
+        style="margin-top: 32px;"
+      >
+
+        <p class="eyebrow">
+          Next
+        </p>
+
+        <h3 id="value-recovery-heading">
+          Determine the reconstruction scope.
+        </h3>
+
+        <p
+          id="value-recovery-description"
+          class="muted"
+        >
+          The next step identifies what work would be considered
+          before any reconstruction-supported sale strategy is evaluated.
+        </p>
+
+      </section>
+
+
+      <div class="button-row">
+
+        <a
+          id="scope-link"
+          class="primary-button"
+          href="seller-value-recovery-scope.html"
+        >
+          Reconstruction Scope
+          <span aria-hidden="true">→</span>
+        </a>
+
+
+        <a
+          id="seller-options-link"
+          class="secondary-button"
+          href="seller-options.html"
+        >
+          Compare Seller Paths
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         VALUE RECOVERY PRINCIPLE
+         ===================================== -->
+
+    <div
+      class="status-message"
+      style="margin-top: 36px;"
+    >
+      Seller Value Recovery is designed around a simple question:
+      if rehabilitation creates additional property value, can more
+      of that value remain with the existing owner rather than being
+      captured only after the property is sold to another party?
+    </div>
+
+
+    <!-- =====================================
+         IMPORTANT LIMIT
+         ===================================== -->
+
+    <div class="status-message">
+      Reconstruction would require property-specific scope,
+      estimates, qualified professionals, funding arrangements,
+      contracts, approvals, milestones, and controls. The owner
+      should not assume that rehabilitation will increase value
+      enough to justify its cost.
+    </div>
+
+
+    <!-- =====================================
+         DISCLAIMER
+         ===================================== -->
+
+    <div class="status-message">
+      This prototype does not provide reconstruction financing,
+      guarantee an after-repair value, engage contractors, create
+      an escrow arrangement, or promise improved sale proceeds.
+      All such matters would require separate review and agreement.
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="site-footer">
+
+    <p>
+      MREO Seller Value Recovery pathway
+    </p>
+
+    <p>
+      MREO · <span id="current-year">2026</span>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================
+       PAGE LOGIC
+       ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+
+      /* -----------------------------------------
+         URL
+         ----------------------------------------- */
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      let propertyAddress =
+        params.get("address");
+
+
+      /* -----------------------------------------
+         RESTORE PROPERTY ADDRESS
+         ----------------------------------------- */
+
+      if (!propertyAddress) {
+
+        try {
+
+          propertyAddress =
+            sessionStorage.getItem(
+              "mreo-seller-property-address"
+            );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not restore property address:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* -----------------------------------------
+         PROPERTY CONTEXT
+         ----------------------------------------- */
+
+      if (propertyAddress) {
+
+        document.getElementById(
+          "property-context"
+        ).hidden =
+          false;
+
+
+        document.getElementById(
+          "property-address"
+        ).textContent =
+          propertyAddress;
+
+      }
+
+
+      /* -----------------------------------------
+         PRESERVE ADDRESS
+         ----------------------------------------- */
+
+      function withAddress(page) {
+
+        if (!propertyAddress) {
+          return page;
+        }
+
+
+        return (
+          `${page}?address=` +
+          encodeURIComponent(propertyAddress)
+        );
+
+      }
+
+
+      /* -----------------------------------------
+         LINKS
+         ----------------------------------------- */
+
+      document.getElementById(
+        "back-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      document.getElementById(
+        "seller-options-link"
+      ).href =
+        withAddress(
+          "seller-options.html"
+        );
+
+
+      document.getElementById(
+        "scope-link"
+      ).href =
+        withAddress(
+          "seller-value-recovery-scope.html"
+        );
+
+
+      /* -----------------------------------------
+         RESTORE SAVED VALUES
+         ----------------------------------------- */
+
+      let savedControl =
+        null;
+
+
+      let savedReconstruction =
+        null;
+
+
+      let savedObjective =
+        null;
+
+
+      try {
+
+        savedControl =
+          sessionStorage.getItem(
+            "mreo-seller-value-recovery-control"
+          );
+
+
+        savedReconstruction =
+          sessionStorage.getItem(
+            "mreo-seller-value-recovery-reconstruction"
+          );
+
+
+        savedObjective =
+          sessionStorage.getItem(
+            "mreo-seller-value-recovery-objective"
+          );
+
+      } catch (error) {
+
+        console.warn(
+          "Could not restore Seller Value Recovery review:",
+          error
+        );
+
+      }
+
+
+      if (savedControl) {
+
+        document.getElementById(
+          "owner-control"
+        ).value =
+          savedControl;
+
+      }
+
+
+      if (savedReconstruction) {
+
+        document.getElementById(
+          "reconstruction-interest"
+        ).value =
+          savedReconstruction;
+
+      }
+
+
+      if (savedObjective) {
+
+        document.getElementById(
+          "sale-objective"
+        ).value =
+          savedObjective;
+
+      }
+
+
+      /* -----------------------------------------
+         FORM
+         ----------------------------------------- */
+
+      document.getElementById(
+        "value-recovery-form"
+      ).addEventListener(
+        "submit",
+        event => {
+
+          event.preventDefault();
+
+
+          const ownerControl =
+            document.getElementById(
+              "owner-control"
+            ).value;
+
+
+          const reconstructionInterest =
+            document.getElementById(
+              "reconstruction-interest"
+            ).value;
+
+
+          const saleObjective =
+            document.getElementById(
+              "sale-objective"
+            ).value;
+
+
+          /* -----------------------------------
+             SAVE
+             ----------------------------------- */
+
+          try {
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-control",
+              ownerControl
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-reconstruction",
+              reconstructionInterest
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-value-recovery-objective",
+              saleObjective
+            );
+
+
+            sessionStorage.setItem(
+              "mreo-seller-selected-pathway",
+              "Seller Value Recovery"
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Could not save Seller Value Recovery review:",
+              error
+            );
+
+          }
+
+
+          /* -----------------------------------
+             RESULT
+             ----------------------------------- */
+
+          document.getElementById(
+            "result-control"
+          ).textContent =
+            ownerControl;
+
+
+          document.getElementById(
+            "result-reconstruction"
+          ).textContent =
+            reconstructionInterest;
+
+
+          document.getElementById(
+            "result-objective"
+          ).textContent =
+            saleObjective;
+
+
+          /* -----------------------------------
+             CONTEXTUAL MESSAGE
+             ----------------------------------- */
+
+          const heading =
+            document.getElementById(
+              "value-recovery-heading"
+            );
+
+
+          const description =
+            document.getElementById(
+              "value-recovery-description"
+            );
+
+
+          if (
+            saleObjective ===
+            "Compare reconstructed and as-is outcomes"
+          ) {
+
+            heading.textContent =
+              "Compare the value created with the cost of reconstruction.";
+
+
+            description.textContent =
+              "The reconstruction scope can be developed first so the owner can compare a supported-sale scenario with an immediate as-is disposition.";
+
+          } else if (
+            reconstructionInterest ===
+            "Major reconstruction"
+          ) {
+
+            heading.textContent =
+              "A detailed reconstruction scope will be essential.";
+
+
+            description.textContent =
+              "A larger project requires clear scope, cost, milestones, professionals, and funding controls before a reconstruction-supported sale can be evaluated.";
+
+          } else if (
+            ownerControl ===
+            "Remain the owner and seller"
+          ) {
+
+            heading.textContent =
+              "The owner remains central to the transaction.";
+
+
+            description.textContent =
+              "The next step identifies potential work while preserving the distinction between reconstruction coordination and ownership of the property.";
+
+          } else {
+
+            heading.textContent =
+              "Determine the reconstruction scope.";
+
+
+            description.textContent =
+              "The next step identifies what work would be considered before any reconstruction-supported sale strategy is evaluated.";
+
+          }
+
+
+          document.getElementById(
+            "value-recovery-result"
+          ).hidden =
+            false;
+
+
+          document.getElementById(
+            "value-recovery-result"
+          ).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         PAGE
+         ----------------------------------------- */
+
+      document.getElementById(
+        "current-year"
+      ).textContent =
+        new Date().getFullYear();
+
+    })();
+  </script>
+
+</body>
+</html>
